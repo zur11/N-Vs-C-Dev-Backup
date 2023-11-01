@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://scfy5o583tip"
-path="res://.godot/imported/bg.png-c937b3db743a5d622fcaaa0db0bae5d3.ctex"
+uid="uid://1gmrkml2ov3j"
+path="res://.godot/imported/market_button.png-52e704c2edc5a4b44c0a159a992c6c14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/game_screen/tutorial_popup/assets/bg.png"
-dest_files=["res://.godot/imported/bg.png-c937b3db743a5d622fcaaa0db0bae5d3.ctex"]
+source_file="res://screens/sub_menus/market_screen/assets/market_button.png"
+dest_files=["res://.godot/imported/market_button.png-52e704c2edc5a4b44c0a159a992c6c14.ctex"]
 
 [params]
 

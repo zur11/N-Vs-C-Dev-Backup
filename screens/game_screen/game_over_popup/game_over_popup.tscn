@@ -29,18 +29,18 @@ texture = ExtResource("2_pcg4e")
 [node name="GoToMainMenuButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 96.0
-offset_top = 456.0
+offset_top = 441.0
 offset_right = 449.0
-offset_bottom = 571.0
+offset_bottom = 556.0
 texture_normal = ExtResource("3_qlh0f")
 texture_pressed = ExtResource("4_sextl")
 
 [node name="PlayAgainButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 605.0
-offset_top = 453.0
+offset_top = 436.0
 offset_right = 958.0
-offset_bottom = 569.0
+offset_bottom = 552.0
 texture_normal = ExtResource("5_05ffk")
 texture_pressed = ExtResource("6_rhp35")
 

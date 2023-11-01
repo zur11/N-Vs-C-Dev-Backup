@@ -112,6 +112,7 @@ func _set_popups():
 		self.add_child(_tutorial_popup)
 		_tutorial_popup.set_z_index(14)
 		_tutorial_popup.visible = false
+		_tutorial_popup.position = Vector2(360,14)
 		_tutorial_popup.total_pages = level.total_pages
 		_tutorial_popup.background_thumbnails = level.background_thumbnails
 		_tutorial_popup.next_button_texture = level.next_button_texture

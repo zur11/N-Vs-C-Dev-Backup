@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://ds50m5bk5qstt"]
+[gd_scene load_steps=13 format=3 uid="uid://ds50m5bk5qstt"]
 
 [ext_resource type="Script" path="res://global_objects/user_balance_displayer/user_balance_displayer.gd" id="1_ai4qv"]
 [ext_resource type="Texture2D" uid="uid://bjwcf6qnvyi1h" path="res://global_objects/user_balance_displayer/assets/user_balance_container.png" id="1_o6ajw"]
 [ext_resource type="Texture2D" uid="uid://b77uj72t7snrb" path="res://global_objects/user_balance_displayer/assets/single_gold_coin.png" id="2_p221i"]
+[ext_resource type="FontFile" uid="uid://3iv2fk2whit2" path="res://assets/fonts/Molot.otf" id="3_j445a"]
 
 [sub_resource type="Animation" id="Animation_7xm1f"]
 length = 0.001
@@ -143,7 +144,8 @@ offset_top = 31.0
 offset_right = 229.0
 offset_bottom = 83.0
 theme_override_colors/font_color = Color(0.321569, 0.196078, 0.054902, 1)
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("3_j445a")
+theme_override_font_sizes/font_size = 41
 text = "0"
 horizontal_alignment = 2
 
@@ -153,7 +155,8 @@ offset_left = 9.0
 offset_top = 121.0
 offset_right = 67.0
 offset_bottom = 193.0
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("3_j445a")
+theme_override_font_sizes/font_size = 52
 text = "+0"
 horizontal_alignment = 2
 
@@ -163,10 +166,10 @@ libraries = {
 }
 
 [node name="Coins_from_box" type="CPUParticles2D" parent="."]
-position = Vector2(-1211, 598)
+position = Vector2(-1023, 609)
 emitting = false
 amount = 10
-lifetime = 1.8
+lifetime = 1.75
 one_shot = true
 speed_scale = 1.5
 randomness = 1.0
@@ -186,7 +189,7 @@ scale_amount_curve = SubResource("Curve_npbi6")
 color_ramp = SubResource("Gradient_dypya")
 
 [node name="Coins_from_anywhere" type="CPUParticles2D" parent="."]
-position = Vector2(86, 124)
+position = Vector2(262, 124)
 emitting = false
 amount = 3
 lifetime = 0.4

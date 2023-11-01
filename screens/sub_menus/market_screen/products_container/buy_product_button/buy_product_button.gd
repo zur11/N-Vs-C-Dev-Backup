@@ -7,11 +7,13 @@ class_name BuyProductButton extends TextureButton
 @export var product_text : String : set = _set_product_text
 
 @onready var _product_thumbnail : TextureRect = $ProductThumbnail
-@onready var _product_label : Label = $ProductLabel
+@onready var _product_label : Label = $DescriptionBox/ProductLabel
+@onready var _price_tag_label : Label = $PriceTag/PriceTagLabel
 
 func _ready():
 	_product_thumbnail.texture = product_thumbnail
 	_product_label.text = product_text
+	_price_tag_label.text = str(product_price)
 
 func _set_product_thumbnail(new_value : Texture):
 	product_thumbnail = new_value

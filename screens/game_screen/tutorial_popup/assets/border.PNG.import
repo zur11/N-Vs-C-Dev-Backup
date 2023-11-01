@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh3a33ibhyye4"
-path="res://.godot/imported/border.PNG-f3585f1a2b6f4e5408a9ea2abc1d84d8.ctex"
+path="res://.godot/imported/border.png-a691d44d6f5964a4202a32e69611c33d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/game_screen/tutorial_popup/assets/border.PNG"
-dest_files=["res://.godot/imported/border.PNG-f3585f1a2b6f4e5408a9ea2abc1d84d8.ctex"]
+source_file="res://screens/game_screen/tutorial_popup/assets/border.png"
+dest_files=["res://.godot/imported/border.png-a691d44d6f5964a4202a32e69611c33d.ctex"]
 
 [params]
 
