@@ -3,46 +3,53 @@ class_name AllyCard extends TextureButton
 signal card_selected(selected_card:AllyCard)
 signal card_unselected
 signal card_loaded()
+signal card_stopped_twinkling
 
 var ally : Ally
 var is_affordable : bool : set = _set_is_affordable
 var is_selected : bool = false : set = _set_is_selected
 var is_loading : bool = false
 var price : int
-var has_been_choosen : bool 
 
 var _loading_time: int
 var _normal_btn_texture : Texture
 var _selected_btn_texture : Texture
 
+var is_twinkling : bool : set = _set_is_twinkling
+var _full_color_int : float = 255
+var _empty_color_int : float = 0
+var _current_color_int : int = 255
+var _color_int_is_decreasing : bool
+
 @onready var _price_label : Label = $PriceLabel
 @onready var _loading_veil : ColorRect = $LoadingVeil
 @onready var _loading_timer : Timer = $LoadingTimer
 
-func _ready():
-	pass
-#	_set_initial_loading_variables()
+func _process(_delta):
+	if is_twinkling:
+		if _color_int_is_decreasing:
+			_current_color_int -= 1
+			self.modulate = Color(_full_color_int, _current_color_int, _current_color_int)
+			
+			if _current_color_int == _empty_color_int: _color_int_is_decreasing = false
+		else:
+			_current_color_int += 1
+			self.modulate = Color(_full_color_int, _current_color_int, _current_color_int)
+			
+			if _current_color_int == _full_color_int: _color_int_is_decreasing = true
 
-#func _set_initial_loading_variables():
-#	var initial_loading_time : int
-#
-#	match  loading_time:
-#		40: # Slow
-#			initial_loading_time = 26
-#		20: # Medium
-#			initial_loading_time = 10
-#		8:  # Fast 
-#			initial_loading_time = 0
-#
-#	_loading_timer.timeout.connect(_on_loading_timer_timeout)
-#
-#	if initial_loading_time == 0: # Enable for Card Loading Process
-#		_loading_veil.visible = false
-#		return
-#
-#	#_loading_veil.visible = false # Disable for Card Loading Process
-#
-#	start_loading_process(initial_loading_time) # Enable for Card Loading Process
+func _set_is_twinkling(new_value):
+	is_twinkling = new_value
+	
+	if not is_twinkling:
+		self.modulate = Color(_full_color_int, _full_color_int, _full_color_int)
+		_current_color_int = _full_color_int
+		card_stopped_twinkling.emit()
+	else:
+		_color_int_is_decreasing = true
+		
+func _twinkle():
+	pass
 
 func set_initial_variables(ally_arg:Ally):
 	ally = ally_arg
@@ -114,9 +121,12 @@ func _on_loading_timer_timeout():
 	card_loaded.emit()
 
 func _on_card_pressed():
+	if is_twinkling:
+		is_twinkling = false
+	
 	if is_selected:
 		is_selected = false
 		return
 		
-	if is_affordable and not is_loading and not is_selected:
+	elif is_affordable and not is_loading and not is_selected:
 		is_selected = true

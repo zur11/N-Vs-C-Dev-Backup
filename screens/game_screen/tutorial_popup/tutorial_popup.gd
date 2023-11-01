@@ -1,6 +1,7 @@
 class_name TutorialPopup extends Control
 
 signal tutorial_finished
+signal first_popup_finished
 
 var next_button_texture : Texture
 var selected_next_button_texture : Texture

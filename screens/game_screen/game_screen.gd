@@ -147,6 +147,7 @@ func _connect_signals():
 	_terrain_grid.ally_for_cell_requested.connect(_on_terrain_grid_ally_for_cell_requested)
 	_card_selector.connect("ally_selected", _on_card_selector_ally_selected)
 	_card_selector.ally_card_loaded.connect(_on_card_selector_card_loaded)
+	_card_selector.ally_card_finished_twinkling_process.connect(_on_ally_card_stopped_twinkling)
 	_game_start_count_down.count_down_finished.connect(_on_game_start_count_down_finished)
 	
 	if level is TutorialLevel:
@@ -466,6 +467,9 @@ func _on_terrain_grid_coin_picked_up(coin_value : int):
 	_coin_picked_up_player.play_sound()
 	_balance_displayer.add_value_to_balance(coin_value)
 	_update_cards_affordability()
+
+func _on_ally_card_stopped_twinkling():
+	pass
 
 func _on_card_selector_ally_selected(selected_ally_name : String):
 	if selected_ally_name != "":

@@ -2,9 +2,15 @@ class_name AllyCardSelector extends VBoxContainer
 
 signal ally_selected(ally_name : String)
 signal ally_card_loaded()
+signal ally_card_finished_twinkling_process
 
 var selected_card : AllyCard
 
+#var _card_is_twinkling : bool
+#var _full_color_int : int = 255
+#var _empty_color_int : int = 0
+#var _current_color_int : int
+#var _color_int_is_decreasing : bool
 
 func start_initial_display(ally_cards : Array[AllyCard]):
 	for card in ally_cards:
@@ -14,7 +20,13 @@ func start_initial_display(ally_cards : Array[AllyCard]):
 		ally_card.set_z_index(6)
 		ally_card.connect("card_selected", _on_ally_card_selected)
 		ally_card.connect("card_loaded", _on_ally_card_loaded)
+		ally_card.card_stopped_twinkling.connect(_on_ally_card_stopped_twinkling)
 		ally_card.card_unselected.connect(_on_ally_card_unselected)
+
+func twinkle_ally_card(ally_card_index:int):
+	var twinkling_card:AllyCard = get_child(ally_card_index) as AllyCard
+	twinkling_card.is_twinkling = true
+		
 
 func disable_all_ally_card_buttons():
 	for child in self.get_children():
@@ -34,6 +46,9 @@ func update_cards_affordability(balance : int):
 			ally_card.is_affordable = true
 		else:
 			ally_card.is_affordable = false
+
+func _on_ally_card_stopped_twinkling():
+	ally_card_finished_twinkling_process.emit()
 
 func _on_ally_card_selected(_selected_card : AllyCard):
 	if selected_card == _selected_card and selected_card != null:
