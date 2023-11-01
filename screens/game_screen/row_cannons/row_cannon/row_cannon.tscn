@@ -187,21 +187,18 @@ polygon = PackedVector2Array(239.823, -123.903, 228.54, -108.899, 222.386, -93.8
 texture = ExtResource("1_6wf37")
 
 [node name="BasePipe" type="Sprite2D" parent="BaseBottom"]
-z_index = 4
 position = Vector2(-13, 12)
 rotation = -1.23913
 texture = ExtResource("2_6l0fd")
 offset = Vector2(44, 2)
 
 [node name="MiddlePipe" type="Sprite2D" parent="BaseBottom/BasePipe"]
-z_index = 3
-z_as_relative = false
+show_behind_parent = true
 position = Vector2(74, -1)
 texture = ExtResource("3_a1ke3")
 
 [node name="TopPipe" type="Sprite2D" parent="BaseBottom/BasePipe/MiddlePipe"]
-z_index = 2
-z_as_relative = false
+show_behind_parent = true
 position = Vector2(64, 0)
 texture = ExtResource("4_e1vhk")
 
@@ -224,13 +221,10 @@ scale_amount_curve = SubResource("Curve_tsxu7")
 color_ramp = SubResource("Gradient_7tfci")
 
 [node name="TopMetal" type="Sprite2D" parent="BaseBottom/BasePipe"]
-z_index = 4
-z_as_relative = false
 position = Vector2(78, -13)
 texture = ExtResource("6_c1cxa")
 
 [node name="BaseTop" type="Sprite2D" parent="BaseBottom"]
-z_index = 5
 position = Vector2(-76, 8)
 texture = ExtResource("7_vudpt")
 

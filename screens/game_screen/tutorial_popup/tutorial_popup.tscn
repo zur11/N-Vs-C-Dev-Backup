@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm57fwp48yttj"]
+[gd_scene load_steps=5 format=3 uid="uid://dm57fwp48yttj"]
 
 [ext_resource type="Script" path="res://screens/game_screen/tutorial_popup/tutorial_popup.gd" id="1_ma753"]
-[ext_resource type="Texture2D" uid="uid://scfy5o583tip" path="res://screens/game_screen/tutorial_popup/assets/bg.PNG" id="2_txbyu"]
-[ext_resource type="Texture2D" uid="uid://bh3a33ibhyye4" path="res://screens/game_screen/tutorial_popup/assets/border.PNG" id="3_82yp4"]
+[ext_resource type="Texture2D" uid="uid://bh3a33ibhyye4" path="res://screens/game_screen/tutorial_popup/assets/border.png" id="2_yl0wj"]
 [ext_resource type="Texture2D" uid="uid://dl5o03oly022o" path="res://screens/game_screen/tutorial_popup/assets/next_button.png" id="4_0j1rr"]
 [ext_resource type="Texture2D" uid="uid://cl38hqx7e5unu" path="res://screens/game_screen/tutorial_popup/assets/next_button_selected.png" id="5_h7rqy"]
 
@@ -16,17 +15,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ma753")
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_txbyu")
-
 [node name="BoxBorderTexture" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("3_82yp4")
+offset_left = 1.0
+offset_right = 1178.0
+offset_bottom = 936.0
+texture = ExtResource("2_yl0wj")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 32.0
+offset_right = 1140.0
+offset_bottom = 899.0
 
 [node name="CurrentPageLabel" type="Label" parent="."]
 visible = false
@@ -40,10 +41,10 @@ theme_override_font_sizes/font_size = 50
 
 [node name="ContinueButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 830.0
-offset_top = 765.0
-offset_right = 1136.0
-offset_bottom = 890.0
+offset_left = 442.0
+offset_top = 938.0
+offset_right = 748.0
+offset_bottom = 1063.0
 texture_normal = ExtResource("4_0j1rr")
 texture_pressed = ExtResource("5_h7rqy")
 texture_hover = ExtResource("5_h7rqy")

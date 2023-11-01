@@ -1,29 +1,128 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfb8cp51xqjwy"]
+[gd_scene load_steps=9 format=3 uid="uid://cfb8cp51xqjwy"]
 
 [ext_resource type="Script" path="res://screens/sub_menus/market_screen/products_container/buy_product_button/buy_product_button.gd" id="1_myiog"]
+[ext_resource type="FontFile" uid="uid://3iv2fk2whit2" path="res://assets/fonts/Molot.otf" id="2_4fp0r"]
+[ext_resource type="Texture2D" uid="uid://k6g6scuermxu" path="res://screens/sub_menus/market_screen/assets/price_tag.png" id="3_0ym14"]
+[ext_resource type="Texture2D" uid="uid://ga5i84ktdy87" path="res://screens/sub_menus/market_screen/assets/buy_tag.png" id="3_oif88"]
+[ext_resource type="Texture2D" uid="uid://dm5iq02kalll0" path="res://screens/sub_menus/market_screen/assets/description_box_texture.png" id="5_7xsgh"]
+
+[sub_resource type="Animation" id="Animation_trwg1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DescriptionBox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yl2ij"]
+resource_name = "_confirm_purchase"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DescriptionBox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PriceTag:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(103, 239), Vector2(31, 239)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BuyTag:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pqin8"]
+_data = {
+"RESET": SubResource("Animation_trwg1"),
+"_confirm_purchase": SubResource("Animation_yl2ij")
+}
 
 [node name="BuyProductButton" type="TextureButton"]
-custom_minimum_size = Vector2(150, 136)
+custom_minimum_size = Vector2(213, 213)
 anchors_preset = -1
 anchor_right = 0.078
 anchor_bottom = 0.157
-offset_right = 0.23999
-offset_bottom = 0.439987
+offset_right = 63.24
+offset_bottom = 100.44
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_myiog")
 
 [node name="ProductThumbnail" type="TextureRect" parent="."]
 layout_mode = 2
-offset_right = 155.0
-offset_bottom = 140.0
+offset_right = 213.0
+offset_bottom = 213.0
 stretch_mode = 3
 
-[node name="ProductLabel" type="Label" parent="."]
+[node name="PriceTag" type="Sprite2D" parent="."]
+position = Vector2(103, 239)
+texture = ExtResource("3_0ym14")
+
+[node name="PriceTagLabel" type="Label" parent="PriceTag"]
+offset_left = -68.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0.372549, 0.286275, 0.2, 1)
+theme_override_fonts/font = ExtResource("2_4fp0r")
+theme_override_font_sizes/font_size = 36
+text = "0"
+horizontal_alignment = 2
+
+[node name="BuyTag" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
-offset_top = 142.0
-offset_right = 150.0
-offset_bottom = 165.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-horizontal_alignment = 1
+offset_left = 103.0
+offset_top = 205.0
+offset_right = 269.0
+offset_bottom = 273.0
+texture_normal = ExtResource("3_oif88")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pqin8")
+}
+
+[node name="DescriptionBox" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(108, 86)
+texture = ExtResource("5_7xsgh")
+
+[node name="ProductLabel" type="Label" parent="DescriptionBox"]
+offset_left = -150.0
+offset_top = -98.0
+offset_right = 145.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4fp0r")
+theme_override_font_sizes/font_size = 38

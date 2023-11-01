@@ -35,9 +35,9 @@ offset_left = 35.0
 offset_top = 937.0
 offset_right = 185.0
 offset_bottom = 1053.0
-texture_normal = ExtResource("3_l5hjq")
-texture_pressed = ExtResource("4_u7ra3")
-texture_hover = ExtResource("4_u7ra3")
+texture_normal = ExtResource("4_u7ra3")
+texture_pressed = ExtResource("3_l5hjq")
+texture_hover = ExtResource("3_l5hjq")
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_tqb2a")
