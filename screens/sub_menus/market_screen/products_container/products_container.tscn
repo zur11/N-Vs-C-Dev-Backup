@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1c7quxy7mj4w"]
+
+[ext_resource type="Script" path="res://screens/sub_menus/market_screen/products_container/products_container.gd" id="1_seujx"]
+
+[node name="ProductsContainer" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_seujx")

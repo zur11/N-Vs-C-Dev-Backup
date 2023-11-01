@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://tk4c25rwhw0q"]
+
+[ext_resource type="Texture2D" uid="uid://8137uxmmbxxy" path="res://screens/loading_screen/assets/loading_screen_background.png" id="1_d03it"]
+[ext_resource type="Script" path="res://screens/sub_menus/market_screen/market_screen.gd" id="1_vrx16"]
+[ext_resource type="Texture2D" uid="uid://cjgjnvdvgceab" path="res://assets/screens/shared_assets/go_back_2.png" id="4_ftdnd"]
+[ext_resource type="Texture2D" uid="uid://jwmwcyqtv2kh" path="res://assets/screens/shared_assets/go_back_1.png" id="5_tpf87"]
+[ext_resource type="AudioStream" uid="uid://cc7rpmevwkpyo" path="res://assets/audio/sfx/buttons_sfx/click_2.mp3" id="6_vlbpn"]
+[ext_resource type="PackedScene" uid="uid://1c7quxy7mj4w" path="res://screens/sub_menus/market_screen/products_container/products_container.tscn" id="7_bd58r"]
+[ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="7_xbif4"]
+[ext_resource type="PackedScene" uid="uid://cfb8cp51xqjwy" path="res://screens/sub_menus/market_screen/products_container/buy_product_button/buy_product_button.tscn" id="8_37i6p"]
+[ext_resource type="Texture2D" uid="uid://cb5tftyl1suss" path="res://screens/game_screen/ally_card_slots/assets/ally_slot.png" id="9_v23fg"]
+[ext_resource type="PackedScene" uid="uid://ds50m5bk5qstt" path="res://global_objects/user_balance_displayer/user_balance_displayer.tscn" id="10_4818i"]
+
+[node name="MarketScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrx16")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_d03it")
+
+[node name="GoBackButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1736.0
+offset_top = 34.0
+offset_right = 1886.0
+offset_bottom = 150.0
+texture_normal = ExtResource("4_ftdnd")
+texture_pressed = ExtResource("5_tpf87")
+texture_hover = ExtResource("5_tpf87")
+flip_h = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vlbpn")
+script = ExtResource("7_xbif4")
+
+[node name="ProductsContainer" parent="." instance=ExtResource("7_bd58r")]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 226.0
+offset_right = 826.0
+offset_bottom = 266.0
+
+[node name="BuyProductButton" parent="ProductsContainer" instance=ExtResource("8_37i6p")]
+layout_mode = 2
+product_name = "7SlotsUpgrade"
+product_price = 100
+product_thumbnail = ExtResource("9_v23fg")
+product_text = "Unlock 7 Slots"
+
+[node name="UserBalanceDisplayer" parent="." instance=ExtResource("10_4818i")]
+
+[connection signal="pressed" from="GoBackButton" to="." method="_on_go_back_button_pressed"]

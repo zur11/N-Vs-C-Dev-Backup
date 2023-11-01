@@ -1,0 +1,11 @@
+Safe save failed. This may be a permissions problem, but also may happen because you are running a paranoid antivirus. If this is the case, please switch to Windows Defender or disable the 'safe save' option in editor settings. This makes it work, but increases the risk of file corruption in a crash.
+  core/io/file_access.cpp:762 - Condition "f.is_null()" is true. Continuing.
+  Attempting to parent and popup a dialog that already has a parent.
+  Safe save failed. This may be a permissions problem, but also may happen because you are running a paranoid antivirus. If this is the case, please switch to Windows Defender or disable the 'safe save' option in editor settings. This makes it work, but increases the risk of file corruption in a crash.
+  core/io/file_access.cpp:762 - Condition "f.is_null()" is true. Continuing.
+  Unable to open file: res://.godot/imported/salingrad_1_foreground.png-4e9226ae5d7aee26e64a8349c54ae5e0.ctex.
+  Failed loading resource: res://.godot/imported/salingrad_1_foreground.png-4e9226ae5d7aee26e64a8349c54ae5e0.ctex. Make sure resources have been imported by opening the project in the editor at least once.
+  Failed loading resource: res://data/worlds/snowstorm/salingrad_1_foreground.png. Make sure resources have been imported by opening the project in the editor at least once.
+  Unable to open file: res://.godot/imported/salingrad_1_foreground.png-0c50dcb29cb954481c87599a2688d652.ctex.
+  Failed loading resource: res://.godot/imported/salingrad_1_foreground.png-0c50dcb29cb954481c87599a2688d652.ctex. Make sure resources have been imported by opening the project in the editor at least once.
+  Failed loading resource: res://data/worlds/trenches/salingrad_1_foreground.png. Make sure resources have been imported by opening the project in the editor at least once.

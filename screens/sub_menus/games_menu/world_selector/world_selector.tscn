@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1qaewqhhtlyv"]
+
+[ext_resource type="Script" path="res://screens/sub_menus/games_menu/world_selector/world_selector.gd" id="1_omxmu"]
+[ext_resource type="Script" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_button.gd" id="2_7jc32"]
+[ext_resource type="PackedScene" uid="uid://btlmw5vysjx8" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/stalingrad_icon.tscn" id="2_fmcdq"]
+[ext_resource type="PackedScene" uid="uid://tkdaet88vh8r" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/stalingrad_2_icon.tscn" id="3_0ulpg"]
+[ext_resource type="PackedScene" uid="uid://d5j7ri7ludn5" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/budapest_icon.tscn" id="4_mq8xf"]
+
+[node name="WorldSelector" type="Control"]
+layout_mode = 3
+anchor_right = 0.704
+anchor_bottom = 0.393
+offset_right = 0.319946
+offset_bottom = -0.440002
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_omxmu")
+
+[node name="World1Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 359.0
+offset_bottom = 414.0
+script = ExtResource("2_7jc32")
+
+[node name="WorldIcon" parent="World1Button" instance=ExtResource("2_fmcdq")]
+position = Vector2(184, 208)
+
+[node name="World2Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 473.0
+offset_right = 826.0
+offset_bottom = 414.0
+script = ExtResource("2_7jc32")
+
+[node name="WorldIcon" parent="World2Button" instance=ExtResource("3_0ulpg")]
+position = Vector2(175, 208)
+
+[node name="World3Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 963.0
+offset_top = -35.0
+offset_right = 1347.0
+offset_bottom = 415.0
+script = ExtResource("2_7jc32")
+
+[node name="WorldIcon" parent="World3Button" instance=ExtResource("4_mq8xf")]
+position = Vector2(189, 227)
