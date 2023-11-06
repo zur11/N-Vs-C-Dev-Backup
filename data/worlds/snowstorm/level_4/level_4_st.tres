@@ -19,7 +19,7 @@ ally_thumbnail = "landmine"
 ally_title = "LANDMINE"
 ally_reward_description = "Land Mine destroys first enemy that walks over it, vulnerable to enemies while charging."
 
-[sub_resource type="Resource" id="Resource_v82nr"]
+[sub_resource type="Resource" id="Resource_vbld1"]
 script = ExtResource("2_nv07a")
 minimum_value = 7
 maximum_value = 10
@@ -208,7 +208,7 @@ level_thumbnail = ExtResource("6_f7iqk")
 enemy_thumbnail = ExtResource("1_qgv43")
 level_allies = Array[PackedScene]([ExtResource("5_go163"), ExtResource("4_a6ccw"), ExtResource("5_xj6i8")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_v82nr")
+coin_dropping_rate = SubResource("Resource_vbld1")
 falling_coin_value = 25
 playable_rows = 5
 game_background_position = "center"

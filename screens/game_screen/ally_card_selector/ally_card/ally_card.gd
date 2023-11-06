@@ -16,9 +16,9 @@ var _normal_btn_texture : Texture
 var _selected_btn_texture : Texture
 
 var is_twinkling : bool : set = _set_is_twinkling
-var _full_color_int : float = 255
+var _full_color_int : float = 1
 var _empty_color_int : float = 0
-var _current_color_int : int = 255
+var _current_color_float : float = 1
 var _color_int_is_decreasing : bool
 
 @onready var _price_label : Label = $PriceLabel
@@ -27,29 +27,30 @@ var _color_int_is_decreasing : bool
 
 func _process(_delta):
 	if is_twinkling:
-		if _color_int_is_decreasing:
-			_current_color_int -= 1
-			self.modulate = Color(_full_color_int, _current_color_int, _current_color_int)
-			
-			if _current_color_int == _empty_color_int: _color_int_is_decreasing = false
-		else:
-			_current_color_int += 1
-			self.modulate = Color(_full_color_int, _current_color_int, _current_color_int)
-			
-			if _current_color_int == _full_color_int: _color_int_is_decreasing = true
+		_twinkle()
 
 func _set_is_twinkling(new_value):
 	is_twinkling = new_value
 	
 	if not is_twinkling:
 		self.modulate = Color(_full_color_int, _full_color_int, _full_color_int)
-		_current_color_int = _full_color_int
+		_current_color_float = _full_color_int
 		card_stopped_twinkling.emit()
 	else:
 		_color_int_is_decreasing = true
 		
 func _twinkle():
-	pass
+#		printt("is twinkling")
+		if _color_int_is_decreasing:
+			_current_color_float -= 0.01
+			self.modulate = Color(_full_color_int, _current_color_float, _current_color_float)
+			
+			if _current_color_float <= _empty_color_int: _color_int_is_decreasing = false
+		else:
+			_current_color_float += 0.01
+			self.modulate = Color(_full_color_int, _current_color_float, _current_color_float)
+			
+			if _current_color_float == _full_color_int: _color_int_is_decreasing = true
 
 func set_initial_variables(ally_arg:Ally):
 	ally = ally_arg

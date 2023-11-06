@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://plvr5fegtliu"
-path="res://.godot/imported/tutorial_row_background.png-ddd9ab126bb7210fdd9ef80ad2e2e2d3.ctex"
+path="res://.godot/imported/tutorial_row_background.png-20687656ea04dc10975a2be8b16545e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/worlds/snowstorm/level_1/tutorial_row_background.png"
-dest_files=["res://.godot/imported/tutorial_row_background.png-ddd9ab126bb7210fdd9ef80ad2e2e2d3.ctex"]
+source_file="res://data/worlds/snowstorm/tutorial_row_background.png"
+dest_files=["res://.godot/imported/tutorial_row_background.png-20687656ea04dc10975a2be8b16545e6.ctex"]
 
 [params]
 

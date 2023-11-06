@@ -139,15 +139,17 @@ enemies = Array[ExtResource("10_s763c")]([SubResource("Resource_tvoao"), SubReso
 
 [resource]
 script = ExtResource("1_jr6qq")
-total_pages = 1
+total_first_popup_pages = 1
+total_second_popup_pages = 1
 background_thumbnails = Array[Texture]([ExtResource("2_5k85p")])
+second_popup_thumbnails = Array[Texture]([])
 ok_button_texture = ExtResource("14_6646a")
 selected_ok_button_texture = ExtResource("17_qmfv8")
 next_button_texture = ExtResource("13_so02n")
 selected_next_button_texture = ExtResource("16_m8tq4")
 base_popup_scene = ExtResource("3_ypysy")
 is_tutorial = false
-level_unlocked = false
+level_unlocked = true
 game_background = ExtResource("5_1w05v")
 game_foreground = ExtResource("6_hk28s")
 level_name = "Level 3"

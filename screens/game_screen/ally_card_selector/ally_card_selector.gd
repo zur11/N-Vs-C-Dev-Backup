@@ -26,6 +26,7 @@ func start_initial_display(ally_cards : Array[AllyCard]):
 func twinkle_ally_card(ally_card_index:int):
 	var twinkling_card:AllyCard = get_child(ally_card_index) as AllyCard
 	twinkling_card.is_twinkling = true
+#	printt("is twinkling")
 		
 
 func disable_all_ally_card_buttons():

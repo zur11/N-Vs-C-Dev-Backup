@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dm57fwp48yttj"]
 
 [ext_resource type="Script" path="res://screens/game_screen/tutorial_popup/tutorial_popup.gd" id="1_ma753"]
-[ext_resource type="Texture2D" uid="uid://bh3a33ibhyye4" path="res://screens/game_screen/tutorial_popup/assets/border.png" id="2_yl0wj"]
+[ext_resource type="Texture2D" uid="uid://bh3a33ibhyye4" path="res://screens/game_screen/tutorial_popup/assets/border.PNG" id="2_yl0wj"]
 [ext_resource type="Texture2D" uid="uid://dl5o03oly022o" path="res://screens/game_screen/tutorial_popup/assets/next_button.png" id="4_0j1rr"]
 [ext_resource type="Texture2D" uid="uid://cl38hqx7e5unu" path="res://screens/game_screen/tutorial_popup/assets/next_button_selected.png" id="5_h7rqy"]
 
