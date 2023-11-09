@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cls10jllpda83"]
+[gd_scene load_steps=45 format=3 uid="uid://cls10jllpda83"]
 
 [ext_resource type="Texture2D" uid="uid://cto61eke7joyb" path="res://assets/game_objects/soldier_shared_assets/circle_shadow.png" id="1_htuxv"]
 [ext_resource type="Script" path="res://game_objects/allies/shooter_ally/bayonet_soldier/bayonet_soldier.gd" id="1_m4sxj"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="17_rffla"]
 [ext_resource type="Texture2D" uid="uid://b1dpvkn8g86e5" path="res://assets/game_objects/soldier_shared_assets/bayonet_ammo.png" id="19_d6fis"]
 [ext_resource type="AudioStream" uid="uid://gel0wirmdxag" path="res://assets/game_objects/soldier_shared_assets/sfx/knife.mp3" id="21_7gqfu"]
+[ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="21_peg6s"]
 [ext_resource type="AudioStream" uid="uid://bybvkyshljte5" path="res://assets/game_objects/soldier_shared_assets/sfx/bayonet_shooting.mp3" id="21_wwnjm"]
 [ext_resource type="Texture2D" uid="uid://5xg73u1xoy12" path="res://assets/game_objects/soldier_shared_assets/circle_particle.png" id="22_huodq"]
 [ext_resource type="AudioStream" uid="uid://i76pxqixmxt0" path="res://assets/game_objects/soldier_shared_assets/sfx/bayonet_reload.mp3" id="23_rnnxh"]
@@ -58,6 +59,14 @@ colors = PackedColorArray(0, 0, 0, 1, 0.967284, 0.896213, 0.79581, 1, 1, 1, 1, 1
 [sub_resource type="Gradient" id="Gradient_jei5u"]
 offsets = PackedFloat32Array(0, 0.359375)
 colors = PackedColorArray(0.206398, 2.31629e-07, 5.41471e-08, 1, 0.905882, 0.0941176, 0, 1)
+
+[sub_resource type="Curve" id="Curve_gpc55"]
+_data = [Vector2(0, 0.147368), 0.0, 0.0, 0, 0, Vector2(0.467033, 0.515789), 0.0, 0.0, 0, 0, Vector2(0.983517, 0.115789), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_vbp3f"]
+offsets = PackedFloat32Array(0, 0.324503, 1)
+colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="Animation" id="Animation_u4glg"]
 length = 0.001
@@ -316,6 +325,7 @@ tracks/20/keys = {
 
 [sub_resource type="Animation" id="Animation_2f24l"]
 resource_name = "_death"
+length = 1.4
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -324,7 +334,7 @@ tracks/0/path = NodePath("Textures/LeftLeg:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0, 0.15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-0.0349066, -0.134046]
@@ -336,7 +346,7 @@ tracks/1/path = NodePath("Textures/RightLeg:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5, 0.7),
+"times": PackedFloat32Array(0, 0.15, 0.4, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.191986, 0.364015, 0.364015, 0.747204]
@@ -348,7 +358,7 @@ tracks/2/path = NodePath("Textures:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.25, 0.55),
+"times": PackedFloat32Array(0, 0.15, 0.2, 0.55),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, -114), Vector2(0, -65), Vector2(0, -65), Vector2(78, -4)]
@@ -360,7 +370,7 @@ tracks/3/path = NodePath("Textures/LeftLeg/LeftFoot:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 1.75743, 1.75743, 0.0918561]
@@ -372,7 +382,7 @@ tracks/4/path = NodePath("Textures/LeftLeg/LeftFoot:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-15.0692, 43.9639), Vector2(-18.552, 32.815), Vector2(-18.552, 32.815), Vector2(-14.8229, 43.5897)]
@@ -384,7 +394,7 @@ tracks/5/path = NodePath("Textures/Body/Head:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.25, 0.55, 0.65),
+"times": PackedFloat32Array(0, 0.15, 0.2, 0.55, 0.65),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.122173, 0.0523599, -0.226893, 0.0]
@@ -408,10 +418,10 @@ tracks/7/path = NodePath("Textures/Body/LeftArm/Bayonet:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.25, 0.45, 0.65),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.15, 0.35, 0.65),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -0.698132, -0.645772, -0.645772, -0.349066]
+"values": [0.0, -0.698132, -0.645772, -0.349066]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -420,7 +430,7 @@ tracks/8/path = NodePath("Textures/RightLeg/RightFoot:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.45, 0.65),
+"times": PackedFloat32Array(0, 0.15, 0.35, 0.65),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0523599, 1.86602, 1.86602, 0.451923]
@@ -432,7 +442,7 @@ tracks/9/path = NodePath("Textures/RightLeg/RightFoot:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.45, 0.65),
+"times": PackedFloat32Array(0, 0.15, 0.35, 0.65),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(17.676, 36.3821), Vector2(3.91714, 32.7514), Vector2(3.91714, 32.7514), Vector2(15.2856, 44.9034)]
@@ -444,7 +454,7 @@ tracks/10/path = NodePath("Textures/Body/RightArm:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, -0.460359, -0.460359, -1.4299]
@@ -456,7 +466,7 @@ tracks/11/path = NodePath("Textures/Body/RightArm/RightElbow:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.45, 0.65),
+"times": PackedFloat32Array(0, 0.15, 0.35, 0.65),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, -0.773356, -0.773356, -0.135041]
@@ -468,7 +478,7 @@ tracks/12/path = NodePath("Textures/Body/RightArm/RightElbow/Hand:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0, 0.15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 0.598123]
@@ -480,7 +490,7 @@ tracks/13/path = NodePath("Textures:rotation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0.25, 0.55),
+"times": PackedFloat32Array(0.2, 0.55),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.37699]
@@ -492,7 +502,7 @@ tracks/14/path = NodePath("Textures/Body/LeftArm:rotation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0.4, 0.6),
+"times": PackedFloat32Array(0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -0.76806]
@@ -504,7 +514,7 @@ tracks/15/path = NodePath("Textures/Body/LeftArm:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0.4, 0.6),
+"times": PackedFloat32Array(0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-37, -76), Vector2(-30.637, -78.1242)]
@@ -516,10 +526,46 @@ tracks/16/path = NodePath("Textures/Body/RightArm:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0.45, 0.6),
+"times": PackedFloat32Array(0.35, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(32, -72), Vector2(16.7301, -64.0735)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Textures:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0.85, 0.95, 1.05, 1.15, 1.25, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Shadow:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(1.25, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("DustParticles:emitting")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_hmhyg"]
@@ -1158,7 +1204,7 @@ texture = ExtResource("5_yueyy")
 offset = Vector2(12.919, 34.556)
 
 [node name="Body" type="Sprite2D" parent="Textures"]
-position = Vector2(0, 39)
+position = Vector2(0, 41)
 rotation = 0.0523599
 texture = ExtResource("6_t6tvu")
 offset = Vector2(0, -39)
@@ -1239,6 +1285,27 @@ radial_accel_max = 34.78
 scale_amount_min = 0.5
 scale_amount_max = 0.5
 color_ramp = SubResource("Gradient_jei5u")
+
+[node name="DustParticles" type="CPUParticles2D" parent="."]
+position = Vector2(2, 57)
+emitting = false
+amount = 20
+lifetime = 0.4
+one_shot = true
+speed_scale = 1.2
+explosiveness = 0.5
+texture = ExtResource("21_peg6s")
+emission_shape = 3
+emission_rect_extents = Vector2(60, 1)
+direction = Vector2(0, -1)
+spread = 55.84
+gravity = Vector2(0, -60)
+initial_velocity_min = 313.25
+initial_velocity_max = 313.25
+angular_velocity_min = 277.59
+angular_velocity_max = 277.59
+scale_amount_curve = SubResource("Curve_gpc55")
+color_ramp = SubResource("Gradient_vbp3f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "_idle"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://scfy5o583tip"
-path="res://.godot/imported/bg.png-c937b3db743a5d622fcaaa0db0bae5d3.ctex"
+uid="uid://jdulueb7gowt"
+path="res://.godot/imported/dust_particle.png-c827576d90e9d7b7987d5195ccf4a4eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/game_screen/tutorial_popup/assets/bg.png"
-dest_files=["res://.godot/imported/bg.png-c937b3db743a5d622fcaaa0db0bae5d3.ctex"]
+source_file="res://assets/game_objects/soldier_shared_assets/dust_particle.png"
+dest_files=["res://.godot/imported/dust_particle.png-c827576d90e9d7b7987d5195ccf4a4eb.ctex"]
 
 [params]
 

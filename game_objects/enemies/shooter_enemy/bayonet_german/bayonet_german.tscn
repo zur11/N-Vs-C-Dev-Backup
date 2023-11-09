@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://c3opynpwn83je"]
+[gd_scene load_steps=51 format=3 uid="uid://c3opynpwn83je"]
 
 [ext_resource type="Script" path="res://game_objects/enemies/shooter_enemy/bayonet_german/bayonet_german.gd" id="1_ds0ex"]
 [ext_resource type="Texture2D" uid="uid://cto61eke7joyb" path="res://assets/game_objects/soldier_shared_assets/circle_shadow.png" id="1_ll8kp"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://d2b8em2h2k8cy" path="res://game_objects/enemies/shooter_enemy/fast_bayonet_german/assets/enemy_bayoneta.png" id="14_70fs3"]
 [ext_resource type="Shader" path="res://assets/game_objects/soldier_shared_assets/alpha_shader/alpha_shader.gdshader" id="15_dis6k"]
 [ext_resource type="Texture2D" uid="uid://ddkq5e615l10l" path="res://assets/game_objects/soldier_shared_assets/alpha_shader/alpha_shader_mask.png" id="16_6u7cg"]
+[ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="17_lx4ad"]
 [ext_resource type="Texture2D" uid="uid://bkqbt0qh6psoc" path="res://assets/game_objects/soldier_shared_assets/carbon_particle.png" id="18_rjsbl"]
 [ext_resource type="Texture2D" uid="uid://cp40denbud2p6" path="res://game_objects/enemies/shooter_enemy/fast_bayonet_german/assets/burnt_bayonet_german.png" id="19_t1b8g"]
 [ext_resource type="AudioStream" uid="uid://gel0wirmdxag" path="res://assets/game_objects/soldier_shared_assets/sfx/knife.mp3" id="20_k18vg"]
@@ -37,6 +38,14 @@ colors = PackedColorArray(0, 0, 0, 1, 0.967284, 0.896213, 0.79581, 1, 1, 1, 1, 1
 [sub_resource type="Gradient" id="Gradient_k7jk8"]
 offsets = PackedFloat32Array(0, 0.359375)
 colors = PackedColorArray(0.206398, 2.31629e-07, 5.41471e-08, 1, 0.905882, 0.0941176, 0, 1)
+
+[sub_resource type="Curve" id="Curve_ib0mi"]
+_data = [Vector2(0, 0.147368), 0.0, 0.0, 0, 0, Vector2(0.467033, 0.515789), 0.0, 0.0, 0, 0, Vector2(0.983517, 0.115789), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_x0jba"]
+offsets = PackedFloat32Array(0, 0.324503, 1)
+colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4c64e"]
 shader = ExtResource("15_dis6k")
@@ -164,6 +173,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_8aby2"]
 resource_name = "_death"
+length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -331,6 +341,42 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.558505, 0.558505, 0.698132]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Textures:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Shadow:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(1, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("DustParticles:emitting")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_dkx66"]
@@ -1398,6 +1444,27 @@ radial_accel_max = 34.78
 scale_amount_min = 0.5
 scale_amount_max = 0.5
 color_ramp = SubResource("Gradient_k7jk8")
+
+[node name="DustParticles" type="CPUParticles2D" parent="."]
+position = Vector2(-42, 107)
+emitting = false
+amount = 20
+lifetime = 0.4
+one_shot = true
+speed_scale = 1.2
+explosiveness = 0.5
+texture = ExtResource("17_lx4ad")
+emission_shape = 3
+emission_rect_extents = Vector2(60, 1)
+direction = Vector2(0, -1)
+spread = 55.84
+gravity = Vector2(0, -60)
+initial_velocity_min = 313.25
+initial_velocity_max = 313.25
+angular_velocity_min = 277.59
+angular_velocity_max = 277.59
+scale_amount_curve = SubResource("Curve_ib0mi")
+color_ramp = SubResource("Gradient_x0jba")
 
 [node name="BurntTexture" type="Sprite2D" parent="."]
 visible = false

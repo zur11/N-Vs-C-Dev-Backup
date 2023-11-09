@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cxe50w0b56lpf"]
+[gd_scene load_steps=58 format=3 uid="uid://cxe50w0b56lpf"]
 
 [ext_resource type="Script" path="res://game_objects/enemies/shooter_enemy/romanian_soldier/romanian_soldier.gd" id="1_uwtyj"]
 [ext_resource type="Texture2D" uid="uid://cto61eke7joyb" path="res://assets/game_objects/soldier_shared_assets/circle_shadow.png" id="2_65eml"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c8uj7rdtr1tf6" path="res://game_objects/enemies/shooter_enemy/romanian_soldier/assets/helmet_mail.png" id="15_50poo"]
 [ext_resource type="Texture2D" uid="uid://dpr43jlwm14kk" path="res://game_objects/enemies/shooter_enemy/romanian_soldier/assets/mail-particle.png" id="16_ecnd7"]
 [ext_resource type="Texture2D" uid="uid://cb5yadkqwh1gh" path="res://game_objects/enemies/shooter_enemy/romanian_soldier/assets/right_arm.png" id="17_6htd3"]
-[ext_resource type="Texture2D" uid="uid://dtt8xxqnfjrnc" path="res://game_objects/enemies/shooter_enemy/romanian_soldier/assets/right_elbow.PNG" id="18_v1kd3"]
+[ext_resource type="Texture2D" uid="uid://dtt8xxqnfjrnc" path="res://game_objects/enemies/shooter_enemy/romanian_soldier/assets/right_elbow.png" id="18_v1kd3"]
 [ext_resource type="Texture2D" uid="uid://cowgrvoa2nwyd" path="res://game_objects/enemies/shooter_enemy/romanian_soldier/assets/knife.png" id="19_bt857"]
 [ext_resource type="Shader" path="res://assets/game_objects/soldier_shared_assets/alpha_shader/alpha_shader.gdshader" id="20_fnj5s"]
 [ext_resource type="Texture2D" uid="uid://ddkq5e615l10l" path="res://assets/game_objects/soldier_shared_assets/alpha_shader/alpha_shader_mask.png" id="21_w0k3e"]
@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://gel0wirmdxag" path="res://assets/game_objects/soldier_shared_assets/sfx/knife.mp3" id="26_1dk3t"]
 [ext_resource type="AudioStream" uid="uid://bowwlbwx64gin" path="res://game_objects/enemies/shooter_enemy/hand_gun_german/assets/sfx/nein.mp3" id="27_l1xco"]
 [ext_resource type="AudioStream" uid="uid://bmplbc8g3k1yu" path="res://assets/game_objects/soldier_shared_assets/sfx/hit.mp3" id="28_r2pf3"]
+[ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="29_yyjfl"]
 
 [sub_resource type="Curve" id="Curve_e8pjr"]
 max_value = 0.8
@@ -211,7 +212,7 @@ tracks/10/keys = {
 
 [sub_resource type="Animation" id="Animation_oi5i7"]
 resource_name = "_death"
-length = 0.8
+length = 1.2
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -380,6 +381,42 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [&"default", &"dead"]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Textures:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Shadow:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(1.05, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("DustParticles:emitting")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0.45),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ba2jp"]
@@ -1525,6 +1562,14 @@ size = Vector2(43.5355, 79.1308)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gl3ox"]
 size = Vector2(42.977, 83.7683)
 
+[sub_resource type="Curve" id="Curve_uvm2q"]
+_data = [Vector2(0, 0.147368), 0.0, 0.0, 0, 0, Vector2(0.467033, 0.515789), 0.0, 0.0, 0, 0, Vector2(0.983517, 0.115789), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_053nn"]
+offsets = PackedFloat32Array(0, 0.324503, 1)
+colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="RomanianSoldier" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
@@ -1760,3 +1805,24 @@ script = ExtResource("25_fv2rw")
 [node name="ShootingTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="DustParticles" type="CPUParticles2D" parent="."]
+position = Vector2(-31, 101)
+emitting = false
+amount = 20
+lifetime = 0.4
+one_shot = true
+speed_scale = 1.2
+explosiveness = 0.5
+texture = ExtResource("29_yyjfl")
+emission_shape = 3
+emission_rect_extents = Vector2(60, 1)
+direction = Vector2(0, -1)
+spread = 55.84
+gravity = Vector2(0, -60)
+initial_velocity_min = 313.25
+initial_velocity_max = 313.25
+angular_velocity_min = 277.59
+angular_velocity_max = 277.59
+scale_amount_curve = SubResource("Curve_uvm2q")
+color_ramp = SubResource("Gradient_053nn")

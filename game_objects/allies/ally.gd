@@ -45,7 +45,7 @@ func receive_damage(damage_points:int, damage_type:String):
 func _die():
 	$AnimationPlayer.play("_death")
 	$DeathSFXPlayer.play_sound()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1.4).timeout
 	
 	self.queue_free()
 	self.ally_died.emit(self, assigned_cell)

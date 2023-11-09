@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6xhrmrplu0ha"]
+[gd_scene load_steps=11 format=3 uid="uid://6xhrmrplu0ha"]
 
 [ext_resource type="Script" path="res://screens/game_screen/game_over_popup/game_over_popup.gd" id="1_pivp5"]
 [ext_resource type="Texture2D" uid="uid://dim4ogihxnj50" path="res://screens/game_screen/game_over_popup/assets/game_over_popup.png" id="2_pcg4e"]
@@ -8,6 +8,64 @@
 [ext_resource type="Texture2D" uid="uid://c7ye1gbc2wy78" path="res://screens/game_screen/game_over_popup/assets/play_again_button_selected.png" id="6_rhp35"]
 [ext_resource type="AudioStream" uid="uid://djx2vlmr8oegg" path="res://assets/audio/sfx/game_screen_popups/generic_button_pressed_sfx.mp3" id="7_3y2ti"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="8_3ipbs"]
+
+[sub_resource type="Animation" id="Animation_we2fo"]
+resource_name = "_appear"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackgroundTexture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GoToMainMenuButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayAgainButton:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nhvt5"]
+_data = {
+"_appear": SubResource("Animation_we2fo")
+}
 
 [node name="GameOverPopup" type="Control"]
 layout_mode = 3
@@ -20,13 +78,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pivp5")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -420.0
+offset_top = -184.0
+offset_right = 1500.0
+offset_bottom = 896.0
+color = Color(0.737255, 0.164706, 0.133333, 0.415686)
+
 [node name="BackgroundTexture" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1061.0
+offset_bottom = 805.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(533, 336)
 texture = ExtResource("2_pcg4e")
 
 [node name="GoToMainMenuButton" type="TextureButton" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 96.0
 offset_top = 441.0
@@ -36,6 +106,7 @@ texture_normal = ExtResource("3_qlh0f")
 texture_pressed = ExtResource("4_sextl")
 
 [node name="PlayAgainButton" type="TextureButton" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 605.0
 offset_top = 436.0
@@ -47,6 +118,12 @@ texture_pressed = ExtResource("6_rhp35")
 [node name="GenericBtnPressedPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_3y2ti")
 script = ExtResource("8_3ipbs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "_appear"
+libraries = {
+"": SubResource("AnimationLibrary_nhvt5")
+}
 
 [connection signal="pressed" from="GoToMainMenuButton" to="." method="_on_go_to_main_menu_button_pressed"]
 [connection signal="pressed" from="PlayAgainButton" to="." method="_on_play_again_button_pressed"]

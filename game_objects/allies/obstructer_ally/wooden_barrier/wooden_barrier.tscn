@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dxy03obv86ulg"]
+[gd_scene load_steps=26 format=3 uid="uid://dxy03obv86ulg"]
 
 [ext_resource type="Texture2D" uid="uid://c0cydb18tbyk0" path="res://game_objects/allies/obstructer_ally/wooden_barrier/assets/wooden_barrier_2.png" id="1_17oi1"]
 [ext_resource type="Script" path="res://game_objects/allies/obstructer_ally/wooden_barrier/wooden_barrier.gd" id="1_hshlg"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://c101hsdccshna" path="res://game_objects/allies/obstructer_ally/wooden_barrier/assets/sfx/hit_barrier.mp3" id="7_k242n"]
 [ext_resource type="AudioStream" uid="uid://hsnpvv8rv70u" path="res://game_objects/allies/obstructer_ally/wooden_barrier/assets/sfx/barrier_destroyed.mp3" id="8_mpqbt"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="11_amty8"]
+[ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="13_6sfm6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rf0sk"]
 animations = [{
@@ -63,7 +64,7 @@ size = Vector2(175, 204.5)
 
 [sub_resource type="Animation" id="Animation_bjuih"]
 resource_name = "_death"
-length = 0.4
+length = 1.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -96,6 +97,18 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DustParticles:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -198,6 +211,14 @@ _data = {
 "_receive_damage_general": SubResource("Animation_qv25a")
 }
 
+[sub_resource type="Curve" id="Curve_d1rwd"]
+_data = [Vector2(0, 0.147368), 0.0, 0.0, 0, 0, Vector2(0.467033, 0.515789), 0.0, 0.0, 0, 0, Vector2(0.983517, 0.115789), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_dtaoq"]
+offsets = PackedFloat32Array(0, 0.324503, 1)
+colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="WoodenBarrier" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
@@ -271,3 +292,24 @@ script = ExtResource("11_amty8")
 [node name="DeathSFXPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_mpqbt")
 script = ExtResource("11_amty8")
+
+[node name="DustParticles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 100)
+emitting = false
+amount = 20
+lifetime = 0.4
+one_shot = true
+speed_scale = 1.2
+explosiveness = 0.5
+texture = ExtResource("13_6sfm6")
+emission_shape = 3
+emission_rect_extents = Vector2(60, 1)
+direction = Vector2(0, -1)
+spread = 55.84
+gravity = Vector2(0, -60)
+initial_velocity_min = 313.25
+initial_velocity_max = 313.25
+angular_velocity_min = 277.59
+angular_velocity_max = 277.59
+scale_amount_curve = SubResource("Curve_d1rwd")
+color_ramp = SubResource("Gradient_dtaoq")

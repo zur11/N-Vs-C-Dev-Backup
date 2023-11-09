@@ -148,9 +148,10 @@ text = "10"
 
 [node name="PauseGameButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 565.0
-offset_right = 781.0
-offset_bottom = 82.0
+offset_left = 846.0
+offset_top = 4.0
+offset_right = 1062.0
+offset_bottom = 86.0
 texture_normal = ExtResource("10_1kv0b")
 texture_pressed = ExtResource("11_615ta")
 texture_hover = ExtResource("11_615ta")
@@ -184,10 +185,10 @@ layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 536.0
-offset_top = 207.0
-offset_right = 536.0
-offset_bottom = 207.0
+offset_left = 420.0
+offset_top = 184.0
+offset_right = 420.0
+offset_bottom = 184.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -222,10 +223,10 @@ layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 455.0
-offset_top = 108.0
-offset_right = 455.0
-offset_bottom = 108.0
+offset_left = 374.0
+offset_top = 111.0
+offset_right = 374.0
+offset_bottom = 111.0
 grow_horizontal = 1
 grow_vertical = 1
 
