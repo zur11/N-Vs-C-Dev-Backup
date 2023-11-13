@@ -23,7 +23,7 @@ var _tutorial_twinkling_rows : TutorialTwinklingRows
 @onready var _card_selector : AllyCardSelector = $CardSelector as AllyCardSelector
 @onready var _terrain_grid = $TerrainGrid as TerrainGrid
 @onready var _balance_displayer = $BalanceDisplayer as BalanceDisplayer
-@onready var _enemy_spawners : EnemySpawners = $EnemySpawners
+@onready var _enemy_spawners : EnemySpawners = $EnemySpawners as EnemySpawners
 @onready var _allies_selector_popup : AlliesSelectorPopup = $AlliesSelectorPopup
 @onready var _game_over_popup : GameOverPopup = $GameOverPopup
 @onready var _paused_game_popup : PausedGamePopup = $PausedGamePopup
