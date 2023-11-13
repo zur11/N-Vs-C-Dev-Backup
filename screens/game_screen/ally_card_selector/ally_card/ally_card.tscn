@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1qxwaq6en6i7"]
+[gd_scene load_steps=3 format=3 uid="uid://c1qxwaq6en6i7"]
 
 [ext_resource type="Script" path="res://screens/game_screen/ally_card_selector/ally_card/ally_card.gd" id="1_gw3jc"]
+[ext_resource type="Texture2D" uid="uid://gmquwtosfk6p" path="res://game_objects/allies/obstructer_ally/barrier/ally_card_assets/barrier.png" id="1_pkcqc"]
 
 [node name="AllyCard" type="TextureButton"]
+texture_normal = ExtResource("1_pkcqc")
 script = ExtResource("1_gw3jc")
 
 [node name="PriceLabel" type="Label" parent="."]

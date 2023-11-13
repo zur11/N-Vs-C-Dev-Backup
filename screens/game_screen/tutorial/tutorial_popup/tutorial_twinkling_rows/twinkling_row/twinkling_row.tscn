@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccci5tc2g6xkd"]
+
+[ext_resource type="Texture2D" uid="uid://dtkoh3texayqt" path="res://screens/game_screen/tutorial/tutorial_popup/tutorial_twinkling_rows/assets/tutorial_row_background.png" id="1_usg66"]
+[ext_resource type="Script" path="res://screens/game_screen/tutorial/tutorial_popup/tutorial_twinkling_rows/twinkling_row/twinkling_row.gd" id="2_bdg3j"]
+
+[node name="TwinkingRow" type="TextureRect"]
+mouse_filter = 2
+texture = ExtResource("1_usg66")
+script = ExtResource("2_bdg3j")

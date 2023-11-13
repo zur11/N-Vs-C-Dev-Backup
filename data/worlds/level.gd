@@ -1,7 +1,6 @@
 @tool
 class_name Level extends Resource
 
-@export var is_tutorial : bool
 @export var level_unlocked : bool
 @export var game_background : Texture
 @export var game_foreground : Texture
