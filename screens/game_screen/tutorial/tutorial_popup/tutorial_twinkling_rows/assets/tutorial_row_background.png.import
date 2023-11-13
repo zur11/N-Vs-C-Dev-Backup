@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://scfy5o583tip"
-path="res://.godot/imported/bg.png-c937b3db743a5d622fcaaa0db0bae5d3.ctex"
+uid="uid://dtkoh3texayqt"
+path="res://.godot/imported/tutorial_row_background.png-27870ccd90decf54c9fdb32e825a6d13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/game_screen/tutorial_popup/assets/bg.png"
-dest_files=["res://.godot/imported/bg.png-c937b3db743a5d622fcaaa0db0bae5d3.ctex"]
+source_file="res://screens/game_screen/tutorial/tutorial_popup/tutorial_twinkling_rows/assets/tutorial_row_background.png"
+dest_files=["res://.godot/imported/tutorial_row_background.png-27870ccd90decf54c9fdb32e825a6d13.ctex"]
 
 [params]
 

@@ -85,7 +85,6 @@ offset_bottom = 1056.0
 
 [node name="Foreground" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.709804)
-top_level = true
 layout_mode = 0
 offset_top = 776.0
 offset_right = 6324.0

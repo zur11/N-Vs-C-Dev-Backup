@@ -20,12 +20,12 @@ func _set_is_twinkling(new_value):
 		
 func _twinkle():
 		if _color_int_is_decreasing:
-			_current_color_float -= 0.01
+			_current_color_float -= 0.03
 			self.modulate = Color(_current_color_float, _full_color_int, _current_color_float)
 			
 			if _current_color_float <= _empty_color_int: _color_int_is_decreasing = false
 		else:
-			_current_color_float += 0.01
+			_current_color_float += 0.03
 			self.modulate = Color(_current_color_float, _full_color_int, _current_color_float)
 			
 			if _current_color_float == _full_color_int: _color_int_is_decreasing = true

@@ -1,9 +1,7 @@
-[gd_resource type="Resource" script_class="TutorialLevel" load_steps=38 format=3 uid="uid://lkgoxqd5bfl2"]
+[gd_resource type="Resource" script_class="TutorialLevel" load_steps=33 format=3 uid="uid://lkgoxqd5bfl2"]
 
 [ext_resource type="Script" path="res://data/worlds/snowstorm/tutorial_level.gd" id="1_jr6qq"]
 [ext_resource type="Script" path="res://data/ally_presentation/ally_presentation.gd" id="1_ljenn"]
-[ext_resource type="Texture2D" uid="uid://cbelxubt5ra2b" path="res://screens/game_screen/tutorial_popup/assets/tutorial_3_image_1.png" id="2_5k85p"]
-[ext_resource type="PackedScene" uid="uid://dm57fwp48yttj" path="res://screens/game_screen/tutorial_popup/tutorial_popup.tscn" id="3_ypysy"]
 [ext_resource type="Texture2D" uid="uid://blvi4uvgxvb53" path="res://data/worlds/snowstorm/level_3/enemy_thumbnail_hand_gun.png" id="4_5au08"]
 [ext_resource type="Texture2D" uid="uid://d2iksg4jjnxdd" path="res://data/worlds/snowstorm/stalingrad_game_background.png" id="5_1w05v"]
 [ext_resource type="Texture2D" uid="uid://ccyyoqdxxsu26" path="res://data/worlds/snowstorm/stalingrad_1_foreground.png" id="6_hk28s"]
@@ -12,11 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://ps7ks7v7g60n" path="res://game_objects/allies/obstructer_ally/barrier/barrier.tscn" id="9_1re4t"]
 [ext_resource type="Script" path="res://data/enemy_quantity/enemy_quantity.gd" id="10_s763c"]
 [ext_resource type="Script" path="res://data/enemy_wave/enemy_wave.gd" id="11_u7lh8"]
+[ext_resource type="PackedScene" uid="uid://d22r8s67jka5w" path="res://screens/game_screen/tutorial/stalingrad_level_3/tutorial_level_3_st.tscn" id="12_jntra"]
 [ext_resource type="Texture2D" uid="uid://dmj4whxksfy2u" path="res://data/worlds/snowstorm/level_thumbnail.png" id="12_slkpu"]
-[ext_resource type="Texture2D" uid="uid://dl5o03oly022o" path="res://screens/game_screen/tutorial_popup/assets/next_button.png" id="13_so02n"]
-[ext_resource type="Texture2D" uid="uid://dvgwqsw3u6sgo" path="res://screens/game_screen/tutorial_popup/assets/ok_button.png" id="14_6646a"]
-[ext_resource type="Texture2D" uid="uid://cl38hqx7e5unu" path="res://screens/game_screen/tutorial_popup/assets/next_button_selected.png" id="16_m8tq4"]
-[ext_resource type="Texture2D" uid="uid://dtb15ost7qax6" path="res://screens/game_screen/tutorial_popup/assets/ok_button_selected.png" id="17_qmfv8"]
 
 [sub_resource type="Resource" id="Resource_u3tdt"]
 script = ExtResource("1_ljenn")
@@ -139,17 +134,9 @@ enemies = Array[ExtResource("10_s763c")]([SubResource("Resource_tvoao"), SubReso
 
 [resource]
 script = ExtResource("1_jr6qq")
-total_first_popup_pages = 1
-total_second_popup_pages = 1
-background_thumbnails = Array[Texture]([ExtResource("2_5k85p")])
-second_popup_thumbnails = Array[Texture]([])
-ok_button_texture = ExtResource("14_6646a")
-selected_ok_button_texture = ExtResource("17_qmfv8")
-next_button_texture = ExtResource("13_so02n")
-selected_next_button_texture = ExtResource("16_m8tq4")
-base_popup_scene = ExtResource("3_ypysy")
+tutorial_scene = ExtResource("12_jntra")
 is_tutorial = false
-level_unlocked = true
+level_unlocked = false
 game_background = ExtResource("5_1w05v")
 game_foreground = ExtResource("6_hk28s")
 level_name = "Level 3"
