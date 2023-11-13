@@ -143,7 +143,7 @@ func _die():
 #	await get_tree().process_frame
 	_play_death_animation()
 	$DeathSFXPlayer.play_sound()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1.2).timeout
 
 	died.emit()
 	self.queue_free()

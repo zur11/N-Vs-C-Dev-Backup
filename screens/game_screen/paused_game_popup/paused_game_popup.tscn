@@ -28,10 +28,10 @@ script = ExtResource("1_omj55")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -376.0
-offset_top = -74.0
-offset_right = 1544.0
-offset_bottom = 1006.0
+offset_left = -374.0
+offset_top = -111.0
+offset_right = 1546.0
+offset_bottom = 969.0
 color = Color(0, 0, 0, 0.486275)
 
 [node name="BackgroundTexture" type="TextureRect" parent="."]

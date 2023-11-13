@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dq5mtgrma5krp"]
+[gd_scene load_steps=54 format=3 uid="uid://dq5mtgrma5krp"]
 
 [ext_resource type="Script" path="res://game_objects/enemies/shooter_enemy/hand_gun_german/hand_gun_german.gd" id="1_4onxa"]
 [ext_resource type="Texture2D" uid="uid://cto61eke7joyb" path="res://assets/game_objects/soldier_shared_assets/circle_shadow.png" id="1_umi8j"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://wqs1h3ys34ex" path="res://assets/game_objects/soldier_shared_assets/burnt_standard_german.png" id="18_6u2mr"]
 [ext_resource type="AudioStream" uid="uid://bmplbc8g3k1yu" path="res://assets/game_objects/soldier_shared_assets/sfx/hit.mp3" id="18_fsddc"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="21_eh4g4"]
+[ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="27_eqv8p"]
 
 [sub_resource type="Curve" id="Curve_e8pjr"]
 max_value = 0.8
@@ -209,7 +210,7 @@ tracks/10/keys = {
 
 [sub_resource type="Animation" id="Animation_oi5i7"]
 resource_name = "_death"
-length = 0.8
+length = 1.2
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -378,6 +379,42 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [&"_default", &"_dead"]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Textures:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Shadow:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(1.05, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("DustParticles:emitting")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ba2jp"]
@@ -1383,6 +1420,14 @@ size = Vector2(42.977, 83.7683)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohpsj"]
 size = Vector2(43.5355, 79.1308)
 
+[sub_resource type="Curve" id="Curve_62k0n"]
+_data = [Vector2(0, 0.147368), 0.0, 0.0, 0, 0, Vector2(0.467033, 0.515789), 0.0, 0.0, 0, 0, Vector2(0.983517, 0.115789), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_iwo04"]
+offsets = PackedFloat32Array(0, 0.324503, 1)
+colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="HandgunGerman" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
@@ -1597,3 +1642,24 @@ script = ExtResource("21_eh4g4")
 [node name="ShootingTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="DustParticles" type="CPUParticles2D" parent="."]
+position = Vector2(-97, 109)
+emitting = false
+amount = 20
+lifetime = 0.4
+one_shot = true
+speed_scale = 1.2
+explosiveness = 0.5
+texture = ExtResource("27_eqv8p")
+emission_shape = 3
+emission_rect_extents = Vector2(60, 1)
+direction = Vector2(0, -1)
+spread = 55.84
+gravity = Vector2(0, -60)
+initial_velocity_min = 313.25
+initial_velocity_max = 313.25
+angular_velocity_min = 277.59
+angular_velocity_max = 277.59
+scale_amount_curve = SubResource("Curve_62k0n")
+color_ramp = SubResource("Gradient_iwo04")

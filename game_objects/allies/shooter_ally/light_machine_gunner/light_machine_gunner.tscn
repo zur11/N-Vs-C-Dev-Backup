@@ -1,14 +1,14 @@
-[gd_scene load_steps=43 format=3 uid="uid://b6qp0gp8opqf"]
+[gd_scene load_steps=46 format=3 uid="uid://b6qp0gp8opqf"]
 
-[ext_resource type="Texture2D" uid="uid://h7ahh3wb6l8c" path="res://assets/game_objects/soldier_shared_assets/circle_shadow.png" id="1_jnouo"]
+[ext_resource type="Texture2D" uid="uid://cto61eke7joyb" path="res://assets/game_objects/soldier_shared_assets/circle_shadow.png" id="1_jnouo"]
 [ext_resource type="Script" path="res://game_objects/allies/shooter_ally/light_machine_gunner/light_machine_gunner.gd" id="1_sgt6y"]
 [ext_resource type="Texture2D" uid="uid://mlct3dlrjm6t" path="res://game_objects/allies/shooter_ally/light_machine_gunner/ally_card_assets/light_machine_gunner_normal.png" id="2_n6404"]
 [ext_resource type="PackedScene" uid="uid://br8skpb4kh7c7" path="res://game_objects/components/bullet/gun_bullet/gun_bullet.tscn" id="2_nd2xg"]
-[ext_resource type="Texture2D" uid="uid://oldlsdn4s22w" path="res://assets/game_objects/soldier_shared_assets/legup2.png" id="2_qi15g"]
+[ext_resource type="Texture2D" uid="uid://dla3tqrgg7j8w" path="res://assets/game_objects/soldier_shared_assets/legup2.png" id="2_qi15g"]
 [ext_resource type="Texture2D" uid="uid://p5ksijqml578" path="res://game_objects/allies/shooter_ally/light_machine_gunner/ally_card_assets/light_machine_gunner_selected.png" id="3_14fjw"]
-[ext_resource type="Texture2D" uid="uid://hi1iiepl8v1p" path="res://assets/game_objects/soldier_shared_assets/leg4.png" id="3_h348k"]
+[ext_resource type="Texture2D" uid="uid://de36q80eh20e1" path="res://assets/game_objects/soldier_shared_assets/leg4.png" id="3_h348k"]
 [ext_resource type="Texture2D" uid="uid://dye7bcrha1j02" path="res://assets/game_objects/soldier_shared_assets/leg1.png" id="4_ouwkt"]
-[ext_resource type="Texture2D" uid="uid://t4lb7fewk526" path="res://assets/game_objects/soldier_shared_assets/leg3.png" id="5_ongvd"]
+[ext_resource type="Texture2D" uid="uid://bh2jew5fbuk8g" path="res://assets/game_objects/soldier_shared_assets/leg3.png" id="5_ongvd"]
 [ext_resource type="Texture2D" uid="uid://cjw7wufwn34tt" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/torso.png" id="6_x82q6"]
 [ext_resource type="Texture2D" uid="uid://c1x3wie3se7k1" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/arm1.png" id="7_eb4cx"]
 [ext_resource type="Texture2D" uid="uid://dr6ju8bjkua5w" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/arm4.png" id="8_np4xe"]
@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://qsnoboymsfk5" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/sfx/reload_lmg.mp3" id="19_8hdbx"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="21_7w1r1"]
 [ext_resource type="AudioStream" uid="uid://c6l0oenxxlxti" path="res://assets/game_objects/soldier_shared_assets/sfx/soviet_death.mp3" id="21_f7s7o"]
+[ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="23_q54kb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ciqsd"]
 animations = [{
@@ -78,6 +79,14 @@ colors = PackedColorArray(0, 0, 0, 1, 0.967284, 0.896213, 0.79581, 1, 1, 1, 1, 1
 [sub_resource type="Gradient" id="Gradient_6bqkw"]
 offsets = PackedFloat32Array(0, 0.359375)
 colors = PackedColorArray(0.206398, 2.31629e-07, 5.41471e-08, 1, 0.905882, 0.0941176, 0, 1)
+
+[sub_resource type="Curve" id="Curve_bldgm"]
+_data = [Vector2(0, 0.147368), 0.0, 0.0, 0, 0, Vector2(0.467033, 0.515789), 0.0, 0.0, 0, 0, Vector2(0.983517, 0.115789), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_7t4s8"]
+offsets = PackedFloat32Array(0, 0.324503, 1)
+colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="Animation" id="Animation_7n706"]
 length = 0.001
@@ -312,7 +321,7 @@ tracks/18/keys = {
 
 [sub_resource type="Animation" id="Animation_w2ary"]
 resource_name = "_death"
-length = 0.7
+length = 1.4
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -505,6 +514,42 @@ tracks/15/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, -0.374219, -0.498005, -0.374219]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Textures:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0.85, 0.95, 1.05, 1.15, 1.25, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Shadow:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(1.25, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("DustParticles:emitting")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0.45),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_wevqf"]
@@ -986,6 +1031,7 @@ price = 100
 character_faction = "ally"
 
 [node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(-2, 44.798)
 scale = Vector2(1.23684, 1)
 texture = ExtResource("1_jnouo")
@@ -1000,7 +1046,7 @@ texture = ExtResource("2_qi15g")
 offset = Vector2(12, 22)
 
 [node name="RightFoot" type="Sprite2D" parent="Textures/RightLeg"]
-position = Vector2(17.676, 36.3821)
+position = Vector2(27.4305, 38.3945)
 rotation = 0.0631839
 texture = ExtResource("3_h348k")
 offset = Vector2(22, 31)
@@ -1012,7 +1058,7 @@ texture = ExtResource("4_ouwkt")
 offset = Vector2(16, 19)
 
 [node name="LeftFoot" type="Sprite2D" parent="Textures/LeftLeg"]
-position = Vector2(-15.0692, 43.9639)
+position = Vector2(1.66252, 42.0742)
 rotation = -0.00309256
 texture = ExtResource("5_ongvd")
 offset = Vector2(-3, 35)
@@ -1040,6 +1086,7 @@ offset = Vector2(11, -1)
 [node name="Head" type="AnimatedSprite2D" parent="Textures/Body"]
 position = Vector2(4.94492, -104.103)
 sprite_frames = SubResource("SpriteFrames_ciqsd")
+animation = &"dead"
 offset = Vector2(0, -30)
 
 [node name="GasMask" type="Sprite2D" parent="Textures/Body/Head"]
@@ -1048,7 +1095,8 @@ position = Vector2(9.18983, -6.11528)
 texture = ExtResource("11_rax36")
 
 [node name="MachineGun" type="AnimatedSprite2D" parent="Textures/Body"]
-position = Vector2(39.8583, -41.9663)
+position = Vector2(-20, -80)
+rotation = 2.0944
 sprite_frames = SubResource("SpriteFrames_n3k3y")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Textures/Body/MachineGun"]
@@ -1103,6 +1151,27 @@ scale_amount_min = 0.5
 scale_amount_max = 0.5
 color_ramp = SubResource("Gradient_6bqkw")
 
+[node name="DustParticles" type="CPUParticles2D" parent="."]
+position = Vector2(-51, 57)
+emitting = false
+amount = 20
+lifetime = 0.4
+one_shot = true
+speed_scale = 1.2
+explosiveness = 0.5
+texture = ExtResource("23_q54kb")
+emission_shape = 3
+emission_rect_extents = Vector2(60, 1)
+direction = Vector2(0, -1)
+spread = 55.84
+gravity = Vector2(0, -60)
+initial_velocity_min = 313.25
+initial_velocity_max = 313.25
+angular_velocity_min = 277.59
+angular_velocity_max = 277.59
+scale_amount_curve = SubResource("Curve_bldgm")
+color_ramp = SubResource("Gradient_7t4s8")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "_idle"
 libraries = {
@@ -1115,6 +1184,7 @@ libraries = {
 }
 
 [node name="BodyCollShape" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1.5, -96.5)
 shape = SubResource("RectangleShape2D_7434o")
 
