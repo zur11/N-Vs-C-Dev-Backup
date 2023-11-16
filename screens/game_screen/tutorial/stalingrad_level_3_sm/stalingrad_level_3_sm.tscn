@@ -1,0 +1,18 @@
+[gd_scene load_steps=8 format=3 uid="uid://d22r8s67jka5w"]
+
+[ext_resource type="Script" path="res://screens/game_screen/tutorial/stalingrad_level_3_sm/stalingrad_level_3_sm.gd" id="1_ur7ec"]
+[ext_resource type="Texture2D" uid="uid://cbelxubt5ra2b" path="res://screens/game_screen/tutorial/tutorial_popup/assets/tutorial_3_image_1.png" id="2_q8ybx"]
+[ext_resource type="Texture2D" uid="uid://dvgwqsw3u6sgo" path="res://screens/game_screen/tutorial/tutorial_popup/assets/ok_button.png" id="3_00l6e"]
+[ext_resource type="Texture2D" uid="uid://dtb15ost7qax6" path="res://screens/game_screen/tutorial/tutorial_popup/assets/ok_button_selected.png" id="4_67thc"]
+[ext_resource type="Texture2D" uid="uid://dl5o03oly022o" path="res://screens/game_screen/tutorial/tutorial_popup/assets/next_button.png" id="5_asf5k"]
+[ext_resource type="Texture2D" uid="uid://cl38hqx7e5unu" path="res://screens/game_screen/tutorial/tutorial_popup/assets/next_button_selected.png" id="6_0uo4o"]
+[ext_resource type="PackedScene" uid="uid://dm57fwp48yttj" path="res://screens/game_screen/tutorial/tutorial_popup/tutorial_popup.tscn" id="7_8ot52"]
+
+[node name="StalingradLevel3Sm" type="Node"]
+script = ExtResource("1_ur7ec")
+background_thumbnails = Array[Texture]([ExtResource("2_q8ybx")])
+ok_button_texture = ExtResource("3_00l6e")
+selected_ok_button_texture = ExtResource("4_67thc")
+next_button_texture = ExtResource("5_asf5k")
+selected_next_button_texture = ExtResource("6_0uo4o")
+base_popup_scene = ExtResource("7_8ot52")

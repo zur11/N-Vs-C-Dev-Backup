@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://d354uv0j7en7e" path="res://screens/game_screen/game_start_countdown/assets/2_seconds.png" id="20_28ou3"]
 [ext_resource type="Texture2D" uid="uid://d4jclo167qrmg" path="res://screens/game_screen/game_start_countdown/assets/1_second.png" id="21_noct8"]
 [ext_resource type="Texture2D" uid="uid://butspkraxf2td" path="res://screens/game_screen/game_start_countdown/assets/defend_text.png" id="22_awsed"]
-[ext_resource type="PackedScene" uid="uid://dp0u4mhdo0olf" path="res://screens/game_screen/enemies_preview_grid/preview_enemies_rows.tscn" id="24_2cf1a"]
+[ext_resource type="PackedScene" uid="uid://dp0u4mhdo0olf" path="res://screens/game_screen/enemies_preview_rows/preview_enemies_rows.tscn" id="24_2cf1a"]
 [ext_resource type="AudioStream" uid="uid://by37pjvucyget" path="res://screens/game_screen/pause_button/assets/sfx/pause_popup_sfx.mp3" id="25_7brk2"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="26_vm4rp"]
 [ext_resource type="AudioStream" uid="uid://b5xat8iwvgaxg" path="res://screens/game_screen/balance_displayer/assets/sfx/pick_up_rublo.mp3" id="27_171tr"]

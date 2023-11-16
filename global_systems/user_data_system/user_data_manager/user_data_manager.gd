@@ -16,9 +16,9 @@ func _init():
 		user_data.user_settings.sfx_volume_value = 0.5
 		
 		user_data.games_menu_user_data.worlds = [
-			load("res://data/worlds/snowstorm/snowstorm.tres").duplicate(true) as World,
-			load("res://data/worlds/trenches/trenches.tres").duplicate(true) as World,
-			load("res://data/worlds/city_lights/city_lights.tres").duplicate(true) as World
+			load("res://data/worlds/stalingrad_summer/stalingrad_summer.tres").duplicate(true) as World,
+			load("res://data/worlds/stalingrad_winter/stalingrad_winter.tres").duplicate(true) as World,
+			load("res://data/worlds/budapest/budapest.tres").duplicate(true) as World
 			]
 		user_data.games_menu_user_data.selected_world_index = 0
 		

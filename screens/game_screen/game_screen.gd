@@ -404,7 +404,7 @@ func _display_game_won_popup():
 		
 		
 	if level.background_transitioning_level:
-		if level is LevelSnowstorm:
+		if level is LevelStalingradSummer:
 			
 			_move_screen_to_left_side()
 			await get_tree().create_timer(2).timeout
@@ -423,7 +423,7 @@ func _display_game_won_popup():
 			
 			await get_tree().create_timer(_DEFAULT_TWEEN_ANIMATION_TIME * 4).timeout
 			
-		elif level is LevelTrenches:
+		elif level is LevelStalingradWinter:
 			var terrain_tween = create_tween()
 			var cannons_tween = create_tween()
 
