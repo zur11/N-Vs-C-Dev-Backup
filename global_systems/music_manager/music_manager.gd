@@ -1,9 +1,9 @@
 extends AudioStreamPlayer
 
 const _MAIN_STREAM_PATH : String = "res://assets/audio/music/soviet_dark_carnival_loop2.mp3"
-const _SNOWSTORM_GAME_STREAM_PATH : String = "res://data/worlds/snowstorm/winter-no-wind.mp3"
-const _TRENCHES_GAME_STREAM_PATH : String = "res://data/worlds/trenches/russian-girl.mp3" 
-const _CITY_LIGHTS_GAME_STREAM_PATH : String = "res://data/worlds/city_lights/luna-park.mp3"
+const _STALINGRAD_SUMMER_GAME_STREAM_PATH : String = "res://data/worlds/stalingrad_summer/winter-no-wind.mp3"
+const _STALINGRAD_WINTER_GAME_STREAM_PATH : String = "res://data/worlds/trenches/russian-girl.mp3" 
+const _BUDAPEST_GAME_STREAM_PATH : String = "res://data/worlds/city_lights/luna-park.mp3"
 const _ALLIES_SELECTOR_POPUP_STREAM_PATH : String = "res://assets/audio/music/marionettes_(choosimg_allies_music).mp3"
 
 var _user_settings : UserSettings = UserDataManager.user_data.user_settings
@@ -30,12 +30,12 @@ func play_main_stream():
 	_play_music()
 
 func play_game_stream(game_level:Level):
-	if game_level is LevelSnowstorm:
-		_game_stream = load(_SNOWSTORM_GAME_STREAM_PATH)
-	elif game_level is LevelTrenches:
-		_game_stream = load(_TRENCHES_GAME_STREAM_PATH)
-	elif game_level is LevelCityLights:
-		_game_stream = load(_CITY_LIGHTS_GAME_STREAM_PATH)
+	if game_level is LevelStalingradSummer:
+		_game_stream = load(_STALINGRAD_SUMMER_GAME_STREAM_PATH)
+	elif game_level is LevelStalingradWinter:
+		_game_stream = load(_STALINGRAD_WINTER_GAME_STREAM_PATH)
+	elif game_level is LevelBudapest:
+		_game_stream = load(_BUDAPEST_GAME_STREAM_PATH)
 		
 	if self.playing:
 		self.stop()

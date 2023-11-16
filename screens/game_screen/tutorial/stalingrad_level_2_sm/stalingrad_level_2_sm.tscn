@@ -1,0 +1,20 @@
+[gd_scene load_steps=9 format=3 uid="uid://r1qij4wdr4sq"]
+
+[ext_resource type="Script" path="res://screens/game_screen/tutorial/stalingrad_level_2_sm/stalingrad_level_2_sm.gd" id="1_1hoab"]
+[ext_resource type="PackedScene" uid="uid://ckftahrn31kes" path="res://screens/game_screen/tutorial/tutorial_popup/tutorial_twinkling_rows/tutorial_twinkling_rows.tscn" id="2_1a0ms"]
+[ext_resource type="Texture2D" uid="uid://bmxaf5m0ixbi3" path="res://screens/game_screen/tutorial/tutorial_popup/assets/tutorial_2_image_1.png" id="3_htry0"]
+[ext_resource type="Texture2D" uid="uid://dvgwqsw3u6sgo" path="res://screens/game_screen/tutorial/tutorial_popup/assets/ok_button.png" id="4_dkebb"]
+[ext_resource type="Texture2D" uid="uid://dtb15ost7qax6" path="res://screens/game_screen/tutorial/tutorial_popup/assets/ok_button_selected.png" id="5_xbmmq"]
+[ext_resource type="Texture2D" uid="uid://dl5o03oly022o" path="res://screens/game_screen/tutorial/tutorial_popup/assets/next_button.png" id="6_0g17v"]
+[ext_resource type="Texture2D" uid="uid://cl38hqx7e5unu" path="res://screens/game_screen/tutorial/tutorial_popup/assets/next_button_selected.png" id="7_nol53"]
+[ext_resource type="PackedScene" uid="uid://dm57fwp48yttj" path="res://screens/game_screen/tutorial/tutorial_popup/tutorial_popup.tscn" id="8_m24we"]
+
+[node name="StalingradLevel2Sm" type="Node"]
+script = ExtResource("1_1hoab")
+tutorial_twinkling_rows = ExtResource("2_1a0ms")
+background_thumbnails = Array[Texture]([ExtResource("3_htry0")])
+ok_button_texture = ExtResource("4_dkebb")
+selected_ok_button_texture = ExtResource("5_xbmmq")
+next_button_texture = ExtResource("6_0g17v")
+selected_next_button_texture = ExtResource("7_nol53")
+base_popup_scene = ExtResource("8_m24we")

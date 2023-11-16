@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dbae2g2g0wh6y"]
 
 [ext_resource type="Script" path="res://game_objects/components/shield/soviet_shield/soviet_shield.gd" id="1_6o70s"]
-[ext_resource type="Texture2D" uid="uid://bjcbpnewgmsqp" path="res://game_objects/components/shield/soviet_shield/assets/shield.png" id="2_lkcwa"]
+[ext_resource type="Texture2D" uid="uid://bjcbpnewgmsqp" path="res://game_objects/allies/shooter_ally/shield_soldier/assets/shield.png" id="2_lkcwa"]
 [ext_resource type="Texture2D" uid="uid://dyt82m7r5l5h5" path="res://game_objects/components/shield/soviet_shield/assets/shield_3 slabs.png" id="2_xo64g"]
 [ext_resource type="Texture2D" uid="uid://byobcsdwxe0fy" path="res://game_objects/components/shield/soviet_shield/assets/shield_1_slab.png" id="4_uh2qu"]
 [ext_resource type="Texture2D" uid="uid://cqmebc05wc0tb" path="res://game_objects/components/shield/soviet_shield/assets/shield_2_slabs.png" id="5_0dhfp"]
