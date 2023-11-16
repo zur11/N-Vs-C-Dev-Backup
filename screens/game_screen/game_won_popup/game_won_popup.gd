@@ -34,7 +34,7 @@ var _next_level : Level
 @onready var _generic_btn_pressed_player : SFXPlayer = $GenericBtnPressedPlayer
 @onready var _reward_label : Label = $RewardLabel
 
-@onready var _continue_button : TextureButton = $ContinueButton
+@onready var _continue_button : TextureButton = $%ContinueButton
 
 
 func _ready():

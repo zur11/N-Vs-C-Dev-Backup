@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bo1jforvfhnbv"]
 
 [ext_resource type="Script" path="res://screens/sub_menus/games_menu/games_menu.gd" id="1_0ear5"]
-[ext_resource type="Texture2D" uid="uid://m7wsmpycolq5" path="res://screens/sub_menus/games_menu/assets/snowstorm_background.png" id="2_4ebu2"]
+[ext_resource type="Texture2D" uid="uid://m7wsmpycolq5" path="res://screens/sub_menus/games_menu/games_menu_bgs/st_summer_menu_bg/assets/st_summer_menu_bg.png" id="2_4ebu2"]
 [ext_resource type="PackedScene" uid="uid://b1qaewqhhtlyv" path="res://screens/sub_menus/games_menu/world_selector/world_selector.tscn" id="3_aeiub"]
 [ext_resource type="Texture2D" uid="uid://cjgjnvdvgceab" path="res://assets/screens/shared_assets/go_back_2.png" id="3_l5hjq"]
 [ext_resource type="Texture2D" uid="uid://jwmwcyqtv2kh" path="res://assets/screens/shared_assets/go_back_1.png" id="4_u7ra3"]

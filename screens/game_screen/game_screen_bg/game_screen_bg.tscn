@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr5hyqi1t8myc"]
+
+[ext_resource type="Texture2D" uid="uid://b45nb46gldjup" path="res://screens/game_screen/game_screen_bg/assets/stalingrad_summer_game_bg.png" id="1_o50qj"]
+
+[node name="game_screen_bg" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Middleground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_o50qj")

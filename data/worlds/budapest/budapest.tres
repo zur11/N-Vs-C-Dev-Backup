@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="World" load_steps=5 format=3 uid="uid://oceh7g7ftd64"]
 
-[ext_resource type="Texture2D" uid="uid://coe4u5ptq26ao" path="res://screens/sub_menus/games_menu/assets/city_lights_background.png" id="1_14eoj"]
+[ext_resource type="Texture2D" uid="uid://coe4u5ptq26ao" path="res://screens/sub_menus/games_menu/games_menu_bgs/budapest_menu_bg/assets/budapest_menu_bg.png" id="1_14eoj"]
 [ext_resource type="Script" path="res://data/worlds/world.gd" id="1_iwbvf"]
 [ext_resource type="Resource" uid="uid://dpgaigme7pghq" path="res://data/worlds/budapest/level_1/level_1_ct.tres" id="2_egnw3"]
 [ext_resource type="Resource" uid="uid://ccbos2d8cqhuu" path="res://data/worlds/budapest/level_2/level_2_ct.tres" id="3_7x71c"]

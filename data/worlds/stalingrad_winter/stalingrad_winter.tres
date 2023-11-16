@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="World" load_steps=15 format=3 uid="uid://bck8dreransuu"]
 
 [ext_resource type="Script" path="res://data/worlds/world.gd" id="1_3dmbe"]
-[ext_resource type="Texture2D" uid="uid://diek5epm2qkcl" path="res://screens/sub_menus/games_menu/assets/trenches_background.png" id="1_54r4s"]
+[ext_resource type="Texture2D" uid="uid://diek5epm2qkcl" path="res://screens/sub_menus/games_menu/games_menu_bgs/st_winter_menu_bg/assets/st_winter_menu_bg.png" id="1_54r4s"]
 [ext_resource type="Script" path="res://data/min_max_int_rate/min_max_int_rate.gd" id="1_uv2fe"]
 [ext_resource type="Resource" uid="uid://d10qjo0sdemd8" path="res://data/worlds/stalingrad_winter/level_1/level_1_tr.tres" id="2_ojq3k"]
 [ext_resource type="Resource" uid="uid://bicfkv3i0xtok" path="res://data/worlds/stalingrad_winter/level_2/level_2_tr.tres" id="3_oejaj"]

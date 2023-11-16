@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="World" load_steps=15 format=3 uid="uid://hty4hpn362li"]
 
-[ext_resource type="Texture2D" uid="uid://m7wsmpycolq5" path="res://screens/sub_menus/games_menu/assets/snowstorm_background.png" id="1_oedcw"]
+[ext_resource type="Texture2D" uid="uid://m7wsmpycolq5" path="res://screens/sub_menus/games_menu/games_menu_bgs/st_summer_menu_bg/assets/st_summer_menu_bg.png" id="1_oedcw"]
 [ext_resource type="Script" path="res://data/min_max_int_rate/min_max_int_rate.gd" id="1_vxooa"]
 [ext_resource type="Resource" uid="uid://d17xycj7fg8pm" path="res://data/worlds/stalingrad_summer/level_1/level_1_st_tut.tres" id="3_u2cm8"]
 [ext_resource type="Resource" uid="uid://ldjkb82ffb8u" path="res://data/worlds/stalingrad_summer/level_2/level_2_st_tut.tres" id="4_k1ml6"]

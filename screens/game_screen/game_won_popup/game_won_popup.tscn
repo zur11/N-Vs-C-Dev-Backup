@@ -186,7 +186,6 @@ _data = {
 }
 
 [node name="GameWonPopup" type="Control"]
-process_mode = 3
 layout_mode = 3
 anchor_right = 0.812
 anchor_bottom = 0.956
@@ -215,32 +214,37 @@ offset_left = -136.0
 offset_top = -40.0
 offset_right = 1672.0
 offset_bottom = 1048.0
+scale = Vector2(0.2, 0.2)
 pivot_offset = Vector2(915, 555)
 texture = ExtResource("1_d8od3")
 expand_mode = 1
 
 [node name="CongratulationsTexture" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 127.0
+offset_left = 900.0
 offset_top = 176.0
-offset_right = 1164.0
+offset_right = 1937.0
 offset_bottom = 370.0
 texture = ExtResource("5_e6hqu")
 
 [node name="DescriptionBox" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 336.0
-offset_top = 409.0
+offset_top = 310.0
 offset_right = 1155.0
-offset_bottom = 715.001
+offset_bottom = 616.001
 texture = ExtResource("7_rxjnf")
 
 [node name="RewardContainer" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 152.0
-offset_top = 400.0
+offset_top = 200.0
 offset_right = 534.0
-offset_bottom = 750.001
+offset_bottom = 550.001
+rotation = 0.199897
 pivot_offset = Vector2(202, 170)
 texture = ExtResource("8_nhxyk")
 
@@ -254,6 +258,7 @@ offset_bottom = 750.0
 texture = ExtResource("8_g5kxb")
 
 [node name="AllyThumbnail" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 272.0
 offset_top = 472.0
@@ -282,6 +287,7 @@ expand_mode = 1
 
 [node name="RewardLabel" type="Label" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 245.0
 offset_top = 681.0
@@ -305,6 +311,7 @@ offset_left = 576.0
 offset_top = 680.0
 offset_right = 1012.0
 offset_bottom = 873.0
+scale = Vector2(1e-05, 1.1)
 pivot_offset = Vector2(218, 185)
 texture = ExtResource("9_asisb")
 
@@ -319,7 +326,8 @@ libraries = {
 }
 
 [node name="Buttons" type="Node2D" parent="."]
-position = Vector2(1268, 476)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(1268, -30)
 
 [node name="RetryLevelButton" type="TextureButton" parent="Buttons"]
 offset_left = -108.0
@@ -341,6 +349,7 @@ texture_pressed = ExtResource("9_jgk22")
 texture_hover = ExtResource("9_jgk22")
 
 [node name="ContinueButton" type="TextureButton" parent="Buttons"]
+unique_name_in_owner = true
 offset_left = -108.0
 offset_top = 132.0
 offset_right = 116.0
