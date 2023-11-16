@@ -1,0 +1,646 @@
+[gd_scene load_steps=31 format=3 uid="uid://cv31n8f8ggh4u"]
+
+[ext_resource type="Texture2D" uid="uid://c6jvxj1i8qys3" path="res://game_objects/allies/money_provider/airfield_target/assets/airfield_target_base_lighten.png" id="2_ct16a"]
+[ext_resource type="Texture2D" uid="uid://dda8bu3rxg5li" path="res://game_objects/allies/money_provider/airfield_target/assets/airfield_target_base.png" id="3_eksu4"]
+[ext_resource type="Texture2D" uid="uid://dhp1rjg3hcyvl" path="res://game_objects/allies/money_provider/airfield_target/assets/airfield_target_light.png" id="4_lfc5y"]
+[ext_resource type="Texture2D" uid="uid://cto61eke7joyb" path="res://assets/game_objects/soldier_shared_assets/circle_shadow.png" id="5_bw0aq"]
+[ext_resource type="Texture2D" uid="uid://tcsypmnewke5" path="res://game_objects/allies/money_provider/airfield_target/assets/light_tw.png" id="5_w63lj"]
+[ext_resource type="Texture2D" uid="uid://b4bsoiarq53ry" path="res://game_objects/allies/money_provider/airfield_target/assets/wooden_box.png" id="6_0tbjs"]
+[ext_resource type="Texture2D" uid="uid://c6wcdhwkt3lik" path="res://game_objects/allies/money_provider/airfield_target/assets/wooden_box_door.png" id="7_kuu03"]
+[ext_resource type="AudioStream" uid="uid://d1fuekbnu6lbc" path="res://game_objects/allies/money_provider/airfield_target/assets/sfx/matrioska_falling.mp3" id="11_rdm4i"]
+[ext_resource type="Texture2D" uid="uid://shjt7y1is6ns" path="res://game_objects/allies/money_provider/airfield_target/assets/supply_plane.png" id="12_vjvp1"]
+[ext_resource type="Texture2D" uid="uid://yl3ro34hlikb" path="res://game_objects/allies/money_provider/airfield_target/assets/propellers_1.png" id="13_plj4m"]
+[ext_resource type="AudioStream" uid="uid://bmplbc8g3k1yu" path="res://assets/game_objects/soldier_shared_assets/sfx/hit.mp3" id="14_0nt45"]
+[ext_resource type="Texture2D" uid="uid://kvmb7bk6jycu" path="res://game_objects/allies/money_provider/airfield_target/assets/propellers_2.png" id="14_p6ht0"]
+[ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="15_5ee6c"]
+[ext_resource type="Texture2D" uid="uid://drwbxsgjc87xn" path="res://game_objects/allies/money_provider/airfield_target/assets/airplane_smoke_particle.png" id="15_r7xun"]
+[ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="17_bsgpe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ubwy7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ct16a")
+}],
+"loop": true,
+"name": &"charge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_eksu4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_vjrin"]
+resource_name = "_death"
+length = 2.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DustParticles:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textures/Base:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 1.15, 1.25, 1.35, 1.45, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.47451), Color(1, 1, 1, 1), Color(1, 1, 1, 0.47451), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Textures/Base/Lantern1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.25, 0.55, 0.65, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 2.59597, 2.51113, 2.59597]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Textures/Base/Lantern2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.35, 0.7, 0.8, 1.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -2.67859, -2.52109, -2.67859]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Textures/Base/Lantern3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.25, 0.65, 0.75, 0.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.57555, 1.4127, 1.57555]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Textures/Base/Lantern4:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.05, 0.4, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -1.58129, -1.47245, -1.58129]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Textures/Base/Lantern1/Light:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.427451), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Textures/Base/Lantern2/Light:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.427451), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Textures/Base/Lantern3/Light:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Textures/Base/Lantern4/Light:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.596078), Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Textures:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.94), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f8lpb"]
+resource_name = "_give_coin"
+length = 3.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textures/Base:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.9, 1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.95), Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.95), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textures/Base:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"idle", &"charge", &"idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Textures/WoodenBox:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7, 1, 1.1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2, -314), Vector2(-2, -39), Vector2(-2, -44), Vector2(-2, -39), Vector2(-2, -44)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Textures/WoodenBox:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.53073, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Textures/WoodenBox:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.7, 0.8, 2.6, 2.7, 2.8, 2.9, 3, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.694118), Color(1, 1, 1, 1), Color(1, 1, 1, 0.694118), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Textures/WoodenBox/WoodenBoxDoor:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.4, 1.7, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0), Vector2(1, 0.2), Vector2(1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Textures/Shadow:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.7, 1, 3, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Textures/Base/Lantern1/Light:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.427451), Color(1, 0.690196, 0.635294, 1), Color(1, 1, 1, 0.427451), Color(1, 0.690196, 0.635294, 1), Color(1, 1, 1, 0.427451)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Textures/Base/Lantern2/Light:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.427451), Color(1, 0.690196, 0.635294, 1), Color(1, 1, 1, 0.427451), Color(1, 0.690196, 0.635294, 1), Color(1, 1, 1, 0.427451)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Textures/Base/Lantern3/Light:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.1, 0.4, 0.7, 1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.690196, 0.635294, 1), Color(1, 1, 1, 1), Color(1, 0.690196, 0.635294, 1), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Textures/Base/Lantern4/Light:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.1, 0.4, 0.7, 1, 1.3, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.690196, 0.635294, 1), Color(1, 1, 1, 0.570588), Color(1, 0.690196, 0.635294, 1), Color(1, 1, 1, 0.570588), Color(1, 0.690196, 0.635294, 1), Color(1, 1, 1, 0.570588)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("SupplyPlane:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.9, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SupplyPlane:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.7, 2.2, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1234, -644), Vector2(15.9617, -495), Vector2(2024.65, -495), Vector2(3981, -495)]
+}
+
+[sub_resource type="Animation" id="Animation_5tjgj"]
+resource_name = "_idle"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textures/Base:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1.03), Vector2(1, 0.98), Vector2(1, 1.03), Vector2(1, 0.98)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textures/Base/Lantern1/Light:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1.1, 1.5, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.427451), Color(1, 1, 1, 1), Color(1, 1, 1, 0.427451), Color(1, 1, 1, 1), Color(1, 1, 1, 0.427451), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Textures/Base/Lantern2/Light:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.427451), Color(1, 1, 1, 1), Color(1, 1, 1, 0.427451), Color(1, 1, 1, 1), Color(1, 1, 1, 0.427451), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Textures/Base/Lantern3/Light:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1.1, 1.5, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.427451), Color(1, 1, 1, 1), Color(1, 1, 1, 0.427451), Color(1, 1, 1, 1), Color(1, 1, 1, 0.427451)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Textures/Base/Lantern4/Light:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3, 0.7, 1.1, 1.5, 1.9, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.427451), Color(1, 1, 1, 1), Color(1, 1, 1, 0.427451), Color(1, 1, 1, 1), Color(1, 1, 1, 0.427451)]
+}
+
+[sub_resource type="Animation" id="Animation_eco5f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textures/Base/Lantern1/Light:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.427451)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1tx7n"]
+_data = {
+"RESET": SubResource("Animation_eco5f"),
+"_death": SubResource("Animation_vjrin"),
+"_give_coin": SubResource("Animation_f8lpb"),
+"_idle": SubResource("Animation_5tjgj")
+}
+
+[sub_resource type="Animation" id="Animation_d21m3"]
+resource_name = "_receive_damage_general"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textures/Base:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textures/Base:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.952941, 0.309804, 0.384314, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_abi08"]
+_data = {
+"_receive_damage_general": SubResource("Animation_d21m3")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k14hl"]
+size = Vector2(101, 214)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ryg"]
+size = Vector2(38, 23)
+
+[sub_resource type="Curve" id="Curve_0cvsw"]
+_data = [Vector2(0, 0.147368), 0.0, 0.0, 0, 0, Vector2(0.368132, 0.694737), 0.0, 0.0, 0, 0, Vector2(0.983517, 0.115789), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_ta82l"]
+offsets = PackedFloat32Array(0, 0.245033, 1)
+colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yr0i2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_plj4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_p6ht0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="Curve" id="Curve_pbv85"]
+max_value = 3.0
+_data = [Vector2(0.0164835, 0.347368), 0.0, 0.0, 0, 0, Vector2(0.357143, 0.947368), 0.0, 0.0, 0, 0, Vector2(0.538462, 1.86316), 0.0, 0.0, 0, 0, Vector2(0.785714, 3), 0.0, 0.0, 0, 0, Vector2(1, 0.547368), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_0nbrd"]
+offsets = PackedFloat32Array(0, 0.476821, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="AirfieldTarget" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="Textures" type="Node2D" parent="."]
+
+[node name="Base" type="AnimatedSprite2D" parent="Textures"]
+position = Vector2(-1, 44)
+sprite_frames = SubResource("SpriteFrames_ubwy7")
+animation = &"idle"
+offset = Vector2(-2, -57.9223)
+
+[node name="Lantern1" type="Sprite2D" parent="Textures/Base"]
+show_behind_parent = true
+position = Vector2(60, -110.754)
+texture = ExtResource("4_lfc5y")
+offset = Vector2(2, -20.9806)
+
+[node name="Light" type="Sprite2D" parent="Textures/Base/Lantern1"]
+modulate = Color(1, 1, 1, 0.427451)
+show_behind_parent = true
+position = Vector2(1, -36.8932)
+texture = ExtResource("5_w63lj")
+
+[node name="Lantern2" type="Sprite2D" parent="Textures/Base"]
+show_behind_parent = true
+position = Vector2(-68, -108.812)
+texture = ExtResource("4_lfc5y")
+offset = Vector2(2, -20.9806)
+
+[node name="Light" type="Sprite2D" parent="Textures/Base/Lantern2"]
+modulate = Color(1, 1, 1, 0.427451)
+show_behind_parent = true
+position = Vector2(1, -36.8932)
+texture = ExtResource("5_w63lj")
+
+[node name="Lantern3" type="Sprite2D" parent="Textures/Base"]
+position = Vector2(-74, -31.3214)
+texture = ExtResource("4_lfc5y")
+offset = Vector2(2, -20.9806)
+
+[node name="Light" type="Sprite2D" parent="Textures/Base/Lantern3"]
+show_behind_parent = true
+position = Vector2(1, -36.8932)
+texture = ExtResource("5_w63lj")
+
+[node name="Lantern4" type="Sprite2D" parent="Textures/Base"]
+position = Vector2(63, -31.3214)
+texture = ExtResource("4_lfc5y")
+offset = Vector2(2, -20.9806)
+
+[node name="Light" type="Sprite2D" parent="Textures/Base/Lantern4"]
+modulate = Color(1, 0.690196, 0.635294, 1)
+show_behind_parent = true
+position = Vector2(1, -36.8932)
+texture = ExtResource("5_w63lj")
+
+[node name="Shadow" type="Sprite2D" parent="Textures"]
+position = Vector2(-4, -3)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("5_bw0aq")
+
+[node name="WoodenBox" type="Sprite2D" parent="Textures"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-2, -314)
+rotation = 2.53073
+texture = ExtResource("6_0tbjs")
+
+[node name="WoodenBoxDoor" type="Sprite2D" parent="Textures/WoodenBox"]
+position = Vector2(-1, 40)
+texture = ExtResource("7_kuu03")
+offset = Vector2(0, -41)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "_idle"
+libraries = {
+"": SubResource("AnimationLibrary_1tx7n")
+}
+
+[node name="ReceiveDamage" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_abi08")
+}
+
+[node name="BodyCollShape" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-2.5, -56)
+shape = SubResource("RectangleShape2D_k14hl")
+
+[node name="PhysicalContactCollShape" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(67, -12.5)
+shape = SubResource("RectangleShape2D_v7ryg")
+
+[node name="ReceiveDamageSFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_0nt45")
+script = ExtResource("15_5ee6c")
+
+[node name="DeathSFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_rdm4i")
+script = ExtResource("15_5ee6c")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DustParticles" type="CPUParticles2D" parent="."]
+position = Vector2(-1, 61)
+emitting = false
+amount = 30
+lifetime = 0.8
+one_shot = true
+speed_scale = 1.2
+explosiveness = 0.7
+texture = ExtResource("17_bsgpe")
+emission_shape = 3
+emission_rect_extents = Vector2(60, 1)
+direction = Vector2(0, -1)
+spread = 55.84
+gravity = Vector2(0, -60)
+initial_velocity_min = 433.73
+initial_velocity_max = 433.73
+angular_velocity_min = 277.59
+angular_velocity_max = 277.59
+scale_amount_curve = SubResource("Curve_0cvsw")
+color_ramp = SubResource("Gradient_ta82l")
+
+[node name="SupplyPlane" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1234, -644)
+texture = ExtResource("12_vjvp1")
+
+[node name="Propellers" type="AnimatedSprite2D" parent="SupplyPlane"]
+position = Vector2(293, 12)
+sprite_frames = SubResource("SpriteFrames_yr0i2")
+autoplay = "default"
+frame_progress = 0.847752
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="SupplyPlane"]
+position = Vector2(306.231, 55)
+amount = 17
+lifetime = 5.0
+preprocess = 5.0
+local_coords = true
+texture = ExtResource("15_r7xun")
+direction = Vector2(-1, 0)
+gravity = Vector2(-60, -10)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angular_velocity_min = 14.54
+angular_velocity_max = 14.54
+scale_amount_curve = SubResource("Curve_pbv85")
+color_ramp = SubResource("Gradient_0nbrd")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

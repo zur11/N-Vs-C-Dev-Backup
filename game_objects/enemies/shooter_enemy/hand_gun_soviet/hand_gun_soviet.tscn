@@ -619,10 +619,10 @@ tracks/2/path = NodePath("Textures/Body:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.35, 0.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(0, 41), Vector2(0, 39)]
+"values": []
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1412,7 +1412,7 @@ _data = [Vector2(0, 0.147368), 0.0, 0.0, 0, 0, Vector2(0.368132, 0.694737), 0.0,
 point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_iwo04"]
-offsets = PackedFloat32Array(0, 0.324503, 1)
+offsets = PackedFloat32Array(0, 0.245033, 1)
 colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="HandgunSoviet" type="CharacterBody2D"]
@@ -1450,7 +1450,7 @@ texture = ExtResource("5_ie4xy")
 offset = Vector2(4.85486, 35.9279)
 
 [node name="Body" type="Sprite2D" parent="Textures"]
-position = Vector2(0, 39.6792)
+position = Vector2(0, 48.6792)
 rotation = -0.0349066
 texture = ExtResource("6_crj6m")
 offset = Vector2(0, -39)
@@ -1463,13 +1463,13 @@ texture = ExtResource("7_7uy5c")
 offset = Vector2(32.048, 17.2848)
 
 [node name="LeftElbow" type="Sprite2D" parent="Textures/Body/LeftArm"]
-position = Vector2(-36.5359, 29.3977)
+position = Vector2(-35.7468, 29.1582)
 texture = ExtResource("8_fcivq")
 offset = Vector2(-19.5052, -2.47662)
 
 [node name="Hand" type="Sprite2D" parent="Textures/Body/LeftArm/LeftElbow"]
 position = Vector2(-45.6026, -8.17097)
-rotation = 0.113946
+rotation = 0.123317
 texture = ExtResource("9_juc2k")
 offset = Vector2(11.1335, -22.7057)
 
@@ -1576,12 +1576,10 @@ libraries = {
 }
 
 [node name="BodyCollShape" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(5.5, -133)
 shape = SubResource("RectangleShape2D_qyc3c")
 
 [node name="PhysicalContactCollShape" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-119.5, -75)
 shape = SubResource("RectangleShape2D_1a55r")
 
@@ -1591,13 +1589,11 @@ target_position = Vector2(-640, 0)
 collision_mask = 0
 
 [node name="CollisionRightLeg" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(37, 36)
 rotation = -0.191096
 shape = SubResource("RectangleShape2D_bt04b")
 
 [node name="CollisionLeftLeg" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-26.1108, 36.5737)
 rotation = -0.017936
 shape = SubResource("RectangleShape2D_ohpsj")
@@ -1629,7 +1625,7 @@ amount = 30
 lifetime = 0.8
 one_shot = true
 speed_scale = 1.2
-explosiveness = 0.65
+explosiveness = 0.7
 texture = ExtResource("27_avbeb")
 emission_shape = 3
 emission_rect_extents = Vector2(60, 1)

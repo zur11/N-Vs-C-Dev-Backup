@@ -28,6 +28,8 @@ func _physics_process(_delta):
 			if opponent != null:
 				if self is Grenade:
 					opponent.auto_destroy("explosion")
+				if self is GermanGrenade:
+					opponent.auto_destroy("explosion")
 				if self is MolotovCocktail:
 					opponent.receive_damage(inflicting_damage_points,"close_normal")
 		

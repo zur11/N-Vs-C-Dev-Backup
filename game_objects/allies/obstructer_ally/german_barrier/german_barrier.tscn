@@ -1,0 +1,307 @@
+[gd_scene load_steps=24 format=3 uid="uid://c1qbfmqm2iu0s"]
+
+[ext_resource type="Texture2D" uid="uid://ba3ammwk0t43x" path="res://game_objects/allies/obstructer_ally/german_barrier/assets/barrier_2.png" id="1_sqttc"]
+[ext_resource type="Texture2D" uid="uid://bwwave3hagnv0" path="res://game_objects/allies/obstructer_ally/german_barrier/assets/barrier_3.png" id="2_6nngq"]
+[ext_resource type="Texture2D" uid="uid://dp2ipocvk6ffr" path="res://game_objects/allies/obstructer_ally/german_barrier/assets/barrier_4.png" id="3_l0cwu"]
+[ext_resource type="Texture2D" uid="uid://b07pvfctecedy" path="res://game_objects/allies/obstructer_ally/german_barrier/assets/barrier_1a.png" id="4_4bcox"]
+[ext_resource type="Texture2D" uid="uid://cuv7pbwk0e5ga" path="res://game_objects/allies/obstructer_ally/german_barrier/assets/barrier_1b.png" id="5_7sprg"]
+[ext_resource type="Texture2D" uid="uid://bpvaiichm72ey" path="res://game_objects/allies/obstructer_ally/german_barrier/assets/detroyed_particle.png" id="7_1r8p4"]
+[ext_resource type="Texture2D" uid="uid://5xg73u1xoy12" path="res://assets/game_objects/soldier_shared_assets/circle_particle.png" id="8_tp1gb"]
+[ext_resource type="AudioStream" uid="uid://c101hsdccshna" path="res://game_objects/allies/obstructer_ally/wooden_barrier/assets/sfx/hit_barrier.mp3" id="10_xgym4"]
+[ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="11_ksqad"]
+[ext_resource type="AudioStream" uid="uid://hsnpvv8rv70u" path="res://game_objects/allies/obstructer_ally/wooden_barrier/assets/sfx/barrier_destroyed.mp3" id="12_pcox1"]
+[ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="13_dw0fv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rf0sk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sqttc")
+}],
+"loop": true,
+"name": &"damaged_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6nngq")
+}],
+"loop": true,
+"name": &"damaged_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_l0cwu")
+}],
+"loop": true,
+"name": &"damaged_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4bcox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7sprg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve" id="Curve_gd2wd"]
+min_value = 0.2
+max_value = 0.8
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.502564, 0.781053), 0.35505, 0.35505, 0, 0, Vector2(1, 0.418947), -1.9579, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_cnql5"]
+_data = [Vector2(0, 0.147368), 0.0, 0.0, 0, 0, Vector2(0.317949, 0.894737), 0.0, 0.0, 0, 0, Vector2(0.871795, 0.578947), -2.49886, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtqgl"]
+size = Vector2(175, 204.5)
+
+[sub_resource type="Animation" id="Animation_bjuih"]
+resource_name = "_death"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BarrierTexture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.6, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BarrierTexture:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-4, 81), Vector2(-4, 87)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BarrierTexture/CrumbleParticles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DustParticles2:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dclqj"]
+resource_name = "_idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BarrierTexture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.992, 1.02)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cp2sb"]
+_data = {
+"_death": SubResource("Animation_bjuih"),
+"_idle": SubResource("Animation_dclqj")
+}
+
+[sub_resource type="Animation" id="Animation_0260b"]
+resource_name = "_receive_damage_from_stab"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BarrierTexture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BarrierTexture:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.917647, 0.917647, 0.568627, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BarrierTexture/CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_qv25a"]
+resource_name = "_receive_damage_general"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BarrierTexture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BarrierTexture:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.917647, 0.917647, 0.568627, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_62foo"]
+_data = {
+"_receive_damage_from_stab": SubResource("Animation_0260b"),
+"_receive_damage_general": SubResource("Animation_qv25a")
+}
+
+[sub_resource type="Curve" id="Curve_pbqm3"]
+_data = [Vector2(0, 0.147368), 0.0, 0.0, 0, 0, Vector2(0.368132, 0.694737), 0.0, 0.0, 0, 0, Vector2(0.983517, 0.115789), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_tyy1w"]
+offsets = PackedFloat32Array(0, 0.245033, 1)
+colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="GermanBarrier" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="BarrierTexture" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4, 81)
+sprite_frames = SubResource("SpriteFrames_rf0sk")
+offset = Vector2(4, -81)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="BarrierTexture"]
+position = Vector2(58, -104)
+emitting = false
+amount = 11
+lifetime = 0.3
+one_shot = true
+speed_scale = 2.44
+explosiveness = 0.16
+texture = ExtResource("8_tp1gb")
+direction = Vector2(0, 1)
+spread = 147.85
+gravity = Vector2(0, 500)
+initial_velocity_min = 300.0
+initial_velocity_max = 300.0
+scale_amount_curve = SubResource("Curve_gd2wd")
+
+[node name="CrumbleParticles" type="CPUParticles2D" parent="BarrierTexture"]
+rotation = -2.34256
+emitting = false
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.2
+texture = ExtResource("7_1r8p4")
+direction = Vector2(0, 1)
+spread = 108.43
+gravity = Vector2(0, 10)
+initial_velocity_min = 485.72
+initial_velocity_max = 485.72
+angular_velocity_min = -425.14
+angular_velocity_max = 192.0
+linear_accel_max = 19.05
+scale_amount_curve = SubResource("Curve_cnql5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_mtqgl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "_idle"
+libraries = {
+"": SubResource("AnimationLibrary_cp2sb")
+}
+
+[node name="ReceiveDamage" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_62foo")
+}
+
+[node name="ReceiveDamageSFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_xgym4")
+script = ExtResource("11_ksqad")
+
+[node name="DeathSFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_pcox1")
+script = ExtResource("11_ksqad")
+
+[node name="DustParticles2" type="CPUParticles2D" parent="."]
+position = Vector2(-5, 102)
+emitting = false
+amount = 30
+lifetime = 0.8
+one_shot = true
+speed_scale = 1.2
+explosiveness = 0.7
+texture = ExtResource("13_dw0fv")
+emission_shape = 3
+emission_rect_extents = Vector2(60, 1)
+direction = Vector2(0, -1)
+spread = 55.84
+gravity = Vector2(0, -60)
+initial_velocity_min = 433.73
+initial_velocity_max = 433.73
+angular_velocity_min = 277.59
+angular_velocity_max = 277.59
+scale_amount_curve = SubResource("Curve_pbqm3")
+color_ramp = SubResource("Gradient_tyy1w")

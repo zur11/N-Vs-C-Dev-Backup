@@ -1,0 +1,158 @@
+[gd_scene load_steps=20 format=3 uid="uid://c2nmn5pcetqvs"]
+
+[ext_resource type="Script" path="res://game_objects/allies/throwable_ally/german_grenade/german_grenade.gd" id="1_7viuf"]
+[ext_resource type="AudioStream" uid="uid://bv6sw5if3eye1" path="res://assets/game_objects/soldier_shared_assets/sfx/ally_explosion.mp3" id="4_c04mm"]
+[ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="5_5woby"]
+[ext_resource type="Texture2D" uid="uid://7abkfbpv5rb7" path="res://game_objects/allies/throwable_ally/german_grenade/assets/nazi_grenade.png" id="6_i6ael"]
+[ext_resource type="Texture2D" uid="uid://do54e4khpkxj3" path="res://game_objects/allies/throwable_ally/german_grenade/assets/grenade_explosion/grenade_explosion_1.png" id="7_j78mf"]
+[ext_resource type="Texture2D" uid="uid://nj0tcuo3sxmp" path="res://game_objects/allies/throwable_ally/german_grenade/assets/grenade_explosion/grenade_explosion_2.png" id="8_8e2d0"]
+[ext_resource type="Texture2D" uid="uid://8e1g2ifvrme8" path="res://game_objects/allies/throwable_ally/german_grenade/assets/grenade_explosion/grenade_explosion_3.png" id="9_teqcb"]
+[ext_resource type="Texture2D" uid="uid://ecv5dohohnqv" path="res://game_objects/allies/throwable_ally/german_grenade/assets/grenade_explosion/grenade_explosion_4.png" id="10_448qv"]
+[ext_resource type="Texture2D" uid="uid://bk1lt81b0wq6w" path="res://game_objects/allies/throwable_ally/german_grenade/assets/grenade_explosion/grenade_explosion_5.png" id="11_bwd1i"]
+[ext_resource type="Texture2D" uid="uid://dqnp8rwh1ix3c" path="res://game_objects/allies/throwable_ally/german_grenade/assets/grenade_explosion/grenade_explosion_6.png" id="12_1sh8x"]
+[ext_resource type="Texture2D" uid="uid://clkxocji58pl3" path="res://game_objects/allies/throwable_ally/german_grenade/assets/grenade_explosion/grenade_explosion_7.png" id="13_ugl77"]
+[ext_resource type="Texture2D" uid="uid://dkk2ov0eo3cb5" path="res://game_objects/allies/throwable_ally/german_grenade/assets/grenade_explosion/grenade_explosion_8.png" id="14_jjitg"]
+[ext_resource type="Texture2D" uid="uid://dxkk6d6d4tti8" path="res://game_objects/allies/throwable_ally/german_grenade/assets/grenade_explosion/grenade_explosion_9.png" id="15_hnqwl"]
+
+[sub_resource type="Animation" id="Animation_nhslj"]
+resource_name = "_default"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"default", &"default"]
+}
+
+[sub_resource type="Animation" id="Animation_7ujs3"]
+resource_name = "_exploding"
+length = 0.65
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.65),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"default", &"explosion", &"explosion"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Background:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.05, 0.1, 0.3, 0.65),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.745098), Color(1, 1, 1, 0.745098), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b5pt1"]
+_data = {
+"_default": SubResource("Animation_nhslj"),
+"_exploding": SubResource("Animation_7ujs3")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_51dni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_i6ael")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_j78mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8e2d0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_teqcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_448qv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bwd1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1sh8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ugl77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jjitg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hnqwl")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b02q3"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yk2g"]
+size = Vector2(0, 0)
+
+[node name="GermanGrenade" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_7viuf")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_c04mm")
+script = ExtResource("5_5woby")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ThrowableTexture")
+autoplay = "_default"
+libraries = {
+"": SubResource("AnimationLibrary_b5pt1")
+}
+
+[node name="Background" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+offset_right = 113.0
+offset_bottom = 100.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ThrowableTexture" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, 1)
+sprite_frames = SubResource("SpriteFrames_51dni")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b02q3")
+
+[node name="FallingTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ExplosionBlast" type="Area2D" parent="."]
+
+[node name="BlastCollShape" type="CollisionShape2D" parent="ExplosionBlast"]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_6yk2g")
+
+[connection signal="timeout" from="FallingTimer" to="." method="_on_falling_timer_timeout"]

@@ -4,15 +4,15 @@
 [ext_resource type="Script" path="res://game_objects/allies/shooter_ally/light_machine_gunner/light_machine_gunner.gd" id="1_sgt6y"]
 [ext_resource type="Texture2D" uid="uid://mlct3dlrjm6t" path="res://game_objects/allies/shooter_ally/light_machine_gunner/ally_card_assets/light_machine_gunner_normal.png" id="2_n6404"]
 [ext_resource type="PackedScene" uid="uid://br8skpb4kh7c7" path="res://game_objects/components/bullet/gun_bullet/gun_bullet.tscn" id="2_nd2xg"]
-[ext_resource type="Texture2D" uid="uid://dla3tqrgg7j8w" path="res://assets/game_objects/soldier_shared_assets/legup2.png" id="2_qi15g"]
 [ext_resource type="Texture2D" uid="uid://p5ksijqml578" path="res://game_objects/allies/shooter_ally/light_machine_gunner/ally_card_assets/light_machine_gunner_selected.png" id="3_14fjw"]
-[ext_resource type="Texture2D" uid="uid://de36q80eh20e1" path="res://assets/game_objects/soldier_shared_assets/leg4.png" id="3_h348k"]
-[ext_resource type="Texture2D" uid="uid://dye7bcrha1j02" path="res://assets/game_objects/soldier_shared_assets/leg1.png" id="4_ouwkt"]
-[ext_resource type="Texture2D" uid="uid://bh2jew5fbuk8g" path="res://assets/game_objects/soldier_shared_assets/leg3.png" id="5_ongvd"]
 [ext_resource type="Texture2D" uid="uid://cjw7wufwn34tt" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/torso.png" id="6_x82q6"]
+[ext_resource type="Texture2D" uid="uid://bumwbdawag641" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/right_leg.png" id="6_yk70m"]
+[ext_resource type="Texture2D" uid="uid://c60wuogwt06xs" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/right_foot.png" id="7_0wol4"]
 [ext_resource type="Texture2D" uid="uid://c1x3wie3se7k1" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/arm1.png" id="7_eb4cx"]
+[ext_resource type="Texture2D" uid="uid://b2e0jnakgic2f" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/left_leg.png" id="8_lfbh7"]
 [ext_resource type="Texture2D" uid="uid://dr6ju8bjkua5w" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/arm4.png" id="8_np4xe"]
 [ext_resource type="Texture2D" uid="uid://x6mnwado8gyo" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/hand.png" id="9_nqnnl"]
+[ext_resource type="Texture2D" uid="uid://dfwnmhmp1afr0" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/left_foot.png" id="9_p7q27"]
 [ext_resource type="Texture2D" uid="uid://cqhs07mbl5pjg" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/head_dead.png" id="10_7frik"]
 [ext_resource type="Texture2D" uid="uid://wu4jwygx7q2e" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/head.png" id="10_mpesx"]
 [ext_resource type="Texture2D" uid="uid://01dqd7ma7hno" path="res://game_objects/allies/shooter_ally/light_machine_gunner/assets/gas_mask_machine_gunner.png" id="11_rax36"]
@@ -619,58 +619,34 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Textures/LeftLeg:rotation")
+tracks/5/path = NodePath("Textures/Body/MachineGun:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.8, 2.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0100584, -0.031814, 0.0100584, -0.031814]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Textures/LeftLeg/LeftFoot:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.8, 2.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [-0.0542978, -0.00309256, -0.0542978, -0.00309256]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Textures/Body/MachineGun:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0, 1.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -0.0523599]
 }
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Textures/Body/RightArm/RightElbow:rotation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Textures/Body/RightArm/RightElbow:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0, 1.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -0.0818002]
 }
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Textures/Body/LeftArm/LeftElbow:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Textures/Body/LeftArm/LeftElbow:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0, 1.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -850,10 +826,10 @@ tracks/0/path = NodePath("Textures/Body:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.3, 0.35, 0.45, 0.5, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.3, 0.5, 0.55, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [-0.0174533, -0.0698132, -0.0349066, -0.0698132, -0.0174533, -0.0698132, -0.0349066, -0.0698132, -0.0174533]
+"values": [-0.0174533, -0.0698132, -0.0174533, -0.0698132, -0.0349066, -0.0698132, -0.0174533]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -862,7 +838,7 @@ tracks/1/path = NodePath("Textures/Body/Head:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.5, 0.7),
+"times": PackedFloat32Array(0, 0.05, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0349066, 0.0698132, 0.0698132, 0.0349066]
@@ -874,10 +850,10 @@ tracks/2/path = NodePath("Textures/Body/MachineGun:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.3, 0.35, 0.45, 0.5, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.3, 0.5, 0.55, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(39.8583, -41.9663), Vector2(37, -41.966), Vector2(39.8583, -41.9663), Vector2(37, -41.966), Vector2(39.8583, -41.9663), Vector2(37, -41.966), Vector2(39.8583, -41.9663), Vector2(37, -41.966), Vector2(39.8583, -41.9663)]
+"values": [Vector2(39.8583, -41.9663), Vector2(35, -41.966), Vector2(39.8583, -41.9663), Vector2(35, -41.966), Vector2(39.8583, -41.9663), Vector2(35, -41.966), Vector2(39.8583, -41.9663)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -886,10 +862,22 @@ tracks/3/path = NodePath("Textures/Body/MachineGun/CPUParticles2D:emitting")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, true, true, true]
+"values": [true, true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Textures/Body/LeftArm/LeftElbow:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.3, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0803543, 0.0, -0.0803543, 0.0, -0.0803543]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ktusd"]
@@ -1031,7 +1019,6 @@ price = 100
 character_faction = "ally"
 
 [node name="Shadow" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
 position = Vector2(-2, 44.798)
 scale = Vector2(1.23684, 1)
 texture = ExtResource("1_jnouo")
@@ -1042,25 +1029,25 @@ position = Vector2(0, -114)
 [node name="RightLeg" type="Sprite2D" parent="Textures"]
 position = Vector2(15, 51)
 rotation = 0.184255
-texture = ExtResource("2_qi15g")
+texture = ExtResource("6_yk70m")
 offset = Vector2(12, 22)
 
 [node name="RightFoot" type="Sprite2D" parent="Textures/RightLeg"]
-position = Vector2(27.4305, 38.3945)
+position = Vector2(17.676, 36.3821)
 rotation = 0.0631839
-texture = ExtResource("3_h348k")
+texture = ExtResource("7_0wol4")
 offset = Vector2(22, 31)
 
 [node name="LeftLeg" type="Sprite2D" parent="Textures"]
 position = Vector2(-15, 50)
 rotation = -0.031814
-texture = ExtResource("4_ouwkt")
+texture = ExtResource("8_lfbh7")
 offset = Vector2(16, 19)
 
 [node name="LeftFoot" type="Sprite2D" parent="Textures/LeftLeg"]
 position = Vector2(1.66252, 42.0742)
 rotation = -0.00309256
-texture = ExtResource("5_ongvd")
+texture = ExtResource("9_p7q27")
 offset = Vector2(-3, 35)
 
 [node name="Body" type="Sprite2D" parent="Textures"]
@@ -1086,7 +1073,6 @@ offset = Vector2(11, -1)
 [node name="Head" type="AnimatedSprite2D" parent="Textures/Body"]
 position = Vector2(4.94492, -104.103)
 sprite_frames = SubResource("SpriteFrames_ciqsd")
-animation = &"dead"
 offset = Vector2(0, -30)
 
 [node name="GasMask" type="Sprite2D" parent="Textures/Body/Head"]
@@ -1095,8 +1081,7 @@ position = Vector2(9.18983, -6.11528)
 texture = ExtResource("11_rax36")
 
 [node name="MachineGun" type="AnimatedSprite2D" parent="Textures/Body"]
-position = Vector2(-20, -80)
-rotation = 2.0944
+position = Vector2(36.5317, -41.9661)
 sprite_frames = SubResource("SpriteFrames_n3k3y")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Textures/Body/MachineGun"]

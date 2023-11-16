@@ -647,7 +647,6 @@ enemies = Array[ExtResource("10_o8772")]([SubResource("Resource_n41gc"), SubReso
 
 [resource]
 script = ExtResource("1_21sus")
-is_tutorial = false
 level_unlocked = false
 game_background = ExtResource("4_t6652")
 game_foreground = ExtResource("5_hbj6f")

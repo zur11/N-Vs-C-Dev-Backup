@@ -97,7 +97,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.15, 0.5, 0.6, 0.7, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-1, -28), Vector2(-50, -45), Vector2(-75, 20), Vector2(-75, 18), Vector2(-75, 20), Vector2(-75, 18)]
+"values": [Vector2(-1, -22), Vector2(-50, -45), Vector2(-75, 20), Vector2(-75, 18), Vector2(-75, 20), Vector2(-75, 18)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -245,7 +245,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(1, 1.4, 2.6, 3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-2, -50), Vector2(-3, -92), Vector2(-3, -92), Vector2(-2, -50)]
+"values": [Vector2(-2, -53), Vector2(-3, -112), Vector2(-3, -112), Vector2(-2, -53)]
 }
 
 [sub_resource type="Animation" id="Animation_5tjgj"]
@@ -344,7 +344,6 @@ offsets = PackedFloat32Array(0, 0.324503, 1)
 colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="SmallMatrioshka" type="CharacterBody2D"]
-modulate = Color(0.258824, 0.258824, 0.258824, 1)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_x5in0")
@@ -367,14 +366,13 @@ texture = ExtResource("1_h2rfk")
 texture = ExtResource("2_75hrx")
 
 [node name="Bottom" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -28)
-scale = Vector2(1, 1.03)
+position = Vector2(-1, -22)
 sprite_frames = SubResource("SpriteFrames_ubwy7")
 animation = &"idle"
 offset = Vector2(-3, -22)
 
 [node name="Top" type="AnimatedSprite2D" parent="Bottom"]
-position = Vector2(-2, -50)
+position = Vector2(-2, -53)
 sprite_frames = SubResource("SpriteFrames_ba0tp")
 animation = &"idle"
 autoplay = "idle"
@@ -392,10 +390,12 @@ libraries = {
 }
 
 [node name="BodyCollShape" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-2.5, -74)
 shape = SubResource("RectangleShape2D_k14hl")
 
 [node name="PhysicalContactCollShape" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(68, -14)
 shape = SubResource("RectangleShape2D_v7ryg")
 
