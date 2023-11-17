@@ -4,6 +4,7 @@ class_name World extends Resource
 #@export var world_cleared : bool 
 @export var world_name : String 
 @export var games_menu_background : Texture
+@export var games_menu_bg_scene : PackedScene
 @export var levels : Array[Level]
 @export var selected_level : Level 
 @export var coin_dropping_rate : MinMaxIntRate : set = _set_falling_coin_droping_rate 

@@ -6,7 +6,7 @@ var _level_selector: LevelSelector
 var _loading_new_world : bool
 
 @onready var _world_selector : WorldSelector = $WorldSelector
-@onready var _background_texture : TextureRect = $BackgroundTexture
+@onready var _background_container : Control = $BackgroundContainer
 
 
 func _ready():
@@ -32,7 +32,16 @@ func _set_level_selector():
 	_level_selector.connect("go_to_level", _on_level_selector_go_to_level)
 
 func _on_world_selected_set_selected_world(selected_world:World):
-	_background_texture.texture = selected_world.games_menu_background
+	var world_background_scene : GamesMenuBg = selected_world.games_menu_bg_scene.instantiate() as GamesMenuBg
+	
+	if _background_container.get_child_count() != 0:
+		_background_container.get_child(0).queue_free()
+		
+	_background_container.add_child(world_background_scene)
+	
+#	_background_texture.texture = selected_world.games_menu_background
+	
+	
 	_change_level_selector_display()
 
 func _change_level_selector_display():

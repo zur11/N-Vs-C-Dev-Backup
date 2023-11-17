@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="World" load_steps=15 format=3 uid="uid://hty4hpn362li"]
+[gd_resource type="Resource" script_class="World" load_steps=16 format=3 uid="uid://hty4hpn362li"]
 
-[ext_resource type="Texture2D" uid="uid://m7wsmpycolq5" path="res://screens/sub_menus/games_menu/games_menu_bgs/st_summer_menu_bg/assets/st_summer_menu_bg.png" id="1_oedcw"]
+[ext_resource type="Texture2D" uid="uid://m7wsmpycolq5" path="res://screens/sub_menus/games_menu/games_menu_bgs/stalingrad_summer_bg/assets/st_summer_menu_bg.png" id="1_oedcw"]
 [ext_resource type="Script" path="res://data/min_max_int_rate/min_max_int_rate.gd" id="1_vxooa"]
+[ext_resource type="PackedScene" uid="uid://ci2txb162q4g2" path="res://screens/sub_menus/games_menu/games_menu_bgs/stalingrad_summer_bg/stalingrad_summer_bg.tscn" id="3_b3qus"]
 [ext_resource type="Resource" uid="uid://d17xycj7fg8pm" path="res://data/worlds/stalingrad_summer/level_1/level_1_st_tut.tres" id="3_u2cm8"]
 [ext_resource type="Resource" uid="uid://ldjkb82ffb8u" path="res://data/worlds/stalingrad_summer/level_2/level_2_st_tut.tres" id="4_k1ml6"]
 [ext_resource type="Resource" uid="uid://lkgoxqd5bfl2" path="res://data/worlds/stalingrad_summer/level_3/level_3_st_tut.tres" id="5_5vm8l"]
@@ -23,6 +24,7 @@ maximum_value = 10
 script = ExtResource("13_3bxgn")
 world_name = "Stalingrad Summer"
 games_menu_background = ExtResource("1_oedcw")
+games_menu_bg_scene = ExtResource("3_b3qus")
 levels = Array[Resource("res://data/worlds/level.gd")]([ExtResource("3_u2cm8"), ExtResource("4_k1ml6"), ExtResource("5_5vm8l"), ExtResource("6_h0cn6"), ExtResource("7_10bvg"), ExtResource("8_018x8"), ExtResource("9_kprpv"), ExtResource("10_wog8q"), ExtResource("11_e3h1a"), ExtResource("12_crdda")])
 coin_dropping_rate = SubResource("Resource_v82nr")
 falling_coin_value = 25
