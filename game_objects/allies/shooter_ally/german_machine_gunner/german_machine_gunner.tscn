@@ -571,6 +571,7 @@ position = Vector2(0, -114)
 
 [node name="RightLeg" type="Sprite2D" parent="Textures"]
 position = Vector2(15, 51)
+rotation = 0.184255
 texture = ExtResource("6_vk1va")
 offset = Vector2(12, 22)
 
@@ -594,7 +595,7 @@ offset = Vector2(-3, 35)
 
 [node name="Body" type="Sprite2D" parent="Textures"]
 position = Vector2(0, 40.8228)
-rotation = -0.0523599
+rotation = -0.0174533
 texture = ExtResource("10_n1p0w")
 offset = Vector2(0, -39)
 
@@ -616,6 +617,7 @@ offset = Vector2(11, -1)
 
 [node name="Head" type="AnimatedSprite2D" parent="Textures/Body"]
 position = Vector2(4.94492, -104.103)
+rotation = 0.0349066
 sprite_frames = SubResource("SpriteFrames_ciqsd")
 offset = Vector2(0, -30)
 
@@ -689,10 +691,12 @@ libraries = {
 }
 
 [node name="BodyCollShape" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1.5, -96.5)
 shape = SubResource("RectangleShape2D_7434o")
 
 [node name="PhysicalContactCollShape" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(121, -14)
 shape = SubResource("RectangleShape2D_wneeu")
 

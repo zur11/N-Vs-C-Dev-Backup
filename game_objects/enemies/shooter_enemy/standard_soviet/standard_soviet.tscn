@@ -1,31 +1,30 @@
-[gd_scene load_steps=53 format=3 uid="uid://jj4iosw0mtjo"]
+[gd_scene load_steps=50 format=3 uid="uid://fo5bjn35mrve"]
 
-[ext_resource type="Texture2D" uid="uid://bpdm13gj47qbp" path="res://assets/game_objects/soldier_shared_assets/sv_left_leg.PNG" id="2_6bqp4"]
-[ext_resource type="Texture2D" uid="uid://cto61eke7joyb" path="res://assets/game_objects/soldier_shared_assets/circle_shadow.png" id="2_pg07p"]
-[ext_resource type="Texture2D" uid="uid://b6cmh1ln7wtsj" path="res://assets/game_objects/soldier_shared_assets/sv_left_foot.PNG" id="3_n8n6v"]
-[ext_resource type="Texture2D" uid="uid://dirt8uicn43en" path="res://assets/game_objects/soldier_shared_assets/sv_right_leg.PNG" id="4_87hdw"]
-[ext_resource type="Texture2D" uid="uid://cftwk0iph0cwl" path="res://assets/game_objects/soldier_shared_assets/sv_right_foot.PNG" id="5_ie4xy"]
-[ext_resource type="Texture2D" uid="uid://cv0vqxdgxakeq" path="res://assets/game_objects/soldier_shared_assets/sv_torso.PNG" id="6_crj6m"]
-[ext_resource type="Texture2D" uid="uid://cfvsu8wpi3n8k" path="res://assets/game_objects/soldier_shared_assets/sv_left_arm.PNG" id="7_7uy5c"]
-[ext_resource type="Texture2D" uid="uid://d0ywufn56tt08" path="res://assets/game_objects/soldier_shared_assets/sv_left_elbow.PNG" id="8_fcivq"]
-[ext_resource type="Texture2D" uid="uid://g47uha5q4pub" path="res://assets/game_objects/soldier_shared_assets/sv_handgun.PNG" id="9_juc2k"]
-[ext_resource type="Texture2D" uid="uid://d1tj4nna78nqc" path="res://assets/game_objects/soldier_shared_assets/sv_head_dead.PNG" id="11_bkxl7"]
-[ext_resource type="Texture2D" uid="uid://5xg73u1xoy12" path="res://assets/game_objects/soldier_shared_assets/circle_particle.png" id="11_j3rju"]
-[ext_resource type="Texture2D" uid="uid://bowgp84k7g5j7" path="res://assets/game_objects/soldier_shared_assets/sv_standard_head.PNG" id="12_qw75w"]
-[ext_resource type="Texture2D" uid="uid://2g5rqfv06sh" path="res://game_objects/enemies/shooter_enemy/hand_gun_soviet/assets/helmet.PNG" id="13_6cd0k"]
-[ext_resource type="Texture2D" uid="uid://cj66usod8ofxp" path="res://assets/game_objects/soldier_shared_assets/sv_right_arm.PNG" id="14_1b4ow"]
-[ext_resource type="Texture2D" uid="uid://cuiccwwbbifml" path="res://assets/game_objects/soldier_shared_assets/sv_right_elbow.PNG" id="15_dow4x"]
-[ext_resource type="Texture2D" uid="uid://bvqjqhbpplahi" path="res://assets/game_objects/soldier_shared_assets/sv_knife.PNG" id="16_sv2f0"]
-[ext_resource type="Shader" path="res://assets/game_objects/soldier_shared_assets/alpha_shader/alpha_shader.gdshader" id="18_ubptl"]
-[ext_resource type="Texture2D" uid="uid://ddkq5e615l10l" path="res://assets/game_objects/soldier_shared_assets/alpha_shader/alpha_shader_mask.png" id="19_7vb6s"]
-[ext_resource type="Texture2D" uid="uid://ddkebi0yxwcfv" path="res://assets/game_objects/soldier_shared_assets/sv_burnt_texture.png" id="19_vlwon"]
-[ext_resource type="Texture2D" uid="uid://bkqbt0qh6psoc" path="res://assets/game_objects/soldier_shared_assets/carbon_particle.png" id="21_3vvl8"]
-[ext_resource type="AudioStream" uid="uid://d34ad682xmjtc" path="res://game_objects/enemies/shooter_enemy/hand_gun_soviet/assets/sfx/gunshot_enemy.mp3" id="21_yhcsw"]
-[ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="23_pj3h2"]
-[ext_resource type="AudioStream" uid="uid://cy4f314yw87j1" path="res://assets/game_objects/soldier_shared_assets/sfx/nyet_sfx.mp3" id="24_7tu7q"]
-[ext_resource type="AudioStream" uid="uid://gel0wirmdxag" path="res://assets/game_objects/soldier_shared_assets/sfx/knife.mp3" id="24_f554g"]
-[ext_resource type="AudioStream" uid="uid://bmplbc8g3k1yu" path="res://assets/game_objects/soldier_shared_assets/sfx/hit.mp3" id="26_0ejfq"]
-[ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="27_avbeb"]
+[ext_resource type="Texture2D" uid="uid://cto61eke7joyb" path="res://assets/game_objects/soldier_shared_assets/circle_shadow.png" id="1_wjj00"]
+[ext_resource type="Texture2D" uid="uid://bpdm13gj47qbp" path="res://assets/game_objects/soldier_shared_assets/sv_left_leg.PNG" id="2_47b8f"]
+[ext_resource type="Texture2D" uid="uid://b6cmh1ln7wtsj" path="res://assets/game_objects/soldier_shared_assets/sv_left_foot.PNG" id="3_eicx4"]
+[ext_resource type="Texture2D" uid="uid://dirt8uicn43en" path="res://assets/game_objects/soldier_shared_assets/sv_right_leg.PNG" id="4_cdyuu"]
+[ext_resource type="Texture2D" uid="uid://cftwk0iph0cwl" path="res://assets/game_objects/soldier_shared_assets/sv_right_foot.PNG" id="5_nmaio"]
+[ext_resource type="Texture2D" uid="uid://cv0vqxdgxakeq" path="res://assets/game_objects/soldier_shared_assets/sv_torso.PNG" id="6_7i16u"]
+[ext_resource type="Texture2D" uid="uid://cfvsu8wpi3n8k" path="res://assets/game_objects/soldier_shared_assets/sv_left_arm.PNG" id="7_ra3sx"]
+[ext_resource type="Texture2D" uid="uid://d0ywufn56tt08" path="res://assets/game_objects/soldier_shared_assets/sv_left_elbow.PNG" id="8_27nyh"]
+[ext_resource type="Texture2D" uid="uid://g47uha5q4pub" path="res://assets/game_objects/soldier_shared_assets/sv_handgun.PNG" id="9_sc8oj"]
+[ext_resource type="Texture2D" uid="uid://5xg73u1xoy12" path="res://assets/game_objects/soldier_shared_assets/circle_particle.png" id="10_ywkl1"]
+[ext_resource type="Texture2D" uid="uid://d1tj4nna78nqc" path="res://assets/game_objects/soldier_shared_assets/sv_head_dead.PNG" id="11_hs2km"]
+[ext_resource type="Texture2D" uid="uid://bowgp84k7g5j7" path="res://assets/game_objects/soldier_shared_assets/sv_standard_head.PNG" id="12_6y2h0"]
+[ext_resource type="Texture2D" uid="uid://cj66usod8ofxp" path="res://assets/game_objects/soldier_shared_assets/sv_right_arm.PNG" id="14_diguv"]
+[ext_resource type="Texture2D" uid="uid://cuiccwwbbifml" path="res://assets/game_objects/soldier_shared_assets/sv_right_elbow.PNG" id="14_fetqu"]
+[ext_resource type="Texture2D" uid="uid://bvqjqhbpplahi" path="res://assets/game_objects/soldier_shared_assets/sv_knife.PNG" id="16_hqm4a"]
+[ext_resource type="Shader" path="res://assets/game_objects/soldier_shared_assets/alpha_shader/alpha_shader.gdshader" id="17_fsr6j"]
+[ext_resource type="Texture2D" uid="uid://ddkq5e615l10l" path="res://assets/game_objects/soldier_shared_assets/alpha_shader/alpha_shader_mask.png" id="18_opf1d"]
+[ext_resource type="Texture2D" uid="uid://ddkebi0yxwcfv" path="res://assets/game_objects/soldier_shared_assets/sv_burnt_texture.png" id="19_cerbm"]
+[ext_resource type="Texture2D" uid="uid://bkqbt0qh6psoc" path="res://assets/game_objects/soldier_shared_assets/carbon_particle.png" id="20_lkt5l"]
+[ext_resource type="AudioStream" uid="uid://dosqmw08n04um" path="res://game_objects/enemies/shooter_enemy/standard_soviet/assets/sfx/gunshot_enemy.mp3" id="20_uwjxr"]
+[ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="22_fkfkr"]
+[ext_resource type="AudioStream" uid="uid://gel0wirmdxag" path="res://assets/game_objects/soldier_shared_assets/sfx/knife.mp3" id="23_fanx5"]
+[ext_resource type="AudioStream" uid="uid://cy4f314yw87j1" path="res://assets/game_objects/soldier_shared_assets/sfx/nyet_sfx.mp3" id="24_5now5"]
+[ext_resource type="AudioStream" uid="uid://bmplbc8g3k1yu" path="res://assets/game_objects/soldier_shared_assets/sfx/hit.mp3" id="25_xu3gw"]
+[ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="26_ly5qb"]
 
 [sub_resource type="Curve" id="Curve_e8pjr"]
 max_value = 0.8
@@ -40,7 +39,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0.967284, 0.896213, 0.79581, 1, 1, 1, 1, 1
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_bkxl7")
+"texture": ExtResource("11_hs2km")
 }],
 "loop": true,
 "name": &"_dead",
@@ -48,7 +47,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_qw75w")
+"texture": ExtResource("12_6y2h0")
 }],
 "loop": true,
 "name": &"_default",
@@ -60,13 +59,13 @@ offsets = PackedFloat32Array(0, 0.359375)
 colors = PackedColorArray(0.206398, 2.31629e-07, 5.41471e-08, 1, 0.905882, 0.0941176, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8fapm"]
-shader = ExtResource("18_ubptl")
+shader = ExtResource("17_fsr6j")
 shader_parameter/cutoff_one = -0.01
 shader_parameter/cutoff_two = 1.11
 shader_parameter/smooth_size = 0.0
 shader_parameter/invert_mask = false
 shader_parameter/masking_color = Color(1, 1, 1, 1)
-shader_parameter/mask = ExtResource("19_7vb6s")
+shader_parameter/mask = ExtResource("18_opf1d")
 
 [sub_resource type="Curve" id="Curve_6tpmy"]
 _data = [Vector2(0, 0.863158), 0.0, 0.221906, 0, 0, Vector2(0.482051, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.652632), -0.898026, 0.0, 0, 0]
@@ -969,70 +968,58 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Textures/Body/Head/Helmet:rotation")
+tracks/2/path = NodePath("Textures/LeftLeg/LeftFoot:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-0.0349066]
+"values": [-0.436332]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Textures/LeftLeg/LeftFoot:rotation")
+tracks/3/path = NodePath("Textures/LeftLeg:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-0.436332]
+"values": [0.10472]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Textures/LeftLeg:rotation")
+tracks/4/path = NodePath("BurntTexture:material:shader_parameter/cutoff_two")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.10472]
+"values": [1.11]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("BurntTexture:material:shader_parameter/cutoff_two")
+tracks/5/path = NodePath("Textures/Body/RightArm/RightElbow:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.11]
+"values": [-0.352438]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Textures/Body/RightArm/RightElbow:rotation")
+tracks/6/path = NodePath("Textures/Body/LeftArm/LeftElbow:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.352438]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Textures/Body/LeftArm/LeftElbow:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -1243,22 +1230,10 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Textures/Body/Head/Helmet:position")
+tracks/9/path = NodePath("Textures:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.12),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2.3843, -39.6208), Vector2(-3.18874, -82.9848)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Textures:modulate")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.02, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
@@ -1326,99 +1301,6 @@ _data = {
 "_receive_damage_general": SubResource("Animation_rflfv")
 }
 
-[sub_resource type="Animation" id="Animation_8527d"]
-resource_name = "_state_change_1"
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Textures:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.952941, 0.309804, 0.384314, 1), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Textures/Body:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = false
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [-0.0349066, 0.0294007, -0.0349066]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Textures/Body/Head:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = false
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.15, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.139626, 0.139626, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Textures/Body/Head/Helmet:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = false
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.55, 0.65, 0.95, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2.3843, -39.6208), Vector2(90.5453, -81.8744), Vector2(133.757, 40.1297), Vector2(154.062, 201.499), Vector2(154.306, 194.503), Vector2(154.062, 201.499), Vector2(154.062, 201.499), Vector2(143, 38)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Textures/Body/Head/Helmet:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = false
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-0.0349066, 4.01426]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Textures/Body/Head/Helmet:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = false
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Textures/Body/Head/Helmet:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = false
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.95),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dnxqx"]
-_data = {
-"_state_change_1": SubResource("Animation_8527d")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyc3c"]
 size = Vector2(121, 188)
 
@@ -1439,14 +1321,14 @@ point_count = 3
 offsets = PackedFloat32Array(0, 0.245033, 1)
 colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
-[node name="HandgunSoviet" type="CharacterBody2D"]
+[node name="StandardSoviet" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(1, 75.798)
 scale = Vector2(1.23684, 1)
-texture = ExtResource("2_pg07p")
+texture = ExtResource("1_wjj00")
 
 [node name="Textures" type="Node2D" parent="."]
 position = Vector2(0, -89)
@@ -1454,47 +1336,46 @@ position = Vector2(0, -89)
 [node name="LeftLeg" type="Sprite2D" parent="Textures"]
 position = Vector2(-8.55054, 57.2865)
 rotation = 0.10472
-texture = ExtResource("2_6bqp4")
+texture = ExtResource("2_47b8f")
 offset = Vector2(-5.69067, 12.4666)
 
 [node name="LeftFoot" type="Sprite2D" parent="Textures/LeftLeg"]
 position = Vector2(-10.5098, 33.1283)
 rotation = -0.436332
-texture = ExtResource("3_n8n6v")
+texture = ExtResource("3_eicx4")
 offset = Vector2(-20, 33)
 
 [node name="RightLeg" type="Sprite2D" parent="Textures"]
 position = Vector2(15.7349, 51.3984)
-texture = ExtResource("4_87hdw")
+texture = ExtResource("4_cdyuu")
 offset = Vector2(-14.421, 26.3874)
 
 [node name="RightLeg" type="Sprite2D" parent="Textures/RightLeg"]
 position = Vector2(12.357, 45.459)
-texture = ExtResource("5_ie4xy")
+texture = ExtResource("5_nmaio")
 offset = Vector2(4.85486, 35.9279)
 
 [node name="Body" type="Sprite2D" parent="Textures"]
 position = Vector2(0, 48.6792)
 rotation = -0.0349066
-texture = ExtResource("6_crj6m")
+texture = ExtResource("6_7i16u")
 offset = Vector2(0, -39)
 
 [node name="LeftArm" type="Sprite2D" parent="Textures/Body"]
 show_behind_parent = true
 position = Vector2(-27.8433, -75.277)
 rotation = 0.0549017
-texture = ExtResource("7_7uy5c")
+texture = ExtResource("7_ra3sx")
 offset = Vector2(32.048, 17.2848)
 
 [node name="LeftElbow" type="Sprite2D" parent="Textures/Body/LeftArm"]
-position = Vector2(-35.7468, 29.1582)
-texture = ExtResource("8_fcivq")
+position = Vector2(-36.5359, 29.3977)
+texture = ExtResource("8_27nyh")
 offset = Vector2(-19.5052, -2.47662)
 
 [node name="Hand" type="Sprite2D" parent="Textures/Body/LeftArm/LeftElbow"]
 position = Vector2(-45.6026, -8.17097)
-rotation = 0.123317
-texture = ExtResource("9_juc2k")
+texture = ExtResource("9_sc8oj")
 offset = Vector2(11.1335, -22.7057)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Textures/Body/LeftArm/LeftElbow/Hand"]
@@ -1505,7 +1386,7 @@ lifetime = 0.1
 one_shot = true
 lifetime_randomness = 0.32
 local_coords = true
-texture = ExtResource("11_j3rju")
+texture = ExtResource("10_ywkl1")
 direction = Vector2(-1, 0)
 initial_velocity_min = 616.76
 initial_velocity_max = 616.76
@@ -1518,26 +1399,21 @@ sprite_frames = SubResource("SpriteFrames_4ywge")
 animation = &"_default"
 offset = Vector2(0, -30)
 
-[node name="Helmet" type="Sprite2D" parent="Textures/Body/Head"]
-position = Vector2(2.3843, -39.6208)
-rotation = -0.0349066
-texture = ExtResource("13_6cd0k")
-
 [node name="RightArm" type="Sprite2D" parent="Textures/Body"]
 position = Vector2(39.5333, -72.0458)
-texture = ExtResource("14_1b4ow")
+texture = ExtResource("14_diguv")
 offset = Vector2(-97.5302, -24.9592)
 
 [node name="RightElbow" type="Sprite2D" parent="Textures/Body/RightArm"]
 position = Vector2(25.8353, 36.8032)
 rotation = -0.352438
-texture = ExtResource("15_dow4x")
+texture = ExtResource("14_fetqu")
 offset = Vector2(-33.2665, -1.23141)
 
 [node name="Knife" type="Sprite2D" parent="Textures/Body/RightArm/RightElbow"]
 show_behind_parent = true
 position = Vector2(-59.9371, -5.24389)
-texture = ExtResource("16_sv2f0")
+texture = ExtResource("16_hqm4a")
 offset = Vector2(1.26416, 20.7758)
 
 [node name="BloodParticles" type="CPUParticles2D" parent="Textures/Body"]
@@ -1547,7 +1423,7 @@ emitting = false
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.44
-texture = ExtResource("11_j3rju")
+texture = ExtResource("10_ywkl1")
 emission_shape = 1
 emission_sphere_radius = 3.0
 direction = Vector2(0, 0)
@@ -1565,7 +1441,7 @@ color_ramp = SubResource("Gradient_q71ox")
 visible = false
 material = SubResource("ShaderMaterial_8fapm")
 position = Vector2(-55, -65)
-texture = ExtResource("19_vlwon")
+texture = ExtResource("19_cerbm")
 
 [node name="CarbonParticles" type="CPUParticles2D" parent="."]
 position = Vector2(-24, -90)
@@ -1574,7 +1450,7 @@ amount = 20
 lifetime = 0.6
 one_shot = true
 explosiveness = 0.22
-texture = ExtResource("21_3vvl8")
+texture = ExtResource("20_lkt5l")
 emission_shape = 3
 emission_rect_extents = Vector2(1, 140)
 spread = 14.15
@@ -1592,11 +1468,6 @@ libraries = {
 [node name="ReceiveDamage" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_yulle")
-}
-
-[node name="StateChangePlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_dnxqx")
 }
 
 [node name="BodyCollShape" type="CollisionShape2D" parent="."]
@@ -1623,20 +1494,20 @@ rotation = -0.017936
 shape = SubResource("RectangleShape2D_ohpsj")
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_yhcsw")
-script = ExtResource("23_pj3h2")
+stream = ExtResource("20_uwjxr")
+script = ExtResource("22_fkfkr")
 
 [node name="StabSFXPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("24_f554g")
-script = ExtResource("23_pj3h2")
+stream = ExtResource("23_fanx5")
+script = ExtResource("22_fkfkr")
 
 [node name="DeathSFXPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("24_7tu7q")
-script = ExtResource("23_pj3h2")
+stream = ExtResource("24_5now5")
+script = ExtResource("22_fkfkr")
 
 [node name="ReceiveDamageSFXPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("26_0ejfq")
-script = ExtResource("23_pj3h2")
+stream = ExtResource("25_xu3gw")
+script = ExtResource("22_fkfkr")
 
 [node name="ShootingTimer" type="Timer" parent="."]
 one_shot = true
@@ -1650,7 +1521,7 @@ lifetime = 0.8
 one_shot = true
 speed_scale = 1.2
 explosiveness = 0.7
-texture = ExtResource("27_avbeb")
+texture = ExtResource("26_ly5qb")
 emission_shape = 3
 emission_rect_extents = Vector2(60, 1)
 direction = Vector2(0, -1)
