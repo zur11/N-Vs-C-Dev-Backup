@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="World" load_steps=15 format=3 uid="uid://bck8dreransuu"]
+[gd_resource type="Resource" script_class="World" load_steps=16 format=3 uid="uid://bck8dreransuu"]
 
 [ext_resource type="Script" path="res://data/worlds/world.gd" id="1_3dmbe"]
-[ext_resource type="Texture2D" uid="uid://diek5epm2qkcl" path="res://screens/sub_menus/games_menu/games_menu_bgs/st_winter_menu_bg/assets/st_winter_menu_bg.png" id="1_54r4s"]
+[ext_resource type="Texture2D" uid="uid://diek5epm2qkcl" path="res://screens/sub_menus/games_menu/games_menu_bgs/stalingrad_winter_bg/assets/st_winter_menu_bg.png" id="1_54r4s"]
 [ext_resource type="Script" path="res://data/min_max_int_rate/min_max_int_rate.gd" id="1_uv2fe"]
 [ext_resource type="Resource" uid="uid://d10qjo0sdemd8" path="res://data/worlds/stalingrad_winter/level_1/level_1_tr.tres" id="2_ojq3k"]
 [ext_resource type="Resource" uid="uid://bicfkv3i0xtok" path="res://data/worlds/stalingrad_winter/level_2/level_2_tr.tres" id="3_oejaj"]
+[ext_resource type="PackedScene" uid="uid://dt3fjh0hkvrps" path="res://screens/sub_menus/games_menu/games_menu_bgs/stalingrad_winter_bg/stalingrad_winter_bg.tscn" id="3_qs34y"]
 [ext_resource type="Resource" uid="uid://mwfh5ulvg8yu" path="res://data/worlds/stalingrad_winter/level_3/level_3_tr.tres" id="5_urmmr"]
 [ext_resource type="Resource" uid="uid://wtx1o6ql0esv" path="res://data/worlds/stalingrad_winter/level_4/level_4_tr.tres" id="6_5nraf"]
 [ext_resource type="Resource" uid="uid://be1dvlepgewcs" path="res://data/worlds/stalingrad_winter/level_5/level_5_tr.tres" id="7_e2ufy"]
@@ -23,6 +24,7 @@ maximum_value = 12
 script = ExtResource("1_3dmbe")
 world_name = "Stalingrad Winter"
 games_menu_background = ExtResource("1_54r4s")
+games_menu_bg_scene = ExtResource("3_qs34y")
 levels = Array[Resource("res://data/worlds/level.gd")]([ExtResource("2_ojq3k"), ExtResource("3_oejaj"), ExtResource("5_urmmr"), ExtResource("6_5nraf"), ExtResource("7_e2ufy"), ExtResource("9_7rpwh"), ExtResource("10_kulx6"), ExtResource("11_0j0p2"), ExtResource("12_a5ygc"), ExtResource("13_1psea")])
 coin_dropping_rate = SubResource("Resource_mog0b")
 falling_coin_value = 15
