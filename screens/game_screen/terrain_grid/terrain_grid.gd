@@ -73,8 +73,9 @@ func place_ally_in_cell(cell:Cell, ally:PackedScene):
 	cell.is_occupied = true
 	
 	if instantiated_ally.occupies_two_cells:
-		adjacent_cell.is_occupied = true
-		instantiated_ally.cell_occupant_item_destroyed.connect(_on_ally_item_destroyed)
+		if adjacent_cell:
+			adjacent_cell.is_occupied = true
+			instantiated_ally.cell_occupant_item_destroyed.connect(_on_ally_item_destroyed)
 	
 	instantiated_ally.ally_died.connect(_on_placed_ally_ally_died)
 

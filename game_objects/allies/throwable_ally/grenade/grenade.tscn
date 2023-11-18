@@ -1,9 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://bs6a1e6fgv7y3"]
+[gd_scene load_steps=22 format=3 uid="uid://bs6a1e6fgv7y3"]
 
 [ext_resource type="Script" path="res://game_objects/allies/throwable_ally/grenade/grenade.gd" id="1_vh852"]
+[ext_resource type="Texture2D" uid="uid://bjgma20s2rjwa" path="res://game_objects/allies/throwable_ally/grenade/ally_card_assets/grenade.png" id="2_7yb5d"]
 [ext_resource type="Texture2D" uid="uid://saxbm5r1rdmd" path="res://game_objects/allies/throwable_ally/grenade/assets/grenade_explosion/grenade_explosion_1.png" id="3_1ytgc"]
 [ext_resource type="Texture2D" uid="uid://cwiovgw6acvfd" path="res://game_objects/allies/throwable_ally/grenade/assets/red_army_grenade.png" id="3_bkvhi"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="3_jwvro"]
+[ext_resource type="Texture2D" uid="uid://b6tosbqyfd31l" path="res://game_objects/allies/throwable_ally/grenade/ally_card_assets/grenade_selected.png" id="3_t6r4k"]
 [ext_resource type="Texture2D" uid="uid://ucccjshbwmer" path="res://game_objects/allies/throwable_ally/grenade/assets/grenade_explosion/grenade_explosion_2.png" id="4_q40b0"]
 [ext_resource type="Texture2D" uid="uid://b1ounqnho5d4h" path="res://game_objects/allies/throwable_ally/grenade/assets/grenade_explosion/grenade_explosion_3.png" id="5_dlsit"]
 [ext_resource type="Texture2D" uid="uid://tluu85vwuab8" path="res://game_objects/allies/throwable_ally/grenade/assets/grenade_explosion/grenade_explosion_4.png" id="6_uy6mf"]
@@ -119,6 +121,12 @@ size = Vector2(0, 0)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_vh852")
+ally_name = "grenade"
+ally_card_loading_time = 40
+normal_btn_texture = ExtResource("2_7yb5d")
+selected_btn_texture = ExtResource("3_t6r4k")
+price = 125
+character_faction = "ally"
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_32rgw")

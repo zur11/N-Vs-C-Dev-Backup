@@ -251,13 +251,13 @@ enemy = "eagleGerman"
 [sub_resource type="Resource" id="Resource_lqk88"]
 script = ExtResource("10_cnuoy")
 is_flagged = true
-minimum_spawning_rate = 1.0
-maximum_spawning_rate = 3.0
+minimum_spawning_rate = 2.0
+maximum_spawning_rate = 5.0
 enemies = Array[ExtResource("9_wt6vj")]([SubResource("Resource_7rtl5"), SubResource("Resource_21bvt"), SubResource("Resource_a6rgt")])
 
 [resource]
 script = ExtResource("14_xg032")
-level_unlocked = false
+level_unlocked = true
 game_background = ExtResource("4_lkxkc")
 game_foreground = ExtResource("5_q4v28")
 level_name = "level_7"

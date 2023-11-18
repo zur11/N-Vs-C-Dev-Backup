@@ -198,6 +198,7 @@ _data = {
 }
 
 [node name="GameWonPopup" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchor_right = 0.812
 anchor_bottom = 0.956

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelStalingradSummer" load_steps=71 format=3 uid="uid://cvsiyos131jcu"]
+[gd_resource type="Resource" script_class="LevelStalingradSummer" load_steps=73 format=3 uid="uid://cvsiyos131jcu"]
 
 [ext_resource type="Script" path="res://data/ally_presentation/ally_presentation.gd" id="1_s5k8n"]
 [ext_resource type="Script" path="res://data/min_max_int_rate/min_max_int_rate.gd" id="2_olv4o"]
@@ -36,8 +36,8 @@ enemy = "standardGerman"
 [sub_resource type="Resource" id="Resource_y4lcd"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 25.0
-maximum_spawning_rate = 35.0
+minimum_spawning_rate = 17.0
+maximum_spawning_rate = 22.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_a2tad")])
 
 [sub_resource type="Resource" id="Resource_o3dv6"]
@@ -48,8 +48,8 @@ enemy = "handGunGerman"
 [sub_resource type="Resource" id="Resource_vgbr6"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 23.0
-maximum_spawning_rate = 25.0
+minimum_spawning_rate = 12.0
+maximum_spawning_rate = 15.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_o3dv6")])
 
 [sub_resource type="Resource" id="Resource_ji8r4"]
@@ -60,21 +60,26 @@ enemy = "standardGerman"
 [sub_resource type="Resource" id="Resource_deg51"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 23.0
-maximum_spawning_rate = 25.0
+minimum_spawning_rate = 15.0
+maximum_spawning_rate = 17.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_ji8r4")])
 
 [sub_resource type="Resource" id="Resource_ben7w"]
 script = ExtResource("10_olbe4")
-quantity = 1
+quantity = 2
 enemy = "standardGerman"
+
+[sub_resource type="Resource" id="Resource_ux8rg"]
+script = ExtResource("10_olbe4")
+quantity = 1
+enemy = "handGunGerman"
 
 [sub_resource type="Resource" id="Resource_48lc4"]
 script = ExtResource("11_rahnh")
 is_flagged = false
 minimum_spawning_rate = 1.0
 maximum_spawning_rate = 3.0
-enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_ben7w")])
+enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_ben7w"), SubResource("Resource_ux8rg")])
 
 [sub_resource type="Resource" id="Resource_hvsxw"]
 script = ExtResource("10_olbe4")
@@ -84,8 +89,8 @@ enemy = "handGunGerman"
 [sub_resource type="Resource" id="Resource_f1gj0"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 23.0
-maximum_spawning_rate = 25.0
+minimum_spawning_rate = 15.0
+maximum_spawning_rate = 18.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_hvsxw")])
 
 [sub_resource type="Resource" id="Resource_sdv6x"]
@@ -106,8 +111,8 @@ enemy = "handGunGerman"
 [sub_resource type="Resource" id="Resource_2c84h"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 23.0
-maximum_spawning_rate = 25.0
+minimum_spawning_rate = 16.0
+maximum_spawning_rate = 19.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_sdv6x"), SubResource("Resource_quxko"), SubResource("Resource_n0o7o")])
 
 [sub_resource type="Resource" id="Resource_bdg3j"]
@@ -118,8 +123,8 @@ enemy = "standardGerman"
 [sub_resource type="Resource" id="Resource_cw3kf"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 34.0
-maximum_spawning_rate = 35.0
+minimum_spawning_rate = 15.0
+maximum_spawning_rate = 18.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_bdg3j")])
 
 [sub_resource type="Resource" id="Resource_fvkgw"]
@@ -129,7 +134,7 @@ enemy = "standardGerman"
 
 [sub_resource type="Resource" id="Resource_fvg8d"]
 script = ExtResource("10_olbe4")
-quantity = 1
+quantity = 2
 enemy = "eagleGerman"
 
 [sub_resource type="Resource" id="Resource_xv0sr"]
@@ -140,8 +145,8 @@ enemy = "bayonetGerman"
 [sub_resource type="Resource" id="Resource_2n5mp"]
 script = ExtResource("11_rahnh")
 is_flagged = true
-minimum_spawning_rate = 1.0
-maximum_spawning_rate = 3.0
+minimum_spawning_rate = 3.0
+maximum_spawning_rate = 5.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_fvkgw"), SubResource("Resource_fvg8d"), SubResource("Resource_xv0sr")])
 
 [sub_resource type="Resource" id="Resource_5xfmx"]
@@ -152,13 +157,13 @@ enemy = "standardGerman"
 [sub_resource type="Resource" id="Resource_72wby"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 10.0
-maximum_spawning_rate = 11.0
+minimum_spawning_rate = 11.0
+maximum_spawning_rate = 14.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_5xfmx")])
 
 [sub_resource type="Resource" id="Resource_6nob5"]
 script = ExtResource("10_olbe4")
-quantity = 2
+quantity = 4
 enemy = "standardGerman"
 
 [sub_resource type="Resource" id="Resource_pl5oa"]
@@ -168,14 +173,14 @@ enemy = "handGunGerman"
 
 [sub_resource type="Resource" id="Resource_hapcf"]
 script = ExtResource("10_olbe4")
-quantity = 1
+quantity = 2
 enemy = "eagleGerman"
 
 [sub_resource type="Resource" id="Resource_j2lj0"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 1.0
-maximum_spawning_rate = 3.0
+minimum_spawning_rate = 3.0
+maximum_spawning_rate = 5.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_6nob5"), SubResource("Resource_pl5oa"), SubResource("Resource_hapcf")])
 
 [sub_resource type="Resource" id="Resource_7do6e"]
@@ -186,13 +191,13 @@ enemy = "standardGerman"
 [sub_resource type="Resource" id="Resource_uqmrj"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 10.0
-maximum_spawning_rate = 11.0
+minimum_spawning_rate = 12.0
+maximum_spawning_rate = 14.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_7do6e")])
 
 [sub_resource type="Resource" id="Resource_nq6mt"]
 script = ExtResource("10_olbe4")
-quantity = 1
+quantity = 2
 enemy = "standardGerman"
 
 [sub_resource type="Resource" id="Resource_703gx"]
@@ -208,25 +213,30 @@ enemy = "eagleGerman"
 [sub_resource type="Resource" id="Resource_xiywq"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 1.0
-maximum_spawning_rate = 3.0
+minimum_spawning_rate = 3.0
+maximum_spawning_rate = 5.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_nq6mt"), SubResource("Resource_703gx"), SubResource("Resource_eeus4")])
 
 [sub_resource type="Resource" id="Resource_cnlnu"]
 script = ExtResource("10_olbe4")
-quantity = 1
+quantity = 2
 enemy = "standardGerman"
+
+[sub_resource type="Resource" id="Resource_ljw8d"]
+script = ExtResource("10_olbe4")
+quantity = 1
+enemy = "handGunGerman"
 
 [sub_resource type="Resource" id="Resource_5s2g2"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 10.0
-maximum_spawning_rate = 11.0
-enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_cnlnu")])
+minimum_spawning_rate = 11.0
+maximum_spawning_rate = 14.0
+enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_cnlnu"), SubResource("Resource_ljw8d")])
 
 [sub_resource type="Resource" id="Resource_qd3di"]
 script = ExtResource("10_olbe4")
-quantity = 1
+quantity = 2
 enemy = "standardGerman"
 
 [sub_resource type="Resource" id="Resource_7xtdh"]
@@ -242,8 +252,8 @@ enemy = "eagleGerman"
 [sub_resource type="Resource" id="Resource_cml76"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 1.0
-maximum_spawning_rate = 3.0
+minimum_spawning_rate = 3.0
+maximum_spawning_rate = 5.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_qd3di"), SubResource("Resource_7xtdh"), SubResource("Resource_ionbp")])
 
 [sub_resource type="Resource" id="Resource_5ct6u"]
@@ -254,18 +264,18 @@ enemy = "handGunGerman"
 [sub_resource type="Resource" id="Resource_lv05b"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 10.0
-maximum_spawning_rate = 11.0
+minimum_spawning_rate = 12.0
+maximum_spawning_rate = 15.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_5ct6u")])
 
 [sub_resource type="Resource" id="Resource_2vdtc"]
 script = ExtResource("10_olbe4")
-quantity = 1
+quantity = 2
 enemy = "standardGerman"
 
 [sub_resource type="Resource" id="Resource_ocev8"]
 script = ExtResource("10_olbe4")
-quantity = 2
+quantity = 3
 enemy = "handGunGerman"
 
 [sub_resource type="Resource" id="Resource_evofi"]
@@ -275,14 +285,14 @@ enemy = "bayonetGerman"
 
 [sub_resource type="Resource" id="Resource_cy34m"]
 script = ExtResource("10_olbe4")
-quantity = 1
+quantity = 2
 enemy = "eagleGerman"
 
 [sub_resource type="Resource" id="Resource_287k6"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 1.0
-maximum_spawning_rate = 3.0
+minimum_spawning_rate = 3.0
+maximum_spawning_rate = 5.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_2vdtc"), SubResource("Resource_ocev8"), SubResource("Resource_evofi"), SubResource("Resource_cy34m")])
 
 [sub_resource type="Resource" id="Resource_d83k4"]
@@ -293,8 +303,8 @@ enemy = "standardGerman"
 [sub_resource type="Resource" id="Resource_7um8q"]
 script = ExtResource("11_rahnh")
 is_flagged = false
-minimum_spawning_rate = 10.0
-maximum_spawning_rate = 11.0
+minimum_spawning_rate = 12.0
+maximum_spawning_rate = 15.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_d83k4")])
 
 [sub_resource type="Resource" id="Resource_2ahms"]
@@ -304,29 +314,29 @@ enemy = "standardGerman"
 
 [sub_resource type="Resource" id="Resource_f8xhl"]
 script = ExtResource("10_olbe4")
-quantity = 1
+quantity = 3
 enemy = "handGunGerman"
 
 [sub_resource type="Resource" id="Resource_oe2sf"]
 script = ExtResource("10_olbe4")
-quantity = 1
+quantity = 3
 enemy = "bayonetGerman"
 
 [sub_resource type="Resource" id="Resource_kyra1"]
 script = ExtResource("10_olbe4")
-quantity = 1
+quantity = 2
 enemy = "eagleGerman"
 
 [sub_resource type="Resource" id="Resource_4stw8"]
 script = ExtResource("11_rahnh")
 is_flagged = true
-minimum_spawning_rate = 1.0
+minimum_spawning_rate = 2.0
 maximum_spawning_rate = 4.0
 enemies = Array[ExtResource("10_olbe4")]([SubResource("Resource_2ahms"), SubResource("Resource_f8xhl"), SubResource("Resource_oe2sf"), SubResource("Resource_kyra1")])
 
 [resource]
 script = ExtResource("15_0us3v")
-level_unlocked = false
+level_unlocked = true
 game_background = ExtResource("4_q5ssi")
 game_foreground = ExtResource("5_i1dp3")
 level_name = "level_9"
