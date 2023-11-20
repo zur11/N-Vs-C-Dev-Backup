@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://screens/game_screen/game_screen.gd" id="1_k0a87"]
 [ext_resource type="PackedScene" uid="uid://cvxpu3e3wl11t" path="res://screens/game_screen/terrain_grid/terrain_grid.tscn" id="2_3aeo5"]
-[ext_resource type="Resource" uid="uid://nw6qf1u8l4eq" path="res://data/worlds/stalingrad_summer/level_10/level_10_st.tres" id="2_7udk3"]
+[ext_resource type="Resource" uid="uid://nw6qf1u8l4eq" path="res://data/worlds/stalingrad_summer/level_10/level_10_stalingrad_sm.tres" id="2_7udk3"]
 [ext_resource type="PackedScene" uid="uid://tqidibrgm2uf" path="res://screens/game_screen/ally_card_selector/ally_card_selector.tscn" id="3_bsn3m"]
 [ext_resource type="PackedScene" uid="uid://dud1ujrys61qg" path="res://screens/game_screen/balance_displayer/balance_displayer.tscn" id="5_15ded"]
 [ext_resource type="PackedScene" uid="uid://c8ja2opfaohj7" path="res://screens/game_screen/row_cannons/row_cannons.tscn" id="6_17so7"]

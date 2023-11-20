@@ -1146,9 +1146,10 @@ autoplay = "default"
 offset = Vector2(0, -30)
 
 [node name="Hood" type="Sprite2D" parent="Textures/Body/Head"]
-position = Vector2(-3.10989, -33.9711)
-rotation = -0.02244
+position = Vector2(-2.43237, 2.15247)
+rotation = -0.0209661
 texture = ExtResource("18_vuk6v")
+offset = Vector2(0.133198, -36.1297)
 
 [node name="Blood Particles" type="CPUParticles2D" parent="Textures/Body"]
 position = Vector2(13, -62)

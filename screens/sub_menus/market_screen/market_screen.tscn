@@ -1,15 +1,51 @@
-[gd_scene load_steps=11 format=3 uid="uid://tk4c25rwhw0q"]
+[gd_scene load_steps=15 format=3 uid="uid://tk4c25rwhw0q"]
 
 [ext_resource type="Script" path="res://screens/sub_menus/market_screen/market_screen.gd" id="1_vrx16"]
 [ext_resource type="Texture2D" uid="uid://1hytjmdd1qwd" path="res://screens/sub_menus/market_screen/assets/market_background.png" id="2_p0k5p"]
+[ext_resource type="Texture2D" uid="uid://gnuhcgqn5pdp" path="res://screens/sub_menus/market_screen/assets/lamplight.png" id="3_r4gx7"]
 [ext_resource type="Texture2D" uid="uid://cjgjnvdvgceab" path="res://assets/screens/shared_assets/go_back_2.png" id="4_ftdnd"]
 [ext_resource type="Texture2D" uid="uid://jwmwcyqtv2kh" path="res://assets/screens/shared_assets/go_back_1.png" id="5_tpf87"]
+[ext_resource type="Texture2D" uid="uid://0ec2ysu7nywy" path="res://screens/sub_menus/market_screen/assets/market_sign.png" id="6_o0poa"]
 [ext_resource type="AudioStream" uid="uid://cc7rpmevwkpyo" path="res://assets/audio/sfx/buttons_sfx/click_2.mp3" id="6_vlbpn"]
 [ext_resource type="PackedScene" uid="uid://1c7quxy7mj4w" path="res://screens/sub_menus/market_screen/products_container/products_container.tscn" id="7_bd58r"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="7_xbif4"]
 [ext_resource type="PackedScene" uid="uid://cfb8cp51xqjwy" path="res://screens/sub_menus/market_screen/products_container/buy_product_button/buy_product_button.tscn" id="8_37i6p"]
 [ext_resource type="Texture2D" uid="uid://b8b0dliakxqy1" path="res://screens/sub_menus/market_screen/assets/7th_slot_bag.png" id="9_cce85"]
 [ext_resource type="PackedScene" uid="uid://ds50m5bk5qstt" path="res://global_objects/user_balance_displayer/user_balance_displayer.tscn" id="10_4818i"]
+
+[sub_resource type="Animation" id="Animation_au0jy"]
+resource_name = "_appearing"
+length = 1.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lamplight:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.8, 0.85, 0.9, 0.95, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.133333), Color(1, 1, 1, 0.833333), Color(1, 1, 1, 0.129412), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarketSign:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7, 0.9, 0.95, 1.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(592, -235), Vector2(592, -19), Vector2(592, -30), Vector2(592, -19)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_niy7t"]
+_data = {
+"_appearing": SubResource("Animation_au0jy")
+}
 
 [node name="MarketScreen" type="Control"]
 layout_mode = 3
@@ -24,6 +60,11 @@ script = ExtResource("1_vrx16")
 layout_mode = 0
 texture = ExtResource("2_p0k5p")
 
+[node name="Lamplight" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.129412)
+position = Vector2(237, 291)
+texture = ExtResource("3_r4gx7")
+
 [node name="GoBackButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1752.0
@@ -34,6 +75,14 @@ texture_normal = ExtResource("5_tpf87")
 texture_pressed = ExtResource("4_ftdnd")
 texture_hover = ExtResource("4_ftdnd")
 flip_h = true
+
+[node name="MarketSign" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 592.0
+offset_top = -19.0
+offset_right = 1124.0
+offset_bottom = 209.0
+texture = ExtResource("6_o0poa")
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_vlbpn")
@@ -55,5 +104,11 @@ product_text = "Unlock 7 Slots"
 
 [node name="UserBalanceDisplayer" parent="." instance=ExtResource("10_4818i")]
 position = Vector2(19, 22)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "_appearing"
+libraries = {
+"": SubResource("AnimationLibrary_niy7t")
+}
 
 [connection signal="pressed" from="GoBackButton" to="." method="_on_go_back_button_pressed"]
