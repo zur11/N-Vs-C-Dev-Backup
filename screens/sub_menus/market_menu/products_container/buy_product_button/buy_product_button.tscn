@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://cfb8cp51xqjwy"]
 
-[ext_resource type="Script" path="res://screens/sub_menus/market_screen/products_container/buy_product_button/buy_product_button.gd" id="1_myiog"]
+[ext_resource type="Script" path="res://screens/sub_menus/market_menu/products_container/buy_product_button/buy_product_button.gd" id="1_myiog"]
 [ext_resource type="FontFile" uid="uid://3iv2fk2whit2" path="res://assets/fonts/Molot.otf" id="2_4fp0r"]
-[ext_resource type="Texture2D" uid="uid://k6g6scuermxu" path="res://screens/sub_menus/market_screen/assets/price_tag.png" id="3_0ym14"]
-[ext_resource type="Texture2D" uid="uid://ga5i84ktdy87" path="res://screens/sub_menus/market_screen/assets/buy_tag.png" id="3_oif88"]
-[ext_resource type="Texture2D" uid="uid://dm5iq02kalll0" path="res://screens/sub_menus/market_screen/assets/description_box_texture.png" id="5_7xsgh"]
+[ext_resource type="Texture2D" uid="uid://k6g6scuermxu" path="res://screens/sub_menus/market_menu/assets/price_tag.png" id="3_0ym14"]
+[ext_resource type="Texture2D" uid="uid://ga5i84ktdy87" path="res://screens/sub_menus/market_menu/assets/buy_tag.png" id="3_oif88"]
+[ext_resource type="Texture2D" uid="uid://dm5iq02kalll0" path="res://screens/sub_menus/market_menu/assets/description_box_texture.png" id="5_7xsgh"]
 
 [sub_resource type="Animation" id="Animation_trwg1"]
 length = 0.001

@@ -1,5 +1,5 @@
 #@tool
-class_name MarketScreen extends Control
+class_name MarketMenu extends Control
 
 signal go_back
 

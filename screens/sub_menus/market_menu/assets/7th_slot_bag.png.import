@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ga5i84ktdy87"
-path="res://.godot/imported/buy_tag.png-feb3837fe8f4c615237b16d42710f866.ctex"
+uid="uid://b8b0dliakxqy1"
+path="res://.godot/imported/7th_slot_bag.png-9f2e3abb7124d5b51bf44fb77d67ee40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/sub_menus/market_screen/assets/buy_tag.png"
-dest_files=["res://.godot/imported/buy_tag.png-feb3837fe8f4c615237b16d42710f866.ctex"]
+source_file="res://screens/sub_menus/market_menu/assets/7th_slot_bag.png"
+dest_files=["res://.godot/imported/7th_slot_bag.png-9f2e3abb7124d5b51bf44fb77d67ee40.ctex"]
 
 [params]
 

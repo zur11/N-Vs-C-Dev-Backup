@@ -158,6 +158,8 @@ shape = SubResource("RectangleShape2D_b02q3")
 one_shot = true
 
 [node name="ExplosionBlast" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
 [node name="BlastCollShape" type="CollisionShape2D" parent="ExplosionBlast"]
 unique_name_in_owner = true

@@ -5,6 +5,9 @@ signal go_back
 var _level_selector: LevelSelector
 var _loading_new_world : bool
 
+@warning_ignore("unused_private_class_variable")
+var _world_icon_scenes : Array[PackedScene] = [load("res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/stalingrad_icon.tscn"), load("res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/stalingrad_2_icon.tscn"), load("res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/budapest_icon.tscn")]
+
 @onready var _world_selector : WorldSelector = $WorldSelector
 @onready var _background_container : Control = $BackgroundContainer
 

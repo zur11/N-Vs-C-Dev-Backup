@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://oq6aen6b7qdb"]
+[gd_scene load_steps=5 format=3 uid="uid://oq6aen6b7qdb"]
 
 [ext_resource type="Script" path="res://game_objects/components/bullet/cannon_bullet/cannon_bullet.gd" id="1_jclg3"]
 [ext_resource type="Texture2D" uid="uid://dlajyoj7k3trp" path="res://game_objects/components/bullet/cannon_bullet/assets/cannon bullet.png" id="2_jv3o6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkhyt"]
+size = Vector2(44, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fypw4"]
 size = Vector2(44, 20)
 
 [node name="CannonBullet" type="CharacterBody2D"]
@@ -17,3 +20,11 @@ texture = ExtResource("2_jv3o6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_qkhyt")
+
+[node name="BulletBlast" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 682
+
+[node name="BlastCollShape" type="CollisionShape2D" parent="BulletBlast"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_fypw4")

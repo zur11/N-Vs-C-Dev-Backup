@@ -27,7 +27,7 @@ func _connect_row_cannons_signals():
 func _set_enabled_row_cannons():
 	match _playable_rows:
 		5:
-			for cannon in self.get_children():
+			for cannon in self.get_children() as Array[RowCannon]:
 				var row_cannon : RowCannon = cannon as RowCannon
 				_enabled_row_cannons.append(row_cannon)
 		3:

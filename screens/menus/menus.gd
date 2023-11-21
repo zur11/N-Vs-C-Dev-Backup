@@ -2,6 +2,13 @@ extends Node2D
 
 var display_games_menu_directly : bool
 
+var _games_menu_scene : PackedScene = load("res://screens/sub_menus/games_menu/games_menu.tscn")
+var _settings_menu_scene : PackedScene = load("res://screens/sub_menus/settings_menu/settings_menu.tscn")
+var _market_menu_scene : PackedScene = load("res://screens/sub_menus/market_menu/market_menu.tscn")
+
+
+
+
 func _ready():
 	($MainMenu as MainMenu).go_to_sub_menu.connect(_go_to_sub_menu)
 	if display_games_menu_directly:
@@ -11,15 +18,17 @@ func _on_toggle_music_playing():
 	MusicManager.play_main_stream()
 
 func _go_to_sub_menu(sub_menu_name:String):
-	var sub_menu:Node = load("res://screens/sub_menus/"+ sub_menu_name+"/"+ sub_menu_name+".tscn").instantiate()
+	var sub_menu:Node #= load("res://screens/sub_menus/"+ sub_menu_name+"/"+ sub_menu_name+".tscn").instantiate()
 
 	if sub_menu_name == "settings_menu":
+		sub_menu = _settings_menu_scene.instantiate() 
 		sub_menu.connect("toogle_music_playing", _on_toggle_music_playing)
 		SceneManagerSystem.get_container("SubMenuContainer").goto_scene(sub_menu)
 	elif sub_menu_name == "games_menu":
+		sub_menu = _games_menu_scene.instantiate() 
 		SceneManagerSystem.get_container("SubMenuContainer").goto_scene(sub_menu)
 	elif sub_menu_name == "market_screen":
-		
+		sub_menu = _market_menu_scene.instantiate() 
 		SceneManagerSystem.get_container("LeftSubMenuContainer").goto_scene(sub_menu)
 
 	await get_tree().create_timer(0.2).timeout

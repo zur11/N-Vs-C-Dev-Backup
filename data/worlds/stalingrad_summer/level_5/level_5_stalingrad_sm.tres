@@ -186,7 +186,7 @@ enemies = Array[ExtResource("10_62l1s")]([SubResource("Resource_i01sk"), SubReso
 
 [resource]
 script = ExtResource("13_3phc5")
-level_unlocked = true
+level_unlocked = false
 game_background = ExtResource("4_am4kn")
 game_foreground = ExtResource("5_0uysg")
 level_name = "Level 5"

@@ -32,19 +32,19 @@ enemy = "standardGerman"
 script = ExtResource("11_e3sgo")
 is_flagged = false
 minimum_spawning_rate = 15.0
-maximum_spawning_rate = 17.0
+maximum_spawning_rate = 18.0
 enemies = Array[ExtResource("10_0sg02")]([SubResource("Resource_2w3kg")])
 
 [sub_resource type="Resource" id="Resource_k7qnw"]
 script = ExtResource("10_0sg02")
-quantity = 1
+quantity = 2
 enemy = "standardGerman"
 
 [sub_resource type="Resource" id="Resource_2gqg7"]
 script = ExtResource("11_e3sgo")
 is_flagged = true
-minimum_spawning_rate = 14.0
-maximum_spawning_rate = 21.0
+minimum_spawning_rate = 1.0
+maximum_spawning_rate = 3.0
 enemies = Array[ExtResource("10_0sg02")]([SubResource("Resource_k7qnw")])
 
 [resource]

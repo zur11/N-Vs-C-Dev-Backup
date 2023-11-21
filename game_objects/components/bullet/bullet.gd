@@ -16,6 +16,15 @@ func _set_bullet_sender(new_value:GameCharacter):
 	bullet_sender = new_value
 	_set_bullet_collision_and_visibility_settings()
 	_set_inflicted_damage_points()
+	
+	if self is CannonBullet:
+		_set_cannon_bullet_blast_connections()
+
+func _set_cannon_bullet_blast_connections():
+	var _cannon_bullet_blast : Area2D = $BulletBlast
+	
+	_cannon_bullet_blast.body_entered.connect(_on_cannon_bullet_blast_body_entered)
+	
 
 func start_movement_process():
 	if bullet_sender.character_faction == "ally":
@@ -62,11 +71,14 @@ func _set_inflicted_damage_points():
 func _move_right():
 	var base_bullet_speed : float = 11.73
 	self.position.x += base_bullet_speed
-	_check_for_bullet_receiver(base_bullet_speed)
+	
+	if not self is CannonBullet:
+		_check_for_bullet_receiver(base_bullet_speed)
 
 func _move_left():
 	var base_bullet_speed : float = -11.73
 	self.position.x += base_bullet_speed
+	
 	_check_for_bullet_receiver(base_bullet_speed)
 
 func _check_for_bullet_receiver(bullet_speed:float):
@@ -92,3 +104,5 @@ func _animate_impact():
 	if not self is CannonBullet:
 		self.queue_free()
 		
+func _on_cannon_bullet_blast_body_entered(body:Node2D):
+	body.auto_destroy()

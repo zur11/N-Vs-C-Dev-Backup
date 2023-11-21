@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byg6o8ggvbyhn"
-path="res://.godot/imported/market_button_selected.png-75c003910d8f24bb6dcf59c76a65f114.ctex"
+uid="uid://ga5i84ktdy87"
+path="res://.godot/imported/buy_tag.png-571f61c116d026350ac079c29f42820f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/sub_menus/market_screen/assets/market_button_selected.png"
-dest_files=["res://.godot/imported/market_button_selected.png-75c003910d8f24bb6dcf59c76a65f114.ctex"]
+source_file="res://screens/sub_menus/market_menu/assets/buy_tag.png"
+dest_files=["res://.godot/imported/buy_tag.png-571f61c116d026350ac079c29f42820f.ctex"]
 
 [params]
 

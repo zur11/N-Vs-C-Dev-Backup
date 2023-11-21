@@ -1,17 +1,17 @@
 [gd_scene load_steps=11 format=3 uid="uid://tk4c25rwhw0q"]
 
-[ext_resource type="Script" path="res://screens/sub_menus/market_screen/market_screen.gd" id="1_vrx16"]
-[ext_resource type="Texture2D" uid="uid://1hytjmdd1qwd" path="res://screens/sub_menus/market_screen/assets/market_background.png" id="2_p0k5p"]
+[ext_resource type="Script" path="res://screens/sub_menus/market_menu/market_menu.gd" id="1_vrx16"]
+[ext_resource type="Texture2D" uid="uid://1hytjmdd1qwd" path="res://screens/sub_menus/market_menu/assets/market_background.png" id="2_p0k5p"]
 [ext_resource type="Texture2D" uid="uid://cjgjnvdvgceab" path="res://assets/screens/shared_assets/go_back_2.png" id="4_ftdnd"]
 [ext_resource type="Texture2D" uid="uid://jwmwcyqtv2kh" path="res://assets/screens/shared_assets/go_back_1.png" id="5_tpf87"]
 [ext_resource type="AudioStream" uid="uid://cc7rpmevwkpyo" path="res://assets/audio/sfx/buttons_sfx/click_2.mp3" id="6_vlbpn"]
-[ext_resource type="PackedScene" uid="uid://1c7quxy7mj4w" path="res://screens/sub_menus/market_screen/products_container/products_container.tscn" id="7_bd58r"]
+[ext_resource type="PackedScene" uid="uid://1c7quxy7mj4w" path="res://screens/sub_menus/market_menu/products_container/products_container.tscn" id="7_bd58r"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="7_xbif4"]
-[ext_resource type="PackedScene" uid="uid://cfb8cp51xqjwy" path="res://screens/sub_menus/market_screen/products_container/buy_product_button/buy_product_button.tscn" id="8_37i6p"]
-[ext_resource type="Texture2D" uid="uid://b8b0dliakxqy1" path="res://screens/sub_menus/market_screen/assets/7th_slot_bag.png" id="9_cce85"]
+[ext_resource type="PackedScene" uid="uid://cfb8cp51xqjwy" path="res://screens/sub_menus/market_menu/products_container/buy_product_button/buy_product_button.tscn" id="8_37i6p"]
+[ext_resource type="Texture2D" uid="uid://b8b0dliakxqy1" path="res://screens/sub_menus/market_menu/assets/7th_slot_bag.png" id="9_cce85"]
 [ext_resource type="PackedScene" uid="uid://ds50m5bk5qstt" path="res://global_objects/user_balance_displayer/user_balance_displayer.tscn" id="10_4818i"]
 
-[node name="MarketScreen" type="Control"]
+[node name="MarketMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
