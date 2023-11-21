@@ -2,19 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://cto61eke7joyb" path="res://assets/game_objects/soldier_shared_assets/circle_shadow.png" id="1_h2rfk"]
 [ext_resource type="Script" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.gd" id="1_vof6x"]
-[ext_resource type="Texture2D" uid="uid://bgfdah7d1bbit" path="res://game_objects/allies/money_provider/small_matrioshka/assets/matrioska_table.png" id="2_75hrx"]
 [ext_resource type="Script" path="res://data/min_max_int_rate/min_max_int_rate.gd" id="2_dguhb"]
 [ext_resource type="Texture2D" uid="uid://deancn2ggembf" path="res://game_objects/allies/money_provider/matrioshka/ally_card_assets/matrioshka_affordable.png" id="3_0danu"]
-[ext_resource type="Texture2D" uid="uid://c7myutdqydakx" path="res://game_objects/allies/money_provider/small_matrioshka/assets/matrioska_light_bottom.png" id="3_xt8nv"]
-[ext_resource type="Texture2D" uid="uid://yt8qgc6afwva" path="res://game_objects/allies/money_provider/small_matrioshka/assets/matrioska_bottom.png" id="4_8afsi"]
 [ext_resource type="Texture2D" uid="uid://b66ugbh3ptb7a" path="res://game_objects/allies/money_provider/matrioshka/ally_card_assets/matrioshka_selected.png" id="4_td47g"]
-[ext_resource type="Texture2D" uid="uid://moqbvuhpvqlb" path="res://game_objects/allies/money_provider/small_matrioshka/assets/matrioska_blink_1.png" id="5_llwjc"]
-[ext_resource type="Texture2D" uid="uid://ds5et50q0rqta" path="res://game_objects/allies/money_provider/small_matrioshka/assets/matrioska_blink_2.png" id="6_1qhlo"]
-[ext_resource type="Texture2D" uid="uid://otfy6kdsgjvf" path="res://game_objects/allies/money_provider/small_matrioshka/assets/matrioska_light_top.png" id="7_djra1"]
-[ext_resource type="Texture2D" uid="uid://bmk4clgngclvp" path="res://game_objects/allies/money_provider/small_matrioshka/assets/matrioska_top_dead.png" id="8_6rxoq"]
-[ext_resource type="Texture2D" uid="uid://dn237o7345anu" path="res://game_objects/allies/money_provider/small_matrioshka/assets/matrioska_top.png" id="8_iu2g0"]
+[ext_resource type="Texture2D" uid="uid://bgfdah7d1bbit" path="res://game_objects/allies/money_provider/matrioshka/assets/matrioska_table.png" id="6_t8fmq"]
+[ext_resource type="Texture2D" uid="uid://c7myutdqydakx" path="res://game_objects/allies/money_provider/matrioshka/assets/matrioska_light_bottom.png" id="7_3s42x"]
+[ext_resource type="Texture2D" uid="uid://yt8qgc6afwva" path="res://game_objects/allies/money_provider/matrioshka/assets/matrioska_bottom.png" id="8_0kev3"]
+[ext_resource type="Texture2D" uid="uid://moqbvuhpvqlb" path="res://game_objects/allies/money_provider/matrioshka/assets/matrioska_blink_1.png" id="9_cyyf0"]
+[ext_resource type="Texture2D" uid="uid://ds5et50q0rqta" path="res://game_objects/allies/money_provider/matrioshka/assets/matrioska_blink_2.png" id="10_p78hs"]
 [ext_resource type="AudioStream" uid="uid://bmplbc8g3k1yu" path="res://assets/game_objects/soldier_shared_assets/sfx/hit.mp3" id="10_tu6mf"]
 [ext_resource type="AudioStream" uid="uid://bohox485ojx7d" path="res://game_objects/allies/money_provider/small_matrioshka/assets/sfx/matrioska_falling.mp3" id="11_4i6l5"]
+[ext_resource type="Texture2D" uid="uid://otfy6kdsgjvf" path="res://game_objects/allies/money_provider/matrioshka/assets/matrioska_light_top.png" id="11_stulq"]
+[ext_resource type="Texture2D" uid="uid://bmk4clgngclvp" path="res://game_objects/allies/money_provider/matrioshka/assets/matrioska_top_dead.png" id="12_dly71"]
+[ext_resource type="Texture2D" uid="uid://dn237o7345anu" path="res://game_objects/allies/money_provider/matrioshka/assets/matrioska_top.png" id="13_tvtwt"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="16_e0umj"]
 [ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="17_rxg2f"]
 
@@ -27,7 +27,7 @@ maximum_value = 23
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_xt8nv")
+"texture": ExtResource("7_3s42x")
 }],
 "loop": true,
 "name": &"charge",
@@ -35,7 +35,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_8afsi")
+"texture": ExtResource("8_0kev3")
 }],
 "loop": true,
 "name": &"idle",
@@ -46,13 +46,13 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_llwjc")
+"texture": ExtResource("9_cyyf0")
 }, {
 "duration": 2.0,
-"texture": ExtResource("6_1qhlo")
+"texture": ExtResource("10_p78hs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_llwjc")
+"texture": ExtResource("9_cyyf0")
 }],
 "loop": true,
 "name": &"blink",
@@ -60,7 +60,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_djra1")
+"texture": ExtResource("11_stulq")
 }],
 "loop": true,
 "name": &"charge",
@@ -68,7 +68,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_6rxoq")
+"texture": ExtResource("12_dly71")
 }],
 "loop": true,
 "name": &"dead",
@@ -76,7 +76,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_iu2g0")
+"texture": ExtResource("13_tvtwt")
 }],
 "loop": true,
 "name": &"idle",
@@ -363,10 +363,11 @@ position = Vector2(-2, 29)
 texture = ExtResource("1_h2rfk")
 
 [node name="Table" type="Sprite2D" parent="."]
-texture = ExtResource("2_75hrx")
+texture = ExtResource("6_t8fmq")
 
 [node name="Bottom" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -28)
+rotation = 0.0523599
 scale = Vector2(1, 1.03)
 sprite_frames = SubResource("SpriteFrames_ubwy7")
 animation = &"idle"

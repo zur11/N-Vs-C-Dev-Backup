@@ -1,1 +1,2 @@
 class_name StalingradSummerBg extends GamesMenuBg
+
