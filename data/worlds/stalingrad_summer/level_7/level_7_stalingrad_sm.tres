@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://data/min_max_int_rate/min_max_int_rate.gd" id="2_1fl77"]
 [ext_resource type="Texture2D" uid="uid://cq8s4jj5j7oqh" path="res://data/worlds/stalingrad_summer/level_7/enemy_thumbnail_eagle.png" id="3_ngut6"]
 [ext_resource type="Texture2D" uid="uid://d2iksg4jjnxdd" path="res://data/worlds/stalingrad_summer/stalingrad_game_background.png" id="4_lkxkc"]
-[ext_resource type="PackedScene" uid="uid://cgva8gvblu5qv" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.tscn" id="4_rcq5b"]
+[ext_resource type="PackedScene" uid="uid://dwmd00t3h1w4g" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.tscn" id="4_rcq5b"]
 [ext_resource type="PackedScene" uid="uid://ps7ks7v7g60n" path="res://game_objects/allies/obstructer_ally/barrier/barrier.tscn" id="5_f8tah"]
 [ext_resource type="Texture2D" uid="uid://ccyyoqdxxsu26" path="res://data/worlds/stalingrad_summer/stalingrad_summer_foreground.png" id="5_q4v28"]
 [ext_resource type="PackedScene" uid="uid://cls10jllpda83" path="res://game_objects/allies/shooter_ally/bayonet_soldier/bayonet_soldier.tscn" id="5_x5qfw"]

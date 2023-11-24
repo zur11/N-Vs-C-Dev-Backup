@@ -1,6 +1,5 @@
 class_name Matrioshka extends MoneyProvider
 
-
 const _COIN_SCENE_PATH : String = "res://game_objects/components/ruble_coin/ruble_coin.tscn"
 
 
@@ -40,4 +39,4 @@ func _on_timer_timeout():
 	_start_coin_drop_animation()
 	await get_tree().create_timer(1.5).timeout
 	_spawn_new_coin()
-	
+

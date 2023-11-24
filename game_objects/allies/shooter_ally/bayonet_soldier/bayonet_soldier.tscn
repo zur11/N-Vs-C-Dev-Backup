@@ -60,12 +60,12 @@ colors = PackedColorArray(0, 0, 0, 1, 0.967284, 0.896213, 0.79581, 1, 1, 1, 1, 1
 offsets = PackedFloat32Array(0, 0.359375)
 colors = PackedColorArray(0.206398, 2.31629e-07, 5.41471e-08, 1, 0.905882, 0.0941176, 0, 1)
 
-[sub_resource type="Curve" id="Curve_gpc55"]
-_data = [Vector2(0, 0.147368), 0.0, 0.0, 0, 0, Vector2(0.467033, 0.515789), 0.0, 0.0, 0, 0, Vector2(0.983517, 0.115789), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_1vc3g"]
+_data = [Vector2(0, 0.147368), 0.0, 0.0, 0, 0, Vector2(0.368132, 0.694737), 0.0, 0.0, 0, 0, Vector2(0.983517, 0.115789), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Gradient" id="Gradient_vbp3f"]
-offsets = PackedFloat32Array(0, 0.324503, 1)
+[sub_resource type="Gradient" id="Gradient_imogj"]
+offsets = PackedFloat32Array(0, 0.245033, 1)
 colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="Animation" id="Animation_u4glg"]
@@ -325,7 +325,7 @@ tracks/20/keys = {
 
 [sub_resource type="Animation" id="Animation_2f24l"]
 resource_name = "_death"
-length = 1.4
+length = 2.5
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -538,7 +538,7 @@ tracks/17/path = NodePath("Textures:modulate")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0.85, 0.95, 1.05, 1.15, 1.25, 1.4),
+"times": PackedFloat32Array(1.15, 1.35, 1.55, 1.75, 1.95, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -550,7 +550,7 @@ tracks/18/path = NodePath("Shadow:modulate")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(1.25, 1.4),
+"times": PackedFloat32Array(2.2, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -1227,7 +1227,6 @@ offset = Vector2(11, -1)
 [node name="Head" type="AnimatedSprite2D" parent="Textures/Body"]
 position = Vector2(4, -105)
 sprite_frames = SubResource("SpriteFrames_p5b3t")
-animation = &"dead"
 autoplay = "default"
 offset = Vector2(0, -30)
 
@@ -1288,25 +1287,25 @@ scale_amount_max = 0.5
 color_ramp = SubResource("Gradient_jei5u")
 
 [node name="DustParticles" type="CPUParticles2D" parent="."]
-position = Vector2(2, 57)
+position = Vector2(85, 75)
 emitting = false
-amount = 20
-lifetime = 0.4
+amount = 30
+lifetime = 0.8
 one_shot = true
 speed_scale = 1.2
-explosiveness = 0.5
+explosiveness = 0.7
 texture = ExtResource("21_peg6s")
 emission_shape = 3
-emission_rect_extents = Vector2(60, 1)
+emission_rect_extents = Vector2(80, 1)
 direction = Vector2(0, -1)
 spread = 55.84
 gravity = Vector2(0, -60)
-initial_velocity_min = 313.25
-initial_velocity_max = 313.25
+initial_velocity_min = 433.73
+initial_velocity_max = 433.73
 angular_velocity_min = 277.59
 angular_velocity_max = 277.59
-scale_amount_curve = SubResource("Curve_gpc55")
-color_ramp = SubResource("Gradient_vbp3f")
+scale_amount_curve = SubResource("Curve_1vc3g")
+color_ramp = SubResource("Gradient_imogj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "_idle"

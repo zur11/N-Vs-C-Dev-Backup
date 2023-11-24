@@ -1140,7 +1140,6 @@ texture = ExtResource("15_mxx2i")
 
 [node name="Head" type="AnimatedSprite2D" parent="Textures/Body"]
 position = Vector2(5.10193, -100.107)
-rotation = 0.0523599
 sprite_frames = SubResource("SpriteFrames_86gvf")
 autoplay = "default"
 offset = Vector2(0, -30)

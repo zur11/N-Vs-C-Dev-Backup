@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dds2emlv2vs34" path="res://data/worlds/stalingrad_winter/level_3/enemy_thumbnail_italian.png" id="3_vmoox"]
 [ext_resource type="Texture2D" uid="uid://cpwpyrkuuw2c7" path="res://data/worlds/stalingrad_winter/stalingrad_game_background.png" id="4_j2gyh"]
 [ext_resource type="Texture2D" uid="uid://b6ln2w14sh4fo" path="res://data/worlds/stalingrad_winter/stalingrad_winter_foreground.png" id="5_6dt4r"]
-[ext_resource type="PackedScene" uid="uid://cgva8gvblu5qv" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.tscn" id="5_14wm5"]
+[ext_resource type="PackedScene" uid="uid://dwmd00t3h1w4g" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.tscn" id="5_14wm5"]
 [ext_resource type="PackedScene" uid="uid://cls10jllpda83" path="res://game_objects/allies/shooter_ally/bayonet_soldier/bayonet_soldier.tscn" id="5_gsgje"]
 [ext_resource type="PackedScene" uid="uid://ps7ks7v7g60n" path="res://game_objects/allies/obstructer_ally/barrier/barrier.tscn" id="6_bfxrm"]
 [ext_resource type="PackedScene" uid="uid://dm0t1b4mj7sbb" path="res://game_objects/allies/shooter_ally/shield_soldier/shield_soldier.tscn" id="8_orcyp"]
@@ -16,8 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bxhu3d00bhswu" path="res://data/worlds/stalingrad_winter/stalingrad_wt_level_tumbnail.png" id="11_eiwxr"]
 [ext_resource type="Script" path="res://data/enemy_quantity/enemy_quantity.gd" id="11_px67r"]
 [ext_resource type="Script" path="res://data/enemy_wave/enemy_wave.gd" id="12_0icxm"]
-[ext_resource type="PackedScene" uid="uid://ciopcfjgq5ifn" path="res://game_objects/allies/money_provider/small_matrioshka/small_matrioshka.tscn" id="12_2ow2h"]
 [ext_resource type="PackedScene" uid="uid://dxy03obv86ulg" path="res://game_objects/allies/obstructer_ally/wooden_barrier/wooden_barrier.tscn" id="13_auigu"]
+[ext_resource type="PackedScene" uid="uid://co3biarax0yt4" path="res://game_objects/allies/money_provider/small_matrioshka/small_matrioshka.tscn" id="14_ilm1k"]
 [ext_resource type="Script" path="res://data/worlds/stalingrad_winter/level_stalingrad_winter.gd" id="18_18kn6"]
 
 [sub_resource type="Resource" id="Resource_t67t8"]
@@ -26,7 +26,7 @@ ally_thumbnail = "coins"
 ally_title = "REWARDCOINS"
 ally_reward_description = "You can use Reward Coins to buy multiple offers in the market."
 
-[sub_resource type="Resource" id="Resource_fednl"]
+[sub_resource type="Resource" id="Resource_sxh0m"]
 script = ExtResource("2_oeulg")
 minimum_value = 10
 maximum_value = 12
@@ -193,9 +193,9 @@ game_foreground = ExtResource("5_6dt4r")
 level_name = "Level 3"
 level_thumbnail = ExtResource("11_eiwxr")
 enemy_thumbnail = ExtResource("3_vmoox")
-level_allies = Array[PackedScene]([ExtResource("5_gsgje"), ExtResource("5_14wm5"), ExtResource("6_bfxrm"), ExtResource("8_xoh76"), ExtResource("9_tu2ph"), ExtResource("8_orcyp"), ExtResource("9_1ghjy"), ExtResource("10_rkjl7"), ExtResource("12_2ow2h"), ExtResource("13_auigu")])
+level_allies = Array[PackedScene]([ExtResource("5_gsgje"), ExtResource("5_14wm5"), ExtResource("6_bfxrm"), ExtResource("8_xoh76"), ExtResource("9_tu2ph"), ExtResource("8_orcyp"), ExtResource("9_1ghjy"), ExtResource("10_rkjl7"), ExtResource("14_ilm1k"), ExtResource("13_auigu")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_fednl")
+coin_dropping_rate = SubResource("Resource_sxh0m")
 falling_coin_value = 15
 playable_rows = 5
 game_background_position = "left"

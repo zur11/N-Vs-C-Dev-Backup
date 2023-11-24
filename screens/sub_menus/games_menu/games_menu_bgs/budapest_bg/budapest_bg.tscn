@@ -33,7 +33,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_0rxwx"]
 resource_name = "_loop"
-length = 2.0
+length = 3.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -42,10 +42,10 @@ tracks/0/path = NodePath("Background Off:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.5, 0.6, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 0.6, 0.7, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 2.7, 2.8, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.117647), Color(1, 1, 1, 0.117647), Color(1, 1, 1, 0), Color(1, 1, 1, 0.117647), Color(1, 1, 1, 0.117647), Color(1, 1, 1, 0), Color(1, 1, 1, 0.117647), Color(1, 1, 1, 0.117647)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.301961), Color(1, 1, 1, 0.117647), Color(1, 1, 1, 0), Color(1, 1, 1, 0.247059), Color(1, 1, 1, 0.117647), Color(1, 1, 1, 0), Color(1, 1, 1, 0.117647), Color(1, 1, 1, 0.298039), Color(1, 1, 1, 0.117647), Color(1, 1, 1, 0), Color(1, 1, 1, 0.301961), Color(1, 1, 1, 0.117647)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wxofg"]
@@ -71,13 +71,14 @@ offset_bottom = 40.0
 texture = ExtResource("1_2vwfb")
 
 [node name="Background Off" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_i6erh")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(1, 1, 1, 0.513726)
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="LevelStalingradSummer" load_steps=26 format=3 uid="uid://b5xb4y7hrj6o2"]
 
 [ext_resource type="PackedScene" uid="uid://cls10jllpda83" path="res://game_objects/allies/shooter_ally/bayonet_soldier/bayonet_soldier.tscn" id="5_3gayi"]
-[ext_resource type="PackedScene" uid="uid://cgva8gvblu5qv" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.tscn" id="5_w7gxf"]
+[ext_resource type="PackedScene" uid="uid://dwmd00t3h1w4g" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.tscn" id="5_w7gxf"]
 [ext_resource type="PackedScene" uid="uid://ps7ks7v7g60n" path="res://game_objects/allies/obstructer_ally/barrier/barrier.tscn" id="6_jc4vv"]
 [ext_resource type="Script" path="res://data/worlds/stalingrad_summer/level_stalingrad_summer.gd" id="6_k68sk"]
 [ext_resource type="Script" path="res://data/enemy_quantity/enemy_quantity.gd" id="7_cufx0"]

@@ -26,7 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://b8q472strxciw" path="res://game_objects/enemies/shooter_enemy/hand_gun_german/assets/sfx/gunshot_enemy.mp3" id="24_olds7"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="25_fv2rw"]
 [ext_resource type="AudioStream" uid="uid://gel0wirmdxag" path="res://assets/game_objects/soldier_shared_assets/sfx/knife.mp3" id="26_1dk3t"]
-[ext_resource type="AudioStream" uid="uid://bowwlbwx64gin" path="res://game_objects/enemies/shooter_enemy/hand_gun_german/assets/sfx/nein.mp3" id="27_l1xco"]
+[ext_resource type="AudioStream" uid="uid://caq35mifujmos" path="res://assets/game_objects/soldier_shared_assets/sfx/nem_sfx.mp3" id="27_w8gwk"]
 [ext_resource type="AudioStream" uid="uid://bmplbc8g3k1yu" path="res://assets/game_objects/soldier_shared_assets/sfx/hit.mp3" id="28_r2pf3"]
 [ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="29_yyjfl"]
 
@@ -1795,7 +1795,7 @@ stream = ExtResource("26_1dk3t")
 script = ExtResource("25_fv2rw")
 
 [node name="DeathSFXPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("27_l1xco")
+stream = ExtResource("27_w8gwk")
 script = ExtResource("25_fv2rw")
 
 [node name="ReceiveDamageSFXPlayer" type="AudioStreamPlayer" parent="."]
