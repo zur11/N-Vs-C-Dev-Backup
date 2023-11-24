@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="LevelStalingradWinter" load_steps=52 format=3 uid="uid://ewj6io0w281s"]
+[gd_resource type="Resource" script_class="LevelStalingradWinter" load_steps=50 format=3 uid="uid://ewj6io0w281s"]
 
 [ext_resource type="Script" path="res://data/ally_presentation/ally_presentation.gd" id="1_rquke"]
 [ext_resource type="Texture2D" uid="uid://4nxab03jmhul" path="res://data/worlds/stalingrad_winter/level_8/enemy_thumbnail_standard.png" id="2_jcmik"]
 [ext_resource type="Script" path="res://data/min_max_int_rate/min_max_int_rate.gd" id="2_n2s37"]
 [ext_resource type="PackedScene" uid="uid://cls10jllpda83" path="res://game_objects/allies/shooter_ally/bayonet_soldier/bayonet_soldier.tscn" id="3_0c65g"]
 [ext_resource type="Texture2D" uid="uid://cpwpyrkuuw2c7" path="res://data/worlds/stalingrad_winter/stalingrad_game_background.png" id="3_kcpnr"]
-[ext_resource type="PackedScene" uid="uid://cgva8gvblu5qv" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.tscn" id="4_5grnm"]
 [ext_resource type="Texture2D" uid="uid://b6ln2w14sh4fo" path="res://data/worlds/stalingrad_winter/stalingrad_winter_foreground.png" id="4_v4m0f"]
 [ext_resource type="PackedScene" uid="uid://ps7ks7v7g60n" path="res://game_objects/allies/obstructer_ally/barrier/barrier.tscn" id="5_aba64"]
 [ext_resource type="PackedScene" uid="uid://dwu4hdrfwqbg3" path="res://game_objects/allies/mine_ally/land_mine/land_mine.tscn" id="6_jnp3h"]
@@ -13,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dm0t1b4mj7sbb" path="res://game_objects/allies/shooter_ally/shield_soldier/shield_soldier.tscn" id="7_st0ur"]
 [ext_resource type="PackedScene" uid="uid://bs6a1e6fgv7y3" path="res://game_objects/allies/throwable_ally/grenade/grenade.tscn" id="8_7mjkp"]
 [ext_resource type="PackedScene" uid="uid://d8vpn2nhfnyd" path="res://game_objects/allies/shooter_ally/farmer/farmer.tscn" id="9_hynix"]
-[ext_resource type="PackedScene" uid="uid://ciopcfjgq5ifn" path="res://game_objects/allies/money_provider/small_matrioshka/small_matrioshka.tscn" id="10_1eu42"]
 [ext_resource type="PackedScene" uid="uid://dxy03obv86ulg" path="res://game_objects/allies/obstructer_ally/wooden_barrier/wooden_barrier.tscn" id="11_kpq60"]
 [ext_resource type="PackedScene" uid="uid://dt3guvmgc72a7" path="res://game_objects/allies/shooter_ally/snowman_soviet/snowman_soviet.tscn" id="12_82lgf"]
 [ext_resource type="PackedScene" uid="uid://cc2fl2p41wxy6" path="res://game_objects/allies/throwable_ally/molotov_cocktail/molotov_cocktail.tscn" id="13_7iwkn"]
@@ -28,7 +26,7 @@ ally_thumbnail = "wojtek"
 ally_title = "WOJTEK"
 ally_reward_description = "Wojtek extermites all enemies crossing it's way. It moves from left to right in one row."
 
-[sub_resource type="Resource" id="Resource_fednl"]
+[sub_resource type="Resource" id="Resource_sxh0m"]
 script = ExtResource("2_n2s37")
 minimum_value = 10
 maximum_value = 12
@@ -207,9 +205,9 @@ game_foreground = ExtResource("4_v4m0f")
 level_name = "Level 8"
 level_thumbnail = ExtResource("14_twbfs")
 enemy_thumbnail = ExtResource("2_jcmik")
-level_allies = Array[PackedScene]([ExtResource("3_0c65g"), ExtResource("4_5grnm"), ExtResource("5_aba64"), ExtResource("6_jnp3h"), ExtResource("7_8jye7"), ExtResource("7_st0ur"), ExtResource("8_7mjkp"), ExtResource("9_hynix"), ExtResource("10_1eu42"), ExtResource("11_kpq60"), ExtResource("12_82lgf"), ExtResource("13_7iwkn")])
+level_allies = Array[PackedScene]([ExtResource("3_0c65g"), ExtResource("5_aba64"), ExtResource("6_jnp3h"), ExtResource("7_8jye7"), ExtResource("7_st0ur"), ExtResource("8_7mjkp"), ExtResource("9_hynix"), ExtResource("11_kpq60"), ExtResource("12_82lgf"), ExtResource("13_7iwkn")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_fednl")
+coin_dropping_rate = SubResource("Resource_sxh0m")
 falling_coin_value = 15
 playable_rows = 5
 game_background_position = "right"

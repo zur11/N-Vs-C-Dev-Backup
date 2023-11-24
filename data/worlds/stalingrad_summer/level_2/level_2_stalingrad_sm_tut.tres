@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d2iksg4jjnxdd" path="res://data/worlds/stalingrad_summer/stalingrad_game_background.png" id="5_qvgtb"]
 [ext_resource type="Texture2D" uid="uid://ccyyoqdxxsu26" path="res://data/worlds/stalingrad_summer/stalingrad_summer_foreground.png" id="6_opndc"]
 [ext_resource type="PackedScene" uid="uid://cls10jllpda83" path="res://game_objects/allies/shooter_ally/bayonet_soldier/bayonet_soldier.tscn" id="7_22cf8"]
-[ext_resource type="PackedScene" uid="uid://cgva8gvblu5qv" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.tscn" id="8_wrqc2"]
+[ext_resource type="PackedScene" uid="uid://dwmd00t3h1w4g" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.tscn" id="8_wrqc2"]
 [ext_resource type="Script" path="res://data/enemy_quantity/enemy_quantity.gd" id="9_vccwq"]
 [ext_resource type="Script" path="res://data/enemy_wave/enemy_wave.gd" id="10_2wopv"]
 [ext_resource type="PackedScene" uid="uid://r1qij4wdr4sq" path="res://screens/game_screen/tutorial/stalingrad_level_2_sm/stalingrad_level_2_sm.tscn" id="11_abu5d"]
@@ -111,7 +111,7 @@ enemies = Array[ExtResource("9_vccwq")]([SubResource("Resource_ps2ai")])
 [resource]
 script = ExtResource("1_q6k0s")
 tutorial_scene = ExtResource("11_abu5d")
-level_unlocked = false
+level_unlocked = true
 game_background = ExtResource("5_qvgtb")
 game_foreground = ExtResource("6_opndc")
 level_name = "Level 2"

@@ -1,0 +1,411 @@
+[gd_scene load_steps=21 format=3 uid="uid://1q5h3tkamf6t"]
+
+[ext_resource type="Texture2D" uid="uid://cto61eke7joyb" path="res://assets/game_objects/soldier_shared_assets/circle_shadow.png" id="1_w5w83"]
+[ext_resource type="Texture2D" uid="uid://cxtniouunuso5" path="res://game_objects/allies/special_ally/sonic_gun/assets/back_pipes.PNG" id="2_uvjqr"]
+[ext_resource type="Texture2D" uid="uid://ci3mgsmfkcu43" path="res://game_objects/allies/special_ally/sonic_gun/assets/base.PNG" id="3_5i5nw"]
+[ext_resource type="Texture2D" uid="uid://blpkfxdxfq3hg" path="res://game_objects/allies/special_ally/sonic_gun/assets/base_off.PNG" id="3_vsuoj"]
+[ext_resource type="Texture2D" uid="uid://bjesle65fj67u" path="res://game_objects/allies/special_ally/sonic_gun/assets/front_pipes.PNG" id="4_yy0g3"]
+[ext_resource type="Texture2D" uid="uid://byrm76odeb1y4" path="res://game_objects/allies/special_ally/sonic_gun/assets/sonic_light.PNG" id="5_dooey"]
+[ext_resource type="Texture2D" uid="uid://cl3rp6dl5fsog" path="res://game_objects/allies/special_ally/sonic_gun/assets/sound_wave.PNG" id="6_32q4p"]
+[ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="8_nqysc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ls86c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vsuoj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5i5nw")
+}],
+"loop": true,
+"name": &"schoot",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_tvekn"]
+resource_name = "_idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textures/Base:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0147039, -0.0396437]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textures:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.03), Vector2(1, 1), Vector2(1, 1.03)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Textures:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3.2), Vector2(0, 0), Vector2(0, -3.2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Textures/Base/SonicLight:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.7, 1, 1.2, 1.5, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.337255), Color(1, 1, 1, 1), Color(1, 1, 1, 0.337255), Color(1, 1, 1, 1), Color(1, 1, 1, 0.337255), Color(1, 1, 1, 1), Color(1, 1, 1, 0.337255)]
+}
+
+[sub_resource type="Animation" id="Animation_qr81v"]
+resource_name = "_shoot"
+length = 2.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textures/Base:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.55, 0.65, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0147039, 0.0, -0.0872665, 0.0147039, 0.0147039]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textures/Base:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.45, 0.55, 0.65, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1.03), Vector2(0.96, 1.03), Vector2(0.94, 1.05), Vector2(0.94, 1.05), Vector2(1.1, 1.03), Vector2(1, 1.03)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Textures/Base:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.45, 0.55, 0.65, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [&"default", &"default", &"schoot", &"default"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Textures/Base:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-4.76199, -55.5986), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599), Vector2(-4.762, -60.599), Vector2(-4.762, -55.599)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SonicWaves:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Textures/Base/SonicLight:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.52549), Color(1, 1, 1, 1), Color(1, 1, 1, 0.52549), Color(1, 1, 1, 1), Color(1, 1, 1, 0.52549), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y1cyi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textures/Base/SonicLight:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xiq42"]
+resource_name = "_death"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textures/Base/SonicLight:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textures/Base:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0147039, 1.11701, 1.0472, 1.11701]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DustParticles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Textures/FrontPipes:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 0.8, 1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -1.50024, -1.46516, -1.50024]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Textures:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.7, 0.9, 1.1, 1.3, 1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 0.5, 0.659755),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Shadow:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PhysicalContactCollShape:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BodyCollShape:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Textures/BackPipes:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.2, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.63029, 1.56337, 1.63029]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Textures/Base:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-4.76199, -55.5986), Vector2(-8, -17), Vector2(-8, -23), Vector2(-8, -17)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o6ttj"]
+_data = {
+"RESET": SubResource("Animation_y1cyi"),
+"_death": SubResource("Animation_xiq42"),
+"_idle": SubResource("Animation_tvekn"),
+"_shoot": SubResource("Animation_qr81v")
+}
+
+[sub_resource type="Curve" id="Curve_ewts3"]
+max_value = 1.5
+_data = [Vector2(0, 1.13684), 0.0, 1.21333, 0, 0, Vector2(0.478022, 1.5), 0.225387, 0.225387, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ufdn4"]
+offsets = PackedFloat32Array(0, 0.211921, 0.496689, 0.84106, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 0.894118, 0.901961, 0.67451, 1, 1, 1, 0.889365, 1, 1, 1, 0.0596026)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16ky7"]
+size = Vector2(136, 285)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmyrl"]
+size = Vector2(144.5, 70)
+
+[sub_resource type="Curve" id="Curve_tsjb5"]
+_data = [Vector2(0, 0.147368), 0.0, 0.0, 0, 0, Vector2(0.368132, 0.694737), 0.0, 0.0, 0, 0, Vector2(0.983517, 0.115789), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_b5jt2"]
+offsets = PackedFloat32Array(0, 0.245033, 1)
+colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="sonic_gun" type="CharacterBody2D"]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(4, 72)
+scale = Vector2(1.45583, 1)
+texture = ExtResource("1_w5w83")
+
+[node name="Textures" type="Node2D" parent="."]
+
+[node name="BackPipes" type="Sprite2D" parent="Textures"]
+position = Vector2(73, 63)
+texture = ExtResource("2_uvjqr")
+offset = Vector2(-24.5, -106.5)
+
+[node name="Base" type="AnimatedSprite2D" parent="Textures"]
+position = Vector2(-4.762, -55.599)
+rotation = 0.0147039
+scale = Vector2(1, 1.03)
+sprite_frames = SubResource("SpriteFrames_ls86c")
+offset = Vector2(51.7616, -24.2204)
+
+[node name="SonicLight" type="Sprite2D" parent="Textures/Base"]
+position = Vector2(6.47607, -84.957)
+rotation = -0.0142757
+scale = Vector2(0.999994, 0.97088)
+skew = -0.000869274
+texture = ExtResource("5_dooey")
+
+[node name="FrontPipes" type="Sprite2D" parent="Textures"]
+position = Vector2(-61, 71)
+texture = ExtResource("4_yy0g3")
+offset = Vector2(40.5, -102.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "_idle"
+libraries = {
+"": SubResource("AnimationLibrary_o6ttj")
+}
+
+[node name="SonicWaves" type="CPUParticles2D" parent="."]
+position = Vector2(66, -74)
+emitting = false
+amount = 18
+lifetime = 2.0
+one_shot = true
+texture = ExtResource("6_32q4p")
+spread = 0.0
+gravity = Vector2(340, 0)
+initial_velocity_min = 771.08
+initial_velocity_max = 771.08
+scale_amount_curve = SubResource("Curve_ewts3")
+color_ramp = SubResource("Gradient_ufdn4")
+
+[node name="BodyCollShape" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -71.5)
+shape = SubResource("RectangleShape2D_16ky7")
+
+[node name="PhysicalContactCollShape" type="CollisionShape2D" parent="."]
+position = Vector2(135.75, 2)
+shape = SubResource("RectangleShape2D_jmyrl")
+
+[node name="DustParticles" type="CPUParticles2D" parent="."]
+position = Vector2(29, 101)
+emitting = false
+amount = 30
+lifetime = 0.8
+one_shot = true
+speed_scale = 1.2
+explosiveness = 0.7
+texture = ExtResource("8_nqysc")
+emission_shape = 3
+emission_rect_extents = Vector2(160, 1)
+direction = Vector2(0, -1)
+spread = 55.84
+gravity = Vector2(0, -60)
+initial_velocity_min = 433.73
+initial_velocity_max = 433.73
+angular_velocity_min = 277.59
+angular_velocity_max = 277.59
+scale_amount_curve = SubResource("Curve_tsjb5")
+color_ramp = SubResource("Gradient_b5jt2")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ci2txb162q4g2"]
+[gd_scene load_steps=11 format=3 uid="uid://ci2txb162q4g2"]
 
 [ext_resource type="Script" path="res://screens/sub_menus/games_menu/games_menu_bgs/stalingrad_summer_bg/stalingrad_summer_bg.gd" id="1_f6ioj"]
 [ext_resource type="Texture2D" uid="uid://m7wsmpycolq5" path="res://screens/sub_menus/games_menu/games_menu_bgs/stalingrad_summer_bg/assets/st_summer_menu_bg.png" id="1_vncel"]
 [ext_resource type="Texture2D" uid="uid://0bbs7km2g0v1" path="res://screens/sub_menus/games_menu/games_menu_bgs/stalingrad_summer_bg/assets/small_dust.PNG" id="3_x4hmu"]
 [ext_resource type="Texture2D" uid="uid://b17qc1i0x83uq" path="res://screens/sub_menus/games_menu/games_menu_bgs/stalingrad_summer_bg/assets/big_dust.PNG" id="4_22oyb"]
+[ext_resource type="Texture2D" uid="uid://cajwfblsma4b0" path="res://screens/sub_menus/games_menu/games_menu_bgs/stalingrad_summer_bg/assets/wind_particle.png" id="5_tujxx"]
 
 [sub_resource type="Gradient" id="Gradient_6lqvq"]
 offsets = PackedFloat32Array(0, 0.311258, 0.655629, 1)
@@ -42,9 +43,86 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.995518, 0.981513, 0.901401, 1), Color(1, 1, 1, 1), Color(0.995518, 0.981513, 0.901401, 1), Color(1, 1, 1, 1), Color(0.995518, 0.981513, 0.901401, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.995518, 0.981513, 0.901401, 1), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_nbtok"]
+resource_name = "_level_5_selected"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.0075, 1.0075), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WindParticlesLeft:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WindParticlesLeft:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-92, 1005), Vector2(947.5, 1048)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Background:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.552941, 0.552941, 0.552941, 1), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WindParticlesRight:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2001, 1005), Vector2(946, 1005)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WindParticlesRight:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w01o4"]
 _data = {
 "_appear": SubResource("Animation_0rveh"),
+"_level_5_selected": SubResource("Animation_nbtok"),
 "_loop": SubResource("Animation_m8xhl")
 }
 
@@ -86,7 +164,7 @@ gravity = Vector2(-70, 0)
 color_ramp = SubResource("Gradient_6lqvq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(1, 1, 1, 0.466667)
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -96,3 +174,31 @@ autoplay = "_appear"
 libraries = {
 "": SubResource("AnimationLibrary_w01o4")
 }
+
+[node name="WindParticlesLeft" type="CPUParticles2D" parent="."]
+position = Vector2(-92, 1005)
+emitting = false
+amount = 14
+lifetime = 0.7
+one_shot = true
+explosiveness = 0.52
+local_coords = true
+texture = ExtResource("5_tujxx")
+direction = Vector2(0, -1)
+gravity = Vector2(0, -700)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+
+[node name="WindParticlesRight" type="CPUParticles2D" parent="."]
+position = Vector2(2001, 1005)
+emitting = false
+amount = 14
+lifetime = 0.7
+one_shot = true
+explosiveness = 0.52
+local_coords = true
+texture = ExtResource("5_tujxx")
+direction = Vector2(0, -1)
+gravity = Vector2(0, -700)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
