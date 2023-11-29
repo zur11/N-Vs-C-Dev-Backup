@@ -1,10 +1,11 @@
-[gd_scene load_steps=54 format=3 uid="uid://dq5mtgrma5krp"]
+[gd_scene load_steps=56 format=3 uid="uid://dq5mtgrma5krp"]
 
 [ext_resource type="Script" path="res://game_objects/enemies/shooter_enemy/hand_gun_german/hand_gun_german.gd" id="1_4onxa"]
 [ext_resource type="Texture2D" uid="uid://cto61eke7joyb" path="res://assets/game_objects/soldier_shared_assets/circle_shadow.png" id="1_umi8j"]
 [ext_resource type="Texture2D" uid="uid://b7ks8vybhsnnx" path="res://assets/game_objects/soldier_shared_assets/german_left_leg.png" id="3_j7t7w"]
 [ext_resource type="Texture2D" uid="uid://cdq3rc3emub44" path="res://assets/game_objects/soldier_shared_assets/german_left_foot.png" id="4_2r4kh"]
 [ext_resource type="Texture2D" uid="uid://dbvufx1c31kg6" path="res://assets/game_objects/soldier_shared_assets/german_right_leg.png" id="5_m7ll4"]
+[ext_resource type="Texture2D" uid="uid://con6gfok7c4mh" path="res://assets/game_objects/soldier_shared_assets/german_left_boot.png" id="5_ov6f6"]
 [ext_resource type="Texture2D" uid="uid://ce3d4hp7ckk6s" path="res://assets/game_objects/soldier_shared_assets/german_right_foot.png" id="6_g08sc"]
 [ext_resource type="Texture2D" uid="uid://dc71v5skm7h32" path="res://assets/game_objects/soldier_shared_assets/german_bodylines.png" id="7_ber6n"]
 [ext_resource type="Texture2D" uid="uid://b33on7g3awemv" path="res://assets/game_objects/soldier_shared_assets/german_arm1.png" id="8_fymca"]
@@ -27,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://bmplbc8g3k1yu" path="res://assets/game_objects/soldier_shared_assets/sfx/hit.mp3" id="18_fsddc"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="21_eh4g4"]
 [ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="27_eqv8p"]
+[ext_resource type="Texture2D" uid="uid://curdp3woxfg55" path="res://assets/game_objects/soldier_shared_assets/german_right_BOOT.png" id="29_v4n5q"]
 
 [sub_resource type="Curve" id="Curve_e8pjr"]
 max_value = 0.8
@@ -628,7 +630,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Textures/RightLeg/RightLeg:rotation")
+tracks/3/path = NodePath("Textures/RightLeg/RightFoot:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -801,7 +803,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Textures/RightLeg/RightLeg:rotation")
+tracks/3/path = NodePath("Textures/RightLeg/RightFoot:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -1461,15 +1463,24 @@ rotation = -0.436332
 texture = ExtResource("4_2r4kh")
 offset = Vector2(-20, 33)
 
+[node name="LeftBoot" type="Sprite2D" parent="Textures/LeftLeg/LeftFoot"]
+position = Vector2(-29.8698, 63.606)
+texture = ExtResource("5_ov6f6")
+
 [node name="RightLeg" type="Sprite2D" parent="Textures"]
 position = Vector2(15.7349, 51.3984)
 texture = ExtResource("5_m7ll4")
 offset = Vector2(-14.421, 26.3874)
 
-[node name="RightLeg" type="Sprite2D" parent="Textures/RightLeg"]
+[node name="RightFoot" type="Sprite2D" parent="Textures/RightLeg"]
 position = Vector2(12.357, 45.459)
 texture = ExtResource("6_g08sc")
 offset = Vector2(4.85486, 35.9279)
+
+[node name="RightBoot" type="Sprite2D" parent="Textures/RightLeg/RightFoot"]
+position = Vector2(5.01967, 39.5618)
+scale = Vector2(1, 1)
+texture = ExtResource("29_v4n5q")
 
 [node name="Body" type="Sprite2D" parent="Textures"]
 position = Vector2(0, 39.6792)
