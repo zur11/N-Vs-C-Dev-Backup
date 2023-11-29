@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gnuhcgqn5pdp"
-path="res://.godot/imported/lamplight.png-067acc51646c7784ae63c18d9c529f34.ctex"
+path="res://.godot/imported/lamplight.png-23f194222dd955365d324290756ec5b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/sub_menus/market_screen/assets/lamplight.png"
-dest_files=["res://.godot/imported/lamplight.png-067acc51646c7784ae63c18d9c529f34.ctex"]
+source_file="res://screens/sub_menus/market_menu/assets/lamplight.png"
+dest_files=["res://.godot/imported/lamplight.png-23f194222dd955365d324290756ec5b6.ctex"]
 
 [params]
 

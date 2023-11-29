@@ -19,7 +19,7 @@ ally_thumbnail = "barrier"
 ally_title = "BARRIER"
 ally_reward_description = "Barrier offers protection from enemy attacks to allies located behind it."
 
-[sub_resource type="Resource" id="Resource_kwn7r"]
+[sub_resource type="Resource" id="Resource_v82nr"]
 script = ExtResource("2_3mcbp")
 minimum_value = 7
 maximum_value = 10
@@ -119,7 +119,7 @@ level_thumbnail = ExtResource("11_kw3j2")
 enemy_thumbnail = ExtResource("4_xovcg")
 level_allies = Array[PackedScene]([ExtResource("7_22cf8"), ExtResource("8_wrqc2")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_kwn7r")
+coin_dropping_rate = SubResource("Resource_v82nr")
 falling_coin_value = 25
 playable_rows = 3
 game_background_position = "right"

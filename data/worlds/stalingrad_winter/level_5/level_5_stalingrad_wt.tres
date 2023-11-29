@@ -25,7 +25,7 @@ ally_thumbnail = "molotov"
 ally_title = "MOLOTOV COCKTAIL"
 ally_reward_description = "Molotov Cocktail inflicts 3 damage points to all sourrounding enemies"
 
-[sub_resource type="Resource" id="Resource_sxh0m"]
+[sub_resource type="Resource" id="Resource_mog0b"]
 script = ExtResource("2_bdxk6")
 minimum_value = 10
 maximum_value = 12
@@ -194,7 +194,7 @@ level_thumbnail = ExtResource("18_2jh4v")
 enemy_thumbnail = ExtResource("2_ft5l1")
 level_allies = Array[PackedScene]([ExtResource("6_ttvrb"), ExtResource("8_j204b"), ExtResource("9_45c78"), ExtResource("10_ovbcj"), ExtResource("11_hku0n"), ExtResource("12_a2b2j"), ExtResource("13_htr6c"), ExtResource("14_e0da4"), ExtResource("15_hjg6m")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_sxh0m")
+coin_dropping_rate = SubResource("Resource_mog0b")
 falling_coin_value = 15
 playable_rows = 5
 game_background_position = "center"

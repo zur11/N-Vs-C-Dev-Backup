@@ -22,7 +22,7 @@ ally_thumbnail = "grenade"
 ally_title = "GRENADE"
 ally_reward_description = "Falling explosive that instantly kills all enemies around the selected cell."
 
-[sub_resource type="Resource" id="Resource_kwn7r"]
+[sub_resource type="Resource" id="Resource_v82nr"]
 script = ExtResource("2_kqgc7")
 minimum_value = 7
 maximum_value = 10
@@ -194,7 +194,7 @@ level_thumbnail = ExtResource("11_no11i")
 enemy_thumbnail = ExtResource("2_jevyw")
 level_allies = Array[PackedScene]([ExtResource("5_aqqb6"), ExtResource("5_ddbhj"), ExtResource("6_wvf4t"), ExtResource("8_y473h"), ExtResource("9_dourq"), ExtResource("8_etaof")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_kwn7r")
+coin_dropping_rate = SubResource("Resource_v82nr")
 falling_coin_value = 25
 playable_rows = 5
 game_background_position = "left"

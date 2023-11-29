@@ -23,7 +23,7 @@ ally_thumbnail = "farmer"
 ally_title = "FARMER"
 ally_reward_description = "Close ranged armed villager, weaker comparing to soldiers but it's free!"
 
-[sub_resource type="Resource" id="Resource_ay4uf"]
+[sub_resource type="Resource" id="Resource_v82nr"]
 script = ExtResource("2_ykwjs")
 minimum_value = 7
 maximum_value = 10
@@ -655,7 +655,7 @@ level_thumbnail = ExtResource("9_f00un")
 enemy_thumbnail = ExtResource("2_xk0rf")
 level_allies = Array[PackedScene]([ExtResource("5_ongve"), ExtResource("4_aabfp"), ExtResource("5_85ksm"), ExtResource("8_4y5pc"), ExtResource("9_c1t0d"), ExtResource("7_b505n"), ExtResource("8_r6him")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_ay4uf")
+coin_dropping_rate = SubResource("Resource_v82nr")
 falling_coin_value = 25
 playable_rows = 5
 game_background_position = "left"

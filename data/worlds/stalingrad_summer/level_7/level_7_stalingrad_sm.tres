@@ -22,7 +22,7 @@ ally_thumbnail = "coins"
 ally_title = "REWARD COINS"
 ally_reward_description = "You can use Reward Coins to buy multiple offers in the market."
 
-[sub_resource type="Resource" id="Resource_kwn7r"]
+[sub_resource type="Resource" id="Resource_v82nr"]
 script = ExtResource("2_1fl77")
 minimum_value = 7
 maximum_value = 10
@@ -265,7 +265,7 @@ level_thumbnail = ExtResource("8_e2sjo")
 enemy_thumbnail = ExtResource("3_ngut6")
 level_allies = Array[PackedScene]([ExtResource("5_x5qfw"), ExtResource("4_rcq5b"), ExtResource("5_f8tah"), ExtResource("8_0nn2p"), ExtResource("9_0vsg6"), ExtResource("7_n1qxm")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_kwn7r")
+coin_dropping_rate = SubResource("Resource_v82nr")
 falling_coin_value = 25
 playable_rows = 5
 game_background_position = "center"

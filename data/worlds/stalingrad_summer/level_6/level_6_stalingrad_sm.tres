@@ -21,7 +21,7 @@ ally_thumbnail = "shieldSoldier"
 ally_title = "SHIELD SOLDIER"
 ally_reward_description = "Shield Soldier is protected by a low resistance shield. Occupies two horizontal cells."
 
-[sub_resource type="Resource" id="Resource_kwn7r"]
+[sub_resource type="Resource" id="Resource_v82nr"]
 script = ExtResource("2_i3ka1")
 minimum_value = 7
 maximum_value = 10
@@ -190,7 +190,7 @@ level_thumbnail = ExtResource("9_5byil")
 enemy_thumbnail = ExtResource("2_6isjx")
 level_allies = Array[PackedScene]([ExtResource("5_6hhh2"), ExtResource("5_dv2wc"), ExtResource("6_jt4ak"), ExtResource("8_co2pk"), ExtResource("9_3howi")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_kwn7r")
+coin_dropping_rate = SubResource("Resource_v82nr")
 falling_coin_value = 25
 playable_rows = 5
 game_background_position = "center"

@@ -20,7 +20,7 @@ ally_thumbnail = "fastBayonetSoviet"
 ally_title = "FAST BAYONET SOVIET"
 ally_reward_description = "Fast Bayonet Soviet has a faster shooting rate so he kills enemies in a shorter period of time"
 
-[sub_resource type="Resource" id="Resource_kwn7r"]
+[sub_resource type="Resource" id="Resource_v82nr"]
 script = ExtResource("2_d0hd2")
 minimum_value = 7
 maximum_value = 10
@@ -194,7 +194,7 @@ level_thumbnail = ExtResource("12_ul7eg")
 enemy_thumbnail = ExtResource("3_hl8bv")
 level_allies = Array[PackedScene]([ExtResource("6_i4hvm"), ExtResource("7_p3uak"), ExtResource("8_v0tgh"), ExtResource("9_xduyi")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_kwn7r")
+coin_dropping_rate = SubResource("Resource_v82nr")
 falling_coin_value = 25
 playable_rows = 5
 game_background_position = "center"

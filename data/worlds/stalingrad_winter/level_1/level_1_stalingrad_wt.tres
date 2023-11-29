@@ -24,7 +24,7 @@ ally_thumbnail = "smallMatrioshka"
 ally_title = "SMALL MATRIOSHKA"
 ally_reward_description = "Small Matrioshka offers ruble coin every few seconds."
 
-[sub_resource type="Resource" id="Resource_fednl"]
+[sub_resource type="Resource" id="Resource_mog0b"]
 script = ExtResource("2_m6b7c")
 minimum_value = 10
 maximum_value = 12
@@ -212,7 +212,7 @@ level_thumbnail = ExtResource("15_w01t0")
 enemy_thumbnail = ExtResource("3_xs5v1")
 level_allies = Array[PackedScene]([ExtResource("5_r0vh8"), ExtResource("5_mo8kh"), ExtResource("6_aafad"), ExtResource("8_jyb2k"), ExtResource("9_j4tgl"), ExtResource("9_sjv13"), ExtResource("10_g8t7v"), ExtResource("11_s7l0n")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_fednl")
+coin_dropping_rate = SubResource("Resource_mog0b")
 falling_coin_value = 15
 playable_rows = 5
 game_background_position = "left"
