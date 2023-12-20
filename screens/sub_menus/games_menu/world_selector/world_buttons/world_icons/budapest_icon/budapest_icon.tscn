@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://btlmw5vysjx8"]
+[gd_scene load_steps=11 format=3 uid="uid://d5j7ri7ludn5"]
 
-[ext_resource type="Texture2D" uid="uid://yjwg1f1c2env" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/assets/stalingrad_icon.png" id="1_wv2gj"]
-[ext_resource type="Script" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/world_icon.gd" id="2_7bv1d"]
-[ext_resource type="Texture2D" uid="uid://bhnummcditq3x" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/assets/world_icon_particle.png" id="3_56km5"]
+[ext_resource type="Texture2D" uid="uid://dyrbi23echou7" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/budapest_icon/assets/budapest_icon.PNG" id="1_xldmu"]
+[ext_resource type="Script" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/world_icon.gd" id="2_6l68f"]
+[ext_resource type="Texture2D" uid="uid://bhnummcditq3x" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/shared_assets/world_icon_particle.png" id="3_4sng4"]
 
 [sub_resource type="Shader" id="Shader_2wwqx"]
 code = "
@@ -143,10 +143,10 @@ point_count = 3
 offsets = PackedFloat32Array(0, 0.205298, 0.649007, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.92549, 0.94902, 0.45098, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
-[node name="StalingradIcon" type="Sprite2D"]
+[node name="BudapestIcon" type="Sprite2D"]
 material = SubResource("ShaderMaterial_vbih3")
-texture = ExtResource("1_wv2gj")
-script = ExtResource("2_7bv1d")
+texture = ExtResource("1_xldmu")
+script = ExtResource("2_6l68f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -154,7 +154,7 @@ libraries = {
 }
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(31, 243)
+position = Vector2(46, 279)
 emitting = false
 amount = 40
 lifetime = 0.7
@@ -162,7 +162,7 @@ one_shot = true
 preprocess = 0.3
 speed_scale = 1.5
 explosiveness = 0.5
-texture = ExtResource("3_56km5")
+texture = ExtResource("3_4sng4")
 emission_shape = 3
 emission_rect_extents = Vector2(150, 1)
 direction = Vector2(0, -1)
