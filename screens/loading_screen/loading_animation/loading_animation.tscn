@@ -308,6 +308,7 @@ texture = ExtResource("1_ol8ao")
 offset = Vector2(0, -6)
 
 [node name="Star1" type="Node2D" parent="LoadingIcon"]
+visible = false
 position = Vector2(-1, -1)
 
 [node name="Point1" type="Sprite2D" parent="LoadingIcon/Star1"]
@@ -342,7 +343,7 @@ offset = Vector2(-42, -11.5)
 
 [node name="Star2" type="Sprite2D" parent="LoadingIcon"]
 position = Vector2(-1, -2)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("3_k1b8h")
 offset = Vector2(1, -9)
 
@@ -356,7 +357,7 @@ texture = ExtResource("5_qj58i")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LoadingIcon"]
 unique_name_in_owner = true
-autoplay = "_idle"
 libraries = {
 "": SubResource("AnimationLibrary_165m1")
 }
+autoplay = "_idle"

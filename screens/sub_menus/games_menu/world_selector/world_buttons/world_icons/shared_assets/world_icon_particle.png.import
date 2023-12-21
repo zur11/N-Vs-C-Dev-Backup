@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csakvkb1x3oug"
-path="res://.godot/imported/berlin_icon.PNG-41521c20f825824693cd20914ede1ab3.ctex"
+uid="uid://bhnummcditq3x"
+path="res://.godot/imported/world_icon_particle.png-41b5422beb8d7357222d7b49241a2522.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/assets/berlin_icon.PNG"
-dest_files=["res://.godot/imported/berlin_icon.PNG-41521c20f825824693cd20914ede1ab3.ctex"]
+source_file="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/shared_assets/world_icon_particle.png"
+dest_files=["res://.godot/imported/world_icon_particle.png-41b5422beb8d7357222d7b49241a2522.ctex"]
 
 [params]
 

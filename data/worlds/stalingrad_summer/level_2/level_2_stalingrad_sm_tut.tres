@@ -111,7 +111,7 @@ enemies = Array[ExtResource("9_vccwq")]([SubResource("Resource_ps2ai")])
 [resource]
 script = ExtResource("1_q6k0s")
 tutorial_scene = ExtResource("11_abu5d")
-level_unlocked = true
+level_unlocked = false
 game_background = ExtResource("5_qvgtb")
 game_foreground = ExtResource("6_opndc")
 level_name = "Level 2"

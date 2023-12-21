@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyrbi23echou7"
-path="res://.godot/imported/budapest_icon.PNG-d747dee17b8291f9a136d4d78ad34e2f.ctex"
+path="res://.godot/imported/budapest_icon.PNG-ad97ef86c28537bb028a55d57cc6e213.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/assets/budapest_icon.PNG"
-dest_files=["res://.godot/imported/budapest_icon.PNG-d747dee17b8291f9a136d4d78ad34e2f.ctex"]
+source_file="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/budapest_icon/assets/budapest_icon.PNG"
+dest_files=["res://.godot/imported/budapest_icon.PNG-ad97ef86c28537bb028a55d57cc6e213.ctex"]
 
 [params]
 
