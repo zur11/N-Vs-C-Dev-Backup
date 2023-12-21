@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://tk4c25rwhw0q"]
+[gd_scene load_steps=15 format=3 uid="uid://tk4c25rwhw0q"]
 
 [ext_resource type="Script" path="res://screens/sub_menus/market_menu/market_menu.gd" id="1_vrx16"]
 [ext_resource type="Texture2D" uid="uid://1hytjmdd1qwd" path="res://screens/sub_menus/market_menu/assets/market_background.png" id="2_p0k5p"]
+[ext_resource type="Texture2D" uid="uid://gnuhcgqn5pdp" path="res://screens/sub_menus/market_menu/assets/lamplight.png" id="3_ax87c"]
 [ext_resource type="Texture2D" uid="uid://cjgjnvdvgceab" path="res://assets/screens/shared_assets/go_back_2.png" id="4_ftdnd"]
 [ext_resource type="Texture2D" uid="uid://jwmwcyqtv2kh" path="res://assets/screens/shared_assets/go_back_1.png" id="5_tpf87"]
 [ext_resource type="AudioStream" uid="uid://cc7rpmevwkpyo" path="res://assets/audio/sfx/buttons_sfx/click_2.mp3" id="6_vlbpn"]
@@ -10,6 +11,40 @@
 [ext_resource type="PackedScene" uid="uid://cfb8cp51xqjwy" path="res://screens/sub_menus/market_menu/products_container/buy_product_button/buy_product_button.tscn" id="8_37i6p"]
 [ext_resource type="Texture2D" uid="uid://b8b0dliakxqy1" path="res://screens/sub_menus/market_menu/assets/7th_slot_bag.png" id="9_cce85"]
 [ext_resource type="PackedScene" uid="uid://ds50m5bk5qstt" path="res://global_objects/user_balance_displayer/user_balance_displayer.tscn" id="10_4818i"]
+[ext_resource type="Texture2D" uid="uid://0ec2ysu7nywy" path="res://screens/sub_menus/market_menu/assets/market_sign.png" id="11_f3rps"]
+
+[sub_resource type="Animation" id="Animation_si3n5"]
+resource_name = "_sign_down"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarketSign:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.7, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(880, -116), Vector2(880, 108), Vector2(880, 96.8), Vector2(880, 108)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lamplight:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.5), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n7hw3"]
+_data = {
+"_sign_down": SubResource("Animation_si3n5")
+}
 
 [node name="MarketMenu" type="Control"]
 layout_mode = 3
@@ -22,7 +57,13 @@ script = ExtResource("1_vrx16")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("2_p0k5p")
+
+[node name="Lamplight" type="Sprite2D" parent="."]
+position = Vector2(237, 291)
+texture = ExtResource("3_ax87c")
 
 [node name="GoBackButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -55,5 +96,15 @@ product_text = "Unlock 7 Slots"
 
 [node name="UserBalanceDisplayer" parent="." instance=ExtResource("10_4818i")]
 position = Vector2(19, 22)
+
+[node name="MarketSign" type="Sprite2D" parent="."]
+position = Vector2(880, 108)
+texture = ExtResource("11_f3rps")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "_sign_down"
+libraries = {
+"": SubResource("AnimationLibrary_n7hw3")
+}
 
 [connection signal="pressed" from="GoBackButton" to="." method="_on_go_back_button_pressed"]
