@@ -353,6 +353,7 @@ ally_card_loading_time = 8
 normal_btn_texture = ExtResource("3_s3q8m")
 selected_btn_texture = ExtResource("4_ondpd")
 price = 25
+character_faction = "ally"
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(-2, 29)
@@ -396,10 +397,10 @@ stream = ExtResource("5_1x2q5")
 script = ExtResource("11_t0suc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "_idle"
 libraries = {
 "": SubResource("AnimationLibrary_k03oj")
 }
+autoplay = "_idle"
 
 [node name="ReceiveDamage" type="AnimationPlayer" parent="."]
 libraries = {

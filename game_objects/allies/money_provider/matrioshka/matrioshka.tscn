@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b0kvasmxxwhq4" path="res://game_objects/allies/money_provider/matrioshka/assets/big_matrioska_top.png" id="9_vs5pw"]
 [ext_resource type="AudioStream" uid="uid://bmplbc8g3k1yu" path="res://assets/game_objects/soldier_shared_assets/sfx/hit.mp3" id="10_tu6mf"]
 [ext_resource type="Texture2D" uid="uid://dvcbvhvbfpmul" path="res://game_objects/allies/money_provider/matrioshka/assets/big_matrioska_top_dead.png" id="12_waplb"]
-[ext_resource type="AudioStream" uid="uid://bohox485ojx7d" path="res://game_objects/allies/money_provider/matrioshka/assets/sfx/matrioska_falling.mp3" id="13_kt561"]
+[ext_resource type="AudioStream" uid="uid://bohox485ojx7d" path="res://game_objects/allies/money_provider/small_matrioshka/assets/sfx/small_matrioshka_falling.mp3" id="13_kt561"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="16_e0umj"]
 [ext_resource type="Texture2D" uid="uid://jdulueb7gowt" path="res://assets/game_objects/soldier_shared_assets/dust_particle.png" id="17_rxg2f"]
 
@@ -82,99 +82,6 @@ animations = [{
 "name": &"default",
 "speed": 10.0
 }]
-
-[sub_resource type="Animation" id="Animation_i34yv"]
-resource_name = "_idle"
-length = 3.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Textures/Down:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0523599, -0.0523599]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Textures/Down:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.5, 2.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 0.96), Vector2(1, 1), Vector2(1, 0.96)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Textures/Down/Top:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.4, 0.5, 0.7, 1.8, 1.9, 2.1, 2.4, 2.5, 2.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [&"default", &"blink", &"default", &"default", &"blink", &"default", &"default", &"blink", &"default"]
-}
-
-[sub_resource type="Animation" id="Animation_y6lig"]
-resource_name = "_give_coin"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Textures/Down:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.4, 0.9, 1.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 0.96), Vector2(1, 1.05), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Textures/Down:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.8, 0.9, 3.5, 3.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [&"default", &"charge", &"charge", &"default"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Textures/Down/Top:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.5, 1, 3.6, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, -49), Vector2(1, -96.3373), Vector2(1, -96.3373), Vector2(1, -49)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Textures/Down/Top:animation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.2, 0.3, 0.5, 0.8, 0.9, 3.5, 3.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [&"default", &"blink", &"default", &"default", &"charge", &"charge", &"default"]
-}
 
 [sub_resource type="Animation" id="Animation_4bqhc"]
 resource_name = "_death"
@@ -264,6 +171,99 @@ tracks/6/keys = {
 "values": [&"default", &"dead"]
 }
 
+[sub_resource type="Animation" id="Animation_y6lig"]
+resource_name = "_give_coin"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textures/Down:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.4, 0.9, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.96), Vector2(1, 1.05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textures/Down:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8, 0.9, 3.5, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [&"default", &"charge", &"charge", &"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Textures/Down/Top:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1, 3.6, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, -49), Vector2(1, -96.3373), Vector2(1, -96.3373), Vector2(1, -49)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Textures/Down/Top:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.3, 0.5, 0.8, 0.9, 3.5, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"default", &"blink", &"default", &"default", &"charge", &"charge", &"default"]
+}
+
+[sub_resource type="Animation" id="Animation_i34yv"]
+resource_name = "_idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textures/Down:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0523599, -0.0523599]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textures/Down:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.5, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.96), Vector2(1, 1), Vector2(1, 0.96)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Textures/Down/Top:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 0.5, 0.7, 1.8, 1.9, 2.1, 2.4, 2.5, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"default", &"blink", &"default", &"default", &"blink", &"default", &"default", &"blink", &"default"]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x0qkg"]
 _data = {
 "_death": SubResource("Animation_4bqhc"),
@@ -321,12 +321,14 @@ colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1, 1, 1, 1, 
 script = ExtResource("1_vof6x")
 coin_value = 25
 coin_dropping_rate = SubResource("Resource_23orj")
+starting_hp = 10
 ally_name = "matrioshka"
 location_in_cell = Vector2(88, 88)
 ally_card_loading_time = 8
 normal_btn_texture = ExtResource("3_0danu")
 selected_btn_texture = ExtResource("4_td47g")
 price = 50
+character_faction = "ally"
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 26)
@@ -349,10 +351,10 @@ autoplay = "default"
 offset = Vector2(-3, -40)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "_idle"
 libraries = {
 "": SubResource("AnimationLibrary_x0qkg")
 }
+autoplay = "_idle"
 
 [node name="ReceiveDamage" type="AnimationPlayer" parent="."]
 libraries = {
