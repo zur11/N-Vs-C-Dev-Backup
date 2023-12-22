@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de1bp0pub3bow"
-path="res://.godot/imported/Recurso 2.png-eeb7716d4f21940e1b9ff63452b00449.ctex"
+uid="uid://cryu2lxggtdop"
+path="res://.godot/imported/communist_symbol_bw.PNG-257e76636d0ed7cda5859bbdf0cf1850.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/loading_screen/loading_animation/assets/Recurso 2.png"
-dest_files=["res://.godot/imported/Recurso 2.png-eeb7716d4f21940e1b9ff63452b00449.ctex"]
+source_file="res://screens/loading_screen/loading_animation/assets/communist_symbol_bw.PNG"
+dest_files=["res://.godot/imported/communist_symbol_bw.PNG-257e76636d0ed7cda5859bbdf0cf1850.ctex"]
 
 [params]
 
