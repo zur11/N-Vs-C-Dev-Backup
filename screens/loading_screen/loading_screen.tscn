@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4n41kmtybwqn"]
+[gd_scene load_steps=9 format=3 uid="uid://b4n41kmtybwqn"]
 
-[ext_resource type="Texture2D" uid="uid://8137uxmmbxxy" path="res://screens/loading_screen/assets/loading_screen_background.png" id="1_tg2x4"]
 [ext_resource type="Script" path="res://screens/loading_screen/loading_screen.gd" id="1_ti8cj"]
 [ext_resource type="PackedScene" uid="uid://ch80xmnv4dmtb" path="res://screens/loading_screen/loading_animation/loading_animation.tscn" id="2_6kal7"]
+[ext_resource type="PackedScene" uid="uid://btlmw5vysjx8" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/stalingrad_summer_icon/stalingrad_icon.tscn" id="2_abdrf"]
 [ext_resource type="Texture2D" uid="uid://cq2h1wsqyivir" path="res://screens/loading_screen/assets/logo_small.png" id="3_8dbqn"]
 [ext_resource type="Texture2D" uid="uid://dhpxw7j0tj03p" path="res://screens/loading_screen/assets/loading_label_small.png" id="3_jh5of"]
+[ext_resource type="PackedScene" uid="uid://tkdaet88vh8r" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/stalingrad_winter_icon/stalingrad_2_icon.tscn" id="3_u266i"]
+[ext_resource type="PackedScene" uid="uid://d5j7ri7ludn5" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/budapest_icon/budapest_icon.tscn" id="4_yicdv"]
+[ext_resource type="Texture2D" uid="uid://g8p0sjy2ngra" path="res://screens/loading_screen/assets/new_loading_screen.png" id="5_urrai"]
 
 [node name="LoadingScreen" type="Control"]
 layout_mode = 3
@@ -15,17 +18,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ti8cj")
 
+[node name="StalingradIcon" parent="." instance=ExtResource("2_abdrf")]
+
+[node name="Stalingrad2Icon" parent="." instance=ExtResource("3_u266i")]
+
+[node name="BudapestIcon" parent="." instance=ExtResource("4_yicdv")]
+
 [node name="BackgroundTexture" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_tg2x4")
+texture = ExtResource("5_urrai")
 
 [node name="LogoTexture" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 387.0
+offset_left = 237.0
 offset_top = 10.0
-offset_right = 1426.0
+offset_right = 1276.0
 offset_bottom = 198.0
 texture = ExtResource("3_8dbqn")
 
@@ -39,10 +48,10 @@ texture = ExtResource("3_jh5of")
 
 [node name="LoadingAnimationsContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 493.0
+offset_left = 636.0
 offset_top = 979.0
-offset_right = 1432.0
-offset_bottom = 979.0
+offset_right = 1335.0
+offset_bottom = 982.0
 
 [node name="LoadingAnimation1" parent="LoadingAnimationsContainer" instance=ExtResource("2_6kal7")]
 
@@ -54,6 +63,3 @@ position = Vector2(430, 0)
 
 [node name="LoadingAnimation4" parent="LoadingAnimationsContainer" instance=ExtResource("2_6kal7")]
 position = Vector2(645, 0)
-
-[node name="LoadingAnimation5" parent="LoadingAnimationsContainer" instance=ExtResource("2_6kal7")]
-position = Vector2(860, 0)

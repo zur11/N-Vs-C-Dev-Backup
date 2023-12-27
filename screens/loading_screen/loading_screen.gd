@@ -4,7 +4,6 @@ var loading_animation_index = 0
 
 var _menus_scene_path : String = "res://screens/menus/menus.tscn"
 var _game_screen_scene_path : String = "res://screens/game_screen/game_screen.tscn"
-var _main_menu_scene_path : String = "res://screens/main_menu/main_menu.tscn"
 var _settings_menu_scene_path : String = "res://screens/sub_menus/settings_menu/settings_menu.tscn"
 var _games_menu_scene_path : String = "res://screens/sub_menus/games_menu/games_menu.tscn"
 
@@ -20,15 +19,12 @@ func _play_next_animation():
 	loading_animation_index += 1
 	if loading_animation_index < loading_animations_container.get_child_count():
 		if loading_animation_index == 1:
-			loading_animations_container.get_child(loading_animation_index).play_loading_animation(loading_animation_index, _main_menu_scene_path)
+			loading_animations_container.get_child(loading_animation_index).play_loading_animation(loading_animation_index, _games_menu_scene_path)
 		
 		elif loading_animation_index == 2:
 			loading_animations_container.get_child(loading_animation_index).play_loading_animation(loading_animation_index, _settings_menu_scene_path)
 		
 		elif loading_animation_index == 3:
-			loading_animations_container.get_child(loading_animation_index).play_loading_animation(loading_animation_index, _games_menu_scene_path)
-		
-		elif loading_animation_index == 4:
 			loading_animations_container.get_child(loading_animation_index).play_loading_animation(loading_animation_index, _menus_scene_path)
 		
 	else:
