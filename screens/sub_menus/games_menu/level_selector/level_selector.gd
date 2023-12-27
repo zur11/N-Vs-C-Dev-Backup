@@ -2,6 +2,7 @@
 class_name LevelSelector extends Node2D
 
 signal go_to_level(level:Level)
+signal level_selected(level_int:int)
 
 var _world: World 
 var _level_group: Array[Level] 
@@ -47,8 +48,8 @@ func _on_level_card_selected(new_value:Level):
 	if _selected_level == new_value: return
 	_selected_level = new_value
 	_world.selected_level = _selected_level
-	
 	_update_user_data()
+	level_selected.emit(int(_selected_level.level_name.trim_prefix("Level ")))
 
 func _on_level_card_pressed(new_value: Level):
 	if new_value == _selected_level:

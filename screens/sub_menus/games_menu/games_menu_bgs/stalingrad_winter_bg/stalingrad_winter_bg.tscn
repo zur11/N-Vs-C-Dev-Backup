@@ -33,23 +33,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0.443137), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_0q8ev"]
-resource_name = "_loop"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.6, 0.7, 0.8, 1, 2, 2.2, 2.5, 3.2, 3.4, 3.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.956863, 0.956863, 0.956863, 0.917647), Color(1, 1, 1, 1), Color(0.956863, 0.956863, 0.956863, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.955882, 0.955882, 0.955882, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.956863, 0.956863, 0.956863, 0.941176), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_l8tot"]
 resource_name = "_level_5_selected"
 length = 0.7
@@ -138,6 +121,23 @@ tracks/6/keys = {
 "values": [Color(1, 1, 1, 1), Color(0.745098, 1, 0.996078, 1), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_0q8ev"]
+resource_name = "_loop"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 0.7, 0.8, 1, 2, 2.2, 2.5, 3.2, 3.4, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.956863, 0.956863, 0.956863, 0.917647), Color(1, 1, 1, 1), Color(0.956863, 0.956863, 0.956863, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.955882, 0.955882, 0.955882, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.956863, 0.956863, 0.956863, 0.941176), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uyw1r"]
 _data = {
 "_appear": SubResource("Animation_amesw"),
@@ -145,7 +145,7 @@ _data = {
 "_loop": SubResource("Animation_0q8ev")
 }
 
-[node name="StalingradWinterBg" type="Control"]
+[node name="BackgroundScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -199,16 +199,16 @@ scale_amount_curve = SubResource("Curve_t3c04")
 color = Color(1, 1, 1, 0.439216)
 
 [node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(1, 1, 1, 0)
+modulate = Color(1, 1, 1, 0.443137)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "_appear"
 libraries = {
 "": SubResource("AnimationLibrary_uyw1r")
 }
+autoplay = "_appear"
 
 [node name="WindParticlesLeft" type="CPUParticles2D" parent="."]
 position = Vector2(947.5, 1048)
