@@ -27,6 +27,9 @@ func _play_next_animation():
 		elif loading_animation_index == 3:
 			loading_animations_container.get_child(loading_animation_index).play_loading_animation(loading_animation_index, _menus_scene_path)
 		
+		#elif loading_animation_index == 4:
+			#loading_animations_container.get_child(loading_animation_index).play_loading_animation(loading_animation_index, _menus_scene_path)
+		
 	else:
 		var menus_screen : Node = load("res://screens/menus/menus.tscn").instantiate()
 		

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vxk6jtmbfmdt"
-path="res://.godot/imported/hammer.png-9dec6f06fc6b360440410f1d0b29d681.ctex"
+uid="uid://b58uwqkhx6tin"
+path="res://.godot/imported/nazi_symbol_color.PNG-046f8a33a0d6857a5dfcff3d97839713.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/loading_screen/loading_animation/assets/hammer.png"
-dest_files=["res://.godot/imported/hammer.png-9dec6f06fc6b360440410f1d0b29d681.ctex"]
+source_file="res://screens/loading_screen/loading_animation/assets/nazi_symbol_color.PNG"
+dest_files=["res://.godot/imported/nazi_symbol_color.PNG-046f8a33a0d6857a5dfcff3d97839713.ctex"]
 
 [params]
 

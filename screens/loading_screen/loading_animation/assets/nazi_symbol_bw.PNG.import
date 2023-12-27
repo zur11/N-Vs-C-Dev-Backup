@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lutf4mqrgftb"
-path="res://.godot/imported/sickle.png-c3f28434c4d9beafd1c89a3f7c9ac9fe.ctex"
+uid="uid://da4nkf73afuh2"
+path="res://.godot/imported/nazi_symbol_bw.PNG-bceb1a11aa0a3f2f6845243236b1a3f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/loading_screen/loading_animation/assets/sickle.png"
-dest_files=["res://.godot/imported/sickle.png-c3f28434c4d9beafd1c89a3f7c9ac9fe.ctex"]
+source_file="res://screens/loading_screen/loading_animation/assets/nazi_symbol_bw.PNG"
+dest_files=["res://.godot/imported/nazi_symbol_bw.PNG-bceb1a11aa0a3f2f6845243236b1a3f8.ctex"]
 
 [params]
 
