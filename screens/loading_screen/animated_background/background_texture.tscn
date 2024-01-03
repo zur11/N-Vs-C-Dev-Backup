@@ -1,0 +1,586 @@
+[gd_scene load_steps=28 format=3 uid="uid://cw5i53clevpnv"]
+
+[ext_resource type="Texture2D" uid="uid://doiyw03di070o" path="res://screens/loading_screen/animated_background/assets/background_colors Fusionadas.PNG" id="1_6fpii"]
+[ext_resource type="Texture2D" uid="uid://csqh7cbnea6yr" path="res://screens/loading_screen/animated_background/assets/BGExplosions.PNG" id="2_3dp43"]
+[ext_resource type="Texture2D" uid="uid://iepk4pbj1ixx" path="res://screens/loading_screen/animated_background/assets/BGBuilding.PNG" id="3_xtbe6"]
+[ext_resource type="Texture2D" uid="uid://dfkpsv54e5lu8" path="res://screens/loading_screen/animated_background/assets/extra_soldiers.PNG" id="4_ihnf0"]
+[ext_resource type="Texture2D" uid="uid://e588ohaucvi5" path="res://screens/loading_screen/animated_background/assets/left_wooden_planks.PNG" id="5_k4j53"]
+[ext_resource type="Texture2D" uid="uid://durev0rop6lgh" path="res://screens/loading_screen/animated_background/assets/communist flag.PNG" id="6_2r0b3"]
+[ext_resource type="Texture2D" uid="uid://dopulthavxsao" path="res://screens/loading_screen/animated_background/assets/smoke_left.png" id="6_y75r1"]
+[ext_resource type="Texture2D" uid="uid://ddj274fcttp56" path="res://screens/loading_screen/animated_background/assets/nazi_flag.PNG" id="7_a4ylu"]
+[ext_resource type="Texture2D" uid="uid://dq1emjbyvwsuq" path="res://screens/loading_screen/animated_background/assets/plane_fire.png" id="7_o7qg3"]
+[ext_resource type="Texture2D" uid="uid://snnvln5tjcf8" path="res://screens/loading_screen/animated_background/assets/smoke_right.png" id="7_u4iul"]
+[ext_resource type="Texture2D" uid="uid://b5wki33k24i8" path="res://screens/loading_screen/animated_background/assets/nazi_soldier.PNG" id="8_hy5cn"]
+[ext_resource type="Texture2D" uid="uid://fvk7e3yc880w" path="res://screens/loading_screen/animated_background/assets/communist_soldier.PNG" id="9_o7hcq"]
+[ext_resource type="Texture2D" uid="uid://dd337utrhhslk" path="res://screens/loading_screen/animated_background/assets/plane.PNG" id="10_325g7"]
+[ext_resource type="Texture2D" uid="uid://6kxigj5phqs3" path="res://screens/loading_screen/animated_background/assets/right_gpart.png" id="11_nuj3c"]
+[ext_resource type="Texture2D" uid="uid://cs7tdf2qxhwui" path="res://screens/loading_screen/animated_background/assets/black_border.PNG" id="11_th50j"]
+[ext_resource type="Texture2D" uid="uid://d2mgg7mn84x5b" path="res://screens/loading_screen/animated_background/assets/foreground_particles.PNG" id="12_v3iwj"]
+[ext_resource type="Texture2D" uid="uid://d0c5jnd2el1ce" path="res://screens/loading_screen/animated_background/assets/left_gpart.png" id="13_pypvn"]
+[ext_resource type="Texture2D" uid="uid://cbmhllyhe6qru" path="res://screens/loading_screen/animated_background/assets/left_bullet.png" id="16_fkv7d"]
+[ext_resource type="Texture2D" uid="uid://c08h7xaadbc38" path="res://screens/loading_screen/animated_background/assets/gun_particle.png" id="16_jvbw8"]
+[ext_resource type="Texture2D" uid="uid://c3j671cy6cdp3" path="res://screens/loading_screen/animated_background/assets/right_bullet.png" id="17_vdq3m"]
+[ext_resource type="Texture2D" uid="uid://bmea3jruf0gle" path="res://screens/loading_screen/animated_background/assets/blood_particle.png" id="20_o8rsy"]
+[ext_resource type="Texture2D" uid="uid://bkn6nljw5wjik" path="res://screens/loading_screen/animated_background/assets/little_rock.png" id="22_8apy6"]
+
+[sub_resource type="Curve" id="Curve_ebhhh"]
+max_value = 1.2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.6154), 0.0, 0.0, 0, 0, Vector2(0.494681, 1.2), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Animation" id="Animation_oqhq8"]
+resource_name = "_slow_motion_animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ForegroundParticles:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 1096), Vector2(960, 1079)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NaziSoldier:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 540), Vector2(975, 540)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CommunistSoldier:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 540), Vector2(945, 542)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Plane:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(978, 530), Vector2(960, 540)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BgExplosions:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(169, 390), Vector2(169, 380)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BgExplosions:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.1, 1.1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CommunistSoldier:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.02, 1.02)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ForegroundParticles:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.01, 1.01)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PlaneFire:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1243, 141), Vector2(1225, 152)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PlaneFire:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.01, 1.01)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("NaziSoldier:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.006, 1.006)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("LeftBullet:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(958, 541), Vector2(1024, 522)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("RightBullet:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(955, 542), Vector2(896.451, 540.418)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("NaziSoldier/RightGpart:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.129412), Color(1, 1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CommunistSoldier/LeftGpart:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.490196), Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("SmokeLeft:scale")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("SmokeLeft:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(966, 505), Vector2(943, 473)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("SmokeRight:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(1, 1)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("SmokeRight:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1107, 556), Vector2(1113, 505)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("BloodParticles/BloodParticle1:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1102, 779), Vector2(1097, 773)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("BloodParticles/BloodParticle2:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1171, 775), Vector2(1173, 774)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("CommunistSoldier/shiny_particles:emitting")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("NaziSoldier/shiny_particles2:emitting")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("BloodParticles/blood particles:emitting")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("BloodParticles/blood particles2:emitting")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("LittleRock:position")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(247, 309), Vector2(276, 244)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("NaziSoldier/shiny_particles2:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("CommunistSoldier/shiny_particles:visible")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wk18i"]
+_data = {
+"_slow_motion_animation": SubResource("Animation_oqhq8")
+}
+
+[sub_resource type="Curve" id="Curve_nrc0n"]
+max_value = 1.2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.783573), 0.0, 0.0, 0, 0, Vector2(0.521277, 0.134908), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_5da6i"]
+max_value = 1.2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.6154), 0.0, 0.0, 0, 0, Vector2(0.492021, 0.21499), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="AnimatedBackground" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackgroundColorsFusionadas" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_6fpii")
+
+[node name="BgExplosions" type="Sprite2D" parent="."]
+position = Vector2(169, 380)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_3dp43")
+offset = Vector2(791, 160)
+
+[node name="BgBuilding" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("3_xtbe6")
+
+[node name="ExtraSoldiers" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("4_ihnf0")
+
+[node name="LeftWoodenPlanks" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("5_k4j53")
+
+[node name="SmokeLeft" type="Sprite2D" parent="."]
+position = Vector2(943, 473)
+texture = ExtResource("6_y75r1")
+
+[node name="SmokeRight" type="Sprite2D" parent="."]
+position = Vector2(1113, 505)
+texture = ExtResource("7_u4iul")
+offset = Vector2(12, -39)
+
+[node name="Plane" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("10_325g7")
+
+[node name="PlaneFire" type="Sprite2D" parent="."]
+position = Vector2(1225, 152)
+scale = Vector2(1.01, 1.01)
+texture = ExtResource("7_o7qg3")
+offset = Vector2(190, -50)
+
+[node name="CommunistFlag" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("6_2r0b3")
+
+[node name="NaziFlag" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("7_a4ylu")
+
+[node name="NaziSoldier" type="Sprite2D" parent="."]
+position = Vector2(975, 540)
+scale = Vector2(1.006, 1.006)
+texture = ExtResource("8_hy5cn")
+
+[node name="RightGpart" type="Sprite2D" parent="NaziSoldier"]
+position = Vector2(-5, -3)
+texture = ExtResource("11_nuj3c")
+
+[node name="shiny_particles2" type="CPUParticles2D" parent="NaziSoldier"]
+visible = false
+position = Vector2(110, 10)
+emitting = false
+amount = 30
+lifetime = 5.0
+one_shot = true
+preprocess = 4.0
+speed_scale = 0.14
+explosiveness = 0.88
+lifetime_randomness = 1.0
+texture = ExtResource("16_jvbw8")
+direction = Vector2(-1, 0)
+spread = 125.91
+gravity = Vector2(-250, -5)
+initial_velocity_min = 3.0
+initial_velocity_max = 3.0
+radial_accel_min = 77.93
+radial_accel_max = 77.93
+scale_amount_curve = SubResource("Curve_ebhhh")
+
+[node name="CommunistSoldier" type="Sprite2D" parent="."]
+position = Vector2(945, 542)
+scale = Vector2(1.02, 1.02)
+texture = ExtResource("9_o7hcq")
+
+[node name="LeftGpart" type="Sprite2D" parent="CommunistSoldier"]
+position = Vector2(-2, 1)
+texture = ExtResource("13_pypvn")
+
+[node name="shiny_particles" type="CPUParticles2D" parent="CommunistSoldier"]
+visible = false
+position = Vector2(12, -46)
+emitting = false
+amount = 30
+lifetime = 5.0
+one_shot = true
+preprocess = 4.0
+speed_scale = 0.14
+explosiveness = 0.88
+lifetime_randomness = 1.0
+texture = ExtResource("16_jvbw8")
+spread = 125.91
+gravity = Vector2(200, -50)
+initial_velocity_min = 3.0
+initial_velocity_max = 3.0
+radial_accel_min = 77.93
+radial_accel_max = 77.93
+scale_amount_curve = SubResource("Curve_ebhhh")
+
+[node name="BlackBorder" type="Sprite2D" parent="."]
+position = Vector2(963, 538)
+texture = ExtResource("11_th50j")
+
+[node name="ForegroundParticles" type="Sprite2D" parent="."]
+position = Vector2(960, 1079)
+scale = Vector2(1.01, 1.01)
+texture = ExtResource("12_v3iwj")
+offset = Vector2(0, -539)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wk18i")
+}
+autoplay = "_slow_motion_animation"
+
+[node name="LeftBullet" type="Sprite2D" parent="."]
+position = Vector2(1024, 522)
+rotation = 0.0349066
+texture = ExtResource("16_fkv7d")
+
+[node name="RightBullet" type="Sprite2D" parent="."]
+position = Vector2(896.451, 540.418)
+texture = ExtResource("17_vdq3m")
+
+[node name="BloodParticles" type="Node2D" parent="."]
+
+[node name="BloodParticle1" type="Sprite2D" parent="BloodParticles"]
+position = Vector2(1097, 773)
+scale = Vector2(0.807692, 0.75)
+texture = ExtResource("20_o8rsy")
+
+[node name="BloodParticle2" type="Sprite2D" parent="BloodParticles"]
+position = Vector2(1173, 774)
+rotation = 0.51172
+scale = Vector2(0.474, 0.4)
+texture = ExtResource("20_o8rsy")
+
+[node name="blood particles" type="CPUParticles2D" parent="BloodParticles"]
+position = Vector2(1307, 907)
+emitting = false
+amount = 30
+lifetime = 5.0
+one_shot = true
+preprocess = 4.0
+speed_scale = 0.14
+explosiveness = 0.88
+lifetime_randomness = 1.0
+local_coords = true
+texture = ExtResource("20_o8rsy")
+emission_shape = 3
+emission_rect_extents = Vector2(40, 1)
+direction = Vector2(-1, 0)
+spread = 125.91
+gravity = Vector2(-20, -60)
+initial_velocity_min = 3.0
+initial_velocity_max = 3.0
+radial_accel_min = 77.93
+radial_accel_max = 77.93
+scale_amount_curve = SubResource("Curve_nrc0n")
+
+[node name="blood particles2" type="CPUParticles2D" parent="BloodParticles"]
+position = Vector2(1129, 792)
+emitting = false
+amount = 30
+lifetime = 5.0
+one_shot = true
+preprocess = 4.0
+speed_scale = 0.14
+explosiveness = 0.88
+lifetime_randomness = 1.0
+local_coords = true
+texture = ExtResource("20_o8rsy")
+emission_shape = 3
+emission_rect_extents = Vector2(40, 1)
+direction = Vector2(-1, 0)
+spread = 125.91
+gravity = Vector2(-20, -80)
+initial_velocity_min = 3.0
+initial_velocity_max = 3.0
+radial_accel_min = 77.93
+radial_accel_max = 77.93
+scale_amount_curve = SubResource("Curve_5da6i")
+
+[node name="LittleRock" type="Sprite2D" parent="."]
+position = Vector2(276, 244)
+texture = ExtResource("22_8apy6")

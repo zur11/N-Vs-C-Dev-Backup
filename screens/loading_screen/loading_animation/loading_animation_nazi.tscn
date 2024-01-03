@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://kaumcd515jsx"]
+[gd_scene load_steps=9 format=3 uid="uid://kaumcd515jsx"]
 
 [ext_resource type="Script" path="res://screens/loading_screen/loading_animation/loading_animation.gd" id="1_khc6x"]
 [ext_resource type="Texture2D" uid="uid://da4nkf73afuh2" path="res://screens/loading_screen/loading_animation/assets/nazi_symbol_bw.PNG" id="2_a4w3g"]
 [ext_resource type="Texture2D" uid="uid://b58uwqkhx6tin" path="res://screens/loading_screen/loading_animation/assets/nazi_symbol_color.PNG" id="3_4fwvk"]
+[ext_resource type="Texture2D" uid="uid://d151ghb0rjqdi" path="res://screens/loading_screen/loading_animation/assets/loading_ring.PNG" id="4_q075v"]
 
 [sub_resource type="Animation" id="Animation_lt5g5"]
 resource_name = "_finished_loading"
@@ -31,6 +32,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LoadingRing:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_7cllp"]
@@ -73,6 +86,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LoadingRing:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_xgojv"]
 resource_name = "_loading"
@@ -80,26 +105,38 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
+tracks/0/path = NodePath("ColorTexture:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorTexture:modulate")
+tracks/1/path = NodePath("LoadingRing:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LoadingRing:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [0.0, 6.28319]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_165m1"]
@@ -115,12 +152,15 @@ script = ExtResource("1_khc6x")
 [node name="LoadingIcon" type="Node2D" parent="."]
 
 [node name="GrayTexture" type="Sprite2D" parent="LoadingIcon"]
-scale = Vector2(0.99, 0.99)
 texture = ExtResource("2_a4w3g")
 
 [node name="ColorTexture" type="Sprite2D" parent="LoadingIcon"]
 modulate = Color(1, 1, 1, 0)
 texture = ExtResource("3_4fwvk")
+
+[node name="LoadingRing" type="Sprite2D" parent="LoadingIcon"]
+visible = false
+texture = ExtResource("4_q075v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LoadingIcon"]
 unique_name_in_owner = true

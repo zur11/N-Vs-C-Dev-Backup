@@ -6,9 +6,6 @@ var _games_menu_scene : PackedScene = load("res://screens/sub_menus/games_menu/g
 var _settings_menu_scene : PackedScene = load("res://screens/sub_menus/settings_menu/settings_menu.tscn")
 var _market_menu_scene : PackedScene = load("res://screens/sub_menus/market_menu/market_menu.tscn")
 
-
-
-
 func _ready():
 	($MainMenu as MainMenu).go_to_sub_menu.connect(_go_to_sub_menu)
 	if display_games_menu_directly:

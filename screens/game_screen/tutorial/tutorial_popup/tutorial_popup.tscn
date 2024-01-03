@@ -41,10 +41,10 @@ theme_override_font_sizes/font_size = 50
 
 [node name="ContinueButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 442.0
-offset_top = 938.0
-offset_right = 748.0
-offset_bottom = 1063.0
+offset_left = 434.0
+offset_top = 865.0
+offset_right = 740.0
+offset_bottom = 990.0
 texture_normal = ExtResource("4_0j1rr")
 texture_pressed = ExtResource("5_h7rqy")
 texture_hover = ExtResource("5_h7rqy")
