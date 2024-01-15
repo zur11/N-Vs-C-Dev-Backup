@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckywsoji8yeuw"]
+
+[ext_resource type="PackedScene" uid="uid://kaumcd515jsx" path="res://screens/loading_screen/loading_animation/loading_animation_nazi.tscn" id="1_uyruk"]
+
+[node name="Test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoadingAnimationNazi" parent="." instance=ExtResource("1_uyruk")]
+position = Vector2(319, 213)
+
+[node name="AnimationPlayer" parent="LoadingAnimationNazi/LoadingIcon" index="3"]
+autoplay = "_loading"
+
+[editable path="LoadingAnimationNazi"]

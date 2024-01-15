@@ -4,14 +4,14 @@ signal loading_animation_ended
 
 var self_index:int
 var previous_animation_position : float
-var my_packed_string_array:PackedStringArray = []
 
 func _ready():
-	$"%AnimationPlayer".speed_scale = 7
+	$"%AnimationPlayer".speed_scale = 1
 	set_process(false)
 
 func _process(_delta):
-	if previous_animation_position < $"%AnimationPlayer".current_animation_position and $"%AnimationPlayer".get_queue() == my_packed_string_array:
+	# if 
+	if previous_animation_position < $"%AnimationPlayer".current_animation_position and $"%AnimationPlayer".get_queue() == PackedStringArray():
 		var charging_anim = $"%AnimationPlayer".get_animation($"%AnimationPlayer".current_animation) as Animation
 		charging_anim.loop_mode = Animation.LOOP_NONE
 		$"%AnimationPlayer".queue("_finished_loading")

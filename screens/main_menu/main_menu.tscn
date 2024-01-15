@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://nkdlkhmsxdka" path="res://screens/main_menu/assets/settings_2.png" id="6_a3eqk"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="7_5jsu4"]
 [ext_resource type="AudioStream" uid="uid://c23u63gja3ttj" path="res://assets/audio/sfx/buttons_sfx/click_1.mp3" id="7_c1rv0"]
-[ext_resource type="Texture2D" uid="uid://1gmrkml2ov3j" path="res://screens/sub_menus/market_screen/assets/market_button.png" id="7_d0cx1"]
-[ext_resource type="Texture2D" uid="uid://byg6o8ggvbyhn" path="res://screens/sub_menus/market_screen/assets/market_button_selected.png" id="8_ycnys"]
+[ext_resource type="Texture2D" uid="uid://1gmrkml2ov3j" path="res://screens/sub_menus/market_menu/assets/market_button.png" id="7_d0cx1"]
+[ext_resource type="Texture2D" uid="uid://byg6o8ggvbyhn" path="res://screens/sub_menus/market_menu/assets/market_button_selected.png" id="8_ycnys"]
 [ext_resource type="PackedScene" uid="uid://swqcdk8cggeg" path="res://screens/main_menu/user_stats_container/user_stats_container.tscn" id="9_3k1xs"]
 
 [node name="MainMenu" type="Control"]
@@ -28,20 +28,20 @@ texture = ExtResource("2_3alm3")
 
 [node name="GoToGamesMenuButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 453.0
-offset_top = 549.0
-offset_right = 796.0
-offset_bottom = 712.0
+offset_left = 486.0
+offset_top = 538.0
+offset_right = 871.0
+offset_bottom = 782.0
 texture_normal = ExtResource("3_hstnn")
 texture_pressed = ExtResource("4_vammy")
 texture_hover = ExtResource("4_vammy")
 
 [node name="GoToSettingsMenuButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 908.0
-offset_top = 652.0
-offset_right = 1325.0
-offset_bottom = 820.0
+offset_left = 945.0
+offset_top = 524.0
+offset_right = 1362.0
+offset_bottom = 801.0
 texture_normal = ExtResource("5_ra82b")
 texture_pressed = ExtResource("6_a3eqk")
 texture_hover = ExtResource("6_a3eqk")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://87lecky2hhq6"]
+[gd_scene load_steps=15 format=3 uid="uid://87lecky2hhq6"]
 
 [ext_resource type="Script" path="res://screens/sub_menus/settings_menu/settings_menu.gd" id="1_ek6l5"]
 [ext_resource type="Texture2D" uid="uid://baj3lloqlxev0" path="res://screens/sub_menus/settings_menu/assets/settings_menu_bg.png" id="2_6g4gv"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ckeh3i5xuaoqs" path="res://screens/sub_menus/settings_menu/assets/flag_stick.png" id="5_ivy1x"]
 [ext_resource type="Theme" uid="uid://qpd6rkhjjnwn" path="res://screens/sub_menus/settings_menu/flag_vertical_slider/sfx_off.tres" id="5_pjwlp"]
 [ext_resource type="AudioStream" uid="uid://cr2skxn5wpmxx" path="res://assets/audio/sfx/buttons_sfx/flag_drop.mp3" id="8_n5gu7"]
+[ext_resource type="Texture2D" uid="uid://lh54jhx07lel" path="res://screens/sub_menus/settings_menu/assets/settings_sign.png" id="8_wfsem"]
 [ext_resource type="PackedScene" uid="uid://bfouuid76jvkq" path="res://screens/sub_menus/settings_menu/flag_vertical_slider/flag_vertical_slider.tscn" id="9_pojic"]
 [ext_resource type="AudioStream" uid="uid://cc7rpmevwkpyo" path="res://assets/audio/sfx/buttons_sfx/click_2.mp3" id="9_vl6b0"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="10_f1nsj"]
@@ -34,12 +35,16 @@ offset_bottom = 40.0
 texture = ExtResource("2_6g4gv")
 
 [node name="MusicFlagStaff" type="Sprite2D" parent="."]
-position = Vector2(934, 548)
+position = Vector2(980, 548)
 texture = ExtResource("5_ivy1x")
 
 [node name="SfxFlagStaff" type="Sprite2D" parent="."]
-position = Vector2(1257, 545)
+position = Vector2(1342, 545)
 texture = ExtResource("5_ivy1x")
+
+[node name="SettingsSign" type="Sprite2D" parent="."]
+position = Vector2(565, 100)
+texture = ExtResource("8_wfsem")
 
 [node name="GoBackButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -63,17 +68,17 @@ script = ExtResource("10_f1nsj")
 
 [node name="MusicVerticalSlider" parent="." instance=ExtResource("9_pojic")]
 layout_mode = 0
-offset_left = 943.0
+offset_left = 986.0
 offset_top = 246.0
-offset_right = 1083.0
+offset_right = 1126.0
 offset_bottom = 794.0
 bus_name = "Music"
 
 [node name="SFXVerticalSlider" parent="." instance=ExtResource("9_pojic")]
 layout_mode = 0
-offset_left = 1265.0
+offset_left = 1350.0
 offset_top = 246.0
-offset_right = 1405.0
+offset_right = 1490.0
 offset_bottom = 794.0
 bus_name = "SFX"
 

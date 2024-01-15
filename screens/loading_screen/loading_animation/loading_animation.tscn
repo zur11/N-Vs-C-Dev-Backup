@@ -160,7 +160,6 @@ texture = ExtResource("3_fbcd4")
 
 [node name="LoadingRing" type="Sprite2D" parent="LoadingIcon"]
 visible = false
-rotation = 1.63575
 texture = ExtResource("4_klieo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LoadingIcon"]
