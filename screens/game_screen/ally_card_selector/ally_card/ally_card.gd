@@ -16,10 +16,15 @@ var _normal_btn_texture : Texture
 var _selected_btn_texture : Texture
 
 var is_twinkling : bool : set = _set_is_twinkling
-var _full_color_int : float = 1
-var _empty_color_int : float = 0
-var _current_color_float : float = 1
-var _color_int_is_decreasing : bool
+var twinkling_texture : TextureRect = TextureRect.new()
+var _minimum_float : float = 0.0
+var _maximum_float : float = 1.0
+var _current_alpha_float : float 
+var _alpha_float_is_decreasing : bool
+
+var _red_float : float = 0.988
+var _green_float : float = 0.604
+var _blue_float : float = 0.604
 
 @onready var _price_label : Label = $PriceLabel
 @onready var _loading_veil : ColorRect = $LoadingVeil
@@ -33,24 +38,24 @@ func _set_is_twinkling(new_value):
 	is_twinkling = new_value
 	
 	if not is_twinkling:
-		self.modulate = Color(_full_color_int, _full_color_int, _full_color_int)
-		_current_color_float = _full_color_int
+		twinkling_texture.queue_free()
 		card_stopped_twinkling.emit()
 	else:
-		_color_int_is_decreasing = true
+		twinkling_texture.texture = _normal_btn_texture
+		self.add_child(twinkling_texture)
+		_alpha_float_is_decreasing = true
 		
 func _twinkle():
-#		printt("is twinkling")
-		if _color_int_is_decreasing:
-			_current_color_float -= 0.03
-			self.modulate = Color(_full_color_int, _current_color_float, _current_color_float)
+		if _alpha_float_is_decreasing:
+			_current_alpha_float -= 0.02
+			twinkling_texture.modulate = Color(_red_float, _green_float, _blue_float, _current_alpha_float)
 			
-			if _current_color_float <= _empty_color_int: _color_int_is_decreasing = false
+			if _current_alpha_float <= _minimum_float: _alpha_float_is_decreasing = false
 		else:
-			_current_color_float += 0.03
-			self.modulate = Color(_full_color_int, _current_color_float, _current_color_float)
+			_current_alpha_float += 0.02
+			twinkling_texture.modulate = Color(_red_float, _green_float, _blue_float, _current_alpha_float)
 			
-			if _current_color_float == _full_color_int: _color_int_is_decreasing = true
+			if _current_alpha_float >= _maximum_float: _alpha_float_is_decreasing = true
 
 func set_initial_variables(ally_arg:Ally):
 	ally = ally_arg

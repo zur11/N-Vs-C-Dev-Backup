@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://crabuykrocekc"]
 
 [ext_resource type="Script" path="res://screens/game_screen/tutorial/stalingrad_level_1_sm/stalingrad_level_1_sm.gd" id="1_6l7qn"]
-[ext_resource type="Texture2D" uid="uid://c3lw0mbuu5dy7" path="res://screens/game_screen/tutorial/tutorial_popup/assets/tutorial_1_image_3.png" id="2_bc611"]
+[ext_resource type="Texture2D" uid="uid://cunfv7egth52b" path="res://screens/game_screen/tutorial/tutorial_popup/assets/tutorial_1_image_3.png" id="2_bc611"]
 [ext_resource type="PackedScene" uid="uid://ckftahrn31kes" path="res://screens/game_screen/tutorial/tutorial_popup/tutorial_twinkling_rows/tutorial_twinkling_rows.tscn" id="3_u7mbv"]
-[ext_resource type="Texture2D" uid="uid://bef6fjfywo5kv" path="res://screens/game_screen/tutorial/tutorial_popup/assets/tutorial_1_image_1.png" id="4_jbqah"]
-[ext_resource type="Texture2D" uid="uid://cunfv7egth52b" path="res://screens/game_screen/tutorial/tutorial_popup/assets/tutorial_1_image_2.png" id="5_acb6h"]
+[ext_resource type="Texture2D" uid="uid://bef6fjfywo5kv" path="res://screens/game_screen/tutorial/tutorial_popup/assets/tutorial_1_image_2.png" id="4_jbqah"]
+[ext_resource type="Texture2D" uid="uid://c3lw0mbuu5dy7" path="res://screens/game_screen/tutorial/tutorial_popup/assets/tutorial_1_image_1.png" id="5_gm8nj"]
 [ext_resource type="Texture2D" uid="uid://dvgwqsw3u6sgo" path="res://screens/game_screen/tutorial/tutorial_popup/assets/ok_button.png" id="6_prgt4"]
 [ext_resource type="Texture2D" uid="uid://dtb15ost7qax6" path="res://screens/game_screen/tutorial/tutorial_popup/assets/ok_button_selected.png" id="7_6536p"]
 [ext_resource type="Texture2D" uid="uid://dl5o03oly022o" path="res://screens/game_screen/tutorial/tutorial_popup/assets/next_button.png" id="8_vk5qm"]
@@ -13,10 +13,10 @@
 
 [node name="StalingradLevel1Sm" type="Node"]
 script = ExtResource("1_6l7qn")
-second_popup_thumbnails = Array[Texture]([ExtResource("2_bc611")])
+total_second_popup_pages = 2
+second_popup_thumbnails = Array[Texture]([ExtResource("4_jbqah"), ExtResource("2_bc611")])
 tutorial_twinkling_rows = ExtResource("3_u7mbv")
-total_first_popup_pages = 2
-background_thumbnails = Array[Texture]([ExtResource("4_jbqah"), ExtResource("5_acb6h")])
+background_thumbnails = Array[Texture]([ExtResource("5_gm8nj")])
 ok_button_texture = ExtResource("6_prgt4")
 selected_ok_button_texture = ExtResource("7_6536p")
 next_button_texture = ExtResource("8_vk5qm")
