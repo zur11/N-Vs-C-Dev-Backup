@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c08h7xaadbc38" path="res://screens/loading_screen/animated_background/assets/gun_particle.png" id="14_b755y"]
 [ext_resource type="Texture2D" uid="uid://fvk7e3yc880w" path="res://screens/loading_screen/animated_background/assets/communist_soldier.PNG" id="15_vy2aj"]
 [ext_resource type="Texture2D" uid="uid://d0c5jnd2el1ce" path="res://screens/loading_screen/animated_background/assets/left_gpart.png" id="16_7d0ab"]
-[ext_resource type="Texture2D" uid="uid://cs7tdf2qxhwui" path="res://screens/loading_screen/animated_background/assets/black_border.PNG" id="17_dp06g"]
+[ext_resource type="Texture2D" uid="uid://cs7tdf2qxhwui" path="res://screens/main_menu/assets/black_border.PNG" id="17_dp06g"]
 [ext_resource type="Texture2D" uid="uid://d2mgg7mn84x5b" path="res://screens/loading_screen/animated_background/assets/foreground_particles.PNG" id="18_s2em8"]
 [ext_resource type="Texture2D" uid="uid://cbmhllyhe6qru" path="res://screens/loading_screen/animated_background/assets/left_bullet.png" id="19_ipwec"]
 [ext_resource type="Texture2D" uid="uid://c3j671cy6cdp3" path="res://screens/loading_screen/animated_background/assets/right_bullet.png" id="20_weckj"]

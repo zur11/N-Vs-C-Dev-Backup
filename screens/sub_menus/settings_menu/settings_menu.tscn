@@ -35,7 +35,7 @@ offset_bottom = 40.0
 texture = ExtResource("2_6g4gv")
 
 [node name="MusicFlagStaff" type="Sprite2D" parent="."]
-position = Vector2(980, 548)
+position = Vector2(1006, 548)
 texture = ExtResource("5_ivy1x")
 
 [node name="SfxFlagStaff" type="Sprite2D" parent="."]
@@ -68,9 +68,9 @@ script = ExtResource("10_f1nsj")
 
 [node name="MusicVerticalSlider" parent="." instance=ExtResource("9_pojic")]
 layout_mode = 0
-offset_left = 986.0
+offset_left = 1012.0
 offset_top = 246.0
-offset_right = 1126.0
+offset_right = 1152.0
 offset_bottom = 794.0
 bus_name = "Music"
 

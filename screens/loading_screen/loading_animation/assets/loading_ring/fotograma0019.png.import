@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs7tdf2qxhwui"
-path="res://.godot/imported/black_border.PNG-02b1dc33300083bb73f87e06218ddfca.ctex"
+uid="uid://cynuxr3bdl01d"
+path="res://.godot/imported/fotograma0019.png-752610abed78edef62f2aa6ff733e78a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/loading_screen/animated_background/assets/black_border.PNG"
-dest_files=["res://.godot/imported/black_border.PNG-02b1dc33300083bb73f87e06218ddfca.ctex"]
+source_file="res://screens/loading_screen/loading_animation/assets/loading_ring/fotograma0019.png"
+dest_files=["res://.godot/imported/fotograma0019.png-752610abed78edef62f2aa6ff733e78a.ctex"]
 
 [params]
 
