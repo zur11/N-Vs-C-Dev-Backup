@@ -1,12 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccdekj6qhy35t"]
+[gd_scene load_steps=8 format=3 uid="uid://ccdekj6qhy35t"]
 
 [ext_resource type="PackedScene" uid="uid://cflg2ypu25js2" path="res://screens/main_menu/main_menu.tscn" id="1_hxyeq"]
 [ext_resource type="Script" path="res://screens/menus/menus.gd" id="1_k132j"]
+[ext_resource type="PackedScene" uid="uid://btlmw5vysjx8" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/stalingrad_summer_icon/stalingrad_icon.tscn" id="2_m6jey"]
 [ext_resource type="Script" path="res://global_systems/scene_manager_system/scene_container/scene_container.gd" id="2_wxv64"]
+[ext_resource type="PackedScene" uid="uid://tkdaet88vh8r" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/stalingrad_winter_icon/stalingrad_2_icon.tscn" id="3_20gu5"]
+[ext_resource type="PackedScene" uid="uid://d5j7ri7ludn5" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/budapest_icon/budapest_icon.tscn" id="4_6fico"]
 [ext_resource type="PackedScene" uid="uid://bo1jforvfhnbv" path="res://screens/sub_menus/games_menu/games_menu.tscn" id="4_c1unn"]
 
 [node name="Menus" type="Node2D"]
 script = ExtResource("1_k132j")
+
+[node name="StalingradIcon" parent="." instance=ExtResource("2_m6jey")]
+
+[node name="Stalingrad2Icon" parent="." instance=ExtResource("3_20gu5")]
+
+[node name="BudapestIcon" parent="." instance=ExtResource("4_6fico")]
 
 [node name="MainMenu" parent="." instance=ExtResource("1_hxyeq")]
 

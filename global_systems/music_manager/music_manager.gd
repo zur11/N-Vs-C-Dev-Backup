@@ -2,8 +2,8 @@ extends AudioStreamPlayer
 
 const _MAIN_STREAM_PATH : String = "res://assets/audio/music/soviet_dark_carnival_loop2.mp3"
 const _STALINGRAD_SUMMER_GAME_STREAM_PATH : String = "res://data/worlds/stalingrad_summer/winter-no-wind.mp3"
-const _STALINGRAD_WINTER_GAME_STREAM_PATH : String = "res://data/worlds/trenches/russian-girl.mp3" 
-const _BUDAPEST_GAME_STREAM_PATH : String = "res://data/worlds/city_lights/luna-park.mp3"
+const _STALINGRAD_WINTER_GAME_STREAM_PATH : String = "res://data/worlds/stalingrad_winter/russian-girl.mp3" 
+const _BUDAPEST_GAME_STREAM_PATH : String = "res://data/worlds/budapest/luna-park.mp3"
 const _ALLIES_SELECTOR_POPUP_STREAM_PATH : String = "res://assets/audio/music/marionettes_(choosimg_allies_music).mp3"
 
 var _user_settings : UserSettings = UserDataManager.user_data.user_settings

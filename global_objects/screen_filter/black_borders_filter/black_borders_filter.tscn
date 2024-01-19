@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv3eiijl20jl4"]
+
+[ext_resource type="Script" path="res://global_objects/screen_filter/black_borders_filter/black_borders_filter.gd" id="1_h3fm1"]
+[ext_resource type="Texture2D" uid="uid://cxgobxsarny1l" path="res://global_objects/screen_filter/black_borders_filter/assets/black_borders.png" id="1_hjqxn"]
+
+[node name="BlackBordersFilter" type="TextureRect"]
+mouse_filter = 2
+texture = ExtResource("1_hjqxn")
+script = ExtResource("1_h3fm1")

@@ -1,7 +1,5 @@
 class_name GameScreen extends Control
 
-signal tutorial_ally_added
-
 const _ALLY_CARD_SCENE_PATH : String = "res://screens/game_screen/ally_card_selector/ally_card/ally_card.tscn"
 const _DEFAULT_TWEEN_ANIMATION_TIME : float = 0.5
 
@@ -15,8 +13,6 @@ var _allies : Array[Ally]
 var _remaining_enemies_count : int 
 var _allies_scenes : Dictionary
 var _available_ally_slots : int
-
-var _tutorial_twinkling_rows : TutorialTwinklingRows
 
 var _tutorial : Tutorial
 
@@ -44,7 +40,8 @@ var _tutorial : Tutorial
 @onready var _new_ally_located_player : SFXPlayer = $NewAllyLocatedPlayer
 @onready var _enemies_arrived_player : SFXPlayer = $EnemiesArrivedPlayer
 @onready var _user_balance_displayer : UserBalanceDisplayer = $UserBalanceDisplayer
-#var _tutorial_popup : TutorialPopup 
+@onready var _black_borders_filter : ScreenFilter = $%BlackBordersFilter as BlackBordersFilter
+@onready var _screen_filters : Node2D = $ScreenFilters
 
 func _ready():
 	_set_initial_variables()
@@ -62,6 +59,7 @@ func _ready():
 func _set_initial_variables():
 	var player_user_data : PlayerUserData = UserDataManager.user_data.player_user_data
 	
+	_black_borders_filter.toogle_filter_visibility(false)
 	_background.texture = level.game_background
 	_foreground.texture = level.game_foreground
 	_foreground.set_z_index(9)
@@ -111,29 +109,6 @@ func _set_popups():
 	_set_popup(_paused_game_popup)
 	_set_popup(_game_won_popup)
 
-#	if level is TutorialLevel:
-#		_tutorial_popup = level.base_popup_scene.instantiate() as TutorialPopup
-#		self.add_child(_tutorial_popup)
-#		_tutorial_popup.set_z_index(14)
-#		_tutorial_popup.visible = false
-#		_tutorial_popup.position = Vector2(360,14)
-#		_tutorial_popup.total_first_popup_pages = level.total_first_popup_pages
-#		_tutorial_popup.total_second_popup_pages = level.total_second_popup_pages
-#		_tutorial_popup.background_thumbnails = level.background_thumbnails
-#		_tutorial_popup.second_popup_thumbnails = level.second_popup_thumbnails
-#		_tutorial_popup.next_button_texture = level.next_button_texture
-#		_tutorial_popup.selected_next_button_texture = level.selected_next_button_texture
-#		_tutorial_popup.ok_button_texture = level.ok_button_texture
-#		_tutorial_popup.selected_ok_button_texture = level.selected_ok_button_texture
-#		_tutorial_popup.update_popup_display()
-#
-#		if level.tutorial_twinkling_rows != null:
-#			_tutorial_twinkling_rows = level.tutorial_twinkling_rows.instantiate() as TutorialTwinklingRows
-#
-#			self.add_child(_tutorial_twinkling_rows)
-#			_tutorial_twinkling_rows.position = Vector2(207,170)
-#			_tutorial_twinkling_rows.set_twinkling_rows([3])
-
 func _set_popup(popup:Control):
 	popup.set_z_index(10)
 	popup.visible = false
@@ -172,12 +147,6 @@ func _connect_signals():
 	card_selector.connect("ally_selected", _on_card_selector_ally_selected)
 	card_selector.ally_card_loaded.connect(_on_card_selector_card_loaded)
 	_game_start_count_down.count_down_finished.connect(_on_game_start_count_down_finished)
-	
-	if level is TutorialLevel:
-#		card_selector.ally_card_finished_twinkling_process.connect(_on_ally_card_stopped_twinkling)
-#		_tutorial_popup.first_popup_finished.connect(_on_first_tutorial_popup_finished)
-#		_tutorial_popup.second_popup_finished.connect(_on_second_tutorial_popup_finished)
-		self.tutorial_ally_added.connect(_on_twinkling_tutorial_row_stopped_twinkling)
 
 func _start_initial_cards_display():
 	var ally_cards : Array[AllyCard] = []
@@ -264,12 +233,9 @@ func _make_initial_transition_right():
 			_start_game_with_count_down()
 		else:
 			_tutorial.initiate_popup()
-#			_display_tutorial_popup()
 			_start_initial_cards_display()
 			_balance_displayer.visible = true
 
-#func _display_tutorial_popup():
-#	_tutorial_popup.visible = true
 
 func _start_game_with_count_down():
 	var card_selector_is_displayed : bool = card_selector.get_child_count() > 0
@@ -440,15 +406,22 @@ func _display_game_won_popup():
 
 
 func _move_screen_to_next_level_position(moving_left:bool):
+	_black_borders_filter.toogle_filter_visibility(false)
+	
 	if moving_left:
 		var tween = create_tween()
+		var screen_filters_tween : Tween = create_tween()
 	
 		tween.tween_property($".", "position", Vector2(self.position.x + 2484, 0), _DEFAULT_TWEEN_ANIMATION_TIME * 4)
+		screen_filters_tween.tween_property(_screen_filters, "position", Vector2(_screen_filters.position.x - 1920, 0), _DEFAULT_TWEEN_ANIMATION_TIME * 4)
 		_game_won_popup.position.x -= 1920
+		
 	else:
 		var first_tween = create_tween()
+		var screen_filters_tween : Tween = create_tween()
 	
 		first_tween.tween_property($".", "position", Vector2(self.position.x - 2484, 0), _DEFAULT_TWEEN_ANIMATION_TIME * 4)
+		screen_filters_tween.tween_property(_screen_filters, "position", Vector2(_screen_filters.position.x + 1920, 0), _DEFAULT_TWEEN_ANIMATION_TIME * 4)
 		
 		await get_tree().create_timer(_DEFAULT_TWEEN_ANIMATION_TIME * 4).timeout
 		var second_tween = create_tween()
@@ -503,12 +476,6 @@ func _on_terrain_grid_coin_picked_up(coin_value : int):
 	_coin_picked_up_player.play_sound()
 	_balance_displayer.add_value_to_balance(coin_value)
 	_update_cards_affordability()
-
-#func _on_ally_card_stopped_twinkling():
-#	_twinkle_terrain_row()
-
-func _twinkle_terrain_row():
-	_tutorial_twinkling_rows.twinkle_rows([0])
 
 func _on_card_selector_ally_selected(selected_ally_name : String):
 	if selected_ally_name != "":
@@ -576,6 +543,8 @@ func _on_allies_selector_allies_chosen(chosen_level_allies : Array[Ally]):
 	_game_start_count_down.start_count_down()
 
 func _on_game_start_count_down_finished():
+	_black_borders_filter.toogle_filter_visibility(true)
+	await get_tree().create_timer(1).timeout
 	_set_terrain_grid_coin_dropping_rate()
 	_set_enemy_spawners()
 	_set_remaining_enemies_count()
@@ -590,32 +559,6 @@ func _on_game_start_count_down_finished():
 
 func _on_card_selector_card_loaded():
 	_update_cards_affordability()
-
-#func _on_first_tutorial_popup_finished(tutorial_continues:bool):
-#	if not tutorial_continues:
-#		_tutorial_popup.visible = false
-#		_tutorial_popup.queue_free()
-#		_start_game_with_count_down()
-#	else:
-#		_tutorial_popup.visible = false
-#
-#		if level.level_name == "Level 1":
-#			card_selector.twinkle_ally_card(0)
-#		if level.level_name == "Level 2":
-#			card_selector.twinkle_ally_card(1)
-
-#func _on_second_tutorial_popup_finished():
-#		_tutorial_popup.visible = false
-#		_tutorial_popup.queue_free()
-#		_start_game_with_count_down()
-
-func _on_twinkling_tutorial_row_stopped_twinkling():
-	
-	_tutorial.on_tutorial_ally_added()
-#	_tutorial_popup.visible = true
-#	_tutorial_popup.update_popup_display()
-#	_tutorial_twinkling_rows.queue_free()
-#	level.tutorial_twinkling_rows = null
 
 func _on_tutorial_finished():
 	_tutorial.queue_free()
