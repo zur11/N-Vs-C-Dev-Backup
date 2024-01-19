@@ -1,10 +1,11 @@
-extends Node2D
+class_name Menus extends Node2D
 
 var display_games_menu_directly : bool
 
 var _games_menu_scene : PackedScene = load("res://screens/sub_menus/games_menu/games_menu.tscn")
 var _settings_menu_scene : PackedScene = load("res://screens/sub_menus/settings_menu/settings_menu.tscn")
 var _market_menu_scene : PackedScene = load("res://screens/sub_menus/market_menu/market_menu.tscn")
+
 
 func _ready():
 	($MainMenu as MainMenu).go_to_sub_menu.connect(_go_to_sub_menu)
@@ -29,6 +30,7 @@ func _go_to_sub_menu(sub_menu_name:String):
 		SceneManagerSystem.get_container("LeftSubMenuContainer").goto_scene(sub_menu)
 
 	await get_tree().create_timer(0.2).timeout
+	
 	var tween = create_tween()
 	
 	if sub_menu_name == "settings_menu" or sub_menu_name == "games_menu":
@@ -39,7 +41,10 @@ func _go_to_sub_menu(sub_menu_name:String):
 		($LeftSubMenuContainer.get_child(0)).go_back.connect(go_to_main_menu)
 
 
+
 func go_to_main_menu():
+	await get_tree().create_timer(0.2).timeout
+	
 	var tween = create_tween()
 	tween.tween_property($".", "position", Vector2(0, 0), 0.5)
 

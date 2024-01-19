@@ -40,6 +40,8 @@ var _tutorial : Tutorial
 @onready var _new_ally_located_player : SFXPlayer = $NewAllyLocatedPlayer
 @onready var _enemies_arrived_player : SFXPlayer = $EnemiesArrivedPlayer
 @onready var _user_balance_displayer : UserBalanceDisplayer = $UserBalanceDisplayer
+@onready var _black_borders_filter : ScreenFilter = $%BlackBordersFilter as BlackBordersFilter
+@onready var _screen_filters : Node2D = $ScreenFilters
 
 func _ready():
 	_set_initial_variables()
@@ -57,6 +59,7 @@ func _ready():
 func _set_initial_variables():
 	var player_user_data : PlayerUserData = UserDataManager.user_data.player_user_data
 	
+	_black_borders_filter.toogle_filter_visibility(false)
 	_background.texture = level.game_background
 	_foreground.texture = level.game_foreground
 	_foreground.set_z_index(9)
@@ -403,15 +406,22 @@ func _display_game_won_popup():
 
 
 func _move_screen_to_next_level_position(moving_left:bool):
+	_black_borders_filter.toogle_filter_visibility(false)
+	
 	if moving_left:
 		var tween = create_tween()
+		var screen_filters_tween : Tween = create_tween()
 	
 		tween.tween_property($".", "position", Vector2(self.position.x + 2484, 0), _DEFAULT_TWEEN_ANIMATION_TIME * 4)
+		screen_filters_tween.tween_property(_screen_filters, "position", Vector2(_screen_filters.position.x - 1920, 0), _DEFAULT_TWEEN_ANIMATION_TIME * 4)
 		_game_won_popup.position.x -= 1920
+		
 	else:
 		var first_tween = create_tween()
+		var screen_filters_tween : Tween = create_tween()
 	
 		first_tween.tween_property($".", "position", Vector2(self.position.x - 2484, 0), _DEFAULT_TWEEN_ANIMATION_TIME * 4)
+		screen_filters_tween.tween_property(_screen_filters, "position", Vector2(_screen_filters.position.x + 1920, 0), _DEFAULT_TWEEN_ANIMATION_TIME * 4)
 		
 		await get_tree().create_timer(_DEFAULT_TWEEN_ANIMATION_TIME * 4).timeout
 		var second_tween = create_tween()
@@ -533,6 +543,8 @@ func _on_allies_selector_allies_chosen(chosen_level_allies : Array[Ally]):
 	_game_start_count_down.start_count_down()
 
 func _on_game_start_count_down_finished():
+	_black_borders_filter.toogle_filter_visibility(true)
+	await get_tree().create_timer(1).timeout
 	_set_terrain_grid_coin_dropping_rate()
 	_set_enemy_spawners()
 	_set_remaining_enemies_count()
