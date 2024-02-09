@@ -1,11 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4n41kmtybwqn"]
+[gd_scene load_steps=9 format=3 uid="uid://b4n41kmtybwqn"]
 
 [ext_resource type="Script" path="res://screens/loading_screen/loading_screen.gd" id="1_ti8cj"]
 [ext_resource type="PackedScene" uid="uid://ch80xmnv4dmtb" path="res://screens/loading_screen/loading_animation/loading_animation.tscn" id="2_6kal7"]
-[ext_resource type="PackedScene" uid="uid://btlmw5vysjx8" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/stalingrad_summer_icon/stalingrad_icon.tscn" id="2_abdrf"]
 [ext_resource type="Texture2D" uid="uid://cq2h1wsqyivir" path="res://screens/loading_screen/assets/logo_small.png" id="3_8dbqn"]
-[ext_resource type="PackedScene" uid="uid://tkdaet88vh8r" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/stalingrad_winter_icon/stalingrad_2_icon.tscn" id="3_u266i"]
-[ext_resource type="PackedScene" uid="uid://d5j7ri7ludn5" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/budapest_icon/budapest_icon.tscn" id="4_yicdv"]
 [ext_resource type="PackedScene" uid="uid://cw5i53clevpnv" path="res://screens/loading_screen/animated_background/animated_background.tscn" id="5_wh8xf"]
 [ext_resource type="FontFile" uid="uid://3iv2fk2whit2" path="res://assets/fonts/Molot.otf" id="7_kdn00"]
 [ext_resource type="PackedScene" uid="uid://kaumcd515jsx" path="res://screens/loading_screen/loading_animation/loading_animation_nazi.tscn" id="9_xr7nt"]
@@ -40,12 +37,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ti8cj")
-
-[node name="StalingradIcon" parent="." instance=ExtResource("2_abdrf")]
-
-[node name="Stalingrad2Icon" parent="." instance=ExtResource("3_u266i")]
-
-[node name="BudapestIcon" parent="." instance=ExtResource("4_yicdv")]
 
 [node name="AnimatedBackground" parent="." instance=ExtResource("5_wh8xf")]
 layout_mode = 0

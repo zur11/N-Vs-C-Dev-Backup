@@ -3,13 +3,13 @@ class_name EnemySpawners extends VBoxContainer
 signal wave_flagged(wave_time_position:float)
 signal enemy_spawned(wait_time:float)
 signal total_spawning_time_calculated(total_spawning_seconds:float)
-signal wave_started(wave_index:int)
+signal wave_started(wave_index:int, is_final_wave:bool)
 signal wave_finished(wave_index:int)
 signal enemy_died
 
 var unsorted_enemy_scenes: Array[EnemyWave] : set = _set_unsorted_enemy_scenes
 var total_enemies_to_spawn : int
-var final_wave_index : int
+var final_wave_index : int 
 
 var _sorted_enemy_scenes : Array[Array] # Array[Array[PackedScene]
 var _enemy_spawning_wait_times : Array[Array] # Array[Array[int]
@@ -245,12 +245,13 @@ func _on_wave_finished(wave_index:int):
 	if wave_index != final_wave_index:
 		_current_wave_index += 1
 		_wave_just_started = true
-#	printt("Wave finished: ", _current_wave_index)
+		if _current_wave_index == final_wave_index: 
+			wave_started.emit(_current_wave_index, true)
+
 
 func _on_enemy_spawning_timer_timeout():
 	if _wave_just_started:
-		wave_started.emit(_current_wave_index)
-#		printt("Wave started: ", _current_wave_index)
+		wave_started.emit(_current_wave_index, false)
 		_wave_just_started = false
 		
 	_prepare_next_enemy_to_spawn()

@@ -16,8 +16,9 @@ var _available_ally_slots : int
 
 var _tutorial : Tutorial
 
-@onready var _background : TextureRect = $Background as TextureRect
-@onready var _foreground : TextureRect = $Foreground as TextureRect
+#@onready var _background : TextureRect = $Background as TextureRect
+@onready var _background_scene : BackgroundScene = $BackgroundScene as BackgroundScene
+#@onready var _foreground : TextureRect = $Foreground as TextureRect
 @onready var card_selector : AllyCardSelector = $CardSelector as AllyCardSelector
 @onready var _terrain_grid = $TerrainGrid as TerrainGrid
 @onready var _balance_displayer = $BalanceDisplayer as BalanceDisplayer
@@ -42,6 +43,7 @@ var _tutorial : Tutorial
 @onready var _user_balance_displayer : UserBalanceDisplayer = $UserBalanceDisplayer
 @onready var _black_borders_filter : ScreenFilter = $%BlackBordersFilter as BlackBordersFilter
 @onready var _screen_filters : Node2D = $ScreenFilters
+@onready var _action_trigger : ActionTrigger = $ActionTrigger as ActionTrigger
 
 func _ready():
 	_set_initial_variables()
@@ -60,10 +62,12 @@ func _set_initial_variables():
 	var player_user_data : PlayerUserData = UserDataManager.user_data.player_user_data
 	
 	_black_borders_filter.toogle_filter_visibility(false)
-	_background.texture = level.game_background
-	_foreground.texture = level.game_foreground
-	_foreground.set_z_index(9)
-	_set_background_and_foreground_position()
+	_set_background_scene()
+	
+	#_background.texture = level.game_background
+	#_foreground.texture = level.game_foreground
+	#_foreground.set_z_index(9)
+	#_set_background_scene_x_position()
 
 	_balance_displayer.set_z_index(13)
 	_user_balance_displayer.set_z_index(13)
@@ -91,19 +95,36 @@ func _set_initial_variables():
 	
 	_game_start_count_down.set_z_index(15)
 	
+func _set_background_scene():
+	var games_menu_user_data : GamesMenuUserData = UserDataManager.user_data.games_menu_user_data as GamesMenuUserData
 	
-func _set_background_and_foreground_position():
+	var new_background_scene : BackgroundScene = level.background_scene.instantiate() as BackgroundScene 
+	var level_index : int = games_menu_user_data.get_current_level_index(level)
+	real_replace_by(_background_scene, new_background_scene)
+	new_background_scene.level_index = level_index + 1 
+	_background_scene = new_background_scene
+	
+	_set_background_scene_x_position()
+	
+func _set_background_scene_x_position():
 	match level.game_background_position:
 		"left":
-			_background.position.x = 0
-			_foreground.position.x = 0
+			_background_scene.position.x = 0
 		"center":
-			_background.position.x = -1920
-			_foreground.position.x = -1920
+			_background_scene.position.x = -1920
 		"right":
-			_background.position.x = -3840
-			_foreground.position.x = -3840
+			_background_scene.position.x = -3840
+
+func real_replace_by(node_to_replace:Node, replacing_node: Node):
+	var parent = node_to_replace.get_parent()
+	var parent_children : Array[Node]= parent.get_children()
+	var pos_in_parent : int = parent_children.find(node_to_replace)
 	
+	parent.remove_child(node_to_replace) # Removes a child node. The node is NOT deleted and must be deleted manually.
+	node_to_replace.queue_free() #Manual deletion of removed child
+	parent.add_child(replacing_node)
+	parent.move_child(replacing_node, pos_in_parent)
+
 func _set_popups():
 	_set_popup(_game_over_popup)
 	_set_popup(_paused_game_popup)
@@ -503,14 +524,16 @@ func _on_enemy_spawners_enemy_spawned(wait_time:float):
 func _on_enemy_spawners_wave_flagged(wave_time_position:float):
 	_game_progress_line.add_flagged_wave(wave_time_position)
 
-func _on_enemy_spawners_wave_started(wave_index:int):
+func _on_enemy_spawners_wave_started(wave_index:int, is_final_wave:bool):
 	if wave_index == 0:
+		_action_trigger.action_triggered.emit(Action.new(Action.Types.FIRST_WAVE_STARTED))
 		_enemies_arrived_player.play_sound()
 		_game_progress_line.visible = true
+	elif is_final_wave:
+		_action_trigger.action_triggered.emit(Action.new(Action.Types.LAST_WAVE_STARTED))
 
 func _on_enemy_spawners_wave_finished(_wave_index:int):
 	pass
-#		print("Game Screen Wave Finished: ", wave_index)
 
 func _on_allies_selector_allies_chosen(chosen_level_allies : Array[Ally]):
 	var ally_cards : Array[AllyCard] = []
