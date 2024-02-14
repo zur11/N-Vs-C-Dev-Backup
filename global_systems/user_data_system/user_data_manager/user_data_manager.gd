@@ -33,11 +33,21 @@ func load_user_data_from_disk() -> UserData:
 	return user_data
 
 
-#func update_games_menu_user_data(new_value:GamesMenuUserData):
-#	user_data.games_menu_user_data = new_value
-#	save_user_data_to_disk()
-#
-#func update_user_settings(new_value:UserSettings):
-#	user_data.user_settings = new_value
-#	save_user_data_to_disk()
+func set_background_scenes_in_all_levels():
+	var worlds = user_data.games_menu_user_data.worlds
+	
+	for world in worlds:
+		for level in world.levels:
+			if level.background_scene_path != "":
+				level.background_scene = load(level.background_scene_path)
 
+func get_current_level_index(level:Level) -> int:
+	var games_menu_user_data = user_data.games_menu_user_data
+	var current_world : World = games_menu_user_data.worlds[games_menu_user_data.selected_world_index] as World 
+	var current_level_index : int
+	
+	for current_world_level in current_world.levels as Array[Level]:
+		if current_world_level.level_name == level.level_name:
+			current_level_index = current_world.levels.find(current_world_level)
+			
+	return current_level_index + 1

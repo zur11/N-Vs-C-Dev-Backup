@@ -2,8 +2,7 @@
 class_name Level extends Resource
 
 @export var level_unlocked : bool
-@export var background_scene : PackedScene
-#@export var game_background : Texture
+@export var background_scene_path : String
 @export var game_foreground : Texture
 @export var level_name : String : set = _set_level_name
 @export var level_thumbnail : Texture 

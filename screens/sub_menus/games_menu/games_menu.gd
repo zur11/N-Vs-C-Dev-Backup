@@ -1,4 +1,4 @@
-extends Control
+class_name GamesMenu extends Control
 
 signal go_back
 
@@ -117,6 +117,8 @@ func _on_level_selector_go_to_level(level:Level):
 	if not level.level_unlocked: return 
 	var destiny_screen : GameScreen = load("res://screens/game_screen/game_screen.tscn").instantiate() as GameScreen
 	destiny_screen.level = level.duplicate(true)
+	#var level_background_scene : PackedScene = load(level.background_scene_path)
+	#destiny_screen.level.background_scene = level_background_scene
 	
 	var container_to_erase : SceneContainer = SceneManagerSystem.get_container_node("SubMenuContainer")
 

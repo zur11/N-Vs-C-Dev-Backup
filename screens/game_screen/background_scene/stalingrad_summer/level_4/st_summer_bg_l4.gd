@@ -1,0 +1,1 @@
+class_name StSummerBgL4 extends BackgroundScene

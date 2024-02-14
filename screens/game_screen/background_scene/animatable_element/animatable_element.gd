@@ -1,36 +1,30 @@
 class_name AnimatableElement extends AnimatedSprite2D
 
-var action_type : Action.Types
-var animation_name : String
+@export var action_type : Action.Types
+@export var sprite_frames_path: String
+
 
 func _ready():
+	set_process(false)
 	self.add_to_group("animatable_elements")
+	_start_threaded_sprite_frames_load()
 
-func set_initial_state_animation(current_level_index : int):
-	action_type = _get_action_type()
-	
-	
-	animation_name = Action.Types.find_key(action_type).to_lower() + "_l"+ str(current_level_index)
+func _process(_delta):
+	if ResourceLoader.load_threaded_get_status(sprite_frames_path) == ResourceLoader.THREAD_LOAD_LOADED:
+		set_process(false)
+		_set_assigned_sprite_frames()
 
-	if self.sprite_frames.has_animation(animation_name):
-		self.animation = animation_name
-	#else:
-		#printt("Sprite Frames do not has: ", animation_name)
+func _start_threaded_sprite_frames_load():
+	if sprite_frames_path != "":
+		ResourceLoader.load_threaded_request(sprite_frames_path)
+		set_process(true)
 
-func _get_action_type() -> Action.Types:
-	var animations : PackedStringArray = sprite_frames.get_animation_names()
-	var actions : Array = Action.Types.keys()
-	var _action_type : Action.Types 
-	
-	for anim in animations:
-		for act_type in actions:
-			if anim.to_upper().begins_with(act_type):
-				_action_type = Action.Types[act_type]
-	
-	return _action_type
+func _set_assigned_sprite_frames():
+	var assigned_sprite_frames : SpriteFrames = ResourceLoader.load_threaded_get(sprite_frames_path) as SpriteFrames
+	self.sprite_frames = assigned_sprite_frames
 
 func play_animation(_action_type:Action.Types):
-	if action_type == _action_type and self.sprite_frames.has_animation(animation_name):
+	if action_type == _action_type:
 		self.play(self.animation)
 
 

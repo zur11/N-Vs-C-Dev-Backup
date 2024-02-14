@@ -16,9 +16,7 @@ var _available_ally_slots : int
 
 var _tutorial : Tutorial
 
-#@onready var _background : TextureRect = $Background as TextureRect
-@onready var _background_scene : BackgroundScene = $BackgroundScene as BackgroundScene
-#@onready var _foreground : TextureRect = $Foreground as TextureRect
+@onready var _background_scene : BackgroundScene
 @onready var card_selector : AllyCardSelector = $CardSelector as AllyCardSelector
 @onready var _terrain_grid = $TerrainGrid as TerrainGrid
 @onready var _balance_displayer = $BalanceDisplayer as BalanceDisplayer
@@ -46,6 +44,7 @@ var _tutorial : Tutorial
 @onready var _action_trigger : ActionTrigger = $ActionTrigger as ActionTrigger
 
 func _ready():
+	set_process(false)
 	_set_initial_variables()
 	_set_game_screen_user_data()
 	_set_popups()
@@ -62,6 +61,7 @@ func _set_initial_variables():
 	var player_user_data : PlayerUserData = UserDataManager.user_data.player_user_data
 	
 	_black_borders_filter.toogle_filter_visibility(false)
+	
 	_set_background_scene()
 	
 	#_background.texture = level.game_background
@@ -96,16 +96,18 @@ func _set_initial_variables():
 	_game_start_count_down.set_z_index(15)
 	
 func _set_background_scene():
-	var games_menu_user_data : GamesMenuUserData = UserDataManager.user_data.games_menu_user_data as GamesMenuUserData
+	var new_background_scene : BackgroundScene = load(level.background_scene_path).instantiate() as BackgroundScene 
+
+	add_child(new_background_scene)
+	move_child(new_background_scene, 1)
 	
-	var new_background_scene : BackgroundScene = level.background_scene.instantiate() as BackgroundScene 
-	var level_index : int = games_menu_user_data.get_current_level_index(level)
-	real_replace_by(_background_scene, new_background_scene)
-	new_background_scene.level_index = level_index + 1 
+	#real_replace_by(_background_scene, new_background_scene) # For Editor Instanciated Version
+
 	_background_scene = new_background_scene
 	
 	_set_background_scene_x_position()
-	
+
+
 func _set_background_scene_x_position():
 	match level.game_background_position:
 		"left":

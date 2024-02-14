@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="LevelStalingradSummer" load_steps=44 format=3 uid="uid://csqajvfmn5nnw"]
+[gd_resource type="Resource" script_class="LevelStalingradSummer" load_steps=43 format=3 uid="uid://csqajvfmn5nnw"]
 
 [ext_resource type="Script" path="res://data/ally_presentation/ally_presentation.gd" id="1_oclej"]
 [ext_resource type="Texture2D" uid="uid://mrq5oudigikp" path="res://data/worlds/stalingrad_summer/level_4/enemy_thumbnail_standard.png" id="1_qgv43"]
 [ext_resource type="Script" path="res://data/min_max_int_rate/min_max_int_rate.gd" id="2_8qq4c"]
-[ext_resource type="Texture2D" uid="uid://d2iksg4jjnxdd" path="res://data/worlds/stalingrad_summer/stalingrad_game_background.png" id="4_00q8u"]
 [ext_resource type="Texture2D" uid="uid://ccyyoqdxxsu26" path="res://data/worlds/stalingrad_summer/stalingrad_summer_foreground.png" id="4_4knhl"]
 [ext_resource type="PackedScene" uid="uid://dwmd00t3h1w4g" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.tscn" id="4_a6ccw"]
 [ext_resource type="PackedScene" uid="uid://cls10jllpda83" path="res://game_objects/allies/shooter_ally/bayonet_soldier/bayonet_soldier.tscn" id="5_go163"]
@@ -19,7 +18,7 @@ ally_thumbnail = "landmine"
 ally_title = "LANDMINE"
 ally_reward_description = "Land Mine destroys first enemy that walks over it, vulnerable to enemies while charging."
 
-[sub_resource type="Resource" id="Resource_v82nr"]
+[sub_resource type="Resource" id="Resource_nnbb1"]
 script = ExtResource("2_8qq4c")
 minimum_value = 7
 maximum_value = 10
@@ -200,14 +199,14 @@ enemies = Array[ExtResource("7_pqp7u")]([SubResource("Resource_43tug"), SubResou
 [resource]
 script = ExtResource("11_0npst")
 level_unlocked = false
-game_background = ExtResource("4_00q8u")
+background_scene_path = "res://screens/game_screen/background_scene/stalingrad_summer/level_4/st_summer_bg_l4.tscn"
 game_foreground = ExtResource("4_4knhl")
 level_name = "Level 4"
 level_thumbnail = ExtResource("6_f7iqk")
 enemy_thumbnail = ExtResource("1_qgv43")
 level_allies = Array[PackedScene]([ExtResource("5_go163"), ExtResource("4_a6ccw"), ExtResource("5_xj6i8")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_v82nr")
+coin_dropping_rate = SubResource("Resource_nnbb1")
 falling_coin_value = 25
 playable_rows = 5
 game_background_position = "center"

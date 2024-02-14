@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=3 uid="uid://wgs54xkae8nn"]
+
+[ext_resource type="Script" path="res://screens/game_screen/background_scene/sky/clouds/clouds.gd" id="1_4ukgq"]
+[ext_resource type="Texture2D" uid="uid://b1fl1flentsdr" path="res://screens/game_screen/background_scene/sky/clouds/assets/clouds_left.png" id="1_xjlww"]
+[ext_resource type="Texture2D" uid="uid://clwhuvyxix610" path="res://screens/game_screen/background_scene/sky/clouds/assets/clouds_right.png" id="2_lqvox"]
+
+[sub_resource type="Animation" id="Animation_smske"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3162, 187)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CloudsLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1480, -30)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CloudsMiddle:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11309, -30)]
+}
+
+[sub_resource type="Animation" id="Animation_2rr54"]
+resource_name = "clouds_loop"
+length = 96.0
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 64, 96),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3162, 187), Vector2(-3532, 187), Vector2(-6384, 187)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CloudsLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(32),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1480, -30)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CloudsMiddle:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(64.0004, 64.0101),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1772, -30), Vector2(11309, -30)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gc14m"]
+_data = {
+"RESET": SubResource("Animation_smske"),
+"clouds_loop": SubResource("Animation_2rr54")
+}
+
+[node name="Clouds" type="Node2D"]
+position = Vector2(3162, 187)
+script = ExtResource("1_4ukgq")
+
+[node name="CloudsLeft" type="Sprite2D" parent="."]
+position = Vector2(-1480, -30)
+texture = ExtResource("1_xjlww")
+
+[node name="CloudsMiddle" type="Sprite2D" parent="."]
+position = Vector2(11309, -30)
+texture = ExtResource("2_lqvox")
+
+[node name="CloudsRight" type="Sprite2D" parent="."]
+position = Vector2(5000, -30)
+texture = ExtResource("1_xjlww")
+
+[node name="CloudsAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gc14m")
+}
+speed_scale = 0.3

@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="LevelStalingradSummer" load_steps=126 format=3 uid="uid://nw6qf1u8l4eq"]
+[gd_resource type="Resource" script_class="LevelStalingradSummer" load_steps=125 format=3 uid="uid://nw6qf1u8l4eq"]
 
 [ext_resource type="Script" path="res://data/ally_presentation/ally_presentation.gd" id="1_vlsep"]
 [ext_resource type="Texture2D" uid="uid://bb5pufo0kpfte" path="res://data/worlds/stalingrad_summer/level_10/enemy_thumbnail_level_10.png" id="2_xk0rf"]
 [ext_resource type="Script" path="res://data/min_max_int_rate/min_max_int_rate.gd" id="2_ykwjs"]
 [ext_resource type="PackedScene" uid="uid://dwmd00t3h1w4g" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.tscn" id="4_aabfp"]
-[ext_resource type="Texture2D" uid="uid://d2iksg4jjnxdd" path="res://data/worlds/stalingrad_summer/stalingrad_game_background.png" id="4_t6652"]
 [ext_resource type="PackedScene" uid="uid://ps7ks7v7g60n" path="res://game_objects/allies/obstructer_ally/barrier/barrier.tscn" id="5_85ksm"]
 [ext_resource type="Texture2D" uid="uid://ccyyoqdxxsu26" path="res://data/worlds/stalingrad_summer/stalingrad_summer_foreground.png" id="5_hbj6f"]
 [ext_resource type="PackedScene" uid="uid://cls10jllpda83" path="res://game_objects/allies/shooter_ally/bayonet_soldier/bayonet_soldier.tscn" id="5_ongve"]
@@ -648,7 +647,7 @@ enemies = Array[ExtResource("10_o8772")]([SubResource("Resource_n41gc"), SubReso
 [resource]
 script = ExtResource("15_ytuiw")
 level_unlocked = false
-game_background = ExtResource("4_t6652")
+background_scene_path = "res://screens/game_screen/background_scene/stalingrad_summer/level_10/st_summer_bg_l10.tscn"
 game_foreground = ExtResource("5_hbj6f")
 level_name = "level_10"
 level_thumbnail = ExtResource("9_f00un")

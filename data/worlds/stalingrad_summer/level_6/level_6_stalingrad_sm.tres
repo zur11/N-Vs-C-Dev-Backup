@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="LevelStalingradSummer" load_steps=43 format=3 uid="uid://cnbcl400xycev"]
+[gd_resource type="Resource" script_class="LevelStalingradSummer" load_steps=42 format=3 uid="uid://cnbcl400xycev"]
 
 [ext_resource type="Script" path="res://data/ally_presentation/ally_presentation.gd" id="1_jno8n"]
 [ext_resource type="Texture2D" uid="uid://rw8udxitee0j" path="res://data/worlds/stalingrad_summer/level_6/enemy_thumbnail_standard.png" id="2_6isjx"]
 [ext_resource type="Script" path="res://data/min_max_int_rate/min_max_int_rate.gd" id="2_i3ka1"]
-[ext_resource type="Texture2D" uid="uid://d2iksg4jjnxdd" path="res://data/worlds/stalingrad_summer/stalingrad_game_background.png" id="4_7yuhy"]
 [ext_resource type="PackedScene" uid="uid://cls10jllpda83" path="res://game_objects/allies/shooter_ally/bayonet_soldier/bayonet_soldier.tscn" id="5_6hhh2"]
 [ext_resource type="PackedScene" uid="uid://dwmd00t3h1w4g" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.tscn" id="5_dv2wc"]
 [ext_resource type="Texture2D" uid="uid://ccyyoqdxxsu26" path="res://data/worlds/stalingrad_summer/stalingrad_summer_foreground.png" id="5_ekxek"]
@@ -21,7 +20,7 @@ ally_thumbnail = "shieldSoldier"
 ally_title = "SHIELD SOLDIER"
 ally_reward_description = "Shield Soldier is protected by a low resistance shield. Occupies two horizontal cells."
 
-[sub_resource type="Resource" id="Resource_v82nr"]
+[sub_resource type="Resource" id="Resource_nnbb1"]
 script = ExtResource("2_i3ka1")
 minimum_value = 7
 maximum_value = 10
@@ -183,14 +182,14 @@ enemies = Array[ExtResource("8_5p2qj")]([SubResource("Resource_xbv6w"), SubResou
 [resource]
 script = ExtResource("13_f5hem")
 level_unlocked = false
-game_background = ExtResource("4_7yuhy")
+background_scene_path = "res://screens/game_screen/background_scene/stalingrad_summer/level_6/st_summer_bg_l6.tscn"
 game_foreground = ExtResource("5_ekxek")
 level_name = "level_6"
 level_thumbnail = ExtResource("9_5byil")
 enemy_thumbnail = ExtResource("2_6isjx")
 level_allies = Array[PackedScene]([ExtResource("5_6hhh2"), ExtResource("5_dv2wc"), ExtResource("6_jt4ak"), ExtResource("8_co2pk"), ExtResource("9_3howi")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_v82nr")
+coin_dropping_rate = SubResource("Resource_nnbb1")
 falling_coin_value = 25
 playable_rows = 5
 game_background_position = "center"

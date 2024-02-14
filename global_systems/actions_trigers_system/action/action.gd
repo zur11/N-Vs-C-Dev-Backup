@@ -1,6 +1,7 @@
 class_name Action extends Node
 
 enum Types {
+	INITIAL_STATE,
 	FIRST_WAVE_STARTED,
 	LAST_WAVE_STARTED,
 	OTHER_ACTION_ACTIVATED,

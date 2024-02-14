@@ -1,0 +1,113 @@
+[gd_scene load_steps=17 format=3 uid="uid://c46cwjjm8k4w8"]
+
+[ext_resource type="PackedScene" uid="uid://bkhds6kw3t8tq" path="res://screens/game_screen/background_scene/stalingrad_summer/level_1/st_summer_bg_l1.tscn" id="1_j2bky"]
+[ext_resource type="Script" path="res://screens/game_screen/background_scene/stalingrad_summer/level_5/st_summer_bg_l5.gd" id="2_qxask"]
+[ext_resource type="Texture2D" uid="uid://cmq8psj2w0xcx" path="res://screens/game_screen/background_scene/stalingrad_summer/level_4/assets/first_wave_animation/level_4_first_wave_atlas.png" id="3_l8b3a"]
+[ext_resource type="Texture2D" uid="uid://dtnehyooff3yy" path="res://screens/game_screen/background_scene/stalingrad_summer/level_3/assets/first_wave_animation/level_3_first_wave_atlas.png" id="3_xej2o"]
+[ext_resource type="Texture2D" uid="uid://jihcewsjgarr" path="res://screens/game_screen/background_scene/stalingrad_summer/level_2/assets/last_wave_animation/fotogramae0013.webp" id="4_geiif"]
+[ext_resource type="Texture2D" uid="uid://cb0v51mduj2nm" path="res://screens/game_screen/background_scene/stalingrad_summer/level_3/assets/last_wave_animation/level_3_last_wave_atlas.png" id="5_d12pn"]
+[ext_resource type="Texture2D" uid="uid://5qi11ufsn0tc" path="res://screens/game_screen/background_scene/stalingrad_summer/level_5/assets/last_wave_animation/level_5_last_wave_atlas.png" id="5_nuwxp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nkvr"]
+atlas = ExtResource("3_l8b3a")
+region = Rect2(0, 2832, 1978, 236)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kfrjl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nkvr")
+}],
+"loop": false,
+"name": &"center_initial_state_l5",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol35q"]
+atlas = ExtResource("3_xej2o")
+region = Rect2(0, 2832, 2538, 236)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j87hl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol35q")
+}],
+"loop": false,
+"name": &"right_initial_state_l5",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_075wa"]
+atlas = ExtResource("5_nuwxp")
+region = Rect2(0, 0, 1925, 1088)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5niyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_075wa")
+}],
+"loop": false,
+"name": &"center_initial_state_l5",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w6p4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_geiif")
+}],
+"loop": false,
+"name": &"right_initial_state_l5",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xek1g"]
+atlas = ExtResource("5_d12pn")
+region = Rect2(0, 3840, 2633, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pnl2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xek1g")
+}],
+"loop": false,
+"name": &"right_initial_state_l5",
+"speed": 5.0
+}]
+
+[node name="BackgroundScene" instance=ExtResource("1_j2bky")]
+script = ExtResource("2_qxask")
+
+[node name="BackgroundObject2" parent="Background" index="1"]
+sprite_frames = SubResource("SpriteFrames_kfrjl")
+animation = &"center_initial_state_l5"
+action_type = 1
+sprite_frames_path = "res://screens/game_screen/background_scene/stalingrad_summer/level_5/sprite_frames/background_frames.tres"
+
+[node name="BackgroundObject1" parent="Background" index="2"]
+sprite_frames = SubResource("SpriteFrames_j87hl")
+animation = &"right_initial_state_l5"
+action_type = 0
+sprite_frames_path = ""
+
+[node name="MidlegroundObject2" parent="Middleground" index="1"]
+sprite_frames = SubResource("SpriteFrames_5niyb")
+animation = &"center_initial_state_l5"
+action_type = 2
+sprite_frames_path = "res://screens/game_screen/background_scene/stalingrad_summer/level_5/sprite_frames/middleground_frames.tres"
+
+[node name="MidlegroundObject1" parent="Middleground" index="2"]
+sprite_frames = SubResource("SpriteFrames_w6p4t")
+animation = &"right_initial_state_l5"
+action_type = 0
+sprite_frames_path = ""
+
+[node name="ForegroundObject1" parent="Foreground" index="2"]
+sprite_frames = SubResource("SpriteFrames_pnl2w")
+animation = &"right_initial_state_l5"
+
+[editable path="Clouds"]

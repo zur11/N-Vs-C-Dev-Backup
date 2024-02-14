@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqetx38sx6id8"]
+
+[ext_resource type="PackedScene" uid="uid://bkhds6kw3t8tq" path="res://screens/game_screen/background_scene/stalingrad_summer/level_1/st_summer_bg_l1.tscn" id="1_0ghsp"]
+[ext_resource type="Texture2D" uid="uid://c7hd0qowdm55n" path="res://screens/game_screen/background_scene/stalingrad_summer/level_2/assets/first_wave_animation/level_2_first_wave_atlas.png" id="2_14bbe"]
+[ext_resource type="Script" path="res://screens/game_screen/background_scene/stalingrad_summer/level_2/st_summer_bg_l2.gd" id="2_yhdo4"]
+[ext_resource type="Texture2D" uid="uid://bh7hq2xndcxx2" path="res://screens/game_screen/background_scene/stalingrad_summer/level_2/assets/last_wave_animation/level_2_last_wave_atlas.png" id="4_6c8kc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xotx"]
+atlas = ExtResource("2_14bbe")
+region = Rect2(0, 0, 2538, 236)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tt5dh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xotx")
+}],
+"loop": true,
+"name": &"background_initial_state_l2",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcbw6"]
+atlas = ExtResource("4_6c8kc")
+region = Rect2(0, 0, 2489, 1088)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdyqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcbw6")
+}],
+"loop": false,
+"name": &"right_initial_state_l2",
+"speed": 5.0
+}]
+
+[node name="BackgroundScene" instance=ExtResource("1_0ghsp")]
+script = ExtResource("2_yhdo4")
+
+[node name="BackgroundObject1" parent="Background" index="2"]
+sprite_frames = SubResource("SpriteFrames_tt5dh")
+animation = &"background_initial_state_l2"
+sprite_frames_path = "res://screens/game_screen/background_scene/stalingrad_summer/level_2/sprite_frames/background_frames.tres"
+
+[node name="MidlegroundObject1" parent="Middleground" index="2"]
+sprite_frames = SubResource("SpriteFrames_pdyqa")
+animation = &"right_initial_state_l2"
+sprite_frames_path = "res://screens/game_screen/background_scene/stalingrad_summer/level_2/sprite_frames/middleground_frames.tres"
+
+[editable path="Clouds"]

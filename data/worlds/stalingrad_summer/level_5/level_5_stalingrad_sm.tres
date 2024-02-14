@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="LevelStalingradSummer" load_steps=43 format=3 uid="uid://dh83wiiv3xmgc"]
+[gd_resource type="Resource" script_class="LevelStalingradSummer" load_steps=42 format=3 uid="uid://dh83wiiv3xmgc"]
 
 [ext_resource type="Script" path="res://data/ally_presentation/ally_presentation.gd" id="1_xtyh5"]
 [ext_resource type="Script" path="res://data/min_max_int_rate/min_max_int_rate.gd" id="2_d0hd2"]
 [ext_resource type="Texture2D" uid="uid://bcu5qlwjwoqj6" path="res://data/worlds/stalingrad_summer/level_5/enemy_thumbnail_bayonet.png" id="3_hl8bv"]
-[ext_resource type="Texture2D" uid="uid://d2iksg4jjnxdd" path="res://data/worlds/stalingrad_summer/stalingrad_game_background.png" id="4_am4kn"]
 [ext_resource type="Texture2D" uid="uid://ccyyoqdxxsu26" path="res://data/worlds/stalingrad_summer/stalingrad_summer_foreground.png" id="5_0uysg"]
 [ext_resource type="PackedScene" uid="uid://cls10jllpda83" path="res://game_objects/allies/shooter_ally/bayonet_soldier/bayonet_soldier.tscn" id="6_i4hvm"]
 [ext_resource type="PackedScene" uid="uid://dwmd00t3h1w4g" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.tscn" id="7_p3uak"]
@@ -20,7 +19,7 @@ ally_thumbnail = "fastBayonetSoviet"
 ally_title = "FAST BAYONET SOVIET"
 ally_reward_description = "Fast Bayonet Soviet has a faster shooting rate so he kills enemies in a shorter period of time"
 
-[sub_resource type="Resource" id="Resource_v82nr"]
+[sub_resource type="Resource" id="Resource_nnbb1"]
 script = ExtResource("2_d0hd2")
 minimum_value = 7
 maximum_value = 10
@@ -187,14 +186,14 @@ enemies = Array[ExtResource("10_62l1s")]([SubResource("Resource_i01sk"), SubReso
 [resource]
 script = ExtResource("13_3phc5")
 level_unlocked = false
-game_background = ExtResource("4_am4kn")
+background_scene_path = "res://screens/game_screen/background_scene/stalingrad_summer/level_5/st_summer_bg_l5.tscn"
 game_foreground = ExtResource("5_0uysg")
 level_name = "Level 5"
 level_thumbnail = ExtResource("12_ul7eg")
 enemy_thumbnail = ExtResource("3_hl8bv")
 level_allies = Array[PackedScene]([ExtResource("6_i4hvm"), ExtResource("7_p3uak"), ExtResource("8_v0tgh"), ExtResource("9_xduyi")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_v82nr")
+coin_dropping_rate = SubResource("Resource_nnbb1")
 falling_coin_value = 25
 playable_rows = 5
 game_background_position = "center"

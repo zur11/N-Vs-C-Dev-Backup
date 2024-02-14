@@ -1,0 +1,94 @@
+[gd_scene load_steps=16 format=3 uid="uid://f6ap0f1kw0un"]
+
+[ext_resource type="PackedScene" uid="uid://bkhds6kw3t8tq" path="res://screens/game_screen/background_scene/stalingrad_summer/level_1/st_summer_bg_l1.tscn" id="1_cnn3g"]
+[ext_resource type="Script" path="res://screens/game_screen/background_scene/stalingrad_summer/level_9/st_summer_bg_l9.gd" id="2_lg14k"]
+[ext_resource type="Texture2D" uid="uid://bevs8ay1llpws" path="res://screens/game_screen/background_scene/stalingrad_summer/level_9/assets/first_wave_animation/level_9_first_wave_atlas.png" id="3_eom1b"]
+[ext_resource type="SpriteFrames" uid="uid://c20njnag5xqn1" path="res://screens/game_screen/background_scene/stalingrad_summer/shared_assets/center_background_initial_state_after_stage_2.tres" id="4_uswvd"]
+[ext_resource type="SpriteFrames" uid="uid://vr1mo6m1p3l" path="res://screens/game_screen/background_scene/stalingrad_summer/shared_assets/background_initial_state_after_stage_1.tres" id="5_jp2ox"]
+[ext_resource type="SpriteFrames" uid="uid://bwolwmif2p7ql" path="res://screens/game_screen/background_scene/stalingrad_summer/shared_assets/middleground_initial_state_after_stage_2.tres" id="6_kgr4i"]
+[ext_resource type="Texture2D" uid="uid://db8w2fi6d8b1n" path="res://screens/game_screen/background_scene/stalingrad_summer/level_9/assets/last_wave_animation/level_9_last_wave_atlas.webp" id="6_w1xtp"]
+[ext_resource type="SpriteFrames" uid="uid://3ahans6ahx7u" path="res://screens/game_screen/background_scene/stalingrad_summer/shared_assets/middleground_initial_state_after_stage_1.tres" id="7_hsde3"]
+[ext_resource type="SpriteFrames" uid="uid://cjgcnnx46cn6o" path="res://screens/game_screen/background_scene/stalingrad_summer/shared_assets/center_foreground_initial_state_after_stage_2.tres" id="8_76m50"]
+[ext_resource type="SpriteFrames" uid="uid://cmkjuaq64u4v1" path="res://screens/game_screen/background_scene/stalingrad_summer/shared_assets/left_foreground_initial_state_stage_3.tres" id="9_5de2y"]
+[ext_resource type="SpriteFrames" uid="uid://busv8at1qsidm" path="res://screens/game_screen/background_scene/stalingrad_summer/shared_assets/foreground_initial_state_after_stage_1.tres" id="9_gd2jo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3j24"]
+atlas = ExtResource("3_eom1b")
+region = Rect2(0, 4956, 1847, 236)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3qer2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3j24")
+}],
+"loop": false,
+"name": &"left_initial_state_l9",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gief"]
+atlas = ExtResource("6_w1xtp")
+region = Rect2(0, 0, 1923, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_enn4i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gief")
+}],
+"loop": false,
+"name": &"left_initial_state_l9",
+"speed": 5.0
+}]
+
+[node name="BackgroundScene" instance=ExtResource("1_cnn3g")]
+script = ExtResource("2_lg14k")
+
+[node name="BackgroundObject3" parent="Background" index="0"]
+sprite_frames = SubResource("SpriteFrames_3qer2")
+animation = &"left_initial_state_l9"
+action_type = 1
+sprite_frames_path = "res://screens/game_screen/background_scene/stalingrad_summer/level_9/sprite_frames/background_frames.tres"
+
+[node name="BackgroundObject2" parent="Background" index="1"]
+sprite_frames = ExtResource("4_uswvd")
+animation = &"center_initial_state_l8"
+
+[node name="BackgroundObject1" parent="Background" index="2"]
+sprite_frames = ExtResource("5_jp2ox")
+animation = &"right_initial_state_l3"
+action_type = 0
+sprite_frames_path = ""
+
+[node name="MidlegroundObject3" parent="Middleground" index="0"]
+sprite_frames = SubResource("SpriteFrames_enn4i")
+animation = &"left_initial_state_l9"
+action_type = 2
+sprite_frames_path = "res://screens/game_screen/background_scene/stalingrad_summer/level_9/sprite_frames/middleground_frames.tres"
+
+[node name="MidlegroundObject2" parent="Middleground" index="1"]
+sprite_frames = ExtResource("6_kgr4i")
+animation = &"center_initial_state_l7"
+
+[node name="MidlegroundObject1" parent="Middleground" index="2"]
+sprite_frames = ExtResource("7_hsde3")
+animation = &"right_initial_state_l3"
+action_type = 0
+sprite_frames_path = ""
+
+[node name="ForegroundObject3" parent="Foreground" index="0"]
+sprite_frames = ExtResource("9_5de2y")
+animation = &"left_initial_state_stage_3"
+frame_progress = 0.0
+
+[node name="ForegroundObject2" parent="Foreground" index="1"]
+sprite_frames = ExtResource("8_76m50")
+animation = &"center_initial_state_l8"
+autoplay = "center_initial_state_l8"
+
+[node name="ForegroundObject1" parent="Foreground" index="2"]
+sprite_frames = ExtResource("9_gd2jo")
+animation = &"right_initial_state_l4"
+
+[editable path="Clouds"]

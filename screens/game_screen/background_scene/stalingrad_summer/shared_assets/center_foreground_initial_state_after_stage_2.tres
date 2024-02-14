@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://cjgcnnx46cn6o"]
+
+[ext_resource type="Texture2D" uid="uid://d0hm2hfvyk8o" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/level_7_last_wave_atlas.png" id="1_51pij"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86kjc"]
+atlas = ExtResource("1_51pij")
+region = Rect2(0, 1420, 2048, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mii8m"]
+atlas = ExtResource("1_51pij")
+region = Rect2(0, 1136, 2048, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb8xu"]
+atlas = ExtResource("1_51pij")
+region = Rect2(0, 852, 2048, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkin7"]
+atlas = ExtResource("1_51pij")
+region = Rect2(0, 568, 2048, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sii2r"]
+atlas = ExtResource("1_51pij")
+region = Rect2(0, 284, 2048, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agfc0"]
+atlas = ExtResource("1_51pij")
+region = Rect2(0, 0, 2048, 284)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86kjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mii8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb8xu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkin7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sii2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agfc0")
+}],
+"loop": true,
+"name": &"center_initial_state_l8",
+"speed": 5.0
+}]

@@ -1,10 +1,9 @@
-[gd_scene load_steps=36 format=3 uid="uid://0yp607cucppk"]
+[gd_scene load_steps=35 format=3 uid="uid://0yp607cucppk"]
 
 [ext_resource type="Script" path="res://screens/game_screen/game_screen.gd" id="1_k0a87"]
 [ext_resource type="PackedScene" uid="uid://cvxpu3e3wl11t" path="res://screens/game_screen/terrain_grid/terrain_grid.tscn" id="2_3aeo5"]
 [ext_resource type="Resource" uid="uid://d17xycj7fg8pm" path="res://data/worlds/stalingrad_summer/level_1/level_1_stalingrad_sm_tut.tres" id="2_gv83r"]
 [ext_resource type="PackedScene" uid="uid://tqidibrgm2uf" path="res://screens/game_screen/ally_card_selector/ally_card_selector.tscn" id="3_bsn3m"]
-[ext_resource type="PackedScene" uid="uid://bkhds6kw3t8tq" path="res://screens/game_screen/background_scene/background_scene_w1/background_scene_w1.tscn" id="3_qqaut"]
 [ext_resource type="PackedScene" uid="uid://dud1ujrys61qg" path="res://screens/game_screen/balance_displayer/balance_displayer.tscn" id="5_15ded"]
 [ext_resource type="PackedScene" uid="uid://c8ja2opfaohj7" path="res://screens/game_screen/row_cannons/row_cannons.tscn" id="6_17so7"]
 [ext_resource type="PackedScene" uid="uid://bdob4r24ux2pr" path="res://screens/game_screen/enemy_spawners/enemy_spawners.tscn" id="7_c346h"]
@@ -58,9 +57,6 @@ collision_mask = 682
 position = Vector2(0, 429)
 shape = SubResource("RectangleShape2D_uhyfe")
 
-[node name="BackgroundScene" parent="." instance=ExtResource("3_qqaut")]
-layout_mode = 1
-
 [node name="EnemySpawners" parent="." instance=ExtResource("7_c346h")]
 z_as_relative = false
 layout_mode = 0
@@ -106,6 +102,7 @@ collision_mask = 128
 collision_mask = 512
 
 [node name="ScreenFilters" type="Node2D" parent="."]
+z_index = 11
 
 [node name="BlackFilter" parent="ScreenFilters" instance=ExtResource("8_6jwiu")]
 

@@ -1,0 +1,2 @@
+class_name StWinterBgL1 extends BackgroundScene
+

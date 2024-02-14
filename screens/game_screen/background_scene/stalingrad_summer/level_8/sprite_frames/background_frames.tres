@@ -1,0 +1,116 @@
+[gd_resource type="SpriteFrames" load_steps=17 format=3 uid="uid://s0jyfb87twfd"]
+
+[ext_resource type="Texture2D" uid="uid://1t1bmjaipnet" path="res://screens/game_screen/background_scene/stalingrad_summer/level_8/assets/first_wave_animation/level_8_first_wave_atlas.png" id="2_vytlv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xobv"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 0, 1847, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txx2n"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 236, 1847, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f1p3"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 472, 1847, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjs57"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 708, 1847, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liluv"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 944, 1847, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmt8p"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 1180, 1847, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsfi4"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 1416, 1847, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghg6h"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 1652, 1847, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sas1m"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 1888, 1847, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnhgg"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 2124, 1847, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bxni"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 2360, 1847, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g02bh"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 2596, 1847, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c31pc"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 2832, 1847, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw4ip"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 3068, 1847, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brjv0"]
+atlas = ExtResource("2_vytlv")
+region = Rect2(0, 3304, 1847, 236)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xobv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txx2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f1p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjs57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_liluv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmt8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsfi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghg6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sas1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnhgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bxni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g02bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c31pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bw4ip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brjv0")
+}],
+"loop": false,
+"name": &"first_wave_started_l8",
+"speed": 5.0
+}]

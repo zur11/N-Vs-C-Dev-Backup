@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="LevelStalingradWinter" load_steps=104 format=3 uid="uid://t0xg77jx2aae"]
+[gd_resource type="Resource" script_class="LevelStalingradWinter" load_steps=103 format=3 uid="uid://t0xg77jx2aae"]
 
 [ext_resource type="Script" path="res://data/ally_presentation/ally_presentation.gd" id="1_4ye3m"]
 [ext_resource type="Script" path="res://data/min_max_int_rate/min_max_int_rate.gd" id="2_g3uqd"]
 [ext_resource type="Texture2D" uid="uid://bwnof7jsd2sc" path="res://data/worlds/stalingrad_winter/level_10/enemy_thumbnail_level_10.png" id="2_m2y5a"]
-[ext_resource type="Texture2D" uid="uid://cpwpyrkuuw2c7" path="res://data/worlds/stalingrad_winter/stalingrad_game_background.png" id="3_h4ftj"]
 [ext_resource type="PackedScene" uid="uid://cls10jllpda83" path="res://game_objects/allies/shooter_ally/bayonet_soldier/bayonet_soldier.tscn" id="3_i5hjg"]
 [ext_resource type="Texture2D" uid="uid://b6ln2w14sh4fo" path="res://data/worlds/stalingrad_winter/stalingrad_winter_foreground.png" id="4_u4jip"]
 [ext_resource type="PackedScene" uid="uid://ps7ks7v7g60n" path="res://game_objects/allies/obstructer_ally/barrier/barrier.tscn" id="5_kjnyg"]
@@ -506,7 +505,7 @@ enemies = Array[ExtResource("18_msj60")]([SubResource("Resource_yjo1b"), SubReso
 [resource]
 script = ExtResource("21_7gk6w")
 level_unlocked = false
-game_background = ExtResource("3_h4ftj")
+background_scene_path = ""
 game_foreground = ExtResource("4_u4jip")
 level_name = "Level 10"
 level_thumbnail = ExtResource("16_slb3a")

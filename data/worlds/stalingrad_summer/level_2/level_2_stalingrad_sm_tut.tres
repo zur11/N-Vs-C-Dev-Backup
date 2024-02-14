@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="TutorialLevel" load_steps=29 format=3 uid="uid://ldjkb82ffb8u"]
+[gd_resource type="Resource" script_class="TutorialLevel" load_steps=28 format=3 uid="uid://ldjkb82ffb8u"]
 
 [ext_resource type="Script" path="res://data/ally_presentation/ally_presentation.gd" id="1_7sf5y"]
 [ext_resource type="Script" path="res://data/worlds/stalingrad_summer/tutorial_level.gd" id="1_q6k0s"]
 [ext_resource type="Script" path="res://data/min_max_int_rate/min_max_int_rate.gd" id="2_3mcbp"]
 [ext_resource type="Texture2D" uid="uid://duw5flil1v7qy" path="res://data/worlds/stalingrad_summer/level_2/enemy_thumbnail_standard.png" id="4_xovcg"]
-[ext_resource type="Texture2D" uid="uid://d2iksg4jjnxdd" path="res://data/worlds/stalingrad_summer/stalingrad_game_background.png" id="5_qvgtb"]
 [ext_resource type="Texture2D" uid="uid://ccyyoqdxxsu26" path="res://data/worlds/stalingrad_summer/stalingrad_summer_foreground.png" id="6_opndc"]
 [ext_resource type="PackedScene" uid="uid://cls10jllpda83" path="res://game_objects/allies/shooter_ally/bayonet_soldier/bayonet_soldier.tscn" id="7_22cf8"]
 [ext_resource type="PackedScene" uid="uid://dwmd00t3h1w4g" path="res://game_objects/allies/money_provider/matrioshka/matrioshka.tscn" id="8_wrqc2"]
@@ -19,7 +18,7 @@ ally_thumbnail = "barrier"
 ally_title = "BARRIER"
 ally_reward_description = "Barrier offers protection from enemy attacks to allies located behind it."
 
-[sub_resource type="Resource" id="Resource_v82nr"]
+[sub_resource type="Resource" id="Resource_nnbb1"]
 script = ExtResource("2_3mcbp")
 minimum_value = 7
 maximum_value = 10
@@ -112,14 +111,14 @@ enemies = Array[ExtResource("9_vccwq")]([SubResource("Resource_ps2ai")])
 script = ExtResource("1_q6k0s")
 tutorial_scene = ExtResource("11_abu5d")
 level_unlocked = false
-game_background = ExtResource("5_qvgtb")
+background_scene_path = "res://screens/game_screen/background_scene/stalingrad_summer/level_2/st_summer_bg_l2.tscn"
 game_foreground = ExtResource("6_opndc")
 level_name = "Level 2"
 level_thumbnail = ExtResource("11_kw3j2")
 enemy_thumbnail = ExtResource("4_xovcg")
 level_allies = Array[PackedScene]([ExtResource("7_22cf8"), ExtResource("8_wrqc2")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_v82nr")
+coin_dropping_rate = SubResource("Resource_nnbb1")
 falling_coin_value = 25
 playable_rows = 3
 game_background_position = "right"

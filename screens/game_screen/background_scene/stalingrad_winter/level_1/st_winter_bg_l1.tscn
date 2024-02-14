@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://osthl1b4vk4k"]
+
+[ext_resource type="Script" path="res://screens/game_screen/background_scene/stalingrad_winter/level_1/st_winter_bg_l1.gd" id="1_b7e2g"]
+[ext_resource type="PackedScene" uid="uid://wgs54xkae8nn" path="res://screens/game_screen/background_scene/sky/clouds/clouds.tscn" id="3_386na"]
+[ext_resource type="Texture2D" uid="uid://mup55gb5atwy" path="res://screens/game_screen/background_scene/sky/sky_texture.png" id="3_vti75"]
+[ext_resource type="Texture2D" uid="uid://blvi5pevah0bb" path="res://screens/game_screen/background_scene/stalingrad_winter/level_1/assets/winter_horizon.png" id="5_mdywo"]
+[ext_resource type="Texture2D" uid="uid://cpfk4wi6xy6gv" path="res://screens/game_screen/background_scene/stalingrad_winter/level_1/assets/winter_middleground.png" id="6_13h0t"]
+[ext_resource type="Texture2D" uid="uid://c8cc1kocd8b68" path="res://screens/game_screen/background_scene/stalingrad_winter/level_1/assets/winter_foreground.png" id="7_gy8bk"]
+
+[node name="BackgroundScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b7e2g")
+
+[node name="Sky" type="Sprite2D" parent="."]
+position = Vector2(3162, 187.5)
+texture = ExtResource("3_vti75")
+
+[node name="Clouds" parent="." instance=ExtResource("3_386na")]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="TemporaryBackgroundTexture" type="TextureRect" parent="Background"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_mdywo")
+
+[node name="Middleground" type="Node2D" parent="."]
+
+[node name="TemporaryMiddlegroundTexture" type="TextureRect" parent="Middleground"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_13h0t")
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="TemporaryForegroundTexture" type="TextureRect" parent="Foreground"]
+offset_top = 767.0
+offset_right = 6324.0
+offset_bottom = 1079.0
+texture = ExtResource("7_gy8bk")
+
+[editable path="Clouds"]
