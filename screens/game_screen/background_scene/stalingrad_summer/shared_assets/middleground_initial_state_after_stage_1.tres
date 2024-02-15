@@ -1,16 +1,16 @@
 [gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://3ahans6ahx7u"]
 
-[ext_resource type="Texture2D" uid="uid://bh7hq2xndcxx2" path="res://screens/game_screen/background_scene/stalingrad_summer/level_2/assets/last_wave_animation/level_2_last_wave_atlas.png" id="1_cnxp1"]
+[ext_resource type="Texture2D" uid="uid://dtitiplymg313" path="res://screens/game_screen/background_scene/stalingrad_summer/level_2/assets/last_wave_animation/level_2_last_wave_atlas.webp" id="1_i60xa"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7be4b"]
-atlas = ExtResource("1_cnxp1")
-region = Rect2(0, 14144, 2489, 1088)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pkmy"]
+atlas = ExtResource("1_i60xa")
+region = Rect2(2484, 3240, 2484, 1080)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7be4b")
+"texture": SubResource("AtlasTexture_6pkmy")
 }],
 "loop": false,
 "name": &"right_initial_state_l3",
