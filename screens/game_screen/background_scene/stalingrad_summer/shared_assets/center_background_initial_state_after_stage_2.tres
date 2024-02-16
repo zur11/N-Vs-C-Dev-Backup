@@ -1,17 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://c20njnag5xqn1"]
-
-[ext_resource type="Texture2D" uid="uid://chrbjt64pxxdn" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/first_wave_animation/level_7_first_wave_atlas.webp" id="1_7vmrh"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qw661"]
-atlas = ExtResource("1_7vmrh")
-region = Rect2(5919, 684, 1973, 228)
+[gd_resource type="SpriteFrames" format=3 uid="uid://c20njnag5xqn1"]
 
 [resource]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qw661")
-}],
+"frames": [],
 "loop": false,
 "name": &"center_initial_state_l8",
 "speed": 5.0

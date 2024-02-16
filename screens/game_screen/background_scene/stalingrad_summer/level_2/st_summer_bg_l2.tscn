@@ -1,34 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqetx38sx6id8"]
+[gd_scene load_steps=7 format=3 uid="uid://dqetx38sx6id8"]
 
 [ext_resource type="PackedScene" uid="uid://bkhds6kw3t8tq" path="res://screens/game_screen/background_scene/stalingrad_summer/level_1/st_summer_bg_l1.tscn" id="1_0ghsp"]
 [ext_resource type="Script" path="res://screens/game_screen/background_scene/stalingrad_summer/level_2/st_summer_bg_l2.gd" id="2_yhdo4"]
-[ext_resource type="Texture2D" uid="uid://ct10yoklxmkqd" path="res://screens/game_screen/background_scene/stalingrad_summer/level_1/assets/first_wave_animation/level_1_first_wave_atlas.webp" id="3_16vyc"]
-[ext_resource type="Texture2D" uid="uid://1grjenutm2ox" path="res://screens/game_screen/background_scene/stalingrad_summer/level_1/assets/last_wave_animation/level_1_last_wave_atlas.webp" id="4_nlkc4"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qaycb"]
-atlas = ExtResource("3_16vyc")
-region = Rect2(2536, 684, 2536, 228)
+[ext_resource type="Texture2D" uid="uid://n2gkbfle7n07" path="res://screens/game_screen/background_scene/stalingrad_summer/level_1/assets/first_wave_animation/right_house_detroyed0013.webp" id="3_u4u0l"]
+[ext_resource type="Texture2D" uid="uid://dmy5txfu7dfcl" path="res://screens/game_screen/background_scene/stalingrad_summer/level_1/assets/last_wave_animation/fotograma0013.webp" id="4_dy3jb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rt8ln"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qaycb")
+"texture": ExtResource("3_u4u0l")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c1im0"]
-atlas = ExtResource("4_nlkc4")
-region = Rect2(2484, 3240, 2484, 1080)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_wkfqa"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c1im0")
+"texture": ExtResource("4_dy3jb")
 }],
 "loop": true,
 "name": &"default",

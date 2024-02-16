@@ -1,128 +1,92 @@
-[gd_resource type="SpriteFrames" load_steps=19 format=3 uid="uid://yvw7p2rxnrtm"]
+[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://yvw7p2rxnrtm"]
 
-[ext_resource type="Texture2D" uid="uid://crs7kmbncelaj" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/level_7_last_wave_atlas.webp" id="1_36vsu"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3753b"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(0, 0, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n5q3v"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(1698, 0, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nhkwg"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(3396, 0, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ytovh"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(5094, 0, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_it2n3"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(0, 274, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g7uxj"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(1698, 274, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_avog2"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(3396, 274, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l38i2"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(5094, 274, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b32b4"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(0, 548, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3yax2"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(1698, 548, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0n5s5"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(3396, 548, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3tdro"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(5094, 548, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ccghv"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(0, 822, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nq8yc"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(1698, 822, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_khwks"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(3396, 822, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dsmqf"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(5094, 822, 1698, 274)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sty68"]
-atlas = ExtResource("1_36vsu")
-region = Rect2(0, 1096, 1698, 274)
+[ext_resource type="Texture2D" uid="uid://djoc2ncv65ds2" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0000.webp" id="1_er54h"]
+[ext_resource type="Texture2D" uid="uid://dha5e7ck1b6ai" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0001.webp" id="2_lwxwl"]
+[ext_resource type="Texture2D" uid="uid://bt4wms5d5dnhs" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0002.webp" id="3_o26qp"]
+[ext_resource type="Texture2D" uid="uid://dlogveckllwww" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0003.webp" id="4_r6tws"]
+[ext_resource type="Texture2D" uid="uid://y3wo84364ds7" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0004.webp" id="5_yakmf"]
+[ext_resource type="Texture2D" uid="uid://c48fspigq2ijq" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0005.webp" id="6_fik1t"]
+[ext_resource type="Texture2D" uid="uid://6wcj42lnxyhf" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0006.webp" id="7_yjuau"]
+[ext_resource type="Texture2D" uid="uid://b4gmloti0bpdu" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0007.webp" id="8_5qnax"]
+[ext_resource type="Texture2D" uid="uid://bsuouu0qutjm6" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0008.webp" id="9_nl1g5"]
+[ext_resource type="Texture2D" uid="uid://bq2hq10iar0xx" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0009.webp" id="10_15eco"]
+[ext_resource type="Texture2D" uid="uid://8uc6fy2xyc71" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0010.webp" id="11_eu3l8"]
+[ext_resource type="Texture2D" uid="uid://bcihtd3ywfy2k" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0011.webp" id="12_btjlp"]
+[ext_resource type="Texture2D" uid="uid://doaiifw6l5k5x" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0012.webp" id="13_tc3b1"]
+[ext_resource type="Texture2D" uid="uid://cfktf2uketl3c" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0013.webp" id="14_1trer"]
+[ext_resource type="Texture2D" uid="uid://c36a8bgab6r2s" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0014.webp" id="15_4qrxu"]
+[ext_resource type="Texture2D" uid="uid://dcf1x1b4ggif1" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0015.webp" id="16_3bx4i"]
+[ext_resource type="Texture2D" uid="uid://yfwslllhvjlf" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0016.webp" id="17_yqt2t"]
+[ext_resource type="Texture2D" uid="uid://b3u31imwxdk7i" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0017.webp" id="18_rf3bo"]
+[ext_resource type="Texture2D" uid="uid://mcvxg7oql2mj" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0018.webp" id="19_xoqdw"]
+[ext_resource type="Texture2D" uid="uid://ch5gaws1xebox" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0019.webp" id="20_m4npq"]
+[ext_resource type="Texture2D" uid="uid://bsfs2rawx1yu0" path="res://screens/game_screen/background_scene/stalingrad_summer/level_7/assets/last_wave_animation/fotograma0020.webp" id="21_w7tty"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3753b")
+"texture": ExtResource("1_er54h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n5q3v")
+"texture": ExtResource("2_lwxwl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nhkwg")
+"texture": ExtResource("3_o26qp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ytovh")
+"texture": ExtResource("4_r6tws")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_it2n3")
+"texture": ExtResource("5_yakmf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g7uxj")
+"texture": ExtResource("6_fik1t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_avog2")
+"texture": ExtResource("7_yjuau")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l38i2")
+"texture": ExtResource("8_5qnax")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b32b4")
+"texture": ExtResource("9_nl1g5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3yax2")
+"texture": ExtResource("10_15eco")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0n5s5")
+"texture": ExtResource("11_eu3l8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3tdro")
+"texture": ExtResource("12_btjlp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ccghv")
+"texture": ExtResource("13_tc3b1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nq8yc")
+"texture": ExtResource("14_1trer")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_khwks")
+"texture": ExtResource("15_4qrxu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dsmqf")
+"texture": ExtResource("16_3bx4i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sty68")
+"texture": ExtResource("17_yqt2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rf3bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xoqdw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_m4npq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_w7tty")
 }],
 "loop": false,
 "name": &"last_wave_started_l7",
