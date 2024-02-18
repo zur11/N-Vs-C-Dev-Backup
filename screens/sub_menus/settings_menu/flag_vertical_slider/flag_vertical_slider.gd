@@ -21,7 +21,6 @@ func _set_sound_is_enabled(new_value:bool):
 
 func _on_value_changed(value_arg : float):
 	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value_arg))
-#	printt(value_arg)
 	if self.value > 0.002 and not _sound_is_enabled:
 		_sound_is_enabled = true
 	elif self.value <= 0.002 and _sound_is_enabled:

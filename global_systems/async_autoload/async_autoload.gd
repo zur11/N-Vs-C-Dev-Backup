@@ -23,7 +23,7 @@ func load_resource(_resource_path: String):
 
 
 func _process(_delta):
-#	printt("inprocees", loading_url, ResourceLoader.load_threaded_get_status(loading_url, progress_array), progress_array)
+#	print("inprocees", loading_url, ResourceLoader.load_threaded_get_status(loading_url, progress_array), progress_array)
 
 	if ResourceLoader.load_threaded_get_status(loading_url) == ResourceLoader.THREAD_LOAD_LOADED:
 		set_process(false)

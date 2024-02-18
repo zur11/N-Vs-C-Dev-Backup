@@ -75,8 +75,6 @@ func _make_initial_calculations():
 		var enemy_scenes_group : Array = _all_level_enemy_scenes[ii]
 		var scenes_group_proportion_to_total : float = enemy_scenes_group.size() / _total_enemies_count
 		var enemies_to_display : int = int(total_enemies_to_display * scenes_group_proportion_to_total)
-#		printt(scenes_group_proportion_to_total)
-#		printt(enemies_to_display)
 		if enemies_to_display <= 1:
 			_all_enemy_scenes_to_display.append(enemy_scenes_group[0])
 			enemy_scenes_group.pop_front()

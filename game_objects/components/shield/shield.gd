@@ -54,6 +54,5 @@ func _set_shield_collision_layer():
 	
 	for ii in _game_screen_user_data.total_rows_number * 2:
 		if shield_user.get_collision_mask_value(ii+1) == true:
-#			printt("Shield collision layer set: ", ii + 1)
 			self.set_collision_mask_value(ii+1, true)
 			return

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bo1jforvfhnbv"]
+[gd_scene load_steps=9 format=3 uid="uid://bo1jforvfhnbv"]
 
 [ext_resource type="Script" path="res://screens/sub_menus/games_menu/games_menu.gd" id="1_0ear5"]
 [ext_resource type="PackedScene" uid="uid://ci2txb162q4g2" path="res://screens/sub_menus/games_menu/games_menu_bgs/stalingrad_summer_bg/stalingrad_summer_bg.tscn" id="2_1nyjl"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://jwmwcyqtv2kh" path="res://assets/screens/shared_assets/go_back_1.png" id="4_u7ra3"]
 [ext_resource type="AudioStream" uid="uid://cc7rpmevwkpyo" path="res://assets/audio/sfx/buttons_sfx/click_2.mp3" id="6_tqb2a"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="7_dtfa6"]
+[ext_resource type="Script" path="res://screens/sub_menus/games_menu/games_menu_input_controller.gd" id="8_vwuuh"]
 
 [node name="GamesMenu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -32,12 +33,16 @@ offset_left = 35.0
 offset_top = 937.0
 offset_right = 185.0
 offset_bottom = 1053.0
-texture_normal = ExtResource("4_u7ra3")
-texture_pressed = ExtResource("3_l5hjq")
-texture_hover = ExtResource("3_l5hjq")
+texture_normal = ExtResource("3_l5hjq")
+texture_pressed = ExtResource("4_u7ra3")
+texture_hover = ExtResource("4_u7ra3")
+texture_focused = ExtResource("4_u7ra3")
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_tqb2a")
 script = ExtResource("7_dtfa6")
+
+[node name="GamesMenuInputController" type="Node" parent="."]
+script = ExtResource("8_vwuuh")
 
 [connection signal="pressed" from="GoBackButton" to="." method="_on_go_back_button_pressed"]

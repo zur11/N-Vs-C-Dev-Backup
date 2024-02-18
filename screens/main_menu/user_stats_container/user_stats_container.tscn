@@ -145,8 +145,14 @@ _data = {
 "_bounce": SubResource("Animation_26u0x")
 }
 
-[node name="UserStatsContainer" type="Node2D"]
-position = Vector2(1729, 72)
+[node name="UserStatsContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1729.0
+offset_top = 72.0
+offset_right = 1729.0
+offset_bottom = 72.0
+focus_mode = 2
 script = ExtResource("1_3tnu0")
 
 [node name="ExtraContainer2" type="Sprite2D" parent="."]
@@ -173,6 +179,7 @@ text = "0"
 horizontal_alignment = 2
 
 [node name="UsernameContainer" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = -172.0
 offset_top = -55.0
 offset_right = 170.0

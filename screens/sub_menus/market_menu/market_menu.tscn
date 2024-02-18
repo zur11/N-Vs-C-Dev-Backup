@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://tk4c25rwhw0q"]
+[gd_scene load_steps=16 format=3 uid="uid://tk4c25rwhw0q"]
 
 [ext_resource type="Script" path="res://screens/sub_menus/market_menu/market_menu.gd" id="1_vrx16"]
 [ext_resource type="Texture2D" uid="uid://1hytjmdd1qwd" path="res://screens/sub_menus/market_menu/assets/market_background.png" id="2_p0k5p"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b8b0dliakxqy1" path="res://screens/sub_menus/market_menu/assets/7th_slot_bag.png" id="9_cce85"]
 [ext_resource type="PackedScene" uid="uid://ds50m5bk5qstt" path="res://global_objects/user_balance_displayer/user_balance_displayer.tscn" id="10_4818i"]
 [ext_resource type="Texture2D" uid="uid://0ec2ysu7nywy" path="res://screens/sub_menus/market_menu/assets/market_sign.png" id="11_f3rps"]
+[ext_resource type="Script" path="res://screens/sub_menus/market_menu/market_menu_controller.gd" id="13_88w2g"]
 
 [sub_resource type="Animation" id="Animation_si3n5"]
 resource_name = "_sign_down"
@@ -71,9 +72,10 @@ offset_left = 1752.0
 offset_top = 16.0
 offset_right = 1902.0
 offset_bottom = 132.0
-texture_normal = ExtResource("5_tpf87")
-texture_pressed = ExtResource("4_ftdnd")
-texture_hover = ExtResource("4_ftdnd")
+texture_normal = ExtResource("4_ftdnd")
+texture_pressed = ExtResource("5_tpf87")
+texture_hover = ExtResource("5_tpf87")
+texture_focused = ExtResource("5_tpf87")
 flip_h = true
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
@@ -106,5 +108,8 @@ libraries = {
 "": SubResource("AnimationLibrary_n7hw3")
 }
 autoplay = "_sign_down"
+
+[node name="MarketMenuController" type="Node" parent="."]
+script = ExtResource("13_88w2g")
 
 [connection signal="pressed" from="GoBackButton" to="." method="_on_go_back_button_pressed"]

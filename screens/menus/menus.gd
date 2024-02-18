@@ -5,6 +5,7 @@ var display_games_menu_directly : bool
 var _games_menu_scene : PackedScene = load("res://screens/sub_menus/games_menu/games_menu.tscn")
 var _settings_menu_scene : PackedScene = load("res://screens/sub_menus/settings_menu/settings_menu.tscn")
 var _market_menu_scene : PackedScene = load("res://screens/sub_menus/market_menu/market_menu.tscn")
+@onready var _main_menu : MainMenu = $MainMenu as MainMenu
 
 # World Icon Scenes Paths
 
@@ -13,7 +14,7 @@ const _STALINGRAD_WINTER_ICON_PATH : String = "res://screens/sub_menus/games_men
 const _BUDAPEST_ICON_PATH : String = "res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/budapest_icon/budapest_icon.tscn"
 
 func _ready():
-	($MainMenu as MainMenu).go_to_sub_menu.connect(_go_to_sub_menu)
+	_main_menu.go_to_sub_menu.connect(_go_to_sub_menu)
 	if display_games_menu_directly:
 		_display_games_menu()
 	else:
@@ -57,10 +58,12 @@ func _go_to_sub_menu(sub_menu_name:String):
 	
 	if sub_menu_name == "settings_menu" or sub_menu_name == "games_menu":
 		tween.tween_property($".", "position", Vector2(-1920, 0), 0.5)
-		($SubMenuContainer.get_child(0)).go_back.connect(go_to_main_menu)
+		sub_menu.go_back.connect(go_to_main_menu)
 	elif sub_menu_name == "market_screen":
 		tween.tween_property($".", "position", Vector2(1920, 0), 0.5)
-		($LeftSubMenuContainer.get_child(0)).go_back.connect(go_to_main_menu)
+		sub_menu.go_back.connect(go_to_main_menu)
+	
+	sub_menu.set_input_controller()
 
 
 
@@ -69,6 +72,8 @@ func go_to_main_menu():
 	
 	var tween = create_tween()
 	tween.tween_property($".", "position", Vector2(0, 0), 0.5)
+	
+	_main_menu.set_input_controller()
 
 func _display_games_menu():
 	var games_menu:Node = load("res://screens/sub_menus/games_menu/games_menu.tscn").instantiate()

@@ -1,4 +1,4 @@
-extends Control
+class_name SettingsMenu extends Control
 
 signal go_back
 signal toogle_music_playing
@@ -10,13 +10,27 @@ signal toogle_music_playing
 
 var _saved_settings : UserSettings
 
-@onready var _music_vertical_slider : FlagVerticalSlider = $MusicVerticalSlider
+@onready var input_controller : SettingsMenuController = $SettingsMenuController as SettingsMenuController
 @onready var _sfx_vertical_slider : FlagVerticalSlider = $SFXVerticalSlider
+
+@onready var _music_vertical_slider : FlagVerticalSlider = $MusicVerticalSlider
 @onready var _sfx_volume_selection_player : SFXPlayer = $SFXVolumeSelectionPlayer
+@onready var _go_back_button : TextureButton = $GoBackButton 
+
+var initial_focused_object : Control
+var focusable_objects : Array[Control]
 
 func _ready():
 	_get_saved_user_settings()
 	_set_volume_sliders()
+
+func set_input_controller():
+	focusable_objects = [_music_vertical_slider, _sfx_vertical_slider, _go_back_button]
+
+	initial_focused_object = focusable_objects[0]
+	
+	input_controller.containing_scene = self
+	InputControllersManager.selected_input_controller = input_controller
 
 func _get_saved_user_settings():
 	_saved_settings = UserDataManager.user_data.user_settings

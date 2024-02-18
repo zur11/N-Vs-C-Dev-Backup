@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1qaewqhhtlyv"]
+[gd_scene load_steps=7 format=3 uid="uid://b1qaewqhhtlyv"]
 
 [ext_resource type="Script" path="res://screens/sub_menus/games_menu/world_selector/world_selector.gd" id="1_omxmu"]
 [ext_resource type="Script" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_button.gd" id="2_7jc32"]
 [ext_resource type="PackedScene" uid="uid://btlmw5vysjx8" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/stalingrad_summer_icon/stalingrad_icon.tscn" id="2_fmcdq"]
 [ext_resource type="PackedScene" uid="uid://tkdaet88vh8r" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/stalingrad_winter_icon/stalingrad_2_icon.tscn" id="3_0ulpg"]
 [ext_resource type="PackedScene" uid="uid://d5j7ri7ludn5" path="res://screens/sub_menus/games_menu/world_selector/world_buttons/world_icons/budapest_icon/budapest_icon.tscn" id="4_mq8xf"]
+[ext_resource type="Script" path="res://screens/sub_menus/games_menu/world_selector/world_selector_input_controller.gd" id="6_6v3w0"]
 
 [node name="WorldSelector" type="Control"]
 layout_mode = 3
@@ -48,3 +49,6 @@ script = ExtResource("2_7jc32")
 
 [node name="WorldIcon" parent="World3Button" instance=ExtResource("4_mq8xf")]
 position = Vector2(189, 227)
+
+[node name="WorldSelectorInputController" type="Node" parent="."]
+script = ExtResource("6_6v3w0")

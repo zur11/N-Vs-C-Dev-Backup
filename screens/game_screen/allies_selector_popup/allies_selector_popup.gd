@@ -108,7 +108,6 @@ func _set_moveable_cards():
 		moveable_card.set_z_index(13)
 		moveable_card.connect("pressed", _on_moveable_card_pressed.bind(moveable_card))
 		
-#		printt(moveable_card.position)
 		moveable_card.visible = false
 
 
@@ -256,7 +255,6 @@ func _on_moveable_card_pressed(unchosen_card:ChoosableAllyCard):
 		for ii in _chosen_cards.size():
 			var card : ChoosableAllyCard = _chosen_cards[ii]
 			if card.ally == unchosen_card.ally:
-#				printt(ii, card.ally.ally_name)
 				var new_available_slot_index = _chosen_cards.size() - 1
 
 				_ally_card_slots.toogle_ally_slot_visibility(new_available_slot_index, true)

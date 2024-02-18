@@ -10,7 +10,6 @@ func _process(_delta):
 			_on_bear_touched_opponent()
 		
 		if self.position.x > 2000:
-			printt("queue free")
 			self.queue_free()
 
 func _move_right():

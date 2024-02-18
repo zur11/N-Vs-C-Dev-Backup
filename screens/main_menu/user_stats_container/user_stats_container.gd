@@ -1,4 +1,4 @@
-class_name UserStatsContainer extends Node2D
+class_name UserStatsContainer extends Control
 
 var user_name : String : set = _set_user_name
 var user_balance : int : set = _set_user_balance
@@ -6,7 +6,14 @@ var _stats_opened : bool
 
 @onready var _balance_label : Label = $"%BalanceLabel"
 @onready var _user_name_label : Label = $"%UserNameLabel"
+@onready var _user_name_button : TextureButton = $UsernameContainer as TextureButton
 
+var focusable_objects : Array[Control]
+var initial_focused_object : Control
+
+func _ready():
+	focusable_objects = [_user_name_button]
+	initial_focused_object = focusable_objects[0]
 
 func _set_user_name(new_value:String):
 	user_name = new_value

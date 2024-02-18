@@ -71,7 +71,6 @@ func _update_current_page_label():
 func _on_continue_button_pressed():
 	if not is_in_second_popup:
 		if _current_page == total_first_popup_pages:
-#			printt(has_two_popups)
 			first_popup_finished.emit()
 			
 			if has_two_popups:

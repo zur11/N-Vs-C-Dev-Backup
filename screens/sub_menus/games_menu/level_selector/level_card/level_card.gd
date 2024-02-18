@@ -8,6 +8,7 @@ class_name LevelCard extends CenterContainer
 @onready var level_reward_thumbnail : TextureRect = $"%RewardThumbnail"
 @onready var enemy_thumbnail : TextureRect = $"%EnemyThumbnail"
 
+
 func _set_level(new_value: Level) -> void:	
 	level = new_value	
 	_set_card()

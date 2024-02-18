@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpedb0dmgw6kr"]
+[gd_scene load_steps=5 format=3 uid="uid://dpedb0dmgw6kr"]
 
 [ext_resource type="Script" path="res://screens/sub_menus/games_menu/level_selector/level_card/level_card.gd" id="1_w6igs"]
 [ext_resource type="Texture2D" uid="uid://d14ww1o5o2o0v" path="res://screens/sub_menus/games_menu/level_selector/level_card/assets/empty_card_img.png" id="2_ehwp3"]
+[ext_resource type="Script" path="res://screens/sub_menus/games_menu/level_selector/level_card/level_card_button.gd" id="3_44o5h"]
 [ext_resource type="FontFile" uid="uid://3iv2fk2whit2" path="res://assets/fonts/Molot.otf" id="3_j0dbn"]
 
 [node name="LevelCard" type="CenterContainer"]
 custom_minimum_size = Vector2(412.5, 555)
 offset_right = 412.5
 offset_bottom = 555.0
+focus_mode = 2
 script = ExtResource("1_w6igs")
 
 [node name="Button" type="TextureButton" parent="."]
@@ -17,6 +19,7 @@ mouse_filter = 1
 mouse_force_pass_scroll_events = false
 texture_normal = ExtResource("2_ehwp3")
 stretch_mode = 0
+script = ExtResource("3_44o5h")
 
 [node name="LevelThumbnail" type="TextureRect" parent="Button"]
 unique_name_in_owner = true

@@ -39,6 +39,12 @@ func _ready():
 	set_physics_process(false)
 
 func _input(event: InputEvent):
+	if event is InputEventMouseMotion:
+		return
+
+	if event is InputEventKey:
+		return
+	
 	var clicked_on_scroll_container = event.position.y < self.size.y
 	var clicked_on_unselected_card = event.position.y < _base_texture_size.y + 120.0
 	
@@ -294,7 +300,10 @@ func _update_current_selected_card():
 		var card = available_card_buttons[ii] as LevelCard 
 
 		if (_current_selected_card_step / _card_selection_step) == ii:
+			if _current_selected_card != null:
+				_current_selected_card.get_child(0).is_selected = false
 			_current_selected_card = card
+			card.get_child(0).is_selected = true
 			card_selected.emit(card.level)
 			return
 

@@ -10,5 +10,5 @@ offset_right = 140.0
 offset_bottom = 548.0
 theme_override_styles/slider = SubResource("StyleBoxEmpty_ymjeb")
 max_value = 1.0
-step = 0.001
+step = 0.01
 script = ExtResource("1_uv1lw")

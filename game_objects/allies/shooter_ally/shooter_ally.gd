@@ -149,10 +149,6 @@ func _physics_process(_delta):
 				_previous_animation_position = 0
 #				printt("Posible Bug")
 				return
-#				printt("Bug", _opponent_at_shoot_reach)
-			
-#			if _opponent_at_shoot_reach == null:
-#				printt("Opponent shoot reach null")
 
 		_previous_animation_position = $AnimationPlayer.current_animation_position
 		
@@ -163,7 +159,6 @@ func _physics_process(_delta):
 				$AnimationPlayer.play("_reload")
 				$ReloadSFXPlayer.play_sound()
 			else:
-#				printt("Cambio de _shoot o _reload a _idle")
 				$AnimationPlayer.play("_idle")
 			
 			if _opponent_at_physical_contact:

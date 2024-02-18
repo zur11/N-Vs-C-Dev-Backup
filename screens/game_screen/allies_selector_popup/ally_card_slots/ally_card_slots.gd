@@ -33,4 +33,3 @@ func _add_available_ally_slots():
 		self.add_child(ally_slot)
 		await get_tree().create_timer(0.1).timeout
 		ally_slots_global_positions.append(ally_slot.global_position)
-#		printt("ally slot global position: ", ally_slot.global_position)

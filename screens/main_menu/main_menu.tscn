@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cflg2ypu25js2"]
+[gd_scene load_steps=13 format=3 uid="uid://cflg2ypu25js2"]
 
 [ext_resource type="Script" path="res://screens/main_menu/main_menu.gd" id="1_tf8ke"]
 [ext_resource type="Texture2D" uid="uid://dwh802vf3lngr" path="res://screens/main_menu/assets/main_menu_background.png" id="2_3alm3"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://1gmrkml2ov3j" path="res://screens/sub_menus/market_menu/assets/market_button.png" id="7_d0cx1"]
 [ext_resource type="Texture2D" uid="uid://byg6o8ggvbyhn" path="res://screens/sub_menus/market_menu/assets/market_button_selected.png" id="8_ycnys"]
 [ext_resource type="PackedScene" uid="uid://swqcdk8cggeg" path="res://screens/main_menu/user_stats_container/user_stats_container.tscn" id="9_3k1xs"]
+[ext_resource type="Script" path="res://screens/main_menu/main_menu_controller.gd" id="12_dhedq"]
 
 [node name="MainMenu" type="Control"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -35,6 +36,7 @@ offset_bottom = 782.0
 texture_normal = ExtResource("3_hstnn")
 texture_pressed = ExtResource("4_vammy")
 texture_hover = ExtResource("4_vammy")
+texture_focused = ExtResource("4_vammy")
 
 [node name="GoToSettingsMenuButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -45,6 +47,7 @@ offset_bottom = 801.0
 texture_normal = ExtResource("5_ra82b")
 texture_pressed = ExtResource("6_a3eqk")
 texture_hover = ExtResource("6_a3eqk")
+texture_focused = ExtResource("6_a3eqk")
 
 [node name="GoToMarketButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -54,12 +57,16 @@ offset_bottom = 168.0
 texture_normal = ExtResource("7_d0cx1")
 texture_pressed = ExtResource("8_ycnys")
 texture_hover = ExtResource("8_ycnys")
+texture_focused = ExtResource("8_ycnys")
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_c1rv0")
 script = ExtResource("7_5jsu4")
 
 [node name="UserStatsContainer" parent="." instance=ExtResource("9_3k1xs")]
+
+[node name="MainMenuController" type="Node" parent="."]
+script = ExtResource("12_dhedq")
 
 [connection signal="pressed" from="GoToGamesMenuButton" to="." method="_on_go_to_games_menu_button_pressed"]
 [connection signal="pressed" from="GoToSettingsMenuButton" to="." method="_on_go_to_settings_menu_button_pressed"]

@@ -21,6 +21,7 @@ SceneManagerSystem="*res://global_systems/scene_manager_system/system/scene_mana
 AsyncAutoload="*res://global_systems/async_autoload/async_autoload.gd"
 UserDataManager="*res://global_systems/user_data_system/user_data_manager/user_data_manager.gd"
 MusicManager="*res://global_systems/music_manager/music_manager.gd"
+InputControllersManager="*res://global_systems/input_controllers_system/input_controllers_manager.gd"
 
 [display]
 

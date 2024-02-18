@@ -48,22 +48,6 @@ func _set_bullet_collision_and_visibility_settings():
 	for ii in total_rows_number:
 		if bullet_sender.get_z_index() == ii:
 			self.set_z_index(ii)
-	
-#	elif playable_rows == 3:
-#		for ii in playable_rows * 2:
-#			if bullet_sender.get_collision_mask_value(ii+3) == true:
-#				self.set_collision_mask_value(ii+3, true)
-#
-#		for ii in playable_rows:
-#			if bullet_sender.get_z_index() == ii+1:
-#				self.set_z_index(ii+1)
-#
-#	elif playable_rows == 1:
-#		for ii in playable_rows * 2:
-#			if bullet_sender.get_collision_mask_value(ii+5) == true:
-#				self.set_collision_mask_value(ii+5, true)
-#
-#		self.set_z_index(2)
 
 func _set_inflicted_damage_points():
 	_inflicted_damage_points = bullet_sender.damage_per_hit
@@ -84,7 +68,6 @@ func _move_left():
 func _check_for_bullet_receiver(bullet_speed:float):
 	var last_movement : KinematicCollision2D = self.move_and_collide(Vector2(bullet_speed,0), true)
 	if last_movement != null:
-#		printt("last bullet movement right: ", last_movement.get_collider())
 		var damage_receiver : Object = last_movement.get_collider()
 		if self is CannonBullet:
 			damage_receiver.auto_destroy()
@@ -93,7 +76,6 @@ func _check_for_bullet_receiver(bullet_speed:float):
 		_animate_impact()
 
 func _inflict_damage_to_game_object(damage_receiver:Object):
-#	printt("Bullet Damage Receiver: ", damage_receiver)
 	if self is IceBullet:
 		damage_receiver.receive_damage(_inflicted_damage_points, "long_freezing")
 		return

@@ -85,7 +85,6 @@ func _on_falling_timer_timeout():
 	_explode()
 	_explosion_sfx_player.play_sound()
 	_is_exploding = true
-#	printt(_opponents_at_explosion_contact)
 	
 	await get_tree().create_timer(1).timeout
 	self.ally_died.emit(self, assigned_cell)
