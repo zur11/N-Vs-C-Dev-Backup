@@ -198,7 +198,7 @@ enemies = Array[ExtResource("7_pqp7u")]([SubResource("Resource_43tug"), SubResou
 
 [resource]
 script = ExtResource("11_0npst")
-level_unlocked = false
+level_unlocked = true
 background_scene_path = "res://screens/game_screen/background_scene/stalingrad_summer/level_4/st_summer_bg_l4.tscn"
 game_foreground = ExtResource("4_4knhl")
 level_name = "Level 4"

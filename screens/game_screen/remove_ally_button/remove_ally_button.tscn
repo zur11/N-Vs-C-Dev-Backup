@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://botdehl1hhwsv"]
+[gd_scene load_steps=4 format=3 uid="uid://botdehl1hhwsv"]
 
+[ext_resource type="Texture2D" uid="uid://dppmuf6kl8tsg" path="res://screens/game_screen/remove_ally_button/assets/remove_ally_button.png" id="1_0k5el"]
+[ext_resource type="Texture2D" uid="uid://b7yak1a7ol61g" path="res://screens/game_screen/remove_ally_button/assets/remove_ally_button_selected.png" id="2_rsr11"]
 [ext_resource type="Script" path="res://screens/game_screen/remove_ally_button/remove_ally_button.gd" id="3_vno3l"]
 
 [node name="RemoveAllyButton" type="TextureButton"]
 offset_right = 125.0
 offset_bottom = 131.0
+texture_normal = ExtResource("1_0k5el")
+texture_pressed = ExtResource("2_rsr11")
+texture_hover = ExtResource("2_rsr11")
+texture_focused = ExtResource("2_rsr11")
 script = ExtResource("3_vno3l")

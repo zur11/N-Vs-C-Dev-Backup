@@ -8,8 +8,8 @@ var _selected_remove_ally_button_texture : Texture = load(_SELECTED_REMOVE_ALLY_
 
 var is_selected : bool : set = _set_is_selected
 
-func _ready():
-	_update_texture()
+#func _ready():
+	#_update_texture()
 
 func _set_is_selected(new_value:bool):
 	is_selected = new_value

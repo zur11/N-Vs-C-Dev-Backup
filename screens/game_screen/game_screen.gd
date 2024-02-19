@@ -16,9 +16,15 @@ var _available_ally_slots : int
 
 var _tutorial : Tutorial
 
+var focusable_objects : Array[Control]
+var initial_focused_object : Control
+
+@onready var input_controller : GameScreenController = $GameScreenController as GameScreenController
 @onready var _background_scene : BackgroundScene
-@onready var card_selector : AllyCardSelector = $CardSelector as AllyCardSelector
-@onready var _terrain_grid = $TerrainGrid as TerrainGrid
+var card_selector : AllyCardSelector #= $CardSelector as AllyCardSelector
+@onready var _card_selector_input_manager : CardSelectorInputManager = $CardSelectorInputManager as CardSelectorInputManager
+var _terrain_grid : TerrainGrid
+@onready var _terrain_grid_input_manager : TerrainGridInputManager = $TerrainGridInputManager as TerrainGridInputManager
 @onready var _balance_displayer = $BalanceDisplayer as BalanceDisplayer
 @onready var _enemy_spawners : EnemySpawners = $EnemySpawners as EnemySpawners
 @onready var _allies_selector_popup : AlliesSelectorPopup = $AlliesSelectorPopup
@@ -59,15 +65,13 @@ func _ready():
 
 func _set_initial_variables():
 	var player_user_data : PlayerUserData = UserDataManager.user_data.player_user_data
+
+	card_selector = _card_selector_input_manager.managed_scene as AllyCardSelector
+	_terrain_grid = _terrain_grid_input_manager.managed_scene as TerrainGrid
 	
 	_black_borders_filter.toogle_filter_visibility(false)
 	
 	_set_background_scene()
-	
-	#_background.texture = level.game_background
-	#_foreground.texture = level.game_foreground
-	#_foreground.set_z_index(9)
-	#_set_background_scene_x_position()
 
 	_balance_displayer.set_z_index(13)
 	_user_balance_displayer.set_z_index(13)
@@ -94,7 +98,17 @@ func _set_initial_variables():
 	_add_value_to_balance(level.starting_balance)
 	
 	_game_start_count_down.set_z_index(15)
+
+func set_input_controller():
+	focusable_objects = [_remove_ally_button, _pause_game_button]
 	
+	initial_focused_object = focusable_objects[0]
+	
+	input_controller.containing_scene = self
+	InputControllersManager.selected_input_controller = input_controller
+
+
+
 func _set_background_scene():
 	var new_background_scene : BackgroundScene = load(level.background_scene_path).instantiate() as BackgroundScene 
 
@@ -170,6 +184,11 @@ func _connect_signals():
 	card_selector.connect("ally_selected", _on_card_selector_ally_selected)
 	card_selector.ally_card_loaded.connect(_on_card_selector_card_loaded)
 	_game_start_count_down.count_down_finished.connect(_on_game_start_count_down_finished)
+	
+	_card_selector_input_manager.up_exit_input_received.connect(_on_card_selector_up_exit_input_received)
+	_card_selector_input_manager.right_exit_input_received.connect(_on_card_selector_right_exit_input_received)
+	_terrain_grid_input_manager.up_exit_input_received.connect(_on_terrain_grid_up_exit_input_received)
+	_terrain_grid_input_manager.left_exit_input_received.connect(_on_terrain_grid_left_exit_input_received)
 
 func _start_initial_cards_display():
 	var ally_cards : Array[AllyCard] = []
@@ -193,6 +212,8 @@ func _start_initial_cards_display():
 		card_selector.start_initial_display(ally_cards)
 		_update_cards_affordability()
 		card_selector.visible = true
+		
+		#_card_selector_input_manager.set_input_controller()
 		
 	else:
 		_allies_selector_popup.maximum_choosable_allies = _available_ally_slots
@@ -270,6 +291,8 @@ func _start_game_with_count_down():
 	_disable_all_ally_card_buttons()
 	await get_tree().create_timer(_game_start_count_down.total_count_down_time * 2).timeout
 	_enable_all_ally_card_buttons()
+	
+	#_card_selector_input_manager.set_input_controller()
 
 func _move_screen_to_right_side():
 	var tween = create_tween()
@@ -581,6 +604,8 @@ func _on_game_start_count_down_finished():
 	
 	await get_tree().create_timer(2).timeout
 	_game_start_count_down.queue_free()
+	
+	_card_selector_input_manager.set_input_controller()
 
 func _on_card_selector_card_loaded():
 	_update_cards_affordability()
@@ -619,3 +644,21 @@ func _on_remove_ally_button_pressed():
 		_selected_ally_scene = null
 		card_selector.selected_card.is_selected = false
 		card_selector.selected_card = null
+
+func on_left_exit_input_received():
+	_card_selector_input_manager.set_input_controller()
+
+func on_down_exit_input_received():
+	_terrain_grid_input_manager.set_input_controller()
+
+func _on_card_selector_up_exit_input_received():
+	set_input_controller()
+	
+func _on_card_selector_right_exit_input_received():
+	_terrain_grid_input_manager.set_input_controller()
+
+func _on_terrain_grid_up_exit_input_received():
+	set_input_controller()
+	
+func _on_terrain_grid_left_exit_input_received():
+	_card_selector_input_manager.set_input_controller()

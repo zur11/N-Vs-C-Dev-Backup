@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://nt27300hs2qr"]
+
+[ext_resource type="Script" path="res://screens/game_screen/ally_card_selector/card_selector_input_manager/card_selector_input_manager.gd" id="1_ob4xw"]
+[ext_resource type="PackedScene" uid="uid://tqidibrgm2uf" path="res://screens/game_screen/ally_card_selector/ally_card_selector.tscn" id="2_3xrio"]
+[ext_resource type="Script" path="res://screens/game_screen/ally_card_selector/card_selector_controller.gd" id="3_gy5vp"]
+
+[node name="CardSelectorInputManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ob4xw")
+
+[node name="ally_card_selector" parent="." instance=ExtResource("2_3xrio")]
+layout_mode = 0
+
+[node name="CardSelectorController" type="Node" parent="."]
+script = ExtResource("3_gy5vp")
