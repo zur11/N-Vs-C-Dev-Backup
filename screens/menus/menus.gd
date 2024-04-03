@@ -84,7 +84,7 @@ func _display_games_menu():
 	
 	
 func _exit_tree():
-	if $SubMenuContainer.get_child_count() != 0:
+	if $SubMenuContainer.get_child_count() != 0 and not Engine.is_editor_hint():
 		if $SubMenuContainer.get_child(0).name == "SettingsMenu":
 			$SubMenuContainer.get_child(0).update_saved_volume_settings()
 			UserDataManager.save_user_data_to_disk()

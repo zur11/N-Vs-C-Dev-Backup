@@ -20,14 +20,29 @@ var background_thumbnails : Array[Texture]
 var second_popup_thumbnails : Array[Texture]
 var _current_page : int = 1
 
+var focusable_objects : Array[Control]
+var initial_focused_object : Control
+@onready var input_controller : TutorialPopupController = $TutorialPopupController as TutorialPopupController
+
 @onready var _current_page_label : Label = $CurrentPageLabel
 @onready var _continue_button : TextureButton = $ContinueButton
 @onready var _background : TextureRect = $Background
 
-#func _ready():
-#	_update_continue_button_display()
-#	_set_has_two_popups()
-#	_update_current_page_label()
+
+func set_input_controller():
+	if focusable_objects == []:
+		focusable_objects = [_continue_button]
+
+	initial_focused_object = focusable_objects[0]
+	
+	input_controller.containing_scene = self
+	InputControllersManager.selected_input_controller = input_controller
+
+func on_start_key_input_received():
+	_on_continue_button_pressed()
+
+func on_cancel_input_received():
+	_on_continue_button_pressed()
 
 func update_popup_display():
 	_set_has_two_popups()
@@ -41,19 +56,24 @@ func _update_continue_button_display():
 			_continue_button.texture_normal = ok_button_texture
 			_continue_button.texture_pressed = selected_ok_button_texture
 			_continue_button.texture_hover = selected_ok_button_texture
+			_continue_button.texture_focused = selected_ok_button_texture
 		else:
 			_continue_button.texture_normal = next_button_texture
 			_continue_button.texture_pressed = selected_next_button_texture
 			_continue_button.texture_hover = selected_next_button_texture
+			_continue_button.texture_focused = selected_next_button_texture
 	else:
 		if _current_page == total_second_popup_pages:
 			_continue_button.texture_normal = ok_button_texture
 			_continue_button.texture_pressed = selected_ok_button_texture
 			_continue_button.texture_hover = selected_ok_button_texture
+			_continue_button.texture_focused = selected_ok_button_texture
 		else:
 			_continue_button.texture_normal = next_button_texture
 			_continue_button.texture_pressed = selected_next_button_texture
 			_continue_button.texture_hover = selected_next_button_texture
+			_continue_button.texture_focused = selected_next_button_texture
+			
 
 func _update_background_texture():
 	if not is_in_second_popup:

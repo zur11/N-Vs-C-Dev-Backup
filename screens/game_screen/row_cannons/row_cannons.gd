@@ -9,7 +9,13 @@ func initial_setup(playable_rows : int):
 	_playable_rows = playable_rows
 	
 	_connect_row_cannons_signals()
+	_set_cannons_numbers()
 	_set_enabled_row_cannons()
+
+func _set_cannons_numbers():
+	for ii in self.get_child_count():
+		var cannon : RowCannon = self.get_child(ii)
+		cannon.cannon_number= ii + 1
 
 func shoot_in_row(row_number:int):
 	for cannon in _enabled_row_cannons:

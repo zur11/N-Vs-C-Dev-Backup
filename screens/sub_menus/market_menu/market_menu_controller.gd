@@ -1,29 +1,37 @@
 class_name MarketMenuController extends InputController
 
+func _input(event):
+	if InputControllersManager.selected_input_controller == self:
+		if event is InputEventMouseMotion:
+			_disable_keys_input_control()
+			get_viewport().set_input_as_handled()
+
+		elif event is InputEventKey or event is InputEventJoypadButton:
+			if focused_object == null and event.pressed:
+				containing_scene.set_input_controller()
+				get_viewport().set_input_as_handled()
+
 func _on_input_event_key_pressed(event:InputEvent):
-	if event is InputEventKey and event.pressed:
-		match event.keycode:
-			KEY_ENTER:
+	if event is InputEventMouseMotion or event is InputEventJoypadMotion or event is InputEventScreenDrag:
+		return
+		
+	if event.pressed:
+		if event.is_action("accept") or event is InputEventScreenTouch:
+			if event is InputEventScreenTouch:
+				_disable_keys_input_control()
+				return
+			if event is InputEventJoypadButton:
 				focused_object.pressed.emit()
-			KEY_LEFT:
-				var focused_object_index : int = focusable_objects.find(focused_object)
-				if focused_object_index > 0:
-					focused_object = focusable_objects[focused_object_index - 1]
-				else:
-					if focusable_objects.size() > 1:
-						focused_object = focusable_objects[focusable_objects.size() - 1]
-					
-			KEY_RIGHT:
-				var focused_object_index : int = focusable_objects.find(focused_object)
-				if focusable_objects.size() > 1:
-					if focused_object_index < focusable_objects.size() - 1:
-						focused_object = focusable_objects[focused_object_index + 1]
-					else:
-						focused_object = focusable_objects[0]
-
-			KEY_UP:
-				pass
-			KEY_DOWN:
-				pass
-
+				
+			return
+			#focused_object.pressed.emit()
+		elif event.is_action("go_back"):
+			containing_scene.on_cancel_input_received()
+		elif event.is_action("move_left"):
+			containing_scene.on_left_exit_input_received()
+			
 		focused_object.accept_event()
+	else:
+		if event is InputEventScreenTouch:
+			_disable_keys_input_control()
+

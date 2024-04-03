@@ -267,16 +267,19 @@ sprite_frames_path = "res://screens/game_screen/background_scene/stalingrad_summ
 z_index = 10
 
 [node name="ForegroundObject3" type="AnimatedSprite2D" parent="Foreground"]
+modulate = Color(1, 1, 1, 0.7)
 position = Vector2(976, 945)
 sprite_frames = SubResource("SpriteFrames_6etql")
 script = ExtResource("19_8f8e6")
 
 [node name="ForegroundObject2" type="AnimatedSprite2D" parent="Foreground"]
+modulate = Color(1, 1, 1, 0.7)
 position = Vector2(3038, 943)
 sprite_frames = SubResource("SpriteFrames_yivbu")
 script = ExtResource("19_8f8e6")
 
 [node name="ForegroundObject1" type="AnimatedSprite2D" parent="Foreground"]
+modulate = Color(1, 1, 1, 0.7)
 position = Vector2(5009, 924)
 sprite_frames = SubResource("SpriteFrames_fcupp")
 script = ExtResource("19_8f8e6")

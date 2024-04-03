@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvxpu3e3wl11t"]
+[gd_scene load_steps=4 format=3 uid="uid://cvxpu3e3wl11t"]
 
 [ext_resource type="Script" path="res://screens/game_screen/terrain_grid/terrain_grid.gd" id="1_o70ua"]
+[ext_resource type="Script" path="res://screens/game_screen/terrain_grid/terrain_grid_controller.gd" id="2_c8ax0"]
 [ext_resource type="PackedScene" uid="uid://lne27su22q6r" path="res://screens/game_screen/terrain_grid/cell/cell.tscn" id="2_lhhgb"]
 
 [node name="TerrainGrid" type="GridContainer"]
@@ -9,6 +10,9 @@ offset_right = 1616.0
 offset_bottom = 896.0
 columns = 9
 script = ExtResource("1_o70ua")
+
+[node name="TerrainGridController" type="Node" parent="."]
+script = ExtResource("2_c8ax0")
 
 [node name="Row1Col1" parent="." instance=ExtResource("2_lhhgb")]
 layout_mode = 2

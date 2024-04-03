@@ -1,11 +1,12 @@
 class_name Cell extends TextureButton
 
 var is_occupied : bool
+var contained_coins : Array[RubleCoin]
 
-#var is_empty: bool = true : get = _get_is_empty
-#
-#func _get_is_empty() -> bool:
-#	if !$Area2D.has_overlapping_bodies():
-#		return true
-#	else:
-#		return false
+func add_coin_to_cell(coin:RubleCoin):
+	contained_coins.append(coin)
+	coin.tree_exiting.connect(_on_contained_coin_tree_exiting.bind(coin))
+
+func _on_contained_coin_tree_exiting(coin:RubleCoin):
+	contained_coins.erase(coin)
+

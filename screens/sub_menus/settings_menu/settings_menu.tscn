@@ -35,17 +35,25 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_6g4gv")
 
-[node name="MusicFlagStaff" type="Sprite2D" parent="."]
-position = Vector2(1006, 548)
-texture = ExtResource("5_ivy1x")
-
-[node name="SfxFlagStaff" type="Sprite2D" parent="."]
-position = Vector2(1342, 545)
-texture = ExtResource("5_ivy1x")
-
 [node name="SettingsSign" type="Sprite2D" parent="."]
 position = Vector2(565, 100)
 texture = ExtResource("8_wfsem")
+
+[node name="MusicFlagStick" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 969.0
+offset_top = 222.0
+offset_right = 1042.0
+offset_bottom = 874.0
+texture = ExtResource("5_ivy1x")
+
+[node name="SFXFlagStick" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1306.0
+offset_top = 219.0
+offset_right = 1379.0
+offset_bottom = 871.0
+texture = ExtResource("5_ivy1x")
 
 [node name="GoBackButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -87,5 +95,13 @@ bus_name = "SFX"
 [node name="SettingsMenuController" type="Node" parent="."]
 script = ExtResource("15_aamiw")
 
+[connection signal="focus_entered" from="MusicFlagStick" to="." method="_on_music_flag_stick_focus_entered"]
+[connection signal="focus_exited" from="MusicFlagStick" to="." method="_on_music_flag_stick_focus_exited"]
+[connection signal="mouse_entered" from="MusicFlagStick" to="." method="_on_music_flag_stick_mouse_entered"]
+[connection signal="mouse_exited" from="MusicFlagStick" to="." method="_on_music_flag_stick_mouse_exited"]
+[connection signal="focus_entered" from="SFXFlagStick" to="." method="_on_sfx_flag_stick_focus_entered"]
+[connection signal="focus_exited" from="SFXFlagStick" to="." method="_on_sfx_flag_stick_focus_exited"]
+[connection signal="mouse_entered" from="SFXFlagStick" to="." method="_on_sfx_flag_stick_mouse_entered"]
+[connection signal="mouse_exited" from="SFXFlagStick" to="." method="_on_sfx_flag_stick_mouse_exited"]
 [connection signal="pressed" from="GoBackButton" to="." method="_on_go_back_button_pressed"]
 [connection signal="drag_ended" from="SFXVerticalSlider" to="." method="_on_sfx_vertical_slider_drag_ended"]

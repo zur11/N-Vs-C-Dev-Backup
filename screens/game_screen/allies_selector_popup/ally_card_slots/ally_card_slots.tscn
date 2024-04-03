@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bs84ed7ckgfyd"]
+[gd_scene load_steps=3 format=3 uid="uid://bs84ed7ckgfyd"]
 
 [ext_resource type="Script" path="res://screens/game_screen/allies_selector_popup/ally_card_slots/ally_card_slots.gd" id="1_ngtc5"]
+[ext_resource type="Script" path="res://screens/game_screen/allies_selector_popup/ally_card_slots/ally_card_slots_controller.gd" id="2_avx7w"]
 
-[node name="AllyCardSlots" type="VBoxContainer"]
-scale = Vector2(0.96, 0.96)
+[node name="AllyCardSlots" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_ngtc5")
+
+[node name="AllySlotsContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+scale = Vector2(0.96, 0.96)
+
+[node name="AllyCardSlotsController" type="Node" parent="."]
+script = ExtResource("2_avx7w")

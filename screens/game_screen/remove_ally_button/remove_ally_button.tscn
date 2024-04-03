@@ -10,5 +10,4 @@ offset_bottom = 131.0
 texture_normal = ExtResource("1_0k5el")
 texture_pressed = ExtResource("2_rsr11")
 texture_hover = ExtResource("2_rsr11")
-texture_focused = ExtResource("2_rsr11")
 script = ExtResource("3_vno3l")

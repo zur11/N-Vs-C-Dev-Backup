@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dr75bqddrjto7"]
+[gd_scene load_steps=15 format=3 uid="uid://dr75bqddrjto7"]
 
 [ext_resource type="Script" path="res://screens/game_screen/paused_game_popup/paused_game_popup.gd" id="1_omj55"]
 [ext_resource type="Texture2D" uid="uid://jd0ff83xmfq7" path="res://screens/game_screen/paused_game_popup/assets/pause_popup_bg.PNG" id="2_iihcw"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://drbi120c2cato" path="res://screens/game_screen/paused_game_popup/assets/sfx/set_sfx_volume.mp3" id="11_ax76g"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="12_2bon3"]
 [ext_resource type="AudioStream" uid="uid://djx2vlmr8oegg" path="res://assets/audio/sfx/game_screen_popups/generic_button_pressed_sfx.mp3" id="13_ubs4o"]
+[ext_resource type="Script" path="res://screens/game_screen/paused_game_popup/paused_game_popup_controller.gd" id="14_edgcx"]
 
 [node name="PausedGamePopup" type="Control"]
 process_mode = 2
@@ -84,6 +85,8 @@ offset_right = 426.0
 offset_bottom = 737.0
 texture_normal = ExtResource("3_xk0mj")
 texture_pressed = ExtResource("4_w5hwk")
+texture_hover = ExtResource("4_w5hwk")
+texture_focused = ExtResource("4_w5hwk")
 
 [node name="RetryLevelButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -93,6 +96,8 @@ offset_right = 675.0
 offset_bottom = 736.0
 texture_normal = ExtResource("5_opa6a")
 texture_pressed = ExtResource("6_3etcl")
+texture_hover = ExtResource("6_3etcl")
+texture_focused = ExtResource("6_3etcl")
 
 [node name="GoToMainMenuButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -102,6 +107,8 @@ offset_right = 926.0
 offset_bottom = 736.0
 texture_normal = ExtResource("7_0u3vh")
 texture_pressed = ExtResource("8_4ooyn")
+texture_hover = ExtResource("8_4ooyn")
+texture_focused = ExtResource("8_4ooyn")
 
 [node name="SFXVolumeSelectionPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_ax76g")
@@ -110,6 +117,9 @@ script = ExtResource("12_2bon3")
 [node name="GenericBtnPressedPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_ubs4o")
 script = ExtResource("12_2bon3")
+
+[node name="PausedGamePopupController" type="Node" parent="."]
+script = ExtResource("14_edgcx")
 
 [connection signal="drag_ended" from="SFXSliderBackground/SFXHorizontalSlider" to="." method="_on_sfx_horizontal_slider_drag_ended"]
 [connection signal="pressed" from="ResumeGameButton" to="." method="_on_resume_game_button_pressed"]

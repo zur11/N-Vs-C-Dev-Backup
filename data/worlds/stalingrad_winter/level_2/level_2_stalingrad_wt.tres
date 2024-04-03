@@ -24,7 +24,7 @@ ally_thumbnail = "woodenBarrier"
 ally_title = "WOODEN BARRIER"
 ally_reward_description = "Wooden Barrier offers protection from enemy attacks to allies located behind it."
 
-[sub_resource type="Resource" id="Resource_mog0b"]
+[sub_resource type="Resource" id="Resource_qfa5s"]
 script = ExtResource("2_yebf4")
 minimum_value = 10
 maximum_value = 12
@@ -480,7 +480,7 @@ level_thumbnail = ExtResource("14_0eaih")
 enemy_thumbnail = ExtResource("3_cotyu")
 level_allies = Array[PackedScene]([ExtResource("5_jyj56"), ExtResource("6_i563c"), ExtResource("7_ux23c"), ExtResource("8_63555"), ExtResource("9_irw18"), ExtResource("9_5fcs5"), ExtResource("10_5i422"), ExtResource("11_20nmv"), ExtResource("12_fepr8")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_mog0b")
+coin_dropping_rate = SubResource("Resource_qfa5s")
 falling_coin_value = 15
 playable_rows = 5
 game_background_position = "left"

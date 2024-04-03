@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhix51cq3878u"]
+
+[ext_resource type="Script" path="res://screens/game_screen/allies_selector_popup/ally_card_slots/ally_slot/ally_slot.gd" id="1_ptq0t"]
+
+[node name="AllySlot" type="TextureButton"]
+script = ExtResource("1_ptq0t")

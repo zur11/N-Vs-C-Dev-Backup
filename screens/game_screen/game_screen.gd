@@ -16,35 +16,42 @@ var _available_ally_slots : int
 
 var _tutorial : Tutorial
 
+# INPUT CONTROL VARIABLES:
 var focusable_objects : Array[Control]
 var initial_focused_object : Control
 
+var _current_focused_object : Control
+var _last_focused_object : Control
+
+var _last_focused_scene : Node 
+#@onready var _focusable_scenes : Array[Node] = [self, _card_selector_input_manager, _terrain_grid_input_manager, _coins_input_manager]
+
+
 @onready var input_controller : GameScreenController = $GameScreenController as GameScreenController
+@onready var _coins_input_manager : CoinsInputManager = $CoinsInputManager as CoinsInputManager
 @onready var _background_scene : BackgroundScene
-var card_selector : AllyCardSelector #= $CardSelector as AllyCardSelector
-@onready var _card_selector_input_manager : CardSelectorInputManager = $CardSelectorInputManager as CardSelectorInputManager
-var _terrain_grid : TerrainGrid
-@onready var _terrain_grid_input_manager : TerrainGridInputManager = $TerrainGridInputManager as TerrainGridInputManager
+@onready var card_selector : AllyCardSelector = $AllyCardSelector as AllyCardSelector
+@onready var _terrain_grid : TerrainGrid = $TerrainGrid as TerrainGrid
 @onready var _balance_displayer = $BalanceDisplayer as BalanceDisplayer
 @onready var _enemy_spawners : EnemySpawners = $EnemySpawners as EnemySpawners
-@onready var _allies_selector_popup : AlliesSelectorPopup = $AlliesSelectorPopup
-@onready var _game_over_popup : GameOverPopup = $GameOverPopup
-@onready var _paused_game_popup : PausedGamePopup = $PausedGamePopup
-@onready var _game_won_popup : GameWonPopup = $GameWonPopup
+@onready var _allies_selector_popup : AlliesSelectorPopup = $AlliesSelectorPopup as AlliesSelectorPopup
+@onready var _game_over_popup : GameOverPopup = $GameOverPopup as GameOverPopup
+@onready var _paused_game_popup : PausedGamePopup = $PausedGamePopup as PausedGamePopup
+@onready var _game_won_popup : GameWonPopup = $GameWonPopup as GameWonPopup
 @onready var _remaining_enemies_count_label : Label = $RemainingEnemiesCount
-@onready var _game_progress_line : GameProgressLine = $GameProgressLine
-@onready var _remove_ally_button : RemoveAllyButton = $RemoveAllyButton
-@onready var _last_column_enemy_detectors : LastColumnEnemyDetectors = $LastColumnEnemyDetectors
-@onready var _row_cannons : RowCannons = $RowCannons
+@onready var _game_progress_line : GameProgressLine = $GameProgressLine as GameProgressLine
+@onready var _remove_ally_button : RemoveAllyButton = $RemoveAllyButton as RemoveAllyButton
+@onready var _last_column_enemy_detectors : LastColumnEnemyDetectors = $LastColumnEnemyDetectors as LastColumnEnemyDetectors
+@onready var _row_cannons : RowCannons = $RowCannons as RowCannons
 @onready var _pause_game_button : TextureButton = $PauseGameButton
-@onready var _game_start_count_down : GameStartCountDown = $GameStartCountdown
-@onready var _preview_enemies_rows : PreviewEnemiesRows = $PreviewEnemiesRows
-@onready var _pause_btn_pressed_player : SFXPlayer = $PauseBtnPressedPlayer
-@onready var _coin_picked_up_player : SFXPlayer = $CoinPickedUpPlayer
-@onready var _ally_card_selected_player : SFXPlayer = $AllyCardSelectedPlayer
-@onready var _new_ally_located_player : SFXPlayer = $NewAllyLocatedPlayer
-@onready var _enemies_arrived_player : SFXPlayer = $EnemiesArrivedPlayer
-@onready var _user_balance_displayer : UserBalanceDisplayer = $UserBalanceDisplayer
+@onready var _game_start_count_down : GameStartCountDown = $GameStartCountdown as GameStartCountDown
+@onready var _preview_enemies_rows : PreviewEnemiesRows = $PreviewEnemiesRows as PreviewEnemiesRows
+@onready var _pause_btn_pressed_player : SFXPlayer = $PauseBtnPressedPlayer as SFXPlayer
+@onready var _coin_picked_up_player : SFXPlayer = $CoinPickedUpPlayer as SFXPlayer
+@onready var _ally_card_selected_player : SFXPlayer = $AllyCardSelectedPlayer as SFXPlayer
+@onready var _new_ally_located_player : SFXPlayer = $NewAllyLocatedPlayer as SFXPlayer
+@onready var _enemies_arrived_player : SFXPlayer = $EnemiesArrivedPlayer as SFXPlayer
+@onready var _user_balance_displayer : UserBalanceDisplayer = $UserBalanceDisplayer as UserBalanceDisplayer
 @onready var _black_borders_filter : ScreenFilter = $%BlackBordersFilter as BlackBordersFilter
 @onready var _screen_filters : Node2D = $ScreenFilters
 @onready var _action_trigger : ActionTrigger = $ActionTrigger as ActionTrigger
@@ -65,9 +72,6 @@ func _ready():
 
 func _set_initial_variables():
 	var player_user_data : PlayerUserData = UserDataManager.user_data.player_user_data
-
-	card_selector = _card_selector_input_manager.managed_scene as AllyCardSelector
-	_terrain_grid = _terrain_grid_input_manager.managed_scene as TerrainGrid
 	
 	_black_borders_filter.toogle_filter_visibility(false)
 	
@@ -101,13 +105,19 @@ func _set_initial_variables():
 
 func set_input_controller():
 	focusable_objects = [_remove_ally_button, _pause_game_button]
-	
-	initial_focused_object = focusable_objects[0]
+	_connect_focusable_objects_signals()
+	if _last_focused_object != null:
+		initial_focused_object = _last_focused_object
+	else:
+		initial_focused_object = focusable_objects[0]
 	
 	input_controller.containing_scene = self
 	InputControllersManager.selected_input_controller = input_controller
 
-
+func _connect_focusable_objects_signals():
+	for focusable_object in focusable_objects:
+		if not focusable_object.focus_entered.is_connected(_on_focusable_object_focus_entered.bind(focusable_object)):
+			focusable_object.focus_entered.connect(_on_focusable_object_focus_entered.bind(focusable_object))
 
 func _set_background_scene():
 	var new_background_scene : BackgroundScene = load(level.background_scene_path).instantiate() as BackgroundScene 
@@ -181,14 +191,33 @@ func _connect_signals():
 	_terrain_grid.coin_picked_up.connect(_on_terrain_grid_coin_picked_up)
 	_terrain_grid.coin_for_cell_requested.connect(_on_terrain_grid_coin_for_cell_requested)
 	_terrain_grid.ally_for_cell_requested.connect(_on_terrain_grid_ally_for_cell_requested)
+	_terrain_grid.ally_coin_spawned.connect(_on_terrain_grid_ally_coin_spawned)
+	_terrain_grid.coins_selection_key1_input_received.connect(_on_terrain_grid_coins_selection_key1_input_received)
+	_terrain_grid.coins_selection_key2_input_received.connect(_on_terrain_grid_coins_selection_key2_input_received)
 	card_selector.connect("ally_selected", _on_card_selector_ally_selected)
 	card_selector.ally_card_loaded.connect(_on_card_selector_card_loaded)
+	card_selector.coins_selection_key1_input_received.connect(_on_card_selector_coins_selection_key1_input_received)
+	card_selector.coins_selection_key2_input_received.connect(_on_card_selector_coins_selection_key2_input_received)
 	_game_start_count_down.count_down_finished.connect(_on_game_start_count_down_finished)
+	card_selector.start_key_input_received.connect(on_start_key_input_received.bind(card_selector))
+	card_selector.cancel_input_received.connect(_on_card_selector_cancel_input_received)
+	card_selector.up_exit_input_received.connect(_on_card_selector_up_exit_input_received)
+	card_selector.right_exit_input_received.connect(_on_card_selector_right_exit_input_received)
+	_terrain_grid.start_key_input_received.connect(on_start_key_input_received.bind(_terrain_grid))
+	_terrain_grid.cancel_input_received.connect(_on_terrain_grid_cancel_input_received)
+	_terrain_grid.up_exit_input_received.connect(_on_terrain_grid_up_exit_input_received)
+	_terrain_grid.left_exit_input_received.connect(_on_terrain_grid_left_exit_input_received)
+	_coins_input_manager.no_coins_to_select.connect(_on_coins_input_manager_no_coins_to_select)
+	_coins_input_manager.cancel_input_received.connect(_on_coins_input_manager_cancel_input_received)
+	_coins_input_manager.up_input_received.connect(_on_coins_input_manager_cancel_input_received)
+	_coins_input_manager.down_input_received.connect(_on_coins_input_manager_cancel_input_received)
+	_coins_input_manager.left_input_received.connect(_on_coins_input_manager_cancel_input_received)
+	_coins_input_manager.right_input_received.connect(_on_coins_input_manager_cancel_input_received)
+	_paused_game_popup.cancel_input_received.connect(_on_paused_game_popup_cancel_input_received)
+	_paused_game_popup.start_key_input_received.connect(_on_paused_game_popup_start_key_input_received)
+	_coins_input_manager.start_key_input_received.connect(on_start_key_input_received.bind(_coins_input_manager))
 	
-	_card_selector_input_manager.up_exit_input_received.connect(_on_card_selector_up_exit_input_received)
-	_card_selector_input_manager.right_exit_input_received.connect(_on_card_selector_right_exit_input_received)
-	_terrain_grid_input_manager.up_exit_input_received.connect(_on_terrain_grid_up_exit_input_received)
-	_terrain_grid_input_manager.left_exit_input_received.connect(_on_terrain_grid_left_exit_input_received)
+	
 
 func _start_initial_cards_display():
 	var ally_cards : Array[AllyCard] = []
@@ -212,9 +241,6 @@ func _start_initial_cards_display():
 		card_selector.start_initial_display(ally_cards)
 		_update_cards_affordability()
 		card_selector.visible = true
-		
-		#_card_selector_input_manager.set_input_controller()
-		
 	else:
 		_allies_selector_popup.maximum_choosable_allies = _available_ally_slots
 		_allies_selector_popup.start_initial_display(all_allies_scenes)
@@ -264,6 +290,7 @@ func _make_initial_transition_right():
 	if display_allies_selector_popup:
 		_start_initial_cards_display()
 		_allies_selector_popup.visible = true
+		_allies_selector_popup.start_popup_input_control()
 	else:
 		_pause_game_button.disabled = true
 		_row_cannons.visible = true
@@ -291,8 +318,6 @@ func _start_game_with_count_down():
 	_disable_all_ally_card_buttons()
 	await get_tree().create_timer(_game_start_count_down.total_count_down_time * 2).timeout
 	_enable_all_ally_card_buttons()
-	
-	#_card_selector_input_manager.set_input_controller()
 
 func _move_screen_to_right_side():
 	var tween = create_tween()
@@ -353,10 +378,6 @@ func _add_ally(cell: Cell):
 			if card_selector.selected_card:
 				card_selector.selected_card.is_selected = false
 			card_selector.selected_card = null
-		
-	else:
-		printt("ally not added")
-		pass
 
 func _calculate_element_falling_time(cell_name : String) -> float:
 	var element_falling_time : float
@@ -414,7 +435,6 @@ func _display_game_won_popup():
 	elif _game_won_popup.special_coin_reward_activated:
 		_show_user_balance_displayer(level.special_coin_reward)
 		
-		
 	if level.background_transitioning_level:
 		if level is LevelStalingradSummer:
 			
@@ -445,10 +465,10 @@ func _display_game_won_popup():
 			
 			_move_screen_to_next_level_position(false)
 			await get_tree().create_timer(_DEFAULT_TWEEN_ANIMATION_TIME * 6).timeout
-	
-	
+
 	get_tree().paused = true
 	_game_won_popup.visible = true
+	_game_won_popup.set_input_controller()
 
 
 func _move_screen_to_next_level_position(moving_left:bool):
@@ -481,19 +501,25 @@ func _show_user_balance_displayer(coins_to_add:int):
 
 func _on_terrain_grid_cell_pressed(cell:Cell):
 	if not cell.is_occupied:
-		
+		if _remove_ally_button_selected:
+			_remove_ally_button.is_selected = false
+			_remove_ally_button_selected = false
 		_add_ally(cell)
 	elif cell.is_occupied and _remove_ally_button_selected:
 		_terrain_grid.remove_ally_from_cell(cell)
 		_remove_ally_button.is_selected = false
+		_remove_ally_button_selected = false
 		
 func _on_terrain_grid_coin_for_cell_requested(coin:RubleCoin, cell:Cell):
 	var coin_falling_time : float = _calculate_coin_falling_time(cell.name)
 	var coin_z_index : int = _get_element_z_index(cell.name)
 
 	self.add_child(coin)
+	_coins_input_manager.register_new_coin(coin)
+	
 	coin.set_z_index(coin_z_index)
-	coin.picked_up.connect(_on_terrain_grid_coin_picked_up.bind(level.falling_coin_value))
+	coin.picked_up.connect(_on_coin_picked_up.bind(level.falling_coin_value))
+	coin.falling_time = coin_falling_time
 	coin.timer_wait_time = 14.5
 	coin.global_position.x = cell.global_position.x + (cell.size.x / 4)
 	coin.global_position.y = -(coin.size.y / 2) 
@@ -519,6 +545,24 @@ func _on_terrain_grid_ally_for_cell_requested(ally:Ally, cell:Cell):
 	ally.background.global_position = self.global_position
 	
 func _on_terrain_grid_coin_picked_up(coin_value : int):
+	if _remove_ally_button_selected:
+		_remove_ally_button.is_selected = false
+		_remove_ally_button_selected = false
+	
+	_coin_picked_up_player.play_sound()
+	#InputControllersManager.selected_input_controller = null
+	
+	
+	#_coins_input_manager.control_coins_selection_input(1)
+	
+	_balance_displayer.add_value_to_balance(coin_value)
+	_update_cards_affordability()
+
+func _on_coin_picked_up(coin_value : int):
+	if _remove_ally_button_selected:
+		_remove_ally_button.is_selected = false
+		_remove_ally_button_selected = false
+	
 	_coin_picked_up_player.play_sound()
 	_balance_displayer.add_value_to_balance(coin_value)
 	_update_cards_affordability()
@@ -578,7 +622,6 @@ func _on_allies_selector_allies_chosen(chosen_level_allies : Array[Ally]):
 	card_selector.start_initial_display(ally_cards)
 	card_selector.visible = true
 	_update_cards_affordability()
-#	_allies_selector_popup.queue_free()
 	
 	_pause_game_button.disabled = true
 	_row_cannons.visible = true
@@ -605,7 +648,7 @@ func _on_game_start_count_down_finished():
 	await get_tree().create_timer(2).timeout
 	_game_start_count_down.queue_free()
 	
-	_card_selector_input_manager.set_input_controller()
+	card_selector.set_input_controller()
 
 func _on_card_selector_card_loaded():
 	_update_cards_affordability()
@@ -614,10 +657,10 @@ func _on_tutorial_finished():
 	_tutorial.queue_free()
 	_start_game_with_count_down()
 
-func _on_go_back_button_pressed():
-	var menus_screen : Node = load("res://screens/menus/menus.tscn").instantiate()
-	
-	SceneManagerSystem.get_container("ScreenContainer").goto_scene(menus_screen)
+#func _on_go_back_button_pressed():
+	#var menus_screen : Node = load("res://screens/menus/menus.tscn").instantiate()
+	#
+	#SceneManagerSystem.get_container("ScreenContainer").goto_scene(menus_screen)
 
 func _on_enemy_detector_enemy_reached_last_column(row_number:int):
 	_row_cannons.shoot_in_row(row_number)
@@ -627,9 +670,18 @@ func _on_game_over_detector_body_entered(body):
 		get_tree().paused = true
 		_game_over_popup.visible = true
 
+		_game_over_popup.set_input_controller()
+
 func _on_pause_game_button_pressed():
+	if _remove_ally_button_selected:
+		_remove_ally_button.is_selected = false
+		_remove_ally_button_selected = false
+
 	_pause_btn_pressed_player.play_sound()
 	_paused_game_popup.visible = true
+	
+	_paused_game_popup.set_input_controller()
+	
 	get_tree().paused = true
 
 func _on_remove_ally_button_pressed():
@@ -645,20 +697,138 @@ func _on_remove_ally_button_pressed():
 		card_selector.selected_card.is_selected = false
 		card_selector.selected_card = null
 
+func on_cancel_input_received():
+	if _remove_ally_button_selected:
+		_terrain_grid.set_input_controller()
+	else:
+		_last_focused_scene.set_input_controller()
+
 func on_left_exit_input_received():
-	_card_selector_input_manager.set_input_controller()
+	_last_focused_scene = self
+	card_selector.set_input_controller()
 
 func on_down_exit_input_received():
-	_terrain_grid_input_manager.set_input_controller()
+	_last_focused_scene = self
+	_terrain_grid.set_input_controller()
+
+func _on_card_selector_cancel_input_received():
+	_last_focused_scene = card_selector
+	_terrain_grid.set_input_controller()
 
 func _on_card_selector_up_exit_input_received():
+	_last_focused_scene = card_selector
 	set_input_controller()
 	
 func _on_card_selector_right_exit_input_received():
-	_terrain_grid_input_manager.set_input_controller()
+	_last_focused_scene = card_selector
+	_terrain_grid.set_input_controller()
+
+func _on_terrain_grid_cancel_input_received():
+	_last_focused_scene = _terrain_grid
+	card_selector.set_input_controller()
 
 func _on_terrain_grid_up_exit_input_received():
+	_last_focused_scene = _terrain_grid
 	set_input_controller()
 	
 func _on_terrain_grid_left_exit_input_received():
-	_card_selector_input_manager.set_input_controller()
+	_last_focused_scene = _terrain_grid
+	card_selector.set_input_controller()
+
+func _on_coins_input_manager_no_coins_to_select():
+	if _last_focused_scene != null:
+		_last_focused_scene.set_input_controller()
+	else:
+		card_selector.set_input_controller()
+
+func _on_coins_input_manager_cancel_input_received():
+	if _last_focused_scene != null:
+		_last_focused_scene.set_input_controller()
+	else:
+		card_selector.set_input_controller()
+
+func on_coins_selection_key1_input_received():
+	if _coins_input_manager.focusable_coins.size() == 0:
+		print("Not available coins at the moment")
+	else:
+		_last_focused_scene = self
+		InputControllersManager.selected_input_controller = null
+		
+		_coins_input_manager.control_coins_selection_input(1)
+
+func on_coins_selection_key2_input_received():
+	if _coins_input_manager.focusable_coins.size() == 0:
+		print("Not available coins at the moment")
+	else:
+		_last_focused_scene = self
+		InputControllersManager.selected_input_controller = null
+		
+		_coins_input_manager.control_coins_selection_input(2)
+
+func _on_terrain_grid_ally_coin_spawned(coin:RubleCoin):
+	_coins_input_manager.register_new_coin(coin)
+
+func _update_last_focused_object():
+	_last_focused_object = _current_focused_object
+	_current_focused_object = null
+
+func _on_terrain_grid_coins_selection_key1_input_received():
+	if _coins_input_manager.focusable_coins.size() == 0:
+		print("Not available coins at the moment")
+	else:
+		_last_focused_scene = _terrain_grid
+		InputControllersManager.selected_input_controller = null
+		
+		_coins_input_manager.control_coins_selection_input(1)
+
+func _on_terrain_grid_coins_selection_key2_input_received():
+	if _coins_input_manager.focusable_coins.size() == 0:
+		print("Not available coins at the moment")
+	else:
+		_last_focused_scene = _terrain_grid
+		_coins_input_manager.control_coins_selection_input(2)
+		InputControllersManager.selected_input_controller = null
+
+func _on_card_selector_coins_selection_key1_input_received():
+	if _coins_input_manager.focusable_coins.size() == 0:
+		print("Not available coins at the moment")
+	else:
+		_last_focused_scene = card_selector
+		InputControllersManager.selected_input_controller = null
+		
+		_coins_input_manager.control_coins_selection_input(1)
+
+func _on_card_selector_coins_selection_key2_input_received():
+	if _coins_input_manager.focusable_coins.size() == 0:
+		print("Not available coins at the moment")
+	else:
+		_last_focused_scene = card_selector
+		InputControllersManager.selected_input_controller = null
+
+		_coins_input_manager.control_coins_selection_input(2)
+
+func _on_paused_game_popup_cancel_input_received():
+	if _last_focused_scene != null:
+		_last_focused_scene.set_input_controller()
+	else:
+		card_selector.set_input_controller()
+
+func on_start_key_input_received(input_origin_scene:Node):
+	_pause_btn_pressed_player.play_sound()
+	_paused_game_popup.visible = true
+	
+	_last_focused_scene = input_origin_scene
+	_paused_game_popup.set_input_controller()
+	
+	get_tree().paused = true
+
+func _on_paused_game_popup_start_key_input_received():
+	if _last_focused_scene != null:
+		_last_focused_scene.set_input_controller()
+	else:
+		card_selector.set_input_controller()
+
+func _on_focusable_object_focus_entered(focused_object:Control):
+	_current_focused_object = focused_object
+	_update_last_focused_object()
+

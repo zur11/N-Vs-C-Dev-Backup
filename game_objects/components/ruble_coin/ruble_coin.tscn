@@ -169,10 +169,10 @@ animation = &"coin_flipping"
 autoplay = "coin_flipping"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "halo_rotating_anim"
 libraries = {
 "": SubResource("AnimationLibrary_xctjw")
 }
+autoplay = "halo_rotating_anim"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

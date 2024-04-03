@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhwskv3wddlt5"]
+[gd_scene load_steps=14 format=3 uid="uid://dhwskv3wddlt5"]
 
 [ext_resource type="Script" path="res://screens/game_screen/allies_selector_popup/allies_selector_popup.gd" id="1_cqako"]
 [ext_resource type="Texture2D" uid="uid://0dxx7xcbc531" path="res://screens/game_screen/allies_selector_popup/assets/box_background.png" id="1_yc03w"]
@@ -7,11 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://cfp6p7bwwfeng" path="res://screens/game_screen/allies_selector_popup/assets/box_border_old.png" id="8_wjdv5"]
 [ext_resource type="Texture2D" uid="uid://r43anc73j5m1" path="res://screens/game_screen/allies_selector_popup/assets/text_choose_your_allies.png" id="8_ylfav"]
 [ext_resource type="PackedScene" uid="uid://brxq4nw6qqsqj" path="res://screens/game_screen/allies_selector_popup/allies_selector_scroll_container/allies_selector_scroll_container.tscn" id="9_fqgbe"]
-[ext_resource type="PackedScene" uid="uid://bs84ed7ckgfyd" path="res://screens/game_screen/ally_card_slots/ally_card_slots.tscn" id="9_ot4rg"]
-[ext_resource type="Texture2D" uid="uid://cb5tftyl1suss" path="res://screens/game_screen/ally_card_slots/assets/ally_slot.png" id="10_lt5xc"]
+[ext_resource type="PackedScene" uid="uid://bs84ed7ckgfyd" path="res://screens/game_screen/allies_selector_popup/ally_card_slots/ally_card_slots.tscn" id="9_ot4rg"]
+[ext_resource type="Texture2D" uid="uid://cb5tftyl1suss" path="res://screens/game_screen/allies_selector_popup/ally_card_slots/assets/ally_slot.png" id="10_lt5xc"]
 [ext_resource type="AudioStream" uid="uid://dm6j54m13kjy4" path="res://screens/game_screen/allies_selector_popup/assets/sfx/select_ally_in_popup.mp3" id="10_xo0af"]
 [ext_resource type="Script" path="res://global_objects/audio_players/sfx_player.gd" id="11_e02dx"]
 [ext_resource type="AudioStream" uid="uid://djx2vlmr8oegg" path="res://assets/audio/sfx/game_screen_popups/generic_button_pressed_sfx.mp3" id="12_sgafk"]
+[ext_resource type="Script" path="res://screens/game_screen/allies_selector_popup/allies_selector_popup_controller.gd" id="13_u06f0"]
 
 [node name="AlliesSelectorPopup" type="Control"]
 process_mode = 3
@@ -86,6 +87,9 @@ script = ExtResource("11_e02dx")
 [node name="GenericBtnPressedPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_sgafk")
 script = ExtResource("11_e02dx")
+
+[node name="AlliesSelectorPopupController" type="Node" parent="."]
+script = ExtResource("13_u06f0")
 
 [connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
 

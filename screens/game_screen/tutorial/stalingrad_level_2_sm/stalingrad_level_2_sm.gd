@@ -29,9 +29,11 @@ func _remove_twinkling_rows_and_finish_tutorial():
 	_tutorial_popup.visible = false
 	_tutorial_twinkling_rows.queue_free()
 	tutorial_finished.emit()
+	game_screen.set_input_controller()
 
 func _on_ally_card_stopped_twinkling():
 	_twinkle_terrain_row()
+	game_screen._terrain_grid.set_input_controller()
 
 func _twinkle_terrain_row():
 	_tutorial_twinkling_rows.twinkle_rows([0,1,2])
@@ -44,5 +46,6 @@ func display_popup_and_remove_twinkling_rows():
 
 func _on_first_tutorial_popup_finished():
 	_tutorial_popup.visible = false
-	game_screen.card_selector.twinkle_ally_card(1)
+	game_screen.card_selector.twinkle_ally_card(1) 
+	game_screen.card_selector.set_input_controller()
 

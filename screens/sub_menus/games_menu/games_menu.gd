@@ -11,14 +11,17 @@ var current_world : World
 
 @onready var input_controller : GamesMenuInputController = $GamesMenuInputController as GamesMenuInputController
 @onready var background_scene : GamesMenuBg = $BackgroundScene as GamesMenuBg
-@onready var _world_selector : WorldSelector = $WorldSelector
+@onready var _world_selector : WorldSelector = $WorldSelector as WorldSelector
 var _level_selector: LevelSelector
 @onready var _go_back_button : TextureButton = $GoBackButton 
 
+var _games_menu_is_active : bool
+var selected_focusable_object : Control
 var initial_focused_object : Control
 var focusable_objects : Array[Control]
 
 var scene_is_starting : bool
+var current_focused_scene : Node
 
 func _ready():
 	scene_is_starting = true
@@ -28,16 +31,23 @@ func _ready():
 	_update_user_data(_games_menu_user_data.worlds[_games_menu_user_data.selected_world_index].selected_level)
 
 func set_input_controller():
+	_games_menu_is_active = true
 	focusable_objects = [_go_back_button]
-
+	selected_focusable_object = focusable_objects[0]
+	
+	
 	if scene_is_starting:
 		_level_selector.set_input_controller()
 		scene_is_starting = false
+		current_focused_scene = _level_selector
 	else:
-		initial_focused_object = focusable_objects[0]
-	
-	input_controller.containing_scene = self
-	InputControllersManager.selected_input_controller = input_controller
+		current_focused_scene.initial_focused_object = current_focused_scene.selected_focusable_object
+		
+		if current_focused_scene == self:
+			input_controller.containing_scene = self
+			InputControllersManager.selected_input_controller = input_controller
+		else:
+			current_focused_scene.set_input_controller()
 
 func _set_background_scenes():
 	for ii in _games_menu_user_data.worlds.size():
@@ -126,8 +136,11 @@ func _on_world_selected_set_selected_world(selected_world:World):
 	
 	real_replace_by(background_scene, selected_world_bg_scene)
 	background_scene = selected_world_bg_scene
-	
+	current_world = selected_world
+	current_focused_scene = _world_selector
 	_change_level_selector_display()
+	if _games_menu_is_active:
+		_world_selector.set_input_controller()
 
 func on_right_exit_input_received():
 	_level_selector.set_input_controller()
@@ -142,10 +155,15 @@ func _on_world_selector_up_input_received():
 	_level_selector.set_input_controller()
 
 func _on_world_selector_left_exit_input_received():
+	current_focused_scene = self
 	set_input_controller()
 
 func _on_level_selector_level_selected(level_int:int):
+	current_world = _games_menu_user_data.worlds[_games_menu_user_data.selected_world_index]
 	_update_user_data(current_world.levels[level_int - 1])
+	current_focused_scene = _level_selector
+	if _games_menu_is_active:
+		_level_selector.set_input_controller()
 	match level_int:
 		5:
 			background_scene.animate_level_5_selected()
@@ -168,4 +186,5 @@ func _on_go_back_button_pressed():
 	_level_selector.queue_free()
 	_world_selector.queue_free()
 	go_back.emit()
+	_games_menu_is_active = false
 

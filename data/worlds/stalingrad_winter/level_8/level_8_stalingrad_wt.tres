@@ -25,7 +25,7 @@ ally_thumbnail = "wojtek"
 ally_title = "WOJTEK"
 ally_reward_description = "Wojtek extermites all enemies crossing it's way. It moves from left to right in one row."
 
-[sub_resource type="Resource" id="Resource_mog0b"]
+[sub_resource type="Resource" id="Resource_qfa5s"]
 script = ExtResource("2_n2s37")
 minimum_value = 10
 maximum_value = 12
@@ -206,7 +206,7 @@ level_thumbnail = ExtResource("14_twbfs")
 enemy_thumbnail = ExtResource("2_jcmik")
 level_allies = Array[PackedScene]([ExtResource("3_0c65g"), ExtResource("5_aba64"), ExtResource("6_jnp3h"), ExtResource("7_8jye7"), ExtResource("7_st0ur"), ExtResource("8_7mjkp"), ExtResource("9_hynix"), ExtResource("11_kpq60"), ExtResource("12_82lgf"), ExtResource("13_7iwkn")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_mog0b")
+coin_dropping_rate = SubResource("Resource_qfa5s")
 falling_coin_value = 15
 playable_rows = 5
 game_background_position = "right"

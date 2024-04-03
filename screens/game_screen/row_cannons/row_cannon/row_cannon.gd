@@ -10,6 +10,8 @@ var damage_per_hit : int = 100
 var _opponent_at_physical_contact : Object
 var _is_already_shooting : bool
 
+var cannon_number : int
+
 func _physics_process(_delta):
 	if is_active and $AnimationPlayer.current_animation == "_shoot":
 		_check_for_opponent_at_physical_contact()

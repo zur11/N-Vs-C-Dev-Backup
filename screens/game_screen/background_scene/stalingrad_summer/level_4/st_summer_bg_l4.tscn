@@ -60,7 +60,14 @@ sprite_frames = SubResource("SpriteFrames_3hqrb")
 action_type = 0
 sprite_frames_path = ""
 
+[node name="ForegroundObject3" parent="Foreground" index="0"]
+modulate = Color(1, 1, 1, 0.7)
+
+[node name="ForegroundObject2" parent="Foreground" index="1"]
+modulate = Color(1, 1, 1, 0.7)
+
 [node name="ForegroundObject1" parent="Foreground" index="2"]
+modulate = Color(1, 1, 1, 0.7)
 sprite_frames = SubResource("SpriteFrames_igld5")
 
 [editable path="Clouds"]

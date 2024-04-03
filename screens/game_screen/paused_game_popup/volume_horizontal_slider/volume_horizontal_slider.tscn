@@ -29,5 +29,5 @@ theme_override_styles/slider = SubResource("StyleBoxTexture_jus0a")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_o6gmm")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_qp7ry")
 max_value = 1.0
-step = 0.001
+step = 0.01
 script = ExtResource("5_0w6u2")

@@ -17,6 +17,7 @@ var _selected_world_index : int
 
 var initial_focused_object : Control
 var focusable_objects : Array[Control]
+var selected_focusable_object : Control
 
 func initial_setup():
 	_get_user_data()
@@ -25,8 +26,6 @@ func initial_setup():
 
 func set_input_controller():
 	focusable_objects = [ _world_1_button, _world_2_button, _world_3_button]
-	
-	#printt(focusable_objects)
 
 	initial_focused_object = focusable_objects[_games_menu_user_data.selected_world_index]
 	
@@ -66,6 +65,7 @@ func _set_world_buttons():
 
 func _set_initial_selected_world():
 	_update_user_data()
+	_set_selected_focusable_object()
 	_emit_world_selected_signal(_worlds[_selected_world_index])
 
 func _update_selected_world_index(new_value:int):
@@ -82,6 +82,13 @@ func _update_user_data():
 
 	UserDataManager.save_user_data_to_disk()
 
+func _set_selected_focusable_object():
+	var selected_world : World = _worlds[_selected_world_index]
+	for world_button in self.get_children() as Array[WorldButton]:
+		if world_button is WorldButton:
+			if world_button.world == selected_world:
+				selected_focusable_object = world_button
+
 func on_left_exit_input_received():
 	left_exit_input_received.emit()
 
@@ -92,6 +99,7 @@ func _on_world_button_pressed(new_value:int):
 	if new_value == _selected_world_index: return
 	_update_selected_world_index(new_value)
 	_update_user_data()
+	_set_selected_focusable_object()
 	_emit_world_selected_signal(_worlds[_selected_world_index])
 	
 func _emit_world_selected_signal(new_value:World):

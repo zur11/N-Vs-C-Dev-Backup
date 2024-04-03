@@ -1,6 +1,6 @@
 class_name BackgroundScene extends Control
 
-@onready var _clouds : Clouds = $Clouds
+@onready var _clouds : Clouds = $Clouds as Clouds
 
 func _ready():
 	_clouds.start_clouds_movement()

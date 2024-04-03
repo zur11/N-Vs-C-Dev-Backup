@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://qpbws2ipueiy"]
+[gd_scene load_steps=2 format=3 uid="uid://hh0aa5800xgg"]
 
 [ext_resource type="Script" path="res://screens/game_screen/allies_selector_popup/choosable_ally_card/choosable_ally_card.gd" id="2_kyi50"]
 

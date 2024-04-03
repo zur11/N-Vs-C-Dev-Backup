@@ -14,17 +14,29 @@ func _physics_process(_delta):
 
 func _set_bullet_sender(new_value:GameCharacter):
 	bullet_sender = new_value
-	_set_bullet_collision_and_visibility_settings()
-	_set_inflicted_damage_points()
 	
 	if self is CannonBullet:
-		_set_cannon_bullet_blast_connections()
-
-func _set_cannon_bullet_blast_connections():
+		_set_cannon_bullet_blast_connections(bullet_sender.cannon_number)
+	else:
+		_set_bullet_collision_and_visibility_settings()
+		_set_inflicted_damage_points()
+	
+func _set_cannon_bullet_blast_connections(cannon_number:int):
 	var _cannon_bullet_blast : Area2D = $BulletBlast
 	
 	_cannon_bullet_blast.body_entered.connect(_on_cannon_bullet_blast_body_entered)
 	
+	match cannon_number:
+		1:
+			_cannon_bullet_blast.set_collision_mask_value(2, true)
+		2:
+			_cannon_bullet_blast.set_collision_mask_value(4, true)
+		3:
+			_cannon_bullet_blast.set_collision_mask_value(6, true)
+		4:
+			_cannon_bullet_blast.set_collision_mask_value(8, true)
+		5:
+			_cannon_bullet_blast.set_collision_mask_value(10, true)
 
 func start_movement_process():
 	if bullet_sender.character_faction == "ally":
@@ -38,14 +50,14 @@ func start_movement_process():
 
 func _set_bullet_collision_and_visibility_settings():
 	var _game_screen_user_data : GameScreenUserData = UserDataManager.user_data.game_screen_user_data
+	var total_rows_number : int = _game_screen_user_data.total_rows_number
+	var total_layers_number : int = total_rows_number * 2 
 	
-	var total_rows_number : int = 10 # _game_screen_user_data.total_rows_number
-#	if playable_rows == 5:
-	for ii in total_rows_number * 2:
+	for ii in total_layers_number * 2:
 		if bullet_sender.get_collision_mask_value(ii+1) == true:
 			self.set_collision_mask_value(ii+1, true)
 	
-	for ii in total_rows_number:
+	for ii in total_layers_number:
 		if bullet_sender.get_z_index() == ii:
 			self.set_z_index(ii)
 
@@ -70,6 +82,7 @@ func _check_for_bullet_receiver(bullet_speed:float):
 	if last_movement != null:
 		var damage_receiver : Object = last_movement.get_collider()
 		if self is CannonBullet:
+			#printt("Checking Bullet Receiver: ", damage_receiver.name)
 			damage_receiver.auto_destroy()
 		else:
 			_inflict_damage_to_game_object(damage_receiver)

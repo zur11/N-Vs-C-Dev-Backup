@@ -1,6 +1,7 @@
 class_name MoneyProvider extends Ally
 
 signal coin_picked_up
+signal coin_spawned(spawned_coin:RubleCoin)
 
 @export var coin_value : int
 @export var coin_dropping_rate : MinMaxIntRate

@@ -1,9 +1,18 @@
 class_name TerrainGrid extends GridContainer
 
 signal cell_pressed(cell : Cell)
-signal coin_picked_up(coin_value:int)
 signal coin_for_cell_requested(falling_coin : RubleCoin, landing_cell : Cell)
 signal ally_for_cell_requested(falling_ally:Ally, landing_cell : Cell)
+signal coin_picked_up(coin_value:int)
+signal ally_coin_spawned(coin:RubleCoin)
+
+#Input Signals
+signal cancel_input_received
+signal up_exit_input_received
+signal left_exit_input_received
+signal coins_selection_key1_input_received
+signal coins_selection_key2_input_received
+signal start_key_input_received
 
 const _COIN_SCENE_PATH : String = "res://game_objects/components/ruble_coin/ruble_coin.tscn"
 
@@ -11,20 +20,32 @@ var _enabled_cells : Array[Cell]
 var _coin_landing_cells : Array[Cell]
 var coin_dropping_rate : MinMaxIntRate : set = _set_coin_dropping_rate
 
+#Input Variables
+var focusable_objects : Array[Control]
+var initial_focused_object : Control
+var test_color_rect : ColorRect = ColorRect.new()
+var _current_focused_cell : Cell
+var _last_focused_cell : Cell
+
+@onready var input_controller : TerrainGridController = $TerrainGridController as TerrainGridController
+
 
 func set_enabled_cells(playable_rows:int):
 	match playable_rows:
 		5:
 			for cell in get_children() as Array[Cell]:
-				_enabled_cells.append(cell)
+				if cell is Cell:
+					_enabled_cells.append(cell)
 		3:
 			for cell in get_children() as Array[Cell]:
-				if not cell.name.begins_with("Row1") and not cell.name.begins_with("Row5"):
-					_enabled_cells.append(cell)
+				if cell is Cell:
+					if not cell.get_index() <= columns and not cell.get_index() > (get_child_count() - 1) - columns:
+						_enabled_cells.append(cell)
 		1:
 			for cell in get_children() as Array[Cell]:
-				if cell.name.begins_with("Row3"):
-					_enabled_cells.append(cell)
+				if cell is Cell:
+					if cell.name.begins_with("Row3"):
+						_enabled_cells.append(cell)
 	
 	_connect_cells_signals()
 
@@ -48,8 +69,9 @@ func _start_coin_landing_on_cells_process():
 	
 func _set_coin_landing_cells():
 	for cell in get_children() as Array[Cell]:
-		if cell is Cell and not cell.name.begins_with("Row1") and not cell.name.begins_with("Row2"):
-			_coin_landing_cells.append(cell)
+		if cell is Cell:
+			if not cell.get_index() <= (columns * 2):
+				_coin_landing_cells.append(cell)
 
 
 func cell_is_available_for_selected_ally(cell:Cell, ally:PackedScene) -> bool:
@@ -82,7 +104,8 @@ func place_ally_in_cell(cell:Cell, ally:PackedScene):
 	_set_ally_collision_and_visibility_settings(instantiated_ally, cell.name)
 	instantiated_ally.global_position = cell.global_position + (cell.size/2)
 	if instantiated_ally is MoneyProvider:
-		instantiated_ally.connect("coin_picked_up", _on_coin_picked_up.bind(instantiated_ally.coin_value))
+		instantiated_ally.connect("coin_picked_up", _on_coin_picked_up_from_ally.bind(instantiated_ally))
+		instantiated_ally.coin_spawned.connect(_on_ally_coin_spawned)
 	instantiated_ally.adjust_location_in_cell() # Doesn't work from _ready()
 
 func place_falling_ally_in_cell(cell:Cell, ally:PackedScene):
@@ -250,10 +273,10 @@ func _get_random_cell() -> Cell:
 	return random_cell
 
 func _get_right_adjacent_cell(cell:Cell) -> Cell:
-	var adjacent_cell_index : int = cell.get_index() + 1
+	var adjacent_cell_index : int = cell.get_index() # + 1 Removed Because of the InputController
 	var adjacent_cell : Cell
 	
-	if adjacent_cell_index != 9 and adjacent_cell_index != 18 and adjacent_cell_index != 27 and adjacent_cell_index != 36 and adjacent_cell_index != 45:
+	if adjacent_cell_index != columns and adjacent_cell_index != columns * 2 and adjacent_cell_index != columns * 3 and adjacent_cell_index != columns * 4 and adjacent_cell_index != columns * 5:
 		adjacent_cell = self.get_child(adjacent_cell_index)
 	
 	return adjacent_cell
@@ -277,12 +300,67 @@ func _on_coin_drop_timer_time_up():
 	
 	coin_for_cell_requested.emit(falling_coin, landing_cell)
 	
+	landing_cell.add_coin_to_cell(falling_coin)
+	
 	$CoinDropTimer.wait_time = _get_coin_drop_wait_time()
 	$CoinDropTimer.start()
 	
 
-func _on_coin_picked_up(coin_value : int):
+func _on_coin_picked_up_from_ally(instantiated_ally : Ally):
+	var coin_value : int = instantiated_ally.coin_value
 	coin_picked_up.emit(coin_value)
+
+func _on_ally_coin_spawned(coin:RubleCoin):
+	ally_coin_spawned.emit(coin)
 
 func _on_cell_pressed(cell: Cell):
 	cell_pressed.emit(cell)
+
+#Input Functions
+func set_input_controller():
+	for cell in get_children() as Array[Cell]:
+		if cell is Cell:
+			if not focusable_objects.has(cell):
+				focusable_objects.append(cell)
+				cell.focus_entered.connect(_on_focusable_object_focus_entered.bind(cell))
+				cell.focus_exited.connect(_on_focusable_object_focus_exited.bind(cell))
+	
+	if _last_focused_cell != null:
+		initial_focused_object = _last_focused_cell
+	else:
+		initial_focused_object = focusable_objects[0]
+	
+	input_controller.containing_scene = self
+	InputControllersManager.selected_input_controller = input_controller
+
+func _update_last_focused_cell():
+	_last_focused_cell = _current_focused_cell
+	_current_focused_cell = null
+
+func _on_focusable_object_focus_entered(focused_object:Control):
+	_current_focused_cell = focused_object
+	_current_focused_cell.add_child(test_color_rect)
+	test_color_rect.size = focused_object.size
+	test_color_rect.color = Color(0,0,1,0.5)
+	_update_last_focused_cell()
+
+func _on_focusable_object_focus_exited(unfocused_object:Control):
+	unfocused_object.remove_child(test_color_rect)
+
+func on_start_key_input_received():
+	start_key_input_received.emit()
+
+func on_cancel_input_received():
+	cancel_input_received.emit()
+
+func on_up_exit_input_received():
+	up_exit_input_received.emit()
+
+func on_left_exit_input_received():
+	left_exit_input_received.emit()
+
+func on_coins_selection_key1_input_received():
+	coins_selection_key1_input_received.emit()
+
+func on_coins_selection_key2_input_received():
+	coins_selection_key2_input_received.emit()

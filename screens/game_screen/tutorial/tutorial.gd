@@ -27,6 +27,7 @@ func _connect_additional_signals():
 func initiate_popup():
 	_tutorial_popup.visible = true
 	_tutorial_popup.update_popup_display()
+	_tutorial_popup.set_input_controller()
 
 func _set_popup():
 	_tutorial_popup = base_popup_scene.instantiate() as TutorialPopup

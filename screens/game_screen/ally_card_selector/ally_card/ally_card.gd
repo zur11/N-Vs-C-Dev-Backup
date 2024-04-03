@@ -40,6 +40,7 @@ func _set_is_twinkling(new_value):
 	if not is_twinkling:
 		twinkling_texture.queue_free()
 		card_stopped_twinkling.emit()
+		set_process(false)
 	else:
 		twinkling_texture.texture = _normal_btn_texture
 		self.add_child(twinkling_texture)

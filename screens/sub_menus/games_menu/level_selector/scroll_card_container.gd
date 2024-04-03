@@ -2,8 +2,8 @@ class_name ScrollCardContainer extends ScrollContainer
 
 signal user_stopped_scrolling
 signal function_stopped_scrolling
-signal card_selected(level:Level)
-signal card_clicked(level:Level)
+signal card_selected(level:LevelCard)
+signal card_clicked(level:LevelCard)
 
 var control_paddings_size : float = 722
 var _cards_container_separation : int = 32
@@ -39,10 +39,7 @@ func _ready():
 	set_physics_process(false)
 
 func _input(event: InputEvent):
-	if event is InputEventMouseMotion:
-		return
-
-	if event is InputEventKey:
+	if event is InputEventMouseMotion or event is InputEventJoypadMotion or event is InputEventKey or event is InputEventJoypadButton:
 		return
 	
 	var clicked_on_scroll_container = event.position.y < self.size.y
@@ -122,7 +119,7 @@ func populate_card_container(levels:Array[Level]):
 			new_level_card.enemy_thumbnail.modulate = Color(0,0,0,1)
 			new_level_card.level_thumbnail.modulate = Color(0.5,0.5,0.5,1) 
 			new_level_card.level_reward_thumbnail.modulate = Color(0,0,0,1)
-		new_level_card.get_child(0).pressed.connect(_on_level_card_pressed.bind(new_level_card.level))
+		new_level_card.get_child(0).pressed.connect(_on_level_card_pressed.bind(new_level_card))
 	
 	var padding_in : Control = $%CardsContainer.add_spacer(true)
 	var padding_out : Control = $%CardsContainer.add_spacer(false)
@@ -135,7 +132,7 @@ func start_initial_setup(new_value:Level):
 	_initial_selected_level = new_value
 	set_physics_process(true)
 
-func _on_level_card_pressed(new_value:Level):
+func _on_level_card_pressed(new_value:LevelCard):
 	card_clicked.emit(new_value)
 
 func _move_cards_to_initial_offset(new_value:Level):
@@ -304,7 +301,7 @@ func _update_current_selected_card():
 				_current_selected_card.get_child(0).is_selected = false
 			_current_selected_card = card
 			card.get_child(0).is_selected = true
-			card_selected.emit(card.level)
+			card_selected.emit(card)
 			return
 
 func _reset_cards_to_default_size():

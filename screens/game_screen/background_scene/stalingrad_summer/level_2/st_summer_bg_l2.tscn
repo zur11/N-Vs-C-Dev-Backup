@@ -38,4 +38,7 @@ sprite_frames_path = "res://screens/game_screen/background_scene/stalingrad_summ
 sprite_frames = SubResource("SpriteFrames_wkfqa")
 sprite_frames_path = "res://screens/game_screen/background_scene/stalingrad_summer/level_2/sprite_frames/middleground_frames.tres"
 
+[node name="ForegroundObject1" parent="Foreground" index="2"]
+modulate = Color(1, 1, 1, 0.701961)
+
 [editable path="Clouds"]

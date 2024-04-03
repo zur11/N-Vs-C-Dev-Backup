@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://lok4k6ydetes"]
+
+[ext_resource type="Script" path="res://screens/sub_menus/market_menu/products_container/products_container_grid.gd" id="1_vb7oi"]
+[ext_resource type="Script" path="res://screens/sub_menus/market_menu/products_container/products_container_controller.gd" id="2_soqr2"]
+
+[node name="ProductsContainerGrid" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vb7oi")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 2
+
+[node name="ProductsContainerController" type="Node" parent="."]
+script = ExtResource("2_soqr2")

@@ -23,7 +23,7 @@ ally_thumbnail = "snowmanSoviet"
 ally_title = "SNOWMAN SOVIET"
 ally_reward_description = "Snowman shoots freezing shots that slow down enemies movements"
 
-[sub_resource type="Resource" id="Resource_mog0b"]
+[sub_resource type="Resource" id="Resource_qfa5s"]
 script = ExtResource("2_ybamm")
 minimum_value = 10
 maximum_value = 12
@@ -489,7 +489,7 @@ level_thumbnail = ExtResource("13_yjr6h")
 enemy_thumbnail = ExtResource("3_kn5v5")
 level_allies = Array[PackedScene]([ExtResource("15_410q1"), ExtResource("6_isjxb"), ExtResource("16_dojb6"), ExtResource("9_ku647"), ExtResource("8_03sul"), ExtResource("9_r15lm"), ExtResource("10_hnnoc"), ExtResource("12_sei38")])
 starting_balance = 500
-coin_dropping_rate = SubResource("Resource_mog0b")
+coin_dropping_rate = SubResource("Resource_qfa5s")
 falling_coin_value = 15
 playable_rows = 5
 game_background_position = "center"

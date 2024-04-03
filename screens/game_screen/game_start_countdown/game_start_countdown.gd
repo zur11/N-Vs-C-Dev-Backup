@@ -8,7 +8,7 @@ signal count_down_finished
 @export var starting_prompt : Texture
 
 @onready var _count_down_texture_text : TextureRect = $CountDownTextureText
-@onready var _count_down_audio_player : SFXPlayer = $SFXPlayer
+@onready var _count_down_audio_player : SFXPlayer = $SFXPlayer as SFXPlayer
 
 
 func start_count_down():

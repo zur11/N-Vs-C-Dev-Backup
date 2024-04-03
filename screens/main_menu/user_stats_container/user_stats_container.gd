@@ -6,18 +6,11 @@ var _stats_opened : bool
 
 @onready var _balance_label : Label = $"%BalanceLabel"
 @onready var _user_name_label : Label = $"%UserNameLabel"
-@onready var _user_name_button : TextureButton = $UsernameContainer as TextureButton
+@onready var display_stats_button : TextureButton = $%UsernameContainer as TextureButton
 
-var focusable_objects : Array[Control]
-var initial_focused_object : Control
-
-func _ready():
-	focusable_objects = [_user_name_button]
-	initial_focused_object = focusable_objects[0]
 
 func _set_user_name(new_value:String):
 	user_name = new_value
-	
 	_user_name_label.text = user_name
 
 func _set_user_balance(new_value:int):
@@ -33,6 +26,7 @@ func _on_username_container_pressed():
 	elif _stats_opened == true:
 		$AnimationPlayer.play("_close")
 		_stats_opened = false
+		$Arrow.visible = true
 
 func _on_username_container_mouse_entered():
 	if _stats_opened == false:
@@ -42,3 +36,17 @@ func _on_username_container_mouse_entered():
 
 func _on_username_container_mouse_exited():
 	$Arrow/AnimationPlayer.play_backwards("_appear")
+
+func _on_username_container_focus_entered():
+	if _stats_opened == false:
+		$Arrow.visible = true
+	$Arrow/AnimationPlayer.play("_appear")
+	$Arrow/AnimationPlayer.queue("_bounce")
+	
+func _on_username_container_focus_exited():
+	$Arrow/AnimationPlayer.play_backwards("_appear")
+	
+
+
+
+

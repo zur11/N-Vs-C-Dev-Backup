@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://bvjpuifgrxmm5"]
+
+[ext_resource type="Script" path="res://screens/sub_menus/market_menu/products_container/product_popup/product_popup.gd" id="1_ju7ed"]
+[ext_resource type="Texture2D" uid="uid://3uhhqkjk5lea" path="res://screens/sub_menus/market_menu/products_container/product_popup/assets/product_popup_background.PNG" id="1_oo7cq"]
+[ext_resource type="Texture2D" uid="uid://drv3p7hudqvps" path="res://screens/sub_menus/market_menu/products_container/product_popup/assets/popup_pricetag.PNG" id="2_xk2ls"]
+[ext_resource type="Texture2D" uid="uid://mkmr2b3upiwk" path="res://screens/sub_menus/market_menu/products_container/product_popup/assets/buy_unselected.PNG" id="3_g2jne"]
+[ext_resource type="Texture2D" uid="uid://ci5cto268ec4u" path="res://screens/sub_menus/market_menu/products_container/product_popup/assets/buy_selected.PNG" id="4_3k0r3"]
+[ext_resource type="Texture2D" uid="uid://6q173dmgy7t7" path="res://screens/sub_menus/market_menu/products_container/product_popup/assets/cancel_unselected.PNG" id="5_yjo17"]
+[ext_resource type="Texture2D" uid="uid://dgb3jw2o01wqu" path="res://screens/sub_menus/market_menu/products_container/product_popup/assets/cancel_selected.PNG" id="6_2fkjj"]
+[ext_resource type="FontFile" uid="uid://3iv2fk2whit2" path="res://assets/fonts/Molot.otf" id="7_d0rnm"]
+[ext_resource type="Texture2D" uid="uid://dj4c6l7keqbky" path="res://screens/sub_menus/market_menu/products_container/product_popup/assets/7th_slot_bag.png" id="8_b45mg"]
+[ext_resource type="Script" path="res://screens/sub_menus/market_menu/products_container/product_popup/product_popup_controller.gd" id="10_3be6d"]
+
+[node name="ProductPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ju7ed")
+
+[node name="BgShading" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.254902)
+
+[node name="ProductPopupBackground" type="Sprite2D" parent="."]
+position = Vector2(951, 539)
+texture = ExtResource("1_oo7cq")
+
+[node name="ProductThumbnail" type="Sprite2D" parent="."]
+position = Vector2(595, 414)
+texture = ExtResource("8_b45mg")
+
+[node name="DescriptionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 771.0
+offset_top = 265.0
+offset_right = 1456.0
+offset_bottom = 615.0
+theme_override_fonts/font = ExtResource("7_d0rnm")
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 2
+
+[node name="PricetagTexture" type="Sprite2D" parent="."]
+position = Vector2(563, 578)
+texture = ExtResource("2_xk2ls")
+
+[node name="PricetagLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 556.0
+offset_right = 581.0
+offset_bottom = 604.0
+theme_override_colors/font_color = Color(0.301961, 0.235294, 0.156863, 1)
+theme_override_fonts/font = ExtResource("7_d0rnm")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 2
+
+[node name="BuyButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 974.0
+offset_top = 750.0
+offset_right = 1250.0
+offset_bottom = 859.0
+texture_normal = ExtResource("3_g2jne")
+texture_pressed = ExtResource("4_3k0r3")
+texture_hover = ExtResource("4_3k0r3")
+texture_focused = ExtResource("4_3k0r3")
+
+[node name="CancelButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 750.0
+offset_right = 962.0
+offset_bottom = 860.0
+texture_normal = ExtResource("5_yjo17")
+texture_pressed = ExtResource("6_2fkjj")
+texture_hover = ExtResource("6_2fkjj")
+texture_focused = ExtResource("6_2fkjj")
+
+[node name="ProductPopupController" type="Node" parent="."]
+script = ExtResource("10_3be6d")
+
+[connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]
+[connection signal="pressed" from="CancelButton" to="." method="_on_cancel_button_pressed"]

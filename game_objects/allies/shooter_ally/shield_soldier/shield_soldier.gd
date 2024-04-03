@@ -1,7 +1,7 @@
 class_name ShieldSoldier extends ShooterAlly
 
 
-@onready var _shield : SovietShield = $Shield 
+@onready var _shield : SovietShield = $Shield as SovietShield
 
 
 func _set_initial_items():

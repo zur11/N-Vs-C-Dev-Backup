@@ -8,8 +8,9 @@ var initial_focused_object : Control
 var last_focused_object : Control
 
 func _ready():
-	_connect_buy_product_buttons()
-	_set_focusable_objects()
+	if not Engine.is_editor_hint():
+		_connect_buy_product_buttons()
+		_set_focusable_objects()
 
 func _connect_buy_product_buttons():
 	for product_button in self.get_children():

@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="LevelBudapest" load_steps=6 format=3 uid="uid://dpgaigme7pghq"]
+[gd_resource type="Resource" script_class="LevelBudapest" load_steps=5 format=3 uid="uid://dpgaigme7pghq"]
 
-[ext_resource type="Texture2D" uid="uid://ba6sgef5ffyno" path="res://data/worlds/budapest/game_background.png" id="1_bca0i"]
 [ext_resource type="Script" path="res://data/ally_presentation/ally_presentation.gd" id="1_gp085"]
 [ext_resource type="Texture2D" uid="uid://bufgebbedgbca" path="res://data/worlds/budapest/level_1/thumbnail.png" id="1_tph6m"]
 [ext_resource type="Script" path="res://data/worlds/budapest/level_budapest.gd" id="3_j3fgk"]
@@ -14,7 +13,7 @@ ally_reward_description = "Land Mine destroys first enemy that walks over it, vu
 [resource]
 script = ExtResource("3_j3fgk")
 level_unlocked = false
-game_background = ExtResource("1_bca0i")
+background_scene_path = ""
 level_name = "Level 1"
 level_thumbnail = ExtResource("1_tph6m")
 level_allies = Array[PackedScene]([])

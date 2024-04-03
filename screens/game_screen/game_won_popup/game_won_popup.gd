@@ -22,6 +22,10 @@ var _next_world : World
 var _next_level : Level
 
 
+var focusable_objects : Array[Control]
+var initial_focused_object : Control
+@onready var input_controller : GameWonPopupController = $GameWonPopupController as GameWonPopupController
+
 @onready var congratulations_label : Label = $WinningCongratulationsLabel
 
 @onready var _reward_container_no_title : TextureRect = $RewardContainerNoTitle
@@ -31,16 +35,32 @@ var _next_level : Level
 @onready var _ally_thumbnail : TextureRect = $AllyThumbnail
 @onready var _description_label : Label = $DescriptionLabel
 
-@onready var _generic_btn_pressed_player : SFXPlayer = $GenericBtnPressedPlayer
+@onready var _generic_btn_pressed_player : SFXPlayer = $GenericBtnPressedPlayer as SFXPlayer
 @onready var _reward_label : Label = $RewardLabel
 
 @onready var _continue_button : TextureButton = $%ContinueButton
+@onready var _go_to_main_menu_button : TextureButton = $%GoToMainMenuButton
+@onready var _retry_level_button : TextureButton = $%RetryLevelButton
 
 
 func _ready():
 	_get_saved_user_data()
 	_update_levels_and_worlds()
 
+func set_input_controller():
+	if focusable_objects == []:
+		focusable_objects = [_retry_level_button, _go_to_main_menu_button, _continue_button]
+
+	initial_focused_object = focusable_objects[2]
+	
+	input_controller.containing_scene = self
+	InputControllersManager.selected_input_controller = input_controller
+
+func on_start_key_input_received():
+	_on_continue_button_pressed()
+
+func on_cancel_input_received():
+	_on_go_to_main_menu_button_pressed()
 
 func _set_level(new_value:Level):
 	_level = new_value

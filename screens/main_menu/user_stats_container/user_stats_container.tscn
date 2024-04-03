@@ -13,38 +13,38 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("UserBalanceContainer:position")
+tracks/0/path = NodePath("UserStats/UserBalanceContainer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 120), Vector2(0, 0)]
+"values": [Vector2(-171, 65), Vector2(-171, -55)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ExtraContainer1:position")
+tracks/1/path = NodePath("UserStats/ExtraContainer1:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 240), Vector2(0, 0)]
+"values": [Vector2(-171, 185), Vector2(-171, -55)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ExtraContainer2:position")
+tracks/2/path = NodePath("UserStats/ExtraContainer2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 360), Vector2(0, 0)]
+"values": [Vector2(-171, 305), Vector2(-171, -55)]
 }
 
 [sub_resource type="Animation" id="Animation_ebj3p"]
@@ -54,38 +54,38 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("UserBalanceContainer:position")
+tracks/0/path = NodePath("UserStats/UserBalanceContainer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 120)]
+"values": [Vector2(-171, -55), Vector2(-171, 65)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ExtraContainer1:position")
+tracks/1/path = NodePath("UserStats/ExtraContainer1:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 240)]
+"values": [Vector2(-171, -55), Vector2(-171, 185)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ExtraContainer2:position")
+tracks/2/path = NodePath("UserStats/ExtraContainer2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.35, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 360), Vector2(0, 350), Vector2(0, 360)]
+"values": [Vector2(-171, -55), Vector2(-171, 305), Vector2(-171, 295), Vector2(-171, 305)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1m76q"]
@@ -155,30 +155,50 @@ offset_bottom = 72.0
 focus_mode = 2
 script = ExtResource("1_3tnu0")
 
-[node name="ExtraContainer2" type="Sprite2D" parent="."]
-visible = false
+[node name="UserStats" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ExtraContainer2" type="TextureRect" parent="UserStats"]
+layout_mode = 0
+offset_left = -171.0
+offset_top = -55.0
+offset_right = 171.0
+offset_bottom = 56.0001
 texture = ExtResource("2_kdss3")
 
-[node name="ExtraContainer1" type="Sprite2D" parent="."]
-visible = false
+[node name="ExtraContainer1" type="TextureRect" parent="UserStats"]
+layout_mode = 0
+offset_left = -171.0
+offset_top = -55.0
+offset_right = 171.0
+offset_bottom = 56.0001
 texture = ExtResource("2_kdss3")
 
-[node name="UserBalanceContainer" type="Sprite2D" parent="."]
+[node name="UserBalanceContainer" type="TextureRect" parent="UserStats"]
+layout_mode = 0
+offset_left = -171.0
+offset_top = -55.0
+offset_right = 170.0
+offset_bottom = 57.0001
 texture = ExtResource("3_h1jr0")
 
-[node name="BalanceLabel" type="Label" parent="UserBalanceContainer"]
+[node name="BalanceLabel" type="Label" parent="UserStats/UserBalanceContainer"]
 unique_name_in_owner = true
-offset_left = -130.0
-offset_top = -23.0
-offset_right = 51.0
-offset_bottom = 29.0
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 221.0
+offset_bottom = 84.0
 theme_override_colors/font_color = Color(0.321569, 0.196078, 0.054902, 1)
 theme_override_fonts/font = ExtResource("4_slbef")
 theme_override_font_sizes/font_size = 39
 text = "0"
 horizontal_alignment = 2
 
-[node name="UsernameContainer" type="TextureButton" parent="."]
+[node name="UsernameContainer" type="TextureButton" parent="UserStats"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = -172.0
 offset_top = -55.0
@@ -187,7 +207,7 @@ offset_bottom = 56.0
 toggle_mode = true
 texture_normal = ExtResource("2_kdss3")
 
-[node name="UserNameLabel" type="Label" parent="UsernameContainer"]
+[node name="UserNameLabel" type="Label" parent="UserStats/UsernameContainer"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 50.0
@@ -214,6 +234,8 @@ libraries = {
 "": SubResource("AnimationLibrary_w7hbp")
 }
 
-[connection signal="mouse_entered" from="UsernameContainer" to="." method="_on_username_container_mouse_entered"]
-[connection signal="mouse_exited" from="UsernameContainer" to="." method="_on_username_container_mouse_exited"]
-[connection signal="pressed" from="UsernameContainer" to="." method="_on_username_container_pressed"]
+[connection signal="focus_entered" from="UserStats/UsernameContainer" to="." method="_on_username_container_focus_entered"]
+[connection signal="focus_exited" from="UserStats/UsernameContainer" to="." method="_on_username_container_focus_exited"]
+[connection signal="mouse_entered" from="UserStats/UsernameContainer" to="." method="_on_username_container_mouse_entered"]
+[connection signal="mouse_exited" from="UserStats/UsernameContainer" to="." method="_on_username_container_mouse_exited"]
+[connection signal="pressed" from="UserStats/UsernameContainer" to="." method="_on_username_container_pressed"]

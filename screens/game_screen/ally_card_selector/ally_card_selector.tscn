@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://tqidibrgm2uf"]
+[gd_scene load_steps=3 format=3 uid="uid://tqidibrgm2uf"]
 
 [ext_resource type="Script" path="res://screens/game_screen/ally_card_selector/ally_card_selector.gd" id="1_tnv40"]
+[ext_resource type="Script" path="res://screens/game_screen/ally_card_selector/card_selector_controller.gd" id="2_u0pam"]
 
-[node name="ally_card_selector" type="VBoxContainer"]
+[node name="AllyCardSelector" type="VBoxContainer"]
 process_mode = 3
 scale = Vector2(0.96, 0.96)
 script = ExtResource("1_tnv40")
+
+[node name="CardSelectorController" type="Node" parent="."]
+script = ExtResource("2_u0pam")

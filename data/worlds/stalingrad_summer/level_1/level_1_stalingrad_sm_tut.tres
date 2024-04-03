@@ -17,14 +17,14 @@ ally_thumbnail = "matrioshka"
 ally_title = "Matrioshka"
 ally_reward_description = "Matrioshka offers ruble coin every few seconds."
 
-[sub_resource type="Resource" id="Resource_6a3jb"]
+[sub_resource type="Resource" id="Resource_66x6f"]
 script = ExtResource("5_4qmem")
 minimum_value = 7
 maximum_value = 10
 
 [sub_resource type="Resource" id="Resource_2w3kg"]
 script = ExtResource("10_0sg02")
-quantity = 3
+quantity = 2
 enemy = "standardGerman"
 
 [sub_resource type="Resource" id="Resource_cgtqo"]
@@ -36,7 +36,7 @@ enemies = Array[ExtResource("10_0sg02")]([SubResource("Resource_2w3kg")])
 
 [sub_resource type="Resource" id="Resource_k7qnw"]
 script = ExtResource("10_0sg02")
-quantity = 2
+quantity = 1
 enemy = "standardGerman"
 
 [sub_resource type="Resource" id="Resource_2gqg7"]
@@ -57,12 +57,12 @@ level_thumbnail = ExtResource("12_2ilg7")
 enemy_thumbnail = ExtResource("6_e80nx")
 level_allies = Array[PackedScene]([ExtResource("9_6kr2y")])
 starting_balance = 75
-coin_dropping_rate = SubResource("Resource_6a3jb")
+coin_dropping_rate = SubResource("Resource_66x6f")
 falling_coin_value = 25
 playable_rows = 3
 game_background_position = "right"
 ally_presentation = SubResource("Resource_w0u56")
-displayed_preview_enemies = 5
+displayed_preview_enemies = 3
 level_enemies = Array[ExtResource("11_e3sgo")]([SubResource("Resource_cgtqo"), SubResource("Resource_2gqg7")])
 level_coins_reward = 150
 special_coin_reward = 0

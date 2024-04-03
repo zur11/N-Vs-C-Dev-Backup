@@ -18,7 +18,7 @@ ally_thumbnail = "barrier"
 ally_title = "BARRIER"
 ally_reward_description = "Barrier offers protection from enemy attacks to allies located behind it."
 
-[sub_resource type="Resource" id="Resource_nnbb1"]
+[sub_resource type="Resource" id="Resource_66x6f"]
 script = ExtResource("2_3mcbp")
 minimum_value = 7
 maximum_value = 10
@@ -110,7 +110,7 @@ enemies = Array[ExtResource("9_vccwq")]([SubResource("Resource_ps2ai")])
 [resource]
 script = ExtResource("1_q6k0s")
 tutorial_scene = ExtResource("11_abu5d")
-level_unlocked = false
+level_unlocked = true
 background_scene_path = "res://screens/game_screen/background_scene/stalingrad_summer/level_2/st_summer_bg_l2.tscn"
 game_foreground = ExtResource("6_opndc")
 level_name = "Level 2"
@@ -118,7 +118,7 @@ level_thumbnail = ExtResource("11_kw3j2")
 enemy_thumbnail = ExtResource("4_xovcg")
 level_allies = Array[PackedScene]([ExtResource("7_22cf8"), ExtResource("8_wrqc2")])
 starting_balance = 50
-coin_dropping_rate = SubResource("Resource_nnbb1")
+coin_dropping_rate = SubResource("Resource_66x6f")
 falling_coin_value = 25
 playable_rows = 3
 game_background_position = "right"

@@ -15,8 +15,8 @@ var _assigned_collision_masks : Array[int]
 @onready var _throwable_texture : AnimatedSprite2D = $"ThrowableTexture" 
 @onready var _falling_timer : Timer = $"FallingTimer"
 @onready var _animation_player : AnimationPlayer = $AnimationPlayer
-@onready var _explosion_sfx_player : SFXPlayer = $SFXPlayer
-@onready var _explosion_blast : Area2D = $ExplosionBlast
+@onready var _explosion_sfx_player : SFXPlayer = $SFXPlayer as SFXPlayer
+@onready var _explosion_blast : Area2D = $ExplosionBlast 
 @onready var _blast_coll_shape : CollisionShape2D = $%BlastCollShape
 
 

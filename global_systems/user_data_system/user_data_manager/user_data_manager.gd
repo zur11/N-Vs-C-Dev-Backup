@@ -8,7 +8,7 @@ func _init():
 	if user_data.player_user_data.player_name == "":
 		
 		user_data.player_user_data.player_name = "Default User"
-		user_data.player_user_data.player_balance = 150
+		user_data.player_user_data.player_balance = 300
 		
 		user_data.user_settings.music_enabled = true
 		user_data.user_settings.sfx_enabled = true

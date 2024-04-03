@@ -2,7 +2,30 @@ class_name GameOverPopup extends Control
 
 var level_to_replay : Level
 
-@onready var _generic_btn_pressed_player : SFXPlayer = $GenericBtnPressedPlayer
+var focusable_objects : Array[Control]
+var initial_focused_object : Control
+@onready var input_controller : GameOverPopupController = $GameOverPopupController as GameOverPopupController
+
+@onready var _go_to_main_menu_button : TextureButton = $GoToMainMenuButton
+@onready var _play_again_button : TextureButton = $PlayAgainButton
+
+@onready var _generic_btn_pressed_player : SFXPlayer = $GenericBtnPressedPlayer as SFXPlayer
+
+	
+func set_input_controller():
+	if focusable_objects == []:
+		focusable_objects = [_go_to_main_menu_button, _play_again_button]
+
+	initial_focused_object = focusable_objects[1]
+	
+	input_controller.containing_scene = self
+	InputControllersManager.selected_input_controller = input_controller
+
+func on_start_key_input_received():
+	_on_play_again_button_pressed()
+
+func on_cancel_input_received():
+	_on_go_to_main_menu_button_pressed()
 
 func _on_go_to_main_menu_button_pressed():
 	var menus_screen : Node = load("res://screens/menus/menus.tscn").instantiate()

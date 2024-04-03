@@ -14,8 +14,8 @@ var _opponent_at_shoot_reach : Object
 @onready var _explosion_textures : AnimatedSprite2D = $Explosion 
 @onready var _activation_timer : Timer = $"ActivationTimer"
 @onready var _animation_player : AnimationPlayer = $AnimationPlayer
-@onready var _explosion_sfx_player : SFXPlayer = $SFXPlayer
-@onready var _death_sfx_player : SFXPlayer = $DeathSFXPlayer
+@onready var _explosion_sfx_player : SFXPlayer = $SFXPlayer as SFXPlayer
+@onready var _death_sfx_player : SFXPlayer = $DeathSFXPlayer as SFXPlayer
 @onready var _default_texture : Sprite2D = $DefaultTexture
 
 

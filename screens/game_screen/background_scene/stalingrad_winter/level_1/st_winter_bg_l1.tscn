@@ -39,6 +39,7 @@ texture = ExtResource("6_13h0t")
 [node name="Foreground" type="Node2D" parent="."]
 
 [node name="TemporaryForegroundTexture" type="TextureRect" parent="Foreground"]
+modulate = Color(1, 1, 1, 0.7)
 offset_top = 767.0
 offset_right = 6324.0
 offset_bottom = 1079.0

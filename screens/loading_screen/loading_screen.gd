@@ -7,7 +7,7 @@ const _GAME_SCREEN_SCENE_PATH : String = "res://screens/game_screen/game_screen.
 const _SETTINGS_MENU_SCENE_PATH : String = "res://screens/sub_menus/settings_menu/settings_menu.tscn"
 const _GAMES_MENU_SCENE_PATH : String = "res://screens/sub_menus/games_menu/games_menu.tscn"
 
-@onready var loading_animations_container := $"LoadingAnimationsContainer"
+@onready var loading_animations_container : HBoxContainer = $"LoadingAnimationsContainer"
 
 func _ready():
 	MusicManager.play_main_stream()
